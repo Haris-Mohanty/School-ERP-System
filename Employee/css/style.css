@@ -4,16 +4,28 @@
     box-sizing: border-box;
 }
 .side-nav{
-    width: 15%;
     height: 100vh;
     background-color: rgb(7, 76, 205);
     position: fixed;
     top: 0;
     left: 0;
 }
+.side-nav-open{
+    width: 15%;
+}.side-nav-close{
+    width: 0%;
+}
 .page{
     width: 85%;
     background-color: #fff;
     height: 100vh;
     margin-left: 15%;
+}
+.page-open{
+    width: 85%;
+    margin-left: 15;
+}
+.page-close{
+    width: 100%;
+    margin-left: 0%;
 }
