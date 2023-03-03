@@ -6,5 +6,14 @@
 .side-nav{
     width: 15%;
     height: 100vh;
-    background-color: cornflowerblue;
+    background-color: rgb(7, 76, 205);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.page{
+    width: 85%;
+    background-color: #fff;
+    height: 100vh;
+    margin-left: 15%;
 }
