@@ -8,6 +8,11 @@ $(document).ready(function () {
       //page control
       $(".page").removeClass("page-open");
       $(".page").addClass("page-close");
+    } else {
+      $(".side-nav").addClass("side-nav-open");
+      $(".side-nav").removeClass("side-nav-close");
+      $(".page").addClass("page-open");
+      $(".page").removeClass("page-close");
     }
   });
 });
