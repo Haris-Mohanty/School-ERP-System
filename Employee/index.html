@@ -34,7 +34,7 @@
     <title>Employee</title>
   </head>
   <body>
-    <div class="container-fluid p-0">
+    <div class="container-fluid p-0 overflow-hidden">
       <div class="side-nav side-nav-open">
         <button class="btn w-100 text-light text-start institute-update-btn"><i class="fa-solid fa-chart-line"></i>
            Institute Update
@@ -42,12 +42,24 @@
         </button>
         <ul class="collapse institute-menu">
           <li class="border-start collapse-item p-2">Create Category</li>
-          <li class="border-start collapse-item p-2">Create Category</li>
-          <li class="border-start collapse-item p-2">Create Category</li>
+          <li class="border-start collapse-item p-2">Create Course</li>
+          <li class="border-start collapse-item p-2">Create Batch</li>
         </ul>
       </div>
       <div class="page page-open">
-        
+        <div class="row p-3">
+          <div class="col-1"></div>
+          <div class="col-4 bg-white shadow-sm py-2">
+            <h5 class="category-h5">CREATE CATEGORY
+              <i class="fa-solid fa-circle-notch fa-spin create-category-loader float-end mt-1" style="font-size: 18px;"></i>
+            </h5>
+            <form>
+
+            </form>
+          </div>
+          <div class="col-6"></div>
+          <div class="col-1"></div>
+        </div>
       </div>
     </div>
   </body>

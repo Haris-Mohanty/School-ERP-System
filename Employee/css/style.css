@@ -42,3 +42,9 @@
     color: #fff;
     cursor: pointer;
 }
+.category-h5{
+    letter-spacing: 1px;
+    color: rgb(161, 18, 139);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
