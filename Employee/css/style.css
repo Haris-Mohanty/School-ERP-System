@@ -5,7 +5,7 @@
 }
 .side-nav{
     height: 100vh;
-    background-color: rgb(7, 76, 205);
+    background-color: rgb(9, 49, 122);
     position: fixed;
     top: 0;
     left: 0;
@@ -30,4 +30,14 @@
 .page-close{
     width: 100%;
     margin-left: 0%;
+}
+.side-nav button{
+    color: #fff;
+}
+.side-nav ul{
+    list-style: none;
+}
+.side-nav ul li{
+    color: #fff;
+    cursor: pointer;
 }
