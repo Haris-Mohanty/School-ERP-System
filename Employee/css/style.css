@@ -33,6 +33,7 @@
 }
 .side-nav button{
     color: #fff;
+    box-shadow: none;
 }
 .side-nav ul{
     list-style: none;
