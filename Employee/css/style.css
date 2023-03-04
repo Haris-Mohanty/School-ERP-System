@@ -43,7 +43,7 @@
     cursor: pointer;
 }
 .category-h5{
-    letter-spacing: 1px;
+    letter-spacing: 0.7px;
     color: rgb(161, 18, 139);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
