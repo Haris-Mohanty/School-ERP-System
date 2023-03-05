@@ -5,3 +5,9 @@ $(document).ready(function () {
   });
 });
 //INSTITUTE UPDATE COLLAPSEBLE CODE END
+
+//DYNAMIC REQUEST(CREATE CATEGORY) CODE START
+$(document).ready(function () {
+  
+});
+//DYNAMIC REQUEST(CREATE CATEGORY) CODE END
