@@ -14,6 +14,10 @@ $(document).ready(function () {
       $.ajax({
         type: "POST",
         url: "dynamic_pages/" + access_link,
+        beforeSend : function(){
+          let progress
+          $(".page").html()
+        },
         success: function (response) {
           $(".page").html(response);
         }
