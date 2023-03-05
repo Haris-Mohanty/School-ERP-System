@@ -7,7 +7,7 @@ echo '
             <h5 class="category-h5 mb-3 ">CREATE CATEGORY
               <i class="fa-solid fa-circle-notch fa-spin create-category-loader float-end mt-1 text-danger" style="font-size: 20px;"></i>
             </h5>
-            <form>
+            <form action="POST">
               <input type="text" name="category" placeholder="Category Name" class="form-control mb-3 shadow-none">
               <textarea name="details" class="form-control mb-3 shadow-none" placeholder="Enter Details"></textarea>
               <div align="end">

@@ -12,8 +12,11 @@ $(document).ready(function () {
     $(this).click(function () {
       let access_link = $(this).attr("access-link");
       $.ajax({
-        type : "POST",
-        url : "dynamic_pages/"+access_link,
+        type: "POST",
+        url: "dynamic_pages/" + access_link,
+        success: function (response) {
+          $(".page").html(response);
+        }
       });
     });
   });
