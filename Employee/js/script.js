@@ -8,6 +8,9 @@ $(document).ready(function () {
 
 //DYNAMIC REQUEST(CREATE CATEGORY) CODE START
 $(document).ready(function () {
+  //for showing in first page(create category)
+  let active_link = $(".active").attr("access-link");
+  dynamic_request(active_link);
   $(".collapse-item").each(function () {
     $(this).click(function () {
       let access_link = $(this).attr("access-link");
