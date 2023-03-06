@@ -33,7 +33,7 @@ function dynamic_request(access_link) {
         let progress = `<div class="progress" role="progressbar" aria-label="Success striped example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                                <div class="progress-bar progress-bar-striped bg-success" style="width: ${percentage}%"></div>
                       </div>`;
-      $(".page").html(progress);
+        $(".page").html(progress);
       };
       return request;
     },
@@ -50,3 +50,16 @@ function dynamic_request(access_link) {
   });
 }
 //DYNAMIC REQUEST(CREATE CATEGORY) CODE END
+
+//ACTIVE TAB
+$(document).ready(function () {
+  $(".collapse-item").each(function () {
+    $(this).click(function () {
+      $(".collapse-item").each(function () {
+        $(this).removeClass("active");
+      });
+      $(this).addClass("active");
+    });
+  });
+});
+//ACTIVE TAB END

@@ -1,4 +1,6 @@
 <?php
+//show navbar
+require_once("../php/nav.php");
 
 echo '
 <div class="row p-3">
@@ -7,9 +9,9 @@ echo '
             <h5 class="category-h5 mb-3 ">CREATE CATEGORY
               <i class="fa-solid fa-circle-notch fa-spin create-category-loader float-end mt-1 text-danger" style="font-size: 20px;"></i>
             </h5>
-            <form action="POST">
-              <input type="text" name="category" placeholder="Category Name" class="form-control mb-3 shadow-none">
-              <textarea name="details" class="form-control mb-3 shadow-none" placeholder="Enter Details"></textarea>
+            <form class="category-form">
+              <input type="text" name="category" placeholder="Category Name" class="form-control category mb-3 shadow-none">
+              <textarea name="details" class="form-control details mb-3 shadow-none" placeholder="Enter Details"></textarea>
               <div align="end">
                 <button class="btn btn-primary"><i class="fa fa-plus"></i>Add Fields</button>
                 <button class="btn btn-danger">Create</button>
@@ -39,8 +41,8 @@ echo '
                   <td>MCA</td>
                   <td>Lorem, ipsum dolor.</td>
                   <td>
-                    <button class="btn btn-primary p-1 px-2"><i class="fa fa-edit"></i></button>
-                    <button class="btn btn-danger p-1 px-2"><i class="fa fa-trash"></i></button>
+                    <button type="button" class="btn btn-primary p-1 px-2"><i class="fa fa-edit"></i></button>
+                    <button type="submit" class="btn btn-danger p-1 px-2"><i class="fa fa-trash"></i></button>
                   </td>
                 </tr>
               </tbody>

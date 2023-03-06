@@ -18,7 +18,7 @@
 }
 .page{
     width: 85%;
-    background-color: #f1f4de;
+    background-color: #f1f6d9;
     height: 100vh;
     margin-left: 15%;
     transition: 0.5s;
@@ -41,6 +41,13 @@
 .side-nav ul li{
     color: #fff;
     cursor: pointer;
+    font-size: 15px;
+}
+.side-nav ul li:hover, .active{
+    color: rgb(234, 219, 159);
+    border: 1px solid #fff;
+    font-size: 18px;
+    transition: 0.3s ease-in-out;
 }
 .category-h5{
     letter-spacing: 0.7px;
