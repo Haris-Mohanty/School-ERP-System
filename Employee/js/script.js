@@ -70,6 +70,7 @@ $(document).ready(function () {
 //CATEGORY CODE START
 
 function categoryFunc() {
+  //add fiels
   $(document).ready(function () {
     $(".category-add-btn").click(function () {
       let fields = `
@@ -77,6 +78,14 @@ function categoryFunc() {
         <textarea name="details" class="form-control details mb-3 shadow-none" placeholder="Enter Details"></textarea>
       `;
       $(".dynamic-fields").append(fields);
+    });
+  });
+  //create
+  $(document).ready(function () {
+    $(".category-create-btn").click(function (e) {
+      e.preventDefault();
+      let categoryEl = $(".category");
+      let detailsEl = $(".details");
     });
   });
 }
