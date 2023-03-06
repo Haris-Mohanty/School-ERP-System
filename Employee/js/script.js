@@ -86,6 +86,14 @@ function categoryFunc() {
       e.preventDefault();
       let categoryEl = $(".category");
       let detailsEl = $(".details");
+      let i;
+      let category = [],
+        details = [];
+      for (i = 0; i < categoryEl.length; i++) {
+        category[i] = categoryEl[i].value;
+        details[i] = detailsEl[i].value;
+      }
+      console.log(category, details);
     });
   });
 }
