@@ -12,9 +12,12 @@ echo '
             <form class="category-form">
               <input type="text" name="category" placeholder="Category Name" class="form-control category mb-3 shadow-none">
               <textarea name="details" class="form-control details mb-3 shadow-none" placeholder="Enter Details"></textarea>
+              <div class="dynamic-fields">
+              
+              </div>
               <div align="end">
-                <button class="btn btn-primary"><i class="fa fa-plus"></i>Add Fields</button>
-                <button class="btn btn-danger">Create</button>
+                <button type="button" class="btn btn-primary category-add-btn"><i class="fa fa-plus"></i>Add Fields</button>
+                <button type="submit" class="btn btn-danger category-create-btn">Create</button>
               </div>
             </form>
           </div>
@@ -41,8 +44,8 @@ echo '
                   <td>MCA</td>
                   <td>Lorem, ipsum dolor.</td>
                   <td>
-                    <button type="button" class="btn btn-primary category-add-btn p-1 px-2"><i class="fa fa-edit"></i></button>
-                    <button type="submit" class="btn btn-danger category-create-btn p-1 px-2"><i class="fa fa-trash"></i></button>
+                    <button class="btn btn-primary p-1 px-2"><i class="fa fa-edit"></i></button>
+                    <button class="btn btn-danger p-1 px-2"><i class="fa fa-trash"></i></button>
                   </td>
                 </tr>
               </tbody>

@@ -45,6 +45,9 @@ function dynamic_request(access_link) {
       $(".page").html(progress);
     },
     success: function (response) {
+      if (access_link == "category_design.php") {
+        categoryFunc();
+      }
       $(".page").html(response);
     },
   });
@@ -66,10 +69,16 @@ $(document).ready(function () {
 
 //CATEGORY CODE START
 
-$(document).ready(function () {
-  $(".category-add-btn").click(function () {
-    alert();
+function categoryFunc() {
+  $(document).ready(function () {
+    $(".category-add-btn").click(function () {
+      let fields = `
+        <input type="text" name="category" placeholder="Category Name" class="form-control category mb-3 shadow-none">
+        <textarea name="details" class="form-control details mb-3 shadow-none" placeholder="Enter Details"></textarea>
+      `;
+      $(".dynamic-fields").append(fields);
+    });
   });
-});
+}
 
 //CATEGORY CODE END
