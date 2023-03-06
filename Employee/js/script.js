@@ -93,7 +93,21 @@ function categoryFunc() {
         category[i] = categoryEl[i].value;
         details[i] = detailsEl[i].value;
       }
-      console.log(category, details);
+      //create a ajax request to send data to php page
+      $.ajax({
+        type: "POST",
+        url: "php/create_category.php",
+        data: {
+          category: JSON.stringify(category),
+          details: JSON.stringify(details),
+        },
+        beforeSend: function () {
+          $(".create-category-loader").removeClass("d-none");
+        },
+        success: function (response) {
+          document.write(response);
+        },
+      });
     });
   });
 }
