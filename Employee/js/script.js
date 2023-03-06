@@ -63,3 +63,13 @@ $(document).ready(function () {
   });
 });
 //ACTIVE TAB END
+
+//CATEGORY CODE START
+
+$(document).ready(function () {
+  $(".category-add-btn").click(function () {
+    alert();
+  });
+});
+
+//CATEGORY CODE END

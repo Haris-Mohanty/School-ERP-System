@@ -41,8 +41,8 @@ echo '
                   <td>MCA</td>
                   <td>Lorem, ipsum dolor.</td>
                   <td>
-                    <button type="button" class="btn btn-primary p-1 px-2"><i class="fa fa-edit"></i></button>
-                    <button type="submit" class="btn btn-danger p-1 px-2"><i class="fa fa-trash"></i></button>
+                    <button type="button" class="btn btn-primary category-add-btn p-1 px-2"><i class="fa fa-edit"></i></button>
+                    <button type="submit" class="btn btn-danger category-create-btn p-1 px-2"><i class="fa fa-trash"></i></button>
                   </td>
                 </tr>
               </tbody>
