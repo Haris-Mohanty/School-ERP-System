@@ -110,6 +110,7 @@ function categoryFunc() {
               $(".create-category-loader").addClass("d-none");
               swal("Congratulations!", response, "success");
             }, 2000);
+            getCategoryFunc();
           } else {
             setTimeout(function () {
               $(".create-category-loader").addClass("d-none");
@@ -125,11 +126,23 @@ function categoryFunc() {
     $.ajax({
       type: "POST",
       url: "php/category_list.php",
-      beforeSend: function () {
-
-      },
+      beforeSend: function () {},
       success: function (response) {
-        console.log(response);
+        let all_category = JSON.parse(response.trim());
+        all_category.forEach((data, index) => {
+          let tr = `
+          <tr index="${data.id}">
+              <td>${index+1}</td>
+              <td>${data.category_name}</td>
+              <td>${data.details}</td>
+              <td>
+                <button class="btn btn-primary p-1 px-2"><i class="fa fa-edit"></i></button>
+                <button class="btn btn-danger p-1 px-2"><i class="fa fa-trash"></i></button>
+              </td>
+          </tr>
+          `;
+          $(".category-list").append(tr);
+        });
       },
     });
   }

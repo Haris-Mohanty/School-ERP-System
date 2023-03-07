@@ -38,16 +38,8 @@ echo '
                   <th>Action</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>MCA</td>
-                  <td>Lorem, ipsum dolor.</td>
-                  <td>
-                    <button class="btn btn-primary p-1 px-2"><i class="fa fa-edit"></i></button>
-                    <button class="btn btn-danger p-1 px-2"><i class="fa fa-trash"></i></button>
-                  </td>
-                </tr>
+              <tbody class="category-list">
+                
               </tbody>
             </table>
           </div>
