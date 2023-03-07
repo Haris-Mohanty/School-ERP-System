@@ -166,7 +166,8 @@ function categoryFunc() {
         $(saveBtn).removeClass("d-none");
         //save
         $(saveBtn).click(function () {
-          alert(td[1].innerHTML);
+          let category = $(td[1].html());
+          let details = $(td[2].html());
         });
       });
     });
