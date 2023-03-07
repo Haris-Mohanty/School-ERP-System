@@ -162,6 +162,12 @@ function categoryFunc() {
         td[1].focus();
         td[2].contentEditable = true;
         td[2].style.border = "2px solid blue";
+        $(this).addClass("d-none");
+        $(saveBtn).removeClass("d-none");
+        //save
+        $(saveBtn).click(function () {
+          alert(td[1].innerHTML);
+        });
       });
     });
   }
