@@ -4,6 +4,7 @@ require_once("../../Common_files/php/database.php");
 
 $category = json_decode($_POST['category']);
 $details = json_decode($_POST['details']);
+$message = "";
 
 $length = count($category);//getting length
 
@@ -16,11 +17,12 @@ if($response){
                                   VALUES ('$category[$i]' , '$details[$i]')";
 
             if($db -> query($insert_data)){
-                echo "succsss";
+                $message = "Your Data has been Inserted Successfully!";
             }else{
-                echo "unable to store data";
+                $message = "Unable to Store Data";
             }
     }
+    echo $message;
 }else{
     $create_table = "CREATE TABLE category(
         id INT(11) NOT NULL AUTO_INCREMENT,
@@ -34,13 +36,14 @@ if($response){
                                   VALUES ('$category[$i]' , '$details[$i]')";
 
             if($db -> query($insert_data)){
-                echo "succsss";
+                $message = "Data Inserted Successfully!";
             }else{
-                echo "unable to store data";
+                $message = "Unable to Store Data";
             }
         } 
+        echo $message;
     }else{
-        echo "faild";
+        $message = "Unable to create Table!";
     }
 }
 

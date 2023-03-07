@@ -105,7 +105,17 @@ function categoryFunc() {
           $(".create-category-loader").removeClass("d-none");
         },
         success: function (response) {
-          swal("Good Job !", response, "success");
+          if (response.trim() == "Your Data has been Inserted Successfully!") {
+            setTimeout(function () {
+              $(".create-category-loader").addClass("d-none");
+              swal("Congratulations!", response, "success");
+            }, 2000);
+          } else {
+            setTimeout(function () {
+              $(".create-category-loader").addClass("d-none");
+            swal(response.trim(), response.trim(), "error");
+            }, 2000);
+          }
         },
       });
     });
