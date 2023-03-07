@@ -5,6 +5,8 @@ require_once("../../Common_files/php/database.php");
 $category = json_decode($_POST['category']);
 $details = json_decode($_POST['details']);
 
+$length = count($category);//getting length
+
 //get dynamic table
 $get_category = "SELECT * FROM category";
 $response = $db -> query($get_category);
@@ -18,7 +20,12 @@ if($response){
         PRIMARY KEY(id)
     )";
     if($db -> query($create_table)){
-        echo "table created.";
+        for($i=0; $i<$length; $i++){
+            $insert_data = "INSERT INTO category(category_name, details) 
+                                  VALUES ('$category[$i]' , '$details[$i]')";
+
+            if()
+        } 
     }else{
         echo "faild";
     }
