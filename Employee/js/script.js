@@ -109,8 +109,8 @@ function categoryFunc() {
             setTimeout(function () {
               $(".create-category-loader").addClass("d-none");
               swal("Congratulations!", response, "success");
+              getCategoryFunc();
             }, 2000);
-            getCategoryFunc();
           } else {
             setTimeout(function () {
               $(".create-category-loader").addClass("d-none");
@@ -129,24 +129,42 @@ function categoryFunc() {
       beforeSend: function () {},
       success: function (response) {
         let all_category = JSON.parse(response.trim());
+        $(".category-list").html("");
         all_category.forEach((data, index) => {
           let tr = `
           <tr index="${data.id}">
-              <td>${index+1}</td>
+              <td>${index + 1}</td>
               <td>${data.category_name}</td>
               <td>${data.details}</td>
               <td>
-                <button class="btn btn-primary p-1 px-2"><i class="fa fa-edit"></i></button>
+                <button class="btn edit-btn btn-primary p-1 px-2"><i class="fa fa-edit"></i></button>
+                <button class="btn d-none save-btn btn-primary p-1 px-2"><i class="fa fa-save"></i></button>
                 <button class="btn btn-danger p-1 px-2"><i class="fa fa-trash"></i></button>
               </td>
           </tr>
           `;
           $(".category-list").append(tr);
         });
+        updateCategory();
       },
     });
   }
   getCategoryFunc();
+
+  function updateCategory() {
+    let allEditBtn = $(".category-list .edit-btn");
+    $(allEditBtn).each(function () {
+      $(this).click(function () {
+        let parent = this.parentElement.parentElement;
+        let saveBtn = parent.querySelector(".save-btn");
+        let td = parent.querySelectorAll("TD");
+        td[1].contentEditable = true;
+        td[1].focus();
+        $(this).addClass("d-none");
+        $(saveBtn).removeClass("d-none");
+      });
+    });
+  }
 }
 
 //CATEGORY CODE END
