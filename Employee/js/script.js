@@ -113,13 +113,27 @@ function categoryFunc() {
           } else {
             setTimeout(function () {
               $(".create-category-loader").addClass("d-none");
-            swal(response.trim(), response.trim(), "error");
+              swal(response.trim(), response.trim(), "error");
             }, 2000);
           }
         },
       });
     });
   });
+  //get Category list
+  function getCategoryFunc() {
+    $.ajax({
+      type: "POST",
+      url: "php/category_list.php",
+      beforeSend: function () {
+
+      },
+      success: function (response) {
+        console.log(response);
+      },
+    });
+  }
+  getCategoryFunc();
 }
 
 //CATEGORY CODE END
