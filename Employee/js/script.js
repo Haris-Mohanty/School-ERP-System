@@ -105,7 +105,7 @@ function categoryFunc() {
           $(".create-category-loader").removeClass("d-none");
         },
         success: function (response) {
-          document.write(response);
+          swal("Good Job !", response, "success");
         },
       });
     });

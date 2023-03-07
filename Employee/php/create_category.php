@@ -11,7 +11,16 @@ $length = count($category);//getting length
 $get_category = "SELECT * FROM category";
 $response = $db -> query($get_category);
 if($response){
-    echo "Table Found";
+    for($i=0; $i<$length; $i++){
+            $insert_data = "INSERT INTO category(category_name, details) 
+                                  VALUES ('$category[$i]' , '$details[$i]')";
+
+            if($db -> query($insert_data)){
+                echo "succsss";
+            }else{
+                echo "unable to store data";
+            }
+    }
 }else{
     $create_table = "CREATE TABLE category(
         id INT(11) NOT NULL AUTO_INCREMENT,
@@ -24,7 +33,11 @@ if($response){
             $insert_data = "INSERT INTO category(category_name, details) 
                                   VALUES ('$category[$i]' , '$details[$i]')";
 
-            if()
+            if($db -> query($insert_data)){
+                echo "succsss";
+            }else{
+                echo "unable to store data";
+            }
         } 
     }else{
         echo "faild";
