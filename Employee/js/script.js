@@ -160,8 +160,8 @@ function categoryFunc() {
         let td = parent.querySelectorAll("TD");
         td[1].contentEditable = true;
         td[1].focus();
-        $(this).addClass("d-none");
-        $(saveBtn).removeClass("d-none");
+        td[2].contentEditable = true;
+        td[2].style.border = "2px solid blue";
       });
     });
   }
