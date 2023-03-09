@@ -150,13 +150,14 @@ function categoryFunc() {
     });
   }
   getCategoryFunc();
-
+  //EDIT BUTTON CODE START
   function updateCategory() {
     let allEditBtn = $(".category-list .edit-btn");
     $(allEditBtn).each(function () {
       $(this).click(function () {
         let parent = this.parentElement.parentElement;
         let saveBtn = parent.querySelector(".save-btn");
+        let id = $(parent).attr("INDEX");
         let td = parent.querySelectorAll("TD");
         td[1].contentEditable = true;
         td[1].focus();
@@ -166,8 +167,33 @@ function categoryFunc() {
         $(saveBtn).removeClass("d-none");
         //save
         $(saveBtn).click(function () {
-          let category = $(td[1].html());
-          let details = $(td[2].html());
+          let category = $(td[1]).html();
+          let details = $(td[2]).html();
+
+          $.ajax({
+            type: "POST",
+            url: "php/edit_category.php",
+            data: {
+              id: id,
+              category: category,
+              details: details,
+            },
+            cache: false,
+            beforeSend: function () {},
+            success: function (response) {
+              if(response == "success"){
+                swal("Data Updated !", "Your data has been Updated Successfully!", "success");
+                td[1].contentEditable = false;
+              td[1].focus();
+              td[2].contentEditable = false;
+              td[2].style.border = "inherit";
+              $(saveBtn).addClass("d-none");
+              $(allEditBtn).removeClass("d-none");
+              }else{
+              swal(response.trim(), response.trim(), "error");
+              }
+            },
+          });
         });
       });
     });
