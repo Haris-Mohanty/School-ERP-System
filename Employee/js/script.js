@@ -179,19 +179,29 @@ function categoryFunc() {
               details: details,
             },
             cache: false,
-            beforeSend: function () {},
+            beforeSend: function () {
+              $(".show-category-loader").removeClass("d-none");
+            },
             success: function (response) {
-              if(response == "success"){
-                swal("Data Updated !", "Your data has been Updated Successfully!", "success");
-                td[1].contentEditable = false;
-              td[1].focus();
-              td[2].contentEditable = false;
-              td[2].style.border = "inherit";
-              $(saveBtn).addClass("d-none");
-              $(allEditBtn).removeClass("d-none");
-              }else{
-              swal(response.trim(), response.trim(), "error");
-              }
+              setTimeout(function () {
+                if (response == "success") {
+                  $(".show-category-loader").addClass("d-none");
+                  swal(
+                    "Data Updated !",
+                    "Your data has been Updated Successfully!",
+                    "success"
+                  );
+                  td[1].contentEditable = false;
+                  td[1].focus();
+                  td[2].contentEditable = false;
+                  td[2].style.border = "inherit";
+                  $(saveBtn).addClass("d-none");
+                  $(allEditBtn).removeClass("d-none");
+                } else {
+                  $(".show-category-loader").addClass("d-none");
+                  swal(response.trim(), response.trim(), "error");
+                }
+              }, 1500);
             },
           });
         });
