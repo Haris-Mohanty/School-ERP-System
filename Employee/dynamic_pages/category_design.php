@@ -22,6 +22,7 @@ echo '
             </form>
           </div>
           <!-- CREATE CATEGORY CODE END -->
+          
           <!-- CATEGORY LIST SHOW CODE START -->
           <div class="col-2"></div>
           <div class="col-6 bg-white shadow-sm py-2">
