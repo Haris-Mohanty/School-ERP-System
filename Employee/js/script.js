@@ -139,13 +139,14 @@ function categoryFunc() {
               <td>
                 <button class="btn edit-btn btn-primary p-1 px-2"><i class="fa fa-edit"></i></button>
                 <button class="btn d-none save-btn btn-primary p-1 px-2"><i class="fa fa-save"></i></button>
-                <button class="btn btn-danger p-1 px-2"><i class="fa fa-trash"></i></button>
+                <button class="btn btn-danger del-btn p-1 px-2"><i class="fa fa-trash"></i></button>
               </td>
           </tr>
           `;
           $(".category-list").append(tr);
         });
         updateCategory();
+        delCategory();
       },
     });
   }
@@ -208,6 +209,16 @@ function categoryFunc() {
       });
     });
   }
+  //DELETE BUTTON CODE START
+  function delCategory() {
+    let allDelBtn = $(".category-list .del-btn");
+    $(allDelBtn).each(function () {
+      $(this).click(function () {
+        alert();
+      });
+    });
+  }
+  //DELETE BUTTON CODE END
 }
 
 //CATEGORY CODE END
