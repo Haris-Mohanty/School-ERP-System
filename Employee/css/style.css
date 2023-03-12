@@ -58,8 +58,14 @@
 .category-list-show-h{
     height: 55vh;
     overflow-y: scroll;
-    border-raius: 12px;
 }
 ::-webkit-scrollbar{
-    width: 15px;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(136, 13, 152);
+    border-radius: 20px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: #b40909;
 }

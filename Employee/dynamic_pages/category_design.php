@@ -5,7 +5,7 @@ require_once("../php/nav.php");
 echo '
 <div class="row p-3">
           <!-- CREATE CATEGORY CODE START -->
-          <div class="col-4 bg-white shadow-sm py-2">
+          <div class="col-4 h-25 bg-white shadow-sm py-2">
             <h5 class="category-h5 mb-3 ">CREATE CATEGORY
               <i class="fa-solid fa-circle-notch fa-spin create-category-loader d-none float-end mt-1 text-danger" style="font-size: 20px;"></i>
             </h5>
