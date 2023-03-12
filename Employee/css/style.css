@@ -55,3 +55,11 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
 }
+.category-list-show-h{
+    height: 55vh;
+    overflow-y: scroll;
+    border-raius: 12px;
+}
+::-webkit-scrollbar{
+    width: 15px;
+}

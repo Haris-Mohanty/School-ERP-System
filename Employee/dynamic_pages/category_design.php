@@ -25,7 +25,7 @@ echo '
           
           <!-- CATEGORY LIST SHOW CODE START -->
           <div class="col-2"></div>
-          <div class="col-6 bg-white shadow-sm py-2">
+          <div class="col-6 bg-white shadow-sm category-list-show-h py-2">
             <h5 class="category-h5 mb-3 ">CATEGORY LIST
               <i class="fa-solid fa-circle-notch fa-spin d-none show-category-loader float-end mt-1 text-danger" style="font-size: 20px;"></i>
             </h5>
