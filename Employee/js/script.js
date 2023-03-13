@@ -229,8 +229,11 @@ function categoryFunc() {
             category: category,
             details: details,
           },
-          cache : false,
-          
+          cache: false,
+          beforeSend: function () {},
+          success: function (response) {
+            alert(response);
+          },
         });
       });
     });
