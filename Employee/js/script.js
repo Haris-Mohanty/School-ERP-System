@@ -234,16 +234,19 @@ function categoryFunc() {
             $(".show-category-loader").removeClass("d-none");
           },
           success: function (response) {
-            if(response == "success"){
+            //set timeout
+            setTimeout(function () {
+            if (response == "success") {
               $(".show-category-loader").addClass("d-none");
               swal(
                 "Data Deleted !",
                 "Your data has been Deleted Successfully!",
                 "success"
               );
-            }else{
+            } else {
               swal(response.trim(), response.trim(), "error");
-            }
+            }     
+          },1000);
           },
         });
       });
