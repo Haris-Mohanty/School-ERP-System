@@ -184,6 +184,7 @@ function categoryFunc() {
               $(".show-category-loader").removeClass("d-none");
             },
             success: function (response) {
+              //set timeout
               setTimeout(function () {
                 if (response == "success") {
                   $(".show-category-loader").addClass("d-none");
@@ -203,6 +204,7 @@ function categoryFunc() {
                   swal(response.trim(), response.trim(), "error");
                 }
               }, 1500);
+              //set timeout
             },
           });
         });
@@ -219,7 +221,9 @@ function categoryFunc() {
         let td = parent.querySelectorAll("td");
         let category = $(td[1]).html();
         let details = $(td[2]).html();
-        console.log(details)
+        $.ajax({
+          
+        });
       });
     });
   }
