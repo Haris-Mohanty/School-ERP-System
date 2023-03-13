@@ -222,6 +222,14 @@ function categoryFunc() {
         let category = $(td[1]).html();
         let details = $(td[2]).html();
         $.ajax({
+          type: "POST",
+          url: "php/delete_category.php",
+          data: {
+            id: id,
+            category: category,
+            details: details,
+          },
+          cache : false,
           
         });
       });
