@@ -236,16 +236,30 @@ function categoryFunc() {
           success: function (response) {
             //set timeout
             setTimeout(function () {
-            if (response == "success") {
-              $(".show-category-loader").addClass("d-none");
-              swal(
-                "Data Deleted !",
-                "Your data has been Deleted Successfully!",
-                "success"
-              );
-            } else {
-              swal(response.trim(), response.trim(), "error");
-            }     
+              //swal start
+              swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this imaginary file!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+              })
+              .then((willDelete) => {
+                if (willDelete) {
+                  //code
+                    if(response == "success"){
+                    $(".show-category-loader").addClass("d-none");
+                    }else{
+                      swal(response.trim(), response.trim(), "error");
+                    }
+                  swal("Poof! Your imaginary file has been deleted!", {
+                    icon: "success",
+                  });
+                } else {
+                  swal("Your imaginary file is safe!");
+                }
+              });
+              //swal end  
           },1000);
           },
         });
