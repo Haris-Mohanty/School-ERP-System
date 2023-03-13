@@ -217,7 +217,9 @@ function categoryFunc() {
         let parent = this.parentElement.parentElement;
         let id = $(parent).attr("INDEX");
         let td = parent.querySelectorAll("td");
-        console.log(td)
+        let category = $(td[1]).html();
+        let details = $(td[2]).html();
+        console.log(details)
       });
     });
   }
