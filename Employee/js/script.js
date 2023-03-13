@@ -232,7 +232,15 @@ function categoryFunc() {
           cache: false,
           beforeSend: function () {},
           success: function (response) {
-            alert(response);
+            if(response == "success"){
+              swal(
+                "Data Deleted !",
+                "Your data has been Deleted Successfully!",
+                "success"
+              );
+            }else{
+              swal(response.trim(), response.trim(), "error");
+            }
           },
         });
       });

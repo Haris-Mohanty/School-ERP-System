@@ -9,7 +9,7 @@ $details = $_POST['details'];
 $deleteCategory = "DELETE FROM category WHERE id = '$id'";
 
 if($db -> query($deleteCategory)){
-    echo "Success";
+    echo "success";
 }else{
     echo "Unable to Delete Data!";
 }
