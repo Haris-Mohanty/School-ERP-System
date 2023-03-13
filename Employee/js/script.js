@@ -230,9 +230,12 @@ function categoryFunc() {
             details: details,
           },
           cache: false,
-          beforeSend: function () {},
+          beforeSend: function () {
+            $(".show-category-loader").removeClass("d-none");
+          },
           success: function (response) {
             if(response == "success"){
+              $(".show-category-loader").addClass("d-none");
               swal(
                 "Data Deleted !",
                 "Your data has been Deleted Successfully!",
