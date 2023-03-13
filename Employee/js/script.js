@@ -214,7 +214,10 @@ function categoryFunc() {
     let allDelBtn = $(".category-list .del-btn");
     $(allDelBtn).each(function () {
       $(this).click(function () {
-        alert();
+        let parent = this.parentElement.parentElement;
+        let id = $(parent).attr("INDEX");
+        let td = parent.querySelectorAll("td");
+        console.log(td)
       });
     });
   }
