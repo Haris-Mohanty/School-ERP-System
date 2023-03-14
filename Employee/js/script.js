@@ -260,7 +260,7 @@ function categoryFunc() {
                 }
               });
               //swal end  
-          },1000);
+          },500);
           },
         });
       });
@@ -270,3 +270,5 @@ function categoryFunc() {
 }
 
 //CATEGORY CODE END
+
+ 
