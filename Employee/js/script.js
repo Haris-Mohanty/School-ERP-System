@@ -218,11 +218,16 @@ function categoryFunc() {
       $(this).click(function () {
         let parent = this.parentElement.parentElement;
         let id = $(parent).attr("INDEX");
-        alert(id)
+        ajaxDeleteById();
       });
     });
   }
   //DELETE BUTTON CODE END
+}
+
+//ajax delete
+function ajaxDeleteById() {
+  
 }
 
 //CATEGORY CODE END
