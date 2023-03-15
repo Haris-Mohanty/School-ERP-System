@@ -219,6 +219,7 @@ function categoryFunc() {
         let parent = this.parentElement.parentElement;
         let id = $(parent).attr("INDEX");
        let response = await ajaxDeleteById(id, "category", "show-category-loader");
+       alert(response);
       });
     });
   }
@@ -239,7 +240,7 @@ function ajaxDeleteById(id, table, loader) {
         $("."+loader).removeClass("d-none");
       },
       success: function (response) {
-        // $("."+loader).addClass("d-none");
+        $("."+loader).addClass("d-none");
         resolve(response);
       },
     });
