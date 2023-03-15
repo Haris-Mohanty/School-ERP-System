@@ -215,10 +215,10 @@ function categoryFunc() {
   function delCategory() {
     let allDelBtn = $(".category-list .del-btn");
     $(allDelBtn).each(function () {
-      $(this).click(function () {
+      $(this).click(async function () {
         let parent = this.parentElement.parentElement;
         let id = $(parent).attr("INDEX");
-        ajaxDeleteById();
+       let response = await ajaxDeleteById();
       });
     });
   }
@@ -231,8 +231,10 @@ function ajaxDeleteById() {
     $.ajax({
       type: "POST",
       url: "php/delete_category.php",
-      data: {
-        
+      data: {},
+      beforeSend: function () {},
+      success: function (response) {
+        resolve(response);
       },
     });
   });
