@@ -231,9 +231,15 @@ function ajaxDeleteById(id, table, loader) {
     $.ajax({
       type: "POST",
       url: "php/delete_category.php",
-      data: {},
-      beforeSend: function () {},
+      data: {
+        id : id,
+        table : table,
+      },
+      beforeSend: function () {
+        $("."+loader).removeClass("d-none");
+      },
       success: function (response) {
+        // $("."+loader).addClass("d-none");
         resolve(response);
       },
     });
