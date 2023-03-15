@@ -218,51 +218,7 @@ function categoryFunc() {
       $(this).click(function () {
         let parent = this.parentElement.parentElement;
         let id = $(parent).attr("INDEX");
-        let td = parent.querySelectorAll("td");
-        let category = $(td[1]).html();
-        let details = $(td[2]).html();
-        $.ajax({
-          type: "POST",
-          url: "php/delete_category.php",
-          data: {
-            id: id,
-            category: category,
-            details: details,
-          },
-          cache: false,
-          beforeSend: function () {
-            $(".show-category-loader").removeClass("d-none");
-          },
-          success: function (response) {
-            //set timeout
-            setTimeout(function () {
-              //swal start
-              swal({
-                title: "Are you sure?",
-                text: "Once deleted, you will not be able to recover this imaginary file!",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-              })
-              .then((willDelete) => {
-                if (willDelete) {
-                  //code
-                    if(response == "success"){
-                    $(".show-category-loader").addClass("d-none");
-                    }else{
-                      swal(response.trim(), response.trim(), "error");
-                    }
-                  swal("Poof! Your imaginary file has been deleted!", {
-                    icon: "success",
-                  });
-                } else {
-                  swal("Your imaginary file is safe!");
-                }
-              });
-              //swal end  
-          },500);
-          },
-        });
+        alert(id)
       });
     });
   }
@@ -270,5 +226,3 @@ function categoryFunc() {
 }
 
 //CATEGORY CODE END
-
- 
