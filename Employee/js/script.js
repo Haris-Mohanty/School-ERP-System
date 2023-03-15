@@ -228,7 +228,13 @@ function categoryFunc() {
 //ajax delete
 function ajaxDeleteById() {
   return new Promise(function (resolve, reject) {
-    
+    $.ajax({
+      type: "POST",
+      url: "php/delete_category.php",
+      data: {
+        
+      },
+    });
   });
 }
 
