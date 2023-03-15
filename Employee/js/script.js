@@ -218,7 +218,7 @@ function categoryFunc() {
       $(this).click(async function () {
         let parent = this.parentElement.parentElement;
         let id = $(parent).attr("INDEX");
-       let response = await ajaxDeleteById();
+       let response = await ajaxDeleteById(id, "category", "show-category-loader");
       });
     });
   }
@@ -226,7 +226,7 @@ function categoryFunc() {
 }
 
 //ajax delete
-function ajaxDeleteById() {
+function ajaxDeleteById(id, table, loader) {
   return new Promise(function (resolve, reject) {
     $.ajax({
       type: "POST",
