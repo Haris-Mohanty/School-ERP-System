@@ -227,7 +227,9 @@ function categoryFunc() {
 
 //ajax delete
 function ajaxDeleteById() {
-  
+  return new Promise(function (resolve, reject) {
+    
+  });
 }
 
 //CATEGORY CODE END
