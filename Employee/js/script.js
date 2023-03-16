@@ -251,7 +251,7 @@ function ajaxGetAllData(table, loader) {
     type: "POST",
     url: "php/category_list.php",
     beforeSend: function () {
-      $
+      $("."+loader).removeClass("d-none");
     },
     success: function (response) {
       
