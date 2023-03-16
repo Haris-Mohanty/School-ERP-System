@@ -249,15 +249,15 @@ function categoryFunc() {
 function ajaxGetAllData(table, loader) {
   return new Promise(function (resolve, reject) {
     $.ajax({
-    type: "POST",
-    url: "php/category_list.php",
-    beforeSend: function () {
-      $("."+loader).removeClass("d-none");
-    },
-    success: function (response) {
-      
-    },
-  });
+      type: "POST",
+      url: "php/category_list.php",
+      beforeSend: function () {
+        $("."+loader).removeClass("d-none");
+      },
+      success: function (response) {
+        resolve(response);
+      },
+    });
   });
 }
 
