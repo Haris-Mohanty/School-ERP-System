@@ -123,7 +123,7 @@ function categoryFunc() {
   });
   //get Category list
   async function getCategoryFunc() {
-    let response = await ajaxGetAllData("table", "show-category-loader");
+    let response = await ajaxGetAllData("category", "show-category-loader");
     let all_category = JSON.parse(response.trim());
     $(".category-list").html("");
     all_category.forEach((data, index) => {
@@ -145,6 +145,7 @@ function categoryFunc() {
     delCategory();
   }
   getCategoryFunc();
+
   //EDIT BUTTON CODE START
   function updateCategory() {
     let allEditBtn = $(".category-list .edit-btn");
@@ -251,6 +252,9 @@ function ajaxGetAllData(table, loader) {
     $.ajax({
       type: "POST",
       url: "php/category_list.php",
+      data : {
+        table : table,
+      },
       beforeSend: function () {
         $("."+loader).removeClass("d-none");
       },
