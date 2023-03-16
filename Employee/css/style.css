@@ -89,6 +89,6 @@ table {
     box-shadow: 0 2px 2px -1px rgba(105, 5, 5, 0.4);
   }
 select, input, textarea{
-    background-color: #f2f2f2;
+    background-color: #f2f2f2 !important;
     box-shadow: none !important;
 }

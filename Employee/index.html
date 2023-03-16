@@ -80,15 +80,28 @@
               </h5>
               <hr />
               <form>
-                <select name="select-category" class="form-select shadow-none mb-3 bg-light">
+                <select name="select-category" class="form-select mb-3">
                   <option value="choose-category">Choose Category</option>
                 </select>
-                <div class="row">
+                <div class="row mb-3">
                   <div class="col-md-6">
                     <input type="text" name="course-code" placeholder="Course Code" class="form-control">
                   </div>
                   <div class="col-md-6">
                     <input type="text" name="course-name" placeholder="Course Name" class="form-control">
+                  </div>
+                </div>
+                <textarea name="course-detail" class="form-control mb-3"></textarea>
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <input type="text" name="course-duration" placeholder="Course Duration" class="form-control">
+                  </div>
+                  <div class="col-md-6">
+                    <select name="course-time" class="form-select mb-3">
+                      <option value="days">Days</option>
+                      <option value="month">Month</option>
+                      <option value="year">Year</option>
+                    </select>
                   </div>
                 </div>
               </form>
