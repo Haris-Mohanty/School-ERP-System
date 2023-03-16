@@ -92,3 +92,7 @@ select, input, textarea{
     background-color: #f2f2f2 !important;
     box-shadow: none !important;
 }
+input[type="checkbox"], label{
+    cursor: pointer;
+    font-size: 18px;
+  }
