@@ -246,11 +246,13 @@ function categoryFunc() {
   //DELETE BUTTON CODE END
 }
 
-function ajaxGetAllData() {
+function ajaxGetAllData(table, loader) {
   $.ajax({
     type: "POST",
     url: "php/category_list.php",
-    beforeSend: function () {},
+    beforeSend: function () {
+      $
+    },
     success: function (response) {
       
     },
