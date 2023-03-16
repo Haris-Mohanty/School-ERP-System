@@ -68,7 +68,6 @@ $(document).ready(function () {
 //ACTIVE TAB END
 
 //CATEGORY CODE START
-
 function categoryFunc() {
   //add fiels
   $(document).ready(function () {
