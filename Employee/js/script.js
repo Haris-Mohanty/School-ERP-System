@@ -123,32 +123,7 @@ function categoryFunc() {
   });
   //get Category list
   function getCategoryFunc() {
-    $.ajax({
-      type: "POST",
-      url: "php/category_list.php",
-      beforeSend: function () {},
-      success: function (response) {
-        let all_category = JSON.parse(response.trim());
-        $(".category-list").html("");
-        all_category.forEach((data, index) => {
-          let tr = `
-          <tr index="${data.id}">
-              <td>${index + 1}</td>
-              <td>${data.category_name}</td>
-              <td>${data.details}</td>
-              <td>
-                <button class="btn edit-btn btn-primary p-1 px-2"><i class="fa fa-edit"></i></button>
-                <button class="btn d-none save-btn btn-primary p-1 px-2"><i class="fa fa-save"></i></button>
-                <button class="btn btn-danger del-btn p-1 px-2"><i class="fa fa-trash"></i></button>
-              </td>
-          </tr>
-          `;
-          $(".category-list").append(tr);
-        });
-        updateCategory();
-        delCategory();
-      },
-    });
+   
   }
   getCategoryFunc();
   //EDIT BUTTON CODE START
@@ -253,7 +228,32 @@ function categoryFunc() {
 }
 
 function ajaxGetAllData() {
-  
+   $.ajax({
+      type: "POST",
+      url: "php/category_list.php",
+      beforeSend: function () {},
+      success: function (response) {
+        let all_category = JSON.parse(response.trim());
+        $(".category-list").html("");
+        all_category.forEach((data, index) => {
+          let tr = `
+          <tr index="${data.id}">
+              <td>${index + 1}</td>
+              <td>${data.category_name}</td>
+              <td>${data.details}</td>
+              <td>
+                <button class="btn edit-btn btn-primary p-1 px-2"><i class="fa fa-edit"></i></button>
+                <button class="btn d-none save-btn btn-primary p-1 px-2"><i class="fa fa-save"></i></button>
+                <button class="btn btn-danger del-btn p-1 px-2"><i class="fa fa-trash"></i></button>
+              </td>
+          </tr>
+          `;
+          $(".category-list").append(tr);
+        });
+        updateCategory();
+        delCategory();
+      },
+    });
 }
 
 //ajax delete
