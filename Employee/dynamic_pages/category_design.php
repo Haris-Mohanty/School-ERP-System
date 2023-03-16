@@ -25,14 +25,14 @@ echo '
           
           <!-- CATEGORY LIST SHOW CODE START -->
           <div class="col-2"></div>
-          <div class="col-6 bg-white shadow-sm category-list-show-h py-2">
-            <h5 class="category-h5 mb-3 ">CATEGORY LIST
+          <div class="col-6 bg-white shadow-sm category-list-show-h">
+            <h5 class="category-h5 mb-3">CATEGORY LIST
               <i class="fa-solid fa-circle-notch fa-spin d-none show-category-loader float-end mt-1 text-danger" style="font-size: 20px;"></i>
             </h5>
             <hr>
             <table class="table table-striped">
               <thead>
-                <tr>
+                <tr class="red">
                   <th>S/N</th>
                   <th>Category Name</th>
                   <th>Category Details</th>

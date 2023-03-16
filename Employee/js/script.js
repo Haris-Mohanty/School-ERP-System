@@ -215,11 +215,37 @@ function categoryFunc() {
   function delCategory() {
     let allDelBtn = $(".category-list .del-btn");
     $(allDelBtn).each(function () {
-      $(this).click(async function () {
+      $(this).click(function () {
         let parent = this.parentElement.parentElement;
         let id = $(parent).attr("INDEX");
-       let response = await ajaxDeleteById(id, "category", "show-category-loader");
-       alert(response);
+        //swal start
+        swal({
+          title: "Are you sure?",
+          text: "Once deleted, you will not be able to recover this imaginary file!",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+        }).then(async (willDelete) => {
+          if (willDelete) {
+            let response = await ajaxDeleteById(
+              id,
+              "category",
+              "show-category-loader"
+            );
+            if (response.trim() == "success") {
+              getCategoryFunc();
+              swal("Category Deleted", response.trim(), "success");
+            } else {
+              swal(response.trim(), response.trim(), "warning");
+            }
+            swal("Poof! Your imaginary file has been deleted!", {
+              icon: "success",
+            });
+          } else {
+            swal("Your imaginary file is safe!");
+          }
+        });
+        //swal end
       });
     });
   }
@@ -233,15 +259,17 @@ function ajaxDeleteById(id, table, loader) {
       type: "POST",
       url: "php/delete_category.php",
       data: {
-        id : id,
-        table : table,
+        id: id,
+        table: table,
       },
       beforeSend: function () {
-        $("."+loader).removeClass("d-none");
+        $("." + loader).removeClass("d-none");
       },
       success: function (response) {
-        $("."+loader).addClass("d-none");
-        resolve(response);
+        setTimeout(function () {
+          $("." + loader).addClass("d-none");
+          resolve(response);
+        },800);
       },
     });
   });
