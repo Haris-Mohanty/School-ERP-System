@@ -21,7 +21,13 @@
     <!-- SWEET ALERT JS LINK END -->
 
     <!--FONT AWESOME LINK START -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!--FONT AWESOME LINK END -->
 
     <!-- JQUERY LINK START -->
@@ -36,29 +42,53 @@
   <body>
     <div class="container-fluid p-0 overflow-hidden">
       <div class="side-nav side-nav-open">
-        <button class="btn w-100 text-light text-start institute-update-btn"><i class="fa-solid fa-chart-line"></i>
-           Institute Update
-           <i class="fa-solid fa-angle-down float-end mt-2"></i>
+        <button class="btn w-100 text-light text-start institute-update-btn">
+          <i class="fa-solid fa-chart-line"></i>
+          Institute Update
+          <i class="fa-solid fa-angle-down float-end mt-2"></i>
         </button>
         <ul class="collapse show institute-menu">
-          <li class="border-start collapse-item p-2 active" access-link="category_design.php">Create Category</li>
-          <li class="border-start collapse-item p-2" access-link="course_design.php">Create Course</li>
-          <li class="border-start collapse-item p-2" access-link="batch_design.php">Create Batch</li>
+          <li
+            class="border-start collapse-item p-2 active"
+            access-link="category_design.php"
+          >
+            Create Category
+          </li>
+          <li
+            class="border-start collapse-item p-2"
+            access-link="course_design.php"
+          >
+            Create Course
+          </li>
+          <li
+            class="border-start collapse-item p-2"
+            access-link="batch_design.php"
+          >
+            Create Batch
+          </li>
         </ul>
       </div>
       <div class="page page-open">
+        <!-- CREATE COURSE CODE START -->
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-10 bg-white shadow-sm mt-3 p-4">
-              <h5 class="category-h5 mb-3">CREATE COURSE
-                <i class="fa-solid fa-circle-notch fa-spin float-end mt-1 text-danger" style="font-size: 20px;"></i>
+              <h5 class="category-h5 mb-3">
+                CREATE COURSE
+                <i class="fa-solid fa-circle-notch fa-spin float-end mt-1 text-danger" style="font-size: 20px"></i>
               </h5>
-              <hr>
+              <hr />
+              <form>
+                <select name="select-category" class="form-select">
+                  <option value="choose-category">Choose Category</option>
+                </select>
+              </form>
             </div>
             <div class="col-md-1"></div>
           </div>
         </div>
+        <!-- CREATE COURSE CODE END -->
       </div>
     </div>
   </body>
