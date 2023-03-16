@@ -125,9 +125,9 @@ function categoryFunc() {
   async function getCategoryFunc() {
     let response = await ajaxGetAllData("table", "show-category-loader");
     let all_category = JSON.parse(response.trim());
-      $(".category-list").html("");
-      all_category.forEach((data, index) => {
-        let tr = `
+    $(".category-list").html("");
+    all_category.forEach((data, index) => {
+      let tr = `
         <tr index="${data.id}">
             <td>${index + 1}</td>
             <td>${data.category_name}</td>
@@ -139,10 +139,10 @@ function categoryFunc() {
             </td>
         </tr>
         `;
-        $(".category-list").append(tr);
-      });
-      updateCategory();
-      delCategory();
+      $(".category-list").append(tr);
+    });
+    updateCategory();
+    delCategory();
   }
   getCategoryFunc();
   //EDIT BUTTON CODE START
@@ -247,7 +247,8 @@ function categoryFunc() {
 }
 
 function ajaxGetAllData(table, loader) {
-  $.ajax({
+  return new Promise(function (resolve, reject) {
+    $.ajax({
     type: "POST",
     url: "php/category_list.php",
     beforeSend: function () {
@@ -256,6 +257,7 @@ function ajaxGetAllData(table, loader) {
     success: function (response) {
       
     },
+  });
   });
 }
 
