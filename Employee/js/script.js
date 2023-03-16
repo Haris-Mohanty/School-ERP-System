@@ -122,7 +122,8 @@ function categoryFunc() {
     });
   });
   //get Category list
-  function getCategoryFunc() {
+  async function getCategoryFunc() {
+    let response = await ajaxGetAllData("table", "show-category-loader");
     let all_category = JSON.parse(response.trim());
       $(".category-list").html("");
       all_category.forEach((data, index) => {
