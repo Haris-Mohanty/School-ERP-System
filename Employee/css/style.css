@@ -79,7 +79,7 @@ table {
     padding: 0.25rem;
   }
   tr.red th {
-    background: red;
+    background: rgb(250, 12, 119);
     color: white;
   }
   th {

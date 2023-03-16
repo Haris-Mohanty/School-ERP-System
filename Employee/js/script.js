@@ -252,6 +252,10 @@ function categoryFunc() {
   //DELETE BUTTON CODE END
 }
 
+function ajaxGetAllData() {
+  
+}
+
 //ajax delete
 function ajaxDeleteById(id, table, loader) {
   return new Promise(function (resolve, reject) {
@@ -269,7 +273,7 @@ function ajaxDeleteById(id, table, loader) {
         setTimeout(function () {
           $("." + loader).addClass("d-none");
           resolve(response);
-        },800);
+        }, 800);
       },
     });
   });

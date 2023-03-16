@@ -1,7 +1,10 @@
 <?php
 
 require_once("../../Common_files/php/database.php");
-$get_category = "SELECT * FROM category";
+
+$table = $_POST['table'];
+
+$get_category = "SELECT * FROM $table";
 $all_category = [];
 
 $response = $db -> query($get_category);
