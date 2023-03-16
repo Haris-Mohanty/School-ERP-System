@@ -260,12 +260,13 @@ function ajaxGetAllData(table, loader) {
       },
       success: function (response) {
         resolve(response);
+        $("."+loader).addClass("d-none");
       },
     });
   });
 }
 
-//ajax delete
+//DELETE DATA CODE DYNAMIC START
 function ajaxDeleteById(id, table, loader) {
   return new Promise(function (resolve, reject) {
     $.ajax({
