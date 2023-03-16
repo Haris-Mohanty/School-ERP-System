@@ -246,7 +246,7 @@ function categoryFunc() {
   }
   //DELETE BUTTON CODE END
 }
-
+//GET DATA FROM DATABASE DYNAMICALLY CODE START
 function ajaxGetAllData(table, loader) {
   return new Promise(function (resolve, reject) {
     $.ajax({
@@ -265,6 +265,7 @@ function ajaxGetAllData(table, loader) {
     });
   });
 }
+//GET DATA FROM DATABASE DYNAMICALLY CODE END
 
 //DELETE DATA CODE DYNAMIC START
 function ajaxDeleteById(id, table, loader) {
@@ -288,5 +289,5 @@ function ajaxDeleteById(id, table, loader) {
     });
   });
 }
-
+//DELETE DATA CODE DYNAMIC END
 //CATEGORY CODE END
