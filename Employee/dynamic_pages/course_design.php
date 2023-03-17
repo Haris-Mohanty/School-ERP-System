@@ -119,7 +119,7 @@ echo '
                 <option value="choose-category">Choose Category</option>';
 
                 for($i=0; $i<$length; $i++){
-                    
+                    echo '<option value="'.$all_category[$i].'">'.$all_category[$i].'</option>';
                 }
 
 
