@@ -116,8 +116,14 @@ echo '
             <div class="col-md-1"></div>
             <div class="col-md-10 bg-white p-4 shadow-sm">
               <select name="select-category" class="form-select mb-3">
-                <option value="choose-category">Choose Category</option>
-              </select>
+                <option value="choose-category">Choose Category</option>';
+
+                for($i=0; $i<$length; $i++){
+                    
+                }
+
+
+              echo '</select>
               <h5 class="category-h5 mb-3">
                 COURSE LIST
                 <i class="fa-solid fa-circle-notch fa-spin float-end mt-1 text-danger" style="font-size: 20px"></i>
