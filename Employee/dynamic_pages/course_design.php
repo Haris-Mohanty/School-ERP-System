@@ -4,7 +4,15 @@
 require_once("../../Common_files/php/database.php");
 //get category
 $get_category = "SELECT * FROM category";
-$response = 
+
+$response = $db -> query($get_category);
+$all_category = [];
+if($response){
+    while($data = $response -> fetch_assoc()){
+        array_push($all_category, $data);
+    }
+} 
+print_r($all_category);
 
 
 // NAV LINK
