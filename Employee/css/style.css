@@ -91,8 +91,11 @@ table {
 select, input, textarea{
     background-color: #f2f2f2 !important;
     box-shadow: none !important;
+    font-family: "Sofia", sans-serif;
+    letter-spacing: 1.2px;
 }
 input[type="checkbox"], label{
     cursor: pointer;
     font-size: 18px;
+    font-family: "Sofia", sans-serif;
   }
