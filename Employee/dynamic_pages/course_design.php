@@ -3,7 +3,8 @@
 //LINK DATABASE
 require_once("../../Common_files/php/database.php");
 //get category
-$get_category = "SELECT * FROM category"
+$get_category = "SELECT * FROM category";
+$response = 
 
 
 // NAV LINK
