@@ -1,11 +1,15 @@
 <?php
 
+//LINK DATABASE
+require_once("../../Common_files/php/database.php");
+//get category
+$get_category = "SELECT * FROM category"
+
+
 // NAV LINK
 require_once("../php/nav.php");
 
-
 echo '
-
 
 <!-- CREATE COURSE CODE START -->
         <div class="container-fluid">
@@ -18,7 +22,6 @@ echo '
                 <i class="fa-solid fa-circle-notch fa-spin float-end mt-1 text-danger" style="font-size: 20px"></i>
               </h5>
               <hr />
-
 
               <form>
                 <select name="select-category" class="form-select mb-3">
@@ -36,9 +39,7 @@ echo '
                   </div>
                 </div>
 
-
                 <textarea name="course-detail" class="form-control mb-3" placeholder="Course Details"></textarea>
-
 
                 <div class="row mb-3">
                   <div class="col-md-6">
@@ -89,8 +90,6 @@ echo '
                     <button class="btn btn-primary float-end btn-audiowide">Add Course</button>
                   </div>
                 </div>
-
-
               </form>
 
 
@@ -98,8 +97,6 @@ echo '
             <div class="col-md-1"></div>
           </div>
           <!-- COURSE LIST CODE START -->
-
-
           <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-10 bg-white p-4 shadow-sm">
@@ -156,7 +153,6 @@ echo '
             <div class="col-md-1"></div>
           </div>
           <!-- COURSE LIST CODE END -->
-
 
         </div>
         <!-- CREATE COURSE CODE END -->
