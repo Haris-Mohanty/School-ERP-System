@@ -2,17 +2,19 @@
 
 //LINK DATABASE
 require_once("../../Common_files/php/database.php");
-//get category
+//CHOOSE CATEGORY
 $get_category = "SELECT * FROM category";
 
 $response = $db -> query($get_category);
 $all_category = [];
 if($response){
     while($data = $response -> fetch_assoc()){
-        array_push($all_category, $data);
+        array_push($all_category, $data['category_name']);
     }
 } 
-print_r($all_category);
+// print_r($all_category);
+
+$length = count($all_category);
 
 
 // NAV LINK
@@ -34,9 +36,13 @@ echo '
 
               <form>
                 <select name="select-category" class="form-select mb-3">
-                  <option value="choose-category">Choose Category</option>
-                </select>
+                  <option value="choose-category">Choose Category</option>';
 
+                  for($i=0; $i<$length; $i++){
+                 echo '<option value="'.$all_category[$i].'">'.$all_category[$i].'</option>';
+                  }
+
+             echo  '</select>
 
                 <div class="row mb-3">
                   <div class="col-md-6">
