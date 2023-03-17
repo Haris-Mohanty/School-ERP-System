@@ -19,9 +19,11 @@
 .page{
     width: 85%;
     background-color: #fafcee;
-    height: 100vh;
+    max-height: auto;
+    min-height: 100vh;
     margin-left: 15%;
     transition: 0.5s;
+    overflow: hidden;
 }
 .page-open{
     width: 85%;
@@ -61,10 +63,11 @@
 }
 ::-webkit-scrollbar{
     width: 7px;
+    height: 9px;
 }
 ::-webkit-scrollbar-thumb{
     background-color: rgb(136, 13, 152);
-    border-radius: 20px;
+    border-radius: 7px;
 }
 ::-webkit-scrollbar-thumb:hover{
     background-color: #b40909;
