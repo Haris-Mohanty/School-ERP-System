@@ -16,8 +16,8 @@ echo '
               
               </div>
               <div align="end">
-                <button type="button" class="btn btn-primary category-add-btn"><i class="fa fa-plus"></i>Add Fields</button>
-                <button type="submit" class="btn btn-danger category-create-btn">Create</button>
+                <button type="button" class="btn btn-primary category-add-btn btn-audiowide"><i class="fa fa-plus"></i>Add Fields</button>
+                <button type="submit" class="btn btn-danger category-create-btn btn-audiowide">Create</button>
               </div>
             </form>
           </div>
