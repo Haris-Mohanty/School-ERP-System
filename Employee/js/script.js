@@ -48,8 +48,7 @@ function dynamic_request(access_link) {
       $(".page").html(response);
       if (access_link == "category_design.php") {
         categoryFunc();
-      }
-      else if (access_link == "course_design.php") {
+      } else if (access_link == "course_design.php") {
         createCourseFunc();
       }
     },
@@ -300,8 +299,12 @@ function createCourseFunc() {
     e.preventDefault();
     let courseActiveEl = document.querySelector("#course-active");
     let status = "";
-    courseActiveEl.checked == true ? status = "Active" : status = "Pending";
-    alert(status); 
+    courseActiveEl.checked == true ? (status = "Active") : (status = "Pending");
+    $.ajax({
+      type : "POST",
+      url : "php/create_course.php",
+      data : formData,
+    });
   });
 }
 
