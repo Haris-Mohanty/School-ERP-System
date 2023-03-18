@@ -11,7 +11,7 @@ $detail = $_POST['course-detail'];
 $duration = $_POST['course-duration'];
 $time = $_POST['course-time'];
 $fee = $_POST['course-fee'];
-$course_fee_time = $_POST['course-fee-time'];
+$fee_time = $_POST['course-fee-time'];
 $file = $_FILES['course-logo'];
 $added_by = $_POST['course-added-by'];
 //ajax
@@ -37,7 +37,21 @@ $response = $db -> query($getData);
 if($response){
     echo "Found";
 }else{
-    
+    $create_table = "CREATE TABLE course (
+        id INT(11) NOT NULL AUTO_INCREMENT,
+        category VARCHAR(65),
+        code VARCHAR(65),
+        name VARCHAR(55),
+        details VARCHAR(255),
+        duration VARCHAR(55),
+        course_time VARCHAR(55),
+        fee VARCHAR(55),
+        fee_time VARCHAR(55),
+        logo VARCHAR(255),
+        added_by VARCHAR(55),
+        status VARCHAR(55),
+        PRIMARY KEY(id)
+    )";
 }
 
 ?>
