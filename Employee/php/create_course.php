@@ -31,6 +31,13 @@ if($file['name'] == ""){
     $logo = "Course/".$name;
 }
 
+$getData = "SELECT * FROM course";
 
+$response = $db -> query($getData);
+if($response){
+    echo "Found";
+}else{
+    
+}
 
 ?>
