@@ -300,6 +300,8 @@ function createCourseFunc() {
     let courseActiveEl = document.querySelector("#course-active");
     let status = "";
     courseActiveEl.checked == true ? (status = "Active") : (status = "Pending");
+    let formData = new FormData(this);
+    formData.append("status", status);
     $.ajax({
       type : "POST",
       url : "php/create_course.php",
