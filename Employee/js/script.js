@@ -313,7 +313,7 @@ function createCourseFunc() {
         $(".course-loader").removeClass("d-none");
       },
       success: function (response) {
-        
+        document.write(response);
       },
     });
   });
