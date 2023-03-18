@@ -21,6 +21,16 @@ $logo = "";
 $name = "";
 $location = "";
 
-if($file['name'] == "")
+if($file['name'] == ""){
+    $logo = "";
+    $name = "";
+    $location = "";
+}else{
+    $name = $file['name'];
+    $location = $file['tmp_name'];
+    $logo = "Course/".$name;
+}
+
+
 
 ?>
