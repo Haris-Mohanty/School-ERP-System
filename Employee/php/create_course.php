@@ -42,7 +42,7 @@ if($response){
         category VARCHAR(65),
         code VARCHAR(65),
         name VARCHAR(55),
-        details VARCHAR(255),
+        detail VARCHAR(255),
         duration VARCHAR(55),
         course_time VARCHAR(55),
         fee VARCHAR(55),
@@ -52,6 +52,20 @@ if($response){
         status VARCHAR(55),
         PRIMARY KEY(id)
     )";
+
+    if($db -> query($create_table)){
+        $insert_data = "INSERT INTO course(
+            category, code, name, detail, duration, course_time, fee, fee_time, logo, added_by, status) VALUES 
+        ('$category', '$code', '$name', '$detail', '$duration', '$time', '$fee', '$fee_time', '$logo', '$added_by', '$status')";
+
+        if($db -> query($insert_data)){
+            echo "Success";
+        }else{
+            echo "Unable to store data!";
+        }
+    }else{
+        echo "Unable to create table!";
+    }
 }
 
 ?>
