@@ -3,4 +3,18 @@
 //LINK DATABASE
 require_once("../../Common_files/php/database.php");
 
+//receive the name of form data (course_design.php) page.  
+$category = $_POST['course-category'];
+$code = $_POST['course-code'];
+$name = $_POST['course-name'];
+$detail = $_POST['course-detail'];
+$duration = $_POST['course-duration'];
+$time = $_POST['course-time'];
+$fee = $_POST['course-fee'];
+$course_fee_time = $_POST['course-fee-time'];
+$file = $_FILES['course-logo'];
+$added_by = $_POST['course-added-by'];
+//ajax
+$status = $_POST['status'];
+
 ?>
