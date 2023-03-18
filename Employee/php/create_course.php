@@ -17,4 +17,10 @@ $added_by = $_POST['course-added-by'];
 //ajax
 $status = $_POST['status'];
 
+$logo = "";
+$name = "";
+$location = "";
+
+if($file['name'] == "")
+
 ?>
