@@ -30,7 +30,7 @@ echo '
 
               <h5 class="category-h5 mb-3">
                 CREATE COURSE
-                <i class="fa-solid fa-circle-notch fa-spin float-end mt-1 text-danger" style="font-size: 20px"></i>
+                <i class="fa-solid fa-circle-notch fa-spin course-loader d-none float-end mt-1 text-danger" style="font-size: 20px"></i>
               </h5>
               <hr />
 

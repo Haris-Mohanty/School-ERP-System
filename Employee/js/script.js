@@ -303,9 +303,18 @@ function createCourseFunc() {
     let formData = new FormData(this);
     formData.append("status", status);
     $.ajax({
-      type : "POST",
-      url : "php/create_course.php",
-      data : formData,
+      type: "POST",
+      url: "php/create_course.php",
+      data: formData,
+      processData: false,
+      contentType: false,
+      cache: false,
+      beforeSend: function () {
+        $(".course-loader").removeClass("d-none");
+      },
+      success: function (response) {
+        
+      },
     });
   });
 }
