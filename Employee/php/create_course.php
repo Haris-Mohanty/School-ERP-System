@@ -35,7 +35,21 @@ $getData = "SELECT * FROM course";
 
 $response = $db -> query($getData);
 if($response){
-    echo "Found";
+    
+    $insert_data = "INSERT INTO course(
+        category, code, name, detail, duration, course_time, fee, fee_time, logo, added_by, status) VALUES 
+    ('$category', '$code', '$name', '$detail', '$duration', '$time', '$fee', '$fee_time', '$logo', '$added_by', '$status')";
+
+    if($db -> query($insert_data)){
+        echo "Success";
+        
+    }else{
+        echo "Unable to store data!";
+    }
+}else{
+    echo "Unable to create table!";
+}
+
 }else{
     $create_table = "CREATE TABLE course (
         id INT(11) NOT NULL AUTO_INCREMENT,
