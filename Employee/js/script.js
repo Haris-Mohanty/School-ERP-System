@@ -45,10 +45,13 @@ function dynamic_request(access_link) {
       $(".page").html(progress);
     },
     success: function (response) {
+      $(".page").html(response);
       if (access_link == "category_design.php") {
         categoryFunc();
       }
-      $(".page").html(response);
+      else if (access_link == "course_design.php") {
+        createCourseFunc();
+      }
     },
   });
 }
@@ -251,15 +254,15 @@ function ajaxGetAllData(table, loader) {
     $.ajax({
       type: "POST",
       url: "php/category_list.php",
-      data : {
-        table : table,
+      data: {
+        table: table,
       },
       beforeSend: function () {
-        $("."+loader).removeClass("d-none");
+        $("." + loader).removeClass("d-none");
       },
       success: function (response) {
         resolve(response);
-        $("."+loader).addClass("d-none");
+        $("." + loader).addClass("d-none");
       },
     });
   });
@@ -290,3 +293,16 @@ function ajaxDeleteById(id, table, loader) {
 }
 //DELETE DATA CODE DYNAMIC END
 //CATEGORY CODE END
+
+// CREATE COURSE CODE START
+function createCourseFunc() {
+  $(".course-form").submit(function (e) {
+    e.preventDefault();
+    let courseActiveEl = document.querySelector("#course-active");
+    let status = "";
+    courseActiveEl.checked == true ? status = "Active" : status = "Pending";
+    alert(status); 
+  });
+}
+
+// CREATE COURSE CODE END

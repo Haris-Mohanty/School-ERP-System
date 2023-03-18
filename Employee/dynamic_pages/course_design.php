@@ -34,7 +34,7 @@ echo '
               </h5>
               <hr />
 
-              <form>
+              <form class="course-form">
                 <select name="select-category" class="form-select mb-3">
                   <option value="choose-category">Choose Category</option>';
 
