@@ -342,6 +342,7 @@ function createCourseFunc() {
           success: function (response) {
             if (response.trim() != "There is No Course Found!") {
               let all_data = JSON.parse(response.trim());
+              $(".course-list").html('');
               all_data.forEach((data, index) => {
                 let tr = `
                 <tr> 
@@ -366,11 +367,13 @@ function createCourseFunc() {
                 $(".course-list").append(tr);
               });
             } else {
+              $(".course-list").html('');
               swal(response.trim(), response.trim(), "warning");
             }
           },
         });
       } else {
+        $(".course-list").html('');
         swal("Select Category!", "Please Select a Category!", "warning");
       }
     });
