@@ -324,6 +324,13 @@ function createCourseFunc() {
       },
     });
   });
+
+  //SHOWING COURSE LIST BY CATEGORY CODE START
+  function courseListFunc(){
+    
+  }
+  courseListFunc();
+  //SHOWING COURSE LIST BY CATEGORY CODE END
 }
 
 // CREATE COURSE CODE END
