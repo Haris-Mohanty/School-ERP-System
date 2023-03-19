@@ -35,7 +35,7 @@ echo '
               <hr />
 
               <form class="course-form">
-                <select name="course-category" class="form-select course-category mb-3">
+                <select name="course-category" class="form-select mb-3">
                   <option value="choose-category">Choose Category</option>';
 
                   for($i=0; $i<$length; $i++){
@@ -115,7 +115,7 @@ echo '
           <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-10 bg-white p-4 shadow-sm">
-              <select name="select-category" class="form-select mb-3">
+              <select name="select-category" class="form-select course-category mb-3">
                 <option value="choose-category">Choose Category</option>';
 
                 for($i=0; $i<$length; $i++){

@@ -313,21 +313,23 @@ function createCourseFunc() {
         $(".course-loader").removeClass("d-none");
       },
       success: function (response) {
-        setTimeout(function(){
-          if(response.trim() == "Success"){
+        setTimeout(function () {
+          if (response.trim() == "Success") {
             $(".course-loader").addClass("d-none");
             swal("Course Added!", "Course added Successfully!", "success");
-          }else{
+          } else {
             swal(response.trim(), response.trim(), "error");
           }
-        },700)
+        }, 700);
       },
     });
   });
 
   //SHOWING COURSE LIST BY CATEGORY CODE START
-  function courseListFunc(){
-    
+  function courseListFunc() {
+    $(".course-category").on("change", function () {
+      alert();
+    });
   }
   courseListFunc();
   //SHOWING COURSE LIST BY CATEGORY CODE END
