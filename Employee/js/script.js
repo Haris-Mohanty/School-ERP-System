@@ -385,8 +385,15 @@ function createCourseFunc() {
   //SHOWING COURSE LIST BY CATEGORY CODE END
 
   //DELETE COURSE CODE START
-  function deleteCourseFunc(){
-    let allDelBtn = $(".course-list .del-btn")
+  function deleteCourseFunc() {
+    let allDelBtn = $(".course-list .del-btn");
+    $(allDelBtn).each(function () {
+      $(this).click(function () {
+        let parent = this.parentElement.parentElement;
+        let id = $(parent).attr("INDEX");
+        
+      });
+    });
   }
   //DELETE COURSE CODE END
 }
