@@ -6,7 +6,7 @@ require_once("../../Common_files/php/database.php");
 //receive the name of form data (course_design.php) page.  
 $category = $_POST['course-category'];
 $code = $_POST['course-code'];
-$name = $_POST['course-name'];
+$course_name = $_POST['course-name'];
 $detail = $_POST['course-detail'];
 $duration = $_POST['course-duration'];
 $time = $_POST['course-time'];
@@ -35,21 +35,16 @@ $getData = "SELECT * FROM course";
 
 $response = $db -> query($getData);
 if($response){
-    
-    $insert_data = "INSERT INTO course(
-        category, code, name, detail, duration, course_time, fee, fee_time, logo, added_by, status) VALUES 
-    ('$category', '$code', '$name', '$detail', '$duration', '$time', '$fee', '$fee_time', '$logo', '$added_by', '$status')";
+    $insert_data = "INSERT INTO course(category, code, name, detail, duration, course_time, fee, fee_time, logo, added_by, status) VALUES ('$category','$code','$course_name','$detail','$duration','$time','$fee','$fee_time','$logo','$added_by','$status')";
 
     if($db -> query($insert_data)){
+
         echo "Success";
-        
+        move_uploaded_file($location, "../Course/".$name);
+
     }else{
         echo "Unable to store data!";
     }
-}else{
-    echo "Unable to create table!";
-}
-
 }else{
     $create_table = "CREATE TABLE course (
         id INT(11) NOT NULL AUTO_INCREMENT,
@@ -68,12 +63,11 @@ if($response){
     )";
 
     if($db -> query($create_table)){
-        $insert_data = "INSERT INTO course(
-            category, code, name, detail, duration, course_time, fee, fee_time, logo, added_by, status) VALUES 
-        ('$category', '$code', '$name', '$detail', '$duration', '$time', '$fee', '$fee_time', '$logo', '$added_by', '$status')";
+         $insert_data = "INSERT INTO course(category, code, name, detail, duration, course_time, fee, fee_time, logo, added_by, status) VALUES ('$category','$code','$course_name','$detail','$duration','$time','$fee','$fee_time','$logo','$added_by','$status')";
 
         if($db -> query($insert_data)){
             echo "Success";
+            move_uploaded_file($location, "../Course/".$name);
         }else{
             echo "Unable to store data!";
         }
