@@ -341,6 +341,7 @@ function createCourseFunc() {
           },
           success: function (response) {
             if (response.trim() != "There is No Course Found!") {
+              $(".course-list-loader").addClass("d-none");
               let all_data = JSON.parse(response.trim());
               $(".course-list").html('');
               all_data.forEach((data, index) => {
