@@ -388,10 +388,12 @@ function createCourseFunc() {
   function deleteCourseFunc() {
     let allDelBtn = $(".course-list .del-btn");
     $(allDelBtn).each(function () {
-      $(this).click(function () {
+      $(this).click(async function () {
         let parent = this.parentElement.parentElement;
         let id = $(parent).attr("INDEX");
         try {
+          let response = await ajaxDeleteById(id, "course", "course-list-loader");
+          
         } catch (err){
           console.log(err);
         }
