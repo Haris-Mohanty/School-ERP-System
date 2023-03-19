@@ -391,7 +391,10 @@ function createCourseFunc() {
       $(this).click(function () {
         let parent = this.parentElement.parentElement;
         let id = $(parent).attr("INDEX");
-        
+        try {
+        } catch (err){
+          console.log(err);
+        }
       });
     });
   }
