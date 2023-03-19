@@ -361,12 +361,13 @@ function createCourseFunc() {
                   <td class="text-nowrap">${data.detail}</td>
                   <td class="text-nowrap">
                     <button class="btn btn-primary p-1 px-2"><i class="fa fa-edit"></i></button>
-                    <button class="btn btn-danger p-1 px-2"><i class="fa fa-trash"></i></button>
+                    <button class="btn btn-danger del-btn p-1 px-2"><i class="fa fa-trash"></i></button>
                   </td>
                 </tr>
                 `;
                 $(".course-list").append(tr);
               });
+              deleteCourseFunc();
             } else {
               $(".course-list").html("");
               swal(response.trim(), response.trim(), "error");
@@ -382,6 +383,12 @@ function createCourseFunc() {
   }
   courseListFunc();
   //SHOWING COURSE LIST BY CATEGORY CODE END
+
+  //DELETE COURSE CODE START
+  function deleteCourseFunc(){
+    let allDelBtn = $(".course-list .del-btn")
+  }
+  //DELETE COURSE CODE END
 }
 
 // CREATE COURSE CODE END
