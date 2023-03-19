@@ -369,7 +369,7 @@ function createCourseFunc() {
               });
             } else {
               $(".course-list").html('');
-              swal(response.trim(), response.trim(), "warning");
+              swal(response.trim(), response.trim(), "error");
             }
           },
         });
