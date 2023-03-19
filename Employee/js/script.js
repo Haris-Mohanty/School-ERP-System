@@ -393,7 +393,12 @@ function createCourseFunc() {
         let id = $(parent).attr("INDEX");
         try {
           let response = await ajaxDeleteById(id, "course", "course-list-loader");
-          if(response = "")
+          if(response.trim() == "success"){
+            parent.remove();
+            swal("Deleted Successfully!", "Course Deleted Successfully!", "success");
+          }else{
+            swal(response.trim(), response.trim(), "warning");
+          }
         } catch (err){
           console.log(err);
         }
