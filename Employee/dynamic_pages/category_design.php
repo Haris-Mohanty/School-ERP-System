@@ -5,7 +5,7 @@ require_once("../php/nav.php");
 echo '
 <div class="row p-3">
           <!-- CREATE CATEGORY CODE START -->
-          <div class="col-4 h-25 bg-white shadow-sm py-2">
+          <div class="col-md-4 h-25 bg-white shadow-sm py-2">
             <h5 class="category-h5 mb-3 ">CREATE CATEGORY
               <i class="fa-solid fa-circle-notch fa-spin create-category-loader d-none float-end mt-1 text-danger" style="font-size: 20px;"></i>
             </h5>
@@ -24,8 +24,8 @@ echo '
           <!-- CREATE CATEGORY CODE END -->
           
           <!-- CATEGORY LIST SHOW CODE START -->
-          <div class="col-2"></div>
-          <div class="col-6 bg-white shadow-sm category-list-show-h">
+          <div class="col-md-2"></div>
+          <div class="col-md-6 bg-white shadow-sm category-list-show-h">
             <h5 class="category-h5 mb-3">CATEGORY LIST
               <i class="fa-solid fa-circle-notch fa-spin d-none show-category-loader float-end mt-1 text-danger" style="font-size: 20px;"></i>
             </h5>
@@ -34,8 +34,8 @@ echo '
               <thead>
                 <tr class="red">
                   <th>S/N</th>
-                  <th>Category Name</th>
-                  <th>Category Details</th>
+                  <th class="text-nowrap">Category Name</th>
+                  <th class="text-nowrap">Category Details</th>
                   <th>Action</th>
                 </tr>
               </thead>

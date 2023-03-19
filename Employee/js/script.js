@@ -340,7 +340,12 @@ function createCourseFunc() {
             $(".course-list-loader").removeClass("d-none");
           },
           success: function (response) {
-            console.log(response);
+            if(response.trim() != "There is No Course Found!"){
+              let all_data = JSON.parse(response.trim());
+              console.log(all_data);
+            }else{
+              swal(response.trim(), response.trim(), "warning");
+            }
           },
         });
       } else {
