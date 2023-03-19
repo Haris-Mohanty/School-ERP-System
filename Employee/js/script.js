@@ -329,7 +329,7 @@ function createCourseFunc() {
   function courseListFunc() {
     $(".course-category").on("change", function () {
       if (this.value != "choose-category") {
-        //ajax request
+        //ajax request start
         $.ajax({
           type: "POST",
           url: "php/course_list.php",
@@ -343,11 +343,11 @@ function createCourseFunc() {
             if (response.trim() != "There is No Course Found!") {
               $(".course-list-loader").addClass("d-none");
               let all_data = JSON.parse(response.trim());
-              $(".course-list").html('');
+              $(".course-list").html("");
               all_data.forEach((data, index) => {
                 let tr = `
                 <tr index="${data.id}"> 
-                  <td class="text-nowrap">${index+1}</td>
+                  <td class="text-nowrap">${index + 1}</td>
                   <td class="text-nowrap">${data.category}</td>
                   <td class="text-nowrap">${data.code}</td>
                   <td class="text-nowrap">${data.name}</td>
@@ -368,13 +368,14 @@ function createCourseFunc() {
                 $(".course-list").append(tr);
               });
             } else {
-              $(".course-list").html('');
+              $(".course-list").html("");
               swal(response.trim(), response.trim(), "error");
             }
           },
         });
+        //ajax request end
       } else {
-        $(".course-list").html('');
+        $(".course-list").html("");
         swal("Select Category!", "Please Select a Category!", "warning");
       }
     });
