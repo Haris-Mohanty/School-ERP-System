@@ -388,20 +388,37 @@ function createCourseFunc() {
   function deleteCourseFunc() {
     let allDelBtn = $(".course-list .del-btn");
     $(allDelBtn).each(function () {
-      $(this).click(async function () {
+      $(this).click(function () {
         let parent = this.parentElement.parentElement;
         let id = $(parent).attr("INDEX");
-        try {
-          let response = await ajaxDeleteById(id, "course", "course-list-loader");
-          if(response.trim() == "success"){
-            parent.remove();
-            swal("Deleted Successfully!", "Course Deleted Successfully!", "success");
-          }else{
-            swal(response.trim(), response.trim(), "warning");
+        //swal start
+        swal({
+          title: "Are you sure?",
+          text: "Once deleted, you will not be able to recover this imaginary file!",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+        }).then(async (willDelete) => {
+          if (willDelete) {
+            try {
+              let response = await ajaxDeleteById(id, "course", "course-list-loader");
+              if(response.trim() == "success"){
+                parent.remove();
+                swal("Deleted Successfully!", "Course Deleted Successfully!", "success");
+              }else{
+                swal(response.trim(), response.trim(), "warning");
+              }
+            } catch (err){
+              console.log(err);
+            }
+            swal("Poof! Your imaginary file has been deleted!", {
+              icon: "success",
+            });
+          } else {
+            swal("Your imaginary file is safe!");
           }
-        } catch (err){
-          console.log(err);
-        }
+        });
+        //swal end
       });
     });
   }
