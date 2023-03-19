@@ -328,11 +328,21 @@ function createCourseFunc() {
   //SHOWING COURSE LIST BY CATEGORY CODE START
   function courseListFunc() {
     $(".course-category").on("change", function () {
-     if(this.value != "choose-category"){
-      alert();
-     }else{
-      swal("Select Category!", "Please Select a Category!", "warning");
-     }
+      if (this.value != "choose-category") {
+        //ajax request
+        $.ajax({
+          type: "POST",
+          url: "php/course_list.php",
+          data: {
+            category: this.value,
+          },
+          beforeSend: function () {
+            $(".course-loader").removeClass("d-none");
+          },
+        });
+      } else {
+        swal("Select Category!", "Please Select a Category!", "warning");
+      }
     });
   }
   courseListFunc();
