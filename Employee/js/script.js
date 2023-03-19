@@ -340,10 +340,12 @@ function createCourseFunc() {
             $(".course-list-loader").removeClass("d-none");
           },
           success: function (response) {
-            if(response.trim() != "There is No Course Found!"){
+            if (response.trim() != "There is No Course Found!") {
               let all_data = JSON.parse(response.trim());
-              console.log(all_data);
-            }else{
+              all_data.forEach((data, index) => {
+                let tr = 
+              });
+            } else {
               swal(response.trim(), response.trim(), "warning");
             }
           },
