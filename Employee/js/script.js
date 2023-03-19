@@ -363,6 +363,7 @@ function createCourseFunc() {
                   </td>
                 </tr>
                 `;
+                $(".course-list").append(tr);
               });
             } else {
               swal(response.trim(), response.trim(), "warning");
