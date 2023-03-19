@@ -313,7 +313,11 @@ function createCourseFunc() {
         $(".course-loader").removeClass("d-none");
       },
       success: function (response) {
-        document.write(response);
+        if(response.trim() == "Success"){
+          swal("Course Added!", "Course added Successfully!", "success");
+        }else{
+          swal(response.trim(), response.trim(), "error");
+        }
       },
     });
   });
