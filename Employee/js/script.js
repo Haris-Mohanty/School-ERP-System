@@ -393,7 +393,7 @@ function createCourseFunc() {
         let id = $(parent).attr("INDEX");
         try {
           let response = await ajaxDeleteById(id, "course", "course-list-loader");
-          
+          if(response = "")
         } catch (err){
           console.log(err);
         }
