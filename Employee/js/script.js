@@ -346,7 +346,7 @@ function createCourseFunc() {
               $(".course-list").html('');
               all_data.forEach((data, index) => {
                 let tr = `
-                <tr> 
+                <tr index="${data.id}"> 
                   <td class="text-nowrap">1</td>
                   <td class="text-nowrap">MCA</td>
                   <td class="text-nowrap">12452</td>
