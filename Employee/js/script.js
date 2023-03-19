@@ -328,7 +328,11 @@ function createCourseFunc() {
   //SHOWING COURSE LIST BY CATEGORY CODE START
   function courseListFunc() {
     $(".course-category").on("change", function () {
+     if(this.value != "choose-category"){
       alert();
+     }else{
+      swal("Select Category!", "Please Select a Category!", "warning");
+     }
     });
   }
   courseListFunc();
