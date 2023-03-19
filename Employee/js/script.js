@@ -337,7 +337,10 @@ function createCourseFunc() {
             category: this.value,
           },
           beforeSend: function () {
-            $(".course-loader").removeClass("d-none");
+            $(".course-list-loader").removeClass("d-none");
+          },
+          success: function (response) {
+            console.log(response);
           },
         });
       } else {

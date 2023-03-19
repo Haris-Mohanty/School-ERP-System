@@ -126,7 +126,7 @@ echo '
               echo '</select>
               <h5 class="category-h5 mb-3">
                 COURSE LIST
-                <i class="fa-solid fa-circle-notch fa-spin float-end mt-1 text-danger" style="font-size: 20px"></i>
+                <i class="fa-solid fa-circle-notch fa-spin float-end mt-1 text-danger course-list-loader d-none" style="font-size: 20px"></i>
               </h5>
               <hr>
                 <div class="table-responsive">
