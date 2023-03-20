@@ -371,7 +371,11 @@ function createCourseFunc() {
               updateCourseFunc();
             } else {
               $(".course-list").html("");
-              swal("Not Found any Course!", "There is No Course Found in this Category!", "error");
+              swal(
+                "Not Found any Course!",
+                "There is No Course Found in this Category!",
+                "error"
+              );
             }
           },
         });
@@ -435,7 +439,16 @@ function createCourseFunc() {
 
   // EDIT $ UPDATE CODE START
   function updateCourseFunc() {
+    let courseForm = document.querySelector(".course-form");
+    let allCourseInput = courseForm.querySelectorAll("INPUT");
+    let allSelectEl = courseForm.querySelectorAll("SELECT");
+    let textareaEl = courseForm.querySelector("TEXTAREA");
     let addEditBtn = $(".course-list .edit-btn");
+    $(addEditBtn).each(function () {
+      $(this).click(function () {
+        $(".course-form")
+      });
+    });
   }
   // EDIT $ UPDATE CODE END
 }
