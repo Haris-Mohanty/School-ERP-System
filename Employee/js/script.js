@@ -301,7 +301,7 @@ function ajaxGetAllCourse(table, category, loader) {
       url: "php/get_all_course.php",
       data: {
         table: table,
-        category : category
+        category: category,
       },
       beforeSend: function () {
         $("." + loader).removeClass("d-none");
@@ -556,6 +556,8 @@ function createCourseFunc() {
 
 // CREATE BATCH CODE START
 function createBatchFunc() {
-  // alert();
+  $("#batch-category").on("change", function () {
+    ajaxGetAllCourse("course", this.value, "batch-loader");
+  });
 }
 // CREATE BATCH CODE END

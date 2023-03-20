@@ -28,13 +28,13 @@ echo '
         <div class="col-md-10 bg-white shadow-sm mt-3 p-4">
           <h5 class="category-h5 mb-3">
             CREATE BATCH
-            <i class="fa-solid fa-circle-notch fa-spin course-loader d-none float-end mt-1 text-danger" style="font-size: 20px"></i>
+            <i class="fa-solid fa-circle-notch fa-spin batch-loader d-none float-end mt-1 text-danger" style="font-size: 20px"></i>
           </h5>
           <hr />
           <form class="batch-form">
             <div class="row">
               <div class="col-md-6">
-                <select name="batch-category" class="form-select mb-3">
+                <select name="batch-category" id="batch-category" class="form-select mb-3">
                   <option value="choose-category">Choose Category</option>';
 
                   for($i=0; $i<$length; $i++){
