@@ -350,12 +350,14 @@ function createCourseFunc() {
               for (i = 0; i < all_data.length; i++) {
                 let date = new Date(all_data[i].added_date);
                 let dd = date.getDate();
+                dd = dd<10 ? "0"+dd : dd;
                 let mm = date.getMonth() + 1;
+                mm = mm<10 ? "0"+mm : mm;
                 let yy = date.getFullYear();
                 let final_date = dd + "-" + mm + "-" + yy;
                 let time = date.toLocaleTimeString();
                 all_date.push(final_date);
-                all_time.push(all_time);
+                all_time.push(time);
               }
               $(".course-list").html("");
               all_data.forEach((data, index) => {
@@ -370,7 +372,7 @@ function createCourseFunc() {
                   <td class="text-nowrap">${data.fee}</td>
                   <td class="text-nowrap">${data.fee_time}</td>
                   <td class="text-nowra">${data.status}</td>
-                  <td class="text-nowrap">${data.added_date}</td>
+                  <td class="text-nowrap">${all_date[index]} ${all_time[index]}</td>
                   <td class="text-nowrap">${data.added_by}</td>
                   <td class="text-nowrap">${data.detail}</td>
                   <td class="text-nowrap">
