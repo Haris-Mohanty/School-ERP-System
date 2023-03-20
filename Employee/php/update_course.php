@@ -31,6 +31,8 @@ if($file['name'] == ""){
     $logo = "Course/".$name;
 }
 
-
+if($file['name'] == ""){
+    $update_course = "UPDATE course SET category = '$category', code = '$code', name = '$course_name', detail = '$detail',"
+}
 
 ?>

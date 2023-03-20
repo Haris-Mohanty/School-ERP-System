@@ -477,8 +477,15 @@ function createCourseFunc() {
             type: "POST",
             url: "php/update_course.php",
             data: formData,
-            beforeSend: function () {},
-            success: function (response) {},
+            processData: false,
+            contentType: false,
+            cache: false,
+            beforeSend: function () {
+              $(".course-loader").removeClass("d-none");
+            },
+            success: function (response) {
+              alert(response);
+            },
           });
         };
       });
