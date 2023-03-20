@@ -343,6 +343,11 @@ function createCourseFunc() {
             if (response.trim() != "There is No Course Found!") {
               $(".course-list-loader").addClass("d-none");
               let all_data = JSON.parse(response.trim());
+              //date-time
+              let i;
+              let all_time = [];
+              let all_date = [];
+              
               $(".course-list").html("");
               all_data.forEach((data, index) => {
                 let tr = `
@@ -356,7 +361,7 @@ function createCourseFunc() {
                   <td class="text-nowrap">${data.fee}</td>
                   <td class="text-nowrap">${data.fee_time}</td>
                   <td class="text-nowra">${data.status}</td>
-                  <td class="text-nowrap">14-05-2020</td>
+                  <td class="text-nowrap">${data.added_date}</td>
                   <td class="text-nowrap">${data.added_by}</td>
                   <td class="text-nowrap">${data.detail}</td>
                   <td class="text-nowrap">
