@@ -50,6 +50,8 @@ function dynamic_request(access_link) {
         categoryFunc();
       } else if (access_link == "course_design.php") {
         createCourseFunc();
+      } else if (access_link == "batch_design.php") {
+        createBatchFunc();
       }
     },
   });
@@ -350,9 +352,9 @@ function createCourseFunc() {
               for (i = 0; i < all_data.length; i++) {
                 let date = new Date(all_data[i].added_date);
                 let dd = date.getDate();
-                dd = dd<10 ? "0"+dd : dd;
+                dd = dd < 10 ? "0" + dd : dd;
                 let mm = date.getMonth() + 1;
-                mm = mm<10 ? "0"+mm : mm;
+                mm = mm < 10 ? "0" + mm : mm;
                 let yy = date.getFullYear();
                 let final_date = dd + "-" + mm + "-" + yy;
                 let time = date.toLocaleTimeString();
@@ -373,7 +375,9 @@ function createCourseFunc() {
                   <td class="text-nowrap">${data.fee}</td>
                   <td class="text-nowrap">${data.fee_time}</td>
                   <td class="text-nowra">${data.status}</td>
-                  <td class="text-nowrap">${all_date[index]} ${all_time[index]}</td>
+                  <td class="text-nowrap">${all_date[index]} ${
+                  all_time[index]
+                }</td>
                   <td class="text-nowrap">${data.added_by}</td>
                   <td class="text-nowrap">${data.detail}</td>
                   <td class="text-nowrap">
@@ -525,5 +529,10 @@ function createCourseFunc() {
   }
   // EDIT $ UPDATE CODE END
 }
-
 // CREATE COURSE CODE END
+
+// CREATE BATCH CODE START
+function createBatchFunc() {
+  alert();
+}
+// CREATE BATCH CODE END
