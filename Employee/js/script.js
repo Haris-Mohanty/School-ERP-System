@@ -556,8 +556,9 @@ function createCourseFunc() {
 
 // CREATE BATCH CODE START
 function createBatchFunc() {
-  $("#batch-category").on("change", function () {
-    ajaxGetAllCourse("course", this.value, "batch-loader");
+  $("#batch-category").on("change", async function () {
+    let response = await ajaxGetAllCourse("course", this.value, "batch-loader");
+    console.log(response)
   });
 }
 // CREATE BATCH CODE END
