@@ -343,7 +343,7 @@ function createCourseFunc() {
             if (response.trim() != "There is No Course Found!") {
               $(".course-list-loader").addClass("d-none");
               let all_data = JSON.parse(response.trim());
-              //date-time
+              //date-time customize start
               let i;
               let all_time = [];
               let all_date = [];
@@ -359,6 +359,7 @@ function createCourseFunc() {
                 all_date.push(final_date);
                 all_time.push(time);
               }
+              //date-time customize end
               $(".course-list").html("");
               all_data.forEach((data, index) => {
                 let tr = `
