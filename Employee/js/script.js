@@ -300,8 +300,8 @@ function ajaxGetAllCourse(table, category, loader) {
       type: "POST",
       url: "php/get_all_course.php",
       data: {
-        id: id,
         table: table,
+        category : category
       },
       beforeSend: function () {
         $("." + loader).removeClass("d-none");
