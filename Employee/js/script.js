@@ -490,7 +490,7 @@ function createCourseFunc() {
             success: function (response) {
               $(".course-loader").addClass("d-none");
               if(response.trim() == "success"){
-                swal("Course Updated!", "Course Has been Updated Successfully!", "success")
+                swal("Course Updated!", "Course has been Updated Successfully!", "success")
               }else{
                 swal("Failed!", response.trim(), "error")
               }

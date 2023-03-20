@@ -58,6 +58,7 @@ if($response){
         fee_time VARCHAR(55),
         logo VARCHAR(255),
         added_by VARCHAR(55),
+        added_date datetime DEFAULT CURRENT_TIMESTAMP,
         status VARCHAR(55),
         PRIMARY KEY(id)
     )";
