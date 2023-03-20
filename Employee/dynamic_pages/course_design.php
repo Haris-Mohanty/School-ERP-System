@@ -2,6 +2,7 @@
 
 //LINK DATABASE
 require_once("../../Common_files/php/database.php");
+
 //CHOOSE CATEGORY
 $get_category = "SELECT * FROM category";
 
