@@ -446,7 +446,8 @@ function createCourseFunc() {
     let addEditBtn = $(".course-list .edit-btn");
     $(addEditBtn).each(function () {
       $(this).click(function () {
-        $(".course-form")
+        let parent = this.parentElement.parentElement;
+        let id = $(parent).attr("INDEX");
       });
     });
   }
