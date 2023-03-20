@@ -35,8 +35,13 @@ echo '
             <div class="row">
               <div class="col-md-6">
                 <select name="batch-category" class="form-select mb-3">
-                  <option value="choose-category">Choose Category</option>
-                </select>
+                  <option value="choose-category">Choose Category</option>';
+
+                  for($i=0; $i<$length; $i++){
+                   echo '<option value="'.$all_category[$i].'">'.$all_category[$i].'</option>';
+                  }
+
+               echo '</select>
               </div>
               <div class="col-md-6">
                 <select name="batch-course" class="form-select mb-3">
@@ -101,8 +106,13 @@ echo '
         <div class="col-md-1"></div>
         <div class="col-md-10 bg-white p-4 shadow-sm">
           <select name="select-category" class="form-select batch-category mb-3">
-            <option value="choose-category">Choose Category</option>
-          </select>
+            <option value="choose-category">Choose Category</option>';
+
+            for($i=0; $i<$length; $i++){
+                echo '<option value="'.$all_category[$i].'">'.$all_category[$i].'</option>';
+            }
+
+         echo '</select>
           <h5 class="category-h5 mb-3">
             BATCH LIST
             <i class="fa-solid fa-circle-notch fa-spin float-end mt-1 text-danger batch-list-loader d-none" style="font-size: 20px"></i>
