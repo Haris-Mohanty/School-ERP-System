@@ -293,6 +293,29 @@ function ajaxDeleteById(id, table, loader) {
   });
 }
 //DELETE DATA CODE DYNAMIC END
+//GET COURSE DYNAMIC START
+function ajaxGetAllCourse(table, category, loader) {
+  return new Promise(function (resolve, reject) {
+    $.ajax({
+      type: "POST",
+      url: "php/get_all_course.php",
+      data: {
+        id: id,
+        table: table,
+      },
+      beforeSend: function () {
+        $("." + loader).removeClass("d-none");
+      },
+      success: function (response) {
+        setTimeout(function () {
+          $("." + loader).addClass("d-none");
+          resolve(response);
+        }, 800);
+      },
+    });
+  });
+}
+//GET COURSE DYNAMIC END
 //CATEGORY CODE END
 
 // CREATE COURSE CODE START
@@ -533,6 +556,6 @@ function createCourseFunc() {
 
 // CREATE BATCH CODE START
 function createBatchFunc() {
-  alert();
+  // alert();
 }
 // CREATE BATCH CODE END
