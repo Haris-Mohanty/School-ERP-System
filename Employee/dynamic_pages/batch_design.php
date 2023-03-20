@@ -44,7 +44,7 @@ echo '
                echo '</select>
               </div>
               <div class="col-md-6">
-                <select name="batch-course" class="form-select mb-3">
+                <select name="batch-course" id="batch-course" class="form-select mb-3">
                   <option value="choose-course">Choose Course</option>
                 </select>
               </div>

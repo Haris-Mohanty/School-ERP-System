@@ -558,7 +558,19 @@ function createCourseFunc() {
 function createBatchFunc() {
   $("#batch-category").on("change", async function () {
     let response = await ajaxGetAllCourse("course", this.value, "batch-loader");
-    console.log(response)
+    if (response.trim() != "There is No Course Found!") {
+      let all_course = JSON.parse(response.trim());
+      $("#batch-course").html('<option value="choose-course">Choose Course</option>'); //empty
+      all_course.forEach((course) => {
+        let option = `
+        <option value="${course.name}">${course.name}</option>
+        `;
+        $("#batch-course").append(option);
+      });
+    } else {
+      $("#batch-course").html('<option value="choose-course">Choose Course</option>');
+      swal("Not Found any Course!", "There is No Course Found in this Category!", "error");
+    }
   });
 }
 // CREATE BATCH CODE END
