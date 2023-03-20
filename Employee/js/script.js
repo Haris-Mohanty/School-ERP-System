@@ -449,7 +449,10 @@ function createCourseFunc() {
         let parent = this.parentElement.parentElement;
         let id = $(parent).attr("INDEX");
         let allTd = parent.querySelectorAll("TD");
-        console.log(allTd)
+        let status = allTd[8].innerHTML; //status
+        if(status == "Active"){
+          
+        }
         allSelectEl[0].value = allTd[1].innerHTML; //choose category
         allCourseInput[0].value = allTd[2].innerHTML; //course-code
         allCourseInput[1].value = allTd[3].innerHTML; //course-name
