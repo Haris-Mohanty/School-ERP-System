@@ -443,6 +443,7 @@ function createCourseFunc() {
     let allCourseInput = courseForm.querySelectorAll("INPUT");
     let allSelectEl = courseForm.querySelectorAll("SELECT");
     let textareaEl = courseForm.querySelector("TEXTAREA");
+    let allButton = courseForm.querySelectorAll("BUTTON");
     let addEditBtn = $(".course-list .edit-btn");
     $(addEditBtn).each(function () {
       $(this).click(function () {
@@ -464,6 +465,9 @@ function createCourseFunc() {
         allSelectEl[2].value = allTd[7].innerHTML; //fees-period
         allCourseInput[5].value = allTd[10].innerHTML; //added-by
         textareaEl.value = allTd[11].innerHTML; //course-details
+        //button
+        allButton[0].classList.add("d-none");
+        allButton[1].classList.remove("d-none");
       });
     });
   }
