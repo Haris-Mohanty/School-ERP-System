@@ -360,7 +360,7 @@ function createCourseFunc() {
                   <td class="text-nowrap">${data.added_by}</td>
                   <td class="text-nowrap">${data.detail}</td>
                   <td class="text-nowrap">
-                    <button class="btn btn-primary p-1 px-2"><i class="fa fa-edit"></i></button>
+                    <button class="btn edit-btn btn-primary p-1 px-2"><i class="fa fa-edit"></i></button>
                     <button class="btn btn-danger del-btn p-1 px-2"><i class="fa fa-trash"></i></button>
                   </td>
                 </tr>
@@ -368,9 +368,10 @@ function createCourseFunc() {
                 $(".course-list").append(tr);
               });
               deleteCourseFunc();
+              updateCourseFunc();
             } else {
               $(".course-list").html("");
-              swal(response.trim(), response.trim(), "error");
+              swal("Not Found any Course!", "There is No Course Found in this Category!", "error");
             }
           },
         });
@@ -401,14 +402,22 @@ function createCourseFunc() {
         }).then(async (willDelete) => {
           if (willDelete) {
             try {
-              let response = await ajaxDeleteById(id, "course", "course-list-loader");
-              if(response.trim() == "success"){
+              let response = await ajaxDeleteById(
+                id,
+                "course",
+                "course-list-loader"
+              );
+              if (response.trim() == "success") {
                 parent.remove();
-                swal("Deleted Successfully!", "Course Deleted Successfully!", "success");
-              }else{
+                swal(
+                  "Deleted Successfully!",
+                  "Course Deleted Successfully!",
+                  "success"
+                );
+              } else {
                 swal(response.trim(), response.trim(), "warning");
               }
-            } catch (err){
+            } catch (err) {
               console.log(err);
             }
             swal("Poof! Your imaginary file has been deleted!", {
@@ -423,6 +432,12 @@ function createCourseFunc() {
     });
   }
   //DELETE COURSE CODE END
+
+  // EDIT $ UPDATE CODE START
+  function updateCourseFunc() {
+    let addEditBtn = $(".course-list .edit-btn");
+  }
+  // EDIT $ UPDATE CODE END
 }
 
 // CREATE COURSE CODE END
