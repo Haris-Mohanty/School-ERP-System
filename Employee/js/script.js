@@ -406,11 +406,7 @@ function createCourseFunc() {
         }).then(async (willDelete) => {
           if (willDelete) {
             try {
-              let response = await ajaxDeleteById(
-                id,
-                "course",
-                "course-list-loader"
-              );
+              let response = await ajaxDeleteById(id, "course", "course-list-loader");
               if (response.trim() == "success") {
                 parent.remove();
                 swal(
