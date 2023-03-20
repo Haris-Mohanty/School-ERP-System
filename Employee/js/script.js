@@ -451,7 +451,9 @@ function createCourseFunc() {
         let allTd = parent.querySelectorAll("TD");
         let status = allTd[8].innerHTML; //status
         if(status == "Active"){
-          
+          allCourseInput[6].checked = true;
+        }else{
+          allCourseInput[6].checked = false;
         }
         allSelectEl[0].value = allTd[1].innerHTML; //choose category
         allCourseInput[0].value = allTd[2].innerHTML; //course-code
