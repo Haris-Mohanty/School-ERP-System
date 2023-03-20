@@ -465,6 +465,8 @@ function createCourseFunc() {
         allSelectEl[2].value = allTd[7].innerHTML; //fees-period
         allCourseInput[5].value = allTd[10].innerHTML; //added-by
         textareaEl.value = allTd[11].innerHTML; //course-details
+        //formdata
+        let formData = new FormData(courseForm);
         //button
         allButton[0].classList.add("d-none");
         allButton[1].classList.remove("d-none");
@@ -474,7 +476,7 @@ function createCourseFunc() {
           $.ajax({
             type: "POST",
             url: "php/update_course.php",
-            data: {},
+            data: formData,
             beforeSend: function () {},
             success: function (response) {},
           });
