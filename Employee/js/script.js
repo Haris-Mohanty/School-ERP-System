@@ -448,6 +448,8 @@ function createCourseFunc() {
       $(this).click(function () {
         let parent = this.parentElement.parentElement;
         let id = $(parent).attr("INDEX");
+        let allTd = parent.querySelectorAll("TD");
+        console.log(allTd[0].innerHTML);
       });
     });
   }
