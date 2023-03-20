@@ -449,7 +449,15 @@ function createCourseFunc() {
         let parent = this.parentElement.parentElement;
         let id = $(parent).attr("INDEX");
         let allTd = parent.querySelectorAll("TD");
-        console.log(allTd[0].innerHTML);
+        allSelectEl[0].value = allTd[1].innerHTML; //choose category
+        allCourseInput[0].value = allTd[2].innerHTML; //course-code
+        allCourseInput[1].value = allTd[3].innerHTML; //course-name
+        allCourseInput[2].value = allTd[4].innerHTML; //duration
+        allSelectEl[1].value = allTd[5].innerHTML; //total-time
+        allCourseInput[3].value = allTd[6].innerHTML; //fees
+        allSelectEl[2].value = allTd[7].innerHTML; //fees-period
+        allCourseInput[5].value = allTd[10].innerHTML; //added-by
+        textareaEl[1].value = allTd[11].innerHTML; //course-details
       });
     });
   }
