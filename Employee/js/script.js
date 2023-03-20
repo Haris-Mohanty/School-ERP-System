@@ -347,7 +347,16 @@ function createCourseFunc() {
               let i;
               let all_time = [];
               let all_date = [];
-              
+              for (i = 0; i < all_data.length; i++) {
+                let date = new Date(all_data[i].added_date);
+                let dd = date.getDate();
+                let mm = date.getMonth() + 1;
+                let yy = date.getFullYear();
+                let final_date = dd + "-" + mm + "-" + yy;
+                let time = date.toLocaleTimeString();
+                all_date.push(final_date);
+                all_time.push(all_time);
+              }
               $(".course-list").html("");
               all_data.forEach((data, index) => {
                 let tr = `
@@ -461,7 +470,9 @@ function createCourseFunc() {
         } else {
           allCourseInput[6].checked = false;
         }
-        allCourseInput[6].checked == true ? status = "Active" : status = "Pending";
+        allCourseInput[6].checked == true
+          ? (status = "Active")
+          : (status = "Pending");
         allSelectEl[0].value = allTd[1].innerHTML; //choose category
         allCourseInput[0].value = allTd[2].innerHTML; //course-code
         allCourseInput[1].value = allTd[3].innerHTML; //course-name
@@ -471,17 +482,17 @@ function createCourseFunc() {
         allSelectEl[2].value = allTd[7].innerHTML; //fees-period
         allCourseInput[5].value = allTd[10].innerHTML; //added-by
         textareaEl.value = allTd[11].innerHTML; //course-details
-       
+
         //button
         allButton[0].classList.add("d-none");
         allButton[1].classList.remove("d-none");
 
         //ajax request
         allButton[1].onclick = function () {
-           //formdata
-        let formData = new FormData(courseForm);
-        formData.append("status", status);
-        formData.append("id", id);
+          //formdata
+          let formData = new FormData(courseForm);
+          formData.append("status", status);
+          formData.append("id", id);
           $.ajax({
             type: "POST",
             url: "php/update_course.php",
@@ -494,10 +505,14 @@ function createCourseFunc() {
             },
             success: function (response) {
               $(".course-loader").addClass("d-none");
-              if(response.trim() == "success"){
-                swal("Course Updated!", "Course has been Updated Successfully!", "success")
-              }else{
-                swal("Failed!", response.trim(), "error")
+              if (response.trim() == "success") {
+                swal(
+                  "Course Updated!",
+                  "Course has been Updated Successfully!",
+                  "success"
+                );
+              } else {
+                swal("Failed!", response.trim(), "error");
               }
             },
           });
