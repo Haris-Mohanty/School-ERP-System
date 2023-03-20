@@ -406,7 +406,11 @@ function createCourseFunc() {
         }).then(async (willDelete) => {
           if (willDelete) {
             try {
-              let response = await ajaxDeleteById(id, "course", "course-list-loader");
+              let response = await ajaxDeleteById(
+                id,
+                "course",
+                "course-list-loader"
+              );
               if (response.trim() == "success") {
                 parent.remove();
                 swal(
@@ -447,9 +451,9 @@ function createCourseFunc() {
         let id = $(parent).attr("INDEX");
         let allTd = parent.querySelectorAll("TD");
         let status = allTd[8].innerHTML; //status
-        if(status == "Active"){
+        if (status == "Active") {
           allCourseInput[6].checked = true;
-        }else{
+        } else {
           allCourseInput[6].checked = false;
         }
         allSelectEl[0].value = allTd[1].innerHTML; //choose category
@@ -464,6 +468,17 @@ function createCourseFunc() {
         //button
         allButton[0].classList.add("d-none");
         allButton[1].classList.remove("d-none");
+
+        //ajax request
+        allButton[1].onclick = function () {
+          $.ajax({
+            type: "POST",
+            url: "php/update_course.php",
+            data: {},
+            beforeSend: function () {},
+            success: function (response) {},
+          });
+        };
       });
     });
   }
