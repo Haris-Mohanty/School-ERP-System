@@ -456,6 +456,7 @@ function createCourseFunc() {
         } else {
           allCourseInput[6].checked = false;
         }
+        allCourseInput[6].checked == true ? status = "Active" : status = "Pending";
         allSelectEl[0].value = allTd[1].innerHTML; //choose category
         allCourseInput[0].value = allTd[2].innerHTML; //course-code
         allCourseInput[1].value = allTd[3].innerHTML; //course-name
@@ -465,14 +466,17 @@ function createCourseFunc() {
         allSelectEl[2].value = allTd[7].innerHTML; //fees-period
         allCourseInput[5].value = allTd[10].innerHTML; //added-by
         textareaEl.value = allTd[11].innerHTML; //course-details
-        //formdata
-        let formData = new FormData(courseForm);
+       
         //button
         allButton[0].classList.add("d-none");
         allButton[1].classList.remove("d-none");
 
         //ajax request
         allButton[1].onclick = function () {
+           //formdata
+        let formData = new FormData(courseForm);
+        formData.append("status", status);
+        formData.append("id", id);
           $.ajax({
             type: "POST",
             url: "php/update_course.php",
@@ -484,7 +488,12 @@ function createCourseFunc() {
               $(".course-loader").removeClass("d-none");
             },
             success: function (response) {
-              alert(response);
+              $(".course-loader").addClass("d-none");
+              if(response.trim() == "success"){
+                swal("Course Updated!", "Course has been Updated Successfully!", "success")
+              }else{
+                swal("Failed!", response.trim(), "error")
+              }
             },
           });
         };

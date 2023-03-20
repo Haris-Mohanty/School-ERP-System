@@ -16,6 +16,7 @@ $file = $_FILES['course-logo'];
 $added_by = $_POST['course-added-by'];
 //ajax
 $status = $_POST['status'];
+$id = $_POST['id'];
 
 $logo = "";
 $name = "";
@@ -32,7 +33,20 @@ if($file['name'] == ""){
 }
 
 if($file['name'] == ""){
-    $update_course = "UPDATE course SET category = '$category', code = '$code', name = '$course_name', detail = '$detail',"
-}
+    $update_course = "UPDATE course SET category = '$category', code = '$code', name = '$course_name', detail = '$detail', duration = '$duration', course_time = '$time', fee = '$fee', fee_time = '$fee_time', added_by = '$added_by', status = '$status' WHERE id = '$id'";
 
+    if($db -> query($update_course)){
+        echo "success";
+    }else{
+        echo "Unable to Update Course!";
+    }
+}else{
+     $update_course = "UPDATE course SET category = '$category', code = '$code', name = '$course_name', detail = '$detail', duration = '$duration', course_time = '$time', fee = '$fee', fee_time = '$fee_time', logo = '$logo', added_by = '$added_by', status = '$status' WHERE id = '$id'";
+     
+     if($db -> query($update_course)){
+         echo "success";
+     }else{
+         echo "Unable to Update Course!";
+     }
+}
 ?>
