@@ -582,6 +582,8 @@ function createBatchFunc() {
       //active
       let activeEl = document.querySelector("#batch-active");
       let status = "";
+      activeEl.checked == true ? status = "Active" : status = "Pending";
+      //ajax request
 
     }else{
       swal("Select Course!", "Please select category & Course!", "warning")
