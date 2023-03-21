@@ -135,7 +135,7 @@ echo '
                   <tr>
                     <th class="text-nowrap">S/N</th>
                     <th class="text-nowrap">Category</th>
-                    <th class="text-nowrap">Course Code</th>
+                    <th class="text-nowrap">Course Name</th>
                     <th class="text-nowrap">Batch Code</th>
                     <th class="text-nowrap">Batch Name</th>
                     <th class="text-nowrap">Start Time</th>

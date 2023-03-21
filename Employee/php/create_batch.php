@@ -61,6 +61,7 @@ if($response){
         batch_to_date VARCHAR(55),
         logo VARCHAR(255),
         batch_added_by VARCHAR(55),
+        added_date datetime DEFAULT CURRENT_TIMESTAMP,
         status VARCHAR(55),
         PRIMARY KEY(id)
     )";

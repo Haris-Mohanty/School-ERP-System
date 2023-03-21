@@ -682,24 +682,41 @@ function createBatchFunc() {
         this.value,
         "batch-list-loader"
       );
-      if (response.trim() == "There is No Course Found!") {
+      if (response.trim() != "There is No Course Found!") {
         let all_data = JSON.parse(response.trim());
+        //date-time customize start
+        let i;
+        let all_time = [];
+        let all_date = [];
+        for (i = 0; i < all_data.length; i++) {
+          let date = new Date(all_data[i].added_date);
+          let dd = date.getDate();
+          dd = dd < 10 ? "0" + dd : dd;
+          let mm = date.getMonth() + 1;
+          mm = mm < 10 ? "0" + mm : mm;
+          let yy = date.getFullYear();
+          let final_date = dd + "-" + mm + "-" + yy;
+          let time = date.toLocaleTimeString();
+          all_date.push(final_date);
+          all_time.push(time);
+        }
+        //date-time customize end
         all_data.forEach((data, index) => {
           let tr = `
-          <tr>
-             <td class="text-nowrap">Haris</td>
-             <td class="text-nowrap">Haris</td>
-             <td class="text-nowrap">Haris</td>
-             <td class="text-nowrap">Haris</td>
-             <td class="text-nowrap">Haris</td>
-             <td class="text-nowrap">Haris</td>
-             <td class="text-nowrap">Haris</td>
-             <td class="text-nowrap">Haris</td>
-             <td class="text-nowrap">Haris</td>
-             <td class="text-nowrap">Haris</td>
-             <td class="text-nowrap">Haris</td>
-             <td class="text-nowrap">Haris</td>
-             <td class="text-nowrap">Haris</td>
+          <tr index="${data.id}">
+             <td class="text-nowrap">${index + 1}</td>
+             <td class="text-nowrap">${data.category}</td>
+             <td class="text-nowrap">${data.course}</td>
+             <td class="text-nowrap">${data.batch_code}</td>
+             <td class="text-nowrap">${data.batch_name}</td>
+             <td class="text-nowrap">${data.batch_from}</td>
+             <td class="text-nowrap">${data.batch_to}</td>
+             <td class="text-nowrap">${data.batch_from_date}</td>
+             <td class="text-nowrap">${data.batch_to_date}</td>
+             <td class="text-nowrap">${data.status}</td>
+             <td class="text-nowrap">${data.batch_added_by}</td>
+             <td class="text-nowrap">${data.detail}</td>
+             <td class="text-nowrap">${all_date[index]} ${all_time[index]}</td>
              <td class="text-nowrap">
                <button class="btn btn-primary px-2 p-1"><i class="fa fa-edit"></i></button>
                <button class="btn btn-danger px-2 p-1"><i class="fa fa-trash"></i></button>
