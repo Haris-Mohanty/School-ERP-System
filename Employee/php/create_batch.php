@@ -16,10 +16,12 @@ $file = $_FILES['batch-logo'];
 $batch_added_by = $_POST['batch-added-by'];
 $status = $_POST['status'];
 
+
 $logo = "";
 $name = "";
 $location = "";
 
+//logo
 if($file['name'] == ""){
     $logo = "";
     $name = "";
