@@ -590,6 +590,7 @@ function createBatchFunc() {
       let status = "";
       activeEl.checked == true ? (status = "Active") : (status = "Pending");
       formData.append("status", status);
+      
       //ajax request
       $.ajax({
         type: "POST",
