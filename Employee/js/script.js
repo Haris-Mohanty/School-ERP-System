@@ -316,7 +316,33 @@ function ajaxGetAllCourse(table, category, loader) {
   });
 }
 //GET COURSE DYNAMIC END
+
+// GET BATCH DYNAMIC START
+function ajaxGetAllBatch(table, category, loader) {
+  return new Promise(function (resolve, reject) {
+    $.ajax({
+      type: "POST",
+      url: "php/get_all_course.php",
+      data: {
+        table: table,
+        category: category,
+      },
+      beforeSend: function () {
+        $("." + loader).removeClass("d-none");
+      },
+      success: function (response) {
+        setTimeout(function () {
+          $("." + loader).addClass("d-none");
+          resolve(response);
+        }, 800);
+      },
+    });
+  });
+}
+// GET BATCH DYNAMIC END
+
 //CATEGORY CODE END
+
 
 // CREATE COURSE CODE START
 function createCourseFunc() {
@@ -620,7 +646,7 @@ function createBatchFunc() {
   });
   //batch list
   $("#batch-list-category").on("change", async function () {
-    let response = await ajaxGetAllCourse("course", this.value, "batch-loader");
+    let response = await ajaxGetAllCourse("course", this.value, "batch-list-loader");
     if (response.trim() != "There is No Course Found!") {
       let all_course = JSON.parse(response.trim());
       $("#batch-list-course").html(
@@ -636,12 +662,9 @@ function createBatchFunc() {
       $("#batch-list-course").html(
         '<option value="choose-course">Choose Course</option>'
       );
-      swal(
-        "Not Found any Course!",
-        "There is No Course Found in this Category!",
-        "error"
-      );
+      swal("Not Found any Course!", "There is No Course Found in this Category!", "error");
     }
   });
+
 }
 // CREATE BATCH CODE END
