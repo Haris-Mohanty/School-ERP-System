@@ -318,11 +318,11 @@ function ajaxGetAllCourse(table, category, loader) {
 //GET COURSE DYNAMIC END
 
 // GET BATCH DYNAMIC START
-function ajaxGetAllBatch(table, category, loader) {
+function ajaxGetAllBatch(table, category, course, loader) {
   return new Promise(function (resolve, reject) {
     $.ajax({
       type: "POST",
-      url: "php/get_all_course.php",
+      url: "php/get_all_batch.php",
       data: {
         table: table,
         category: category,
