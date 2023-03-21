@@ -573,20 +573,30 @@ function createBatchFunc() {
       $("#batch-course").html(
         '<option value="choose-course">Choose Course</option>'
       );
-      swal("Not Found any Course!", "There is No Course Found in this Category!", "error");
+      swal(
+        "Not Found any Course!",
+        "There is No Course Found in this Category!",
+        "error"
+      );
     }
   });
   $(".batch-form").on("submit", function (e) {
     e.preventDefault();
-    if($("#batch-course").val() != "choose-course"){
+    if ($("#batch-course").val() != "choose-course") {
       //active
       let activeEl = document.querySelector("#batch-active");
       let status = "";
-      activeEl.checked == true ? status = "Active" : status = "Pending";
+      activeEl.checked == true ? (status = "Active") : (status = "Pending");
       //ajax request
-
-    }else{
-      swal("Select Course!", "Please select category & Course!", "warning")
+      $.ajax({
+        type : "POST", 
+        url : "php/create_batch.php",
+        data : formData,
+        contentType : false,
+        cache : false
+      });
+    } else {
+      swal("Select Course!", "Please select category & Course!", "warning");
     }
   });
 }
