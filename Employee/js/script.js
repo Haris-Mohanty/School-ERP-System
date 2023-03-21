@@ -579,7 +579,6 @@ function createBatchFunc() {
   $(".batch-form").on("submit", function (e) {
     e.preventDefault();
     if($("#batch-course").val() != "choose-course"){
-      console.log(this)
       alert("succcess");
     }else{
       swal("Select Course!", "Please Select a Course First!", "warning")
