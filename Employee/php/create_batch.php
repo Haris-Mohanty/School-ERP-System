@@ -48,7 +48,29 @@ if($response){
 }else{
     $create_table = "CREATE TABLE batch(
         id INT(11) NOT NULL AUTO_INCREMENT,
+        category VARCHAR(55),
+        course VARCHAR(55),
+        batch_code VARCHAR(55),
+        batch_name VARCHAR(55),
+        detail VARCHAR(255),
+        batch_from VARCHAR(55),
+        batch_to VARCHAR(55),
+        batch_from_date VARCHAR(55),
+        batch_to_date VARCHAR(55),
+        logo VARCHAR(255),
+        batch_added_by VARCHAR(55),
+        status VARCHAR(55),
+        PRIMARY KEY(id)
     );"
+    if($db -> query($create_table)){
+
+        $insert_data = "INSERT INTO batch(category, course, batch_code, batch_name, detail, batch_from, batch_to, batch_from_date, batch_from_to, logo, batch_added_by, status) VALUES ('$category', '$course', '$batch_code', '$batch_name', '$detail', '$batch_from', '$batch_to', '$batch_from_date', '$batch_to_date', '$logo', '$batch_added_by', '$status')";
+
+        if($db -> )
+
+    }else{
+        echo "Unable to Create Table!";
+    }
 }
 
 
