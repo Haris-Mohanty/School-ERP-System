@@ -35,7 +35,20 @@ $get_data = "SELECT * FROM batch";
 $response = $db -> query($get_data);
 
 if($response){
-    $insert_data = "INSERT INTO batch(category, course, batch_code, batch_name, detail, batch_from, batch_to) VALUES ()";
+    $insert_data = "INSERT INTO batch(category, course, batch_code, batch_name, detail, batch_from, batch_to, batch_from_date, batch_to_date, logo, batch_added_by, status) VALUES ('$category', '$course', '$batch_code', '$batch_name', '$detail', '$batch_from', '$batch_to', '$batch_from_date', '$batch_to_date', '$logo', '$batch_added_by', '$status')";
+
+    if($db -> query($insert_data)){
+
+        echo "Success";
+        move_uploaded_file($location, "../Course/".$name);
+
+    }else{
+        echo "Unable to store data!":
+    }
+}else{
+    $create_table = "CREATE TABLE batch(
+        id INT(11) NOT NULL AUTO_INCREMENT,
+    );"
 }
 
 
