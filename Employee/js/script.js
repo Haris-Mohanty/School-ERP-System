@@ -326,6 +326,7 @@ function ajaxGetAllBatch(table, category, course, loader) {
       data: {
         table: table,
         category: category,
+        course : course,
       },
       beforeSend: function () {
         $("." + loader).removeClass("d-none");
