@@ -706,6 +706,7 @@ function createBatchFunc() {
              </td>
           </tr>
           `;
+          $(".batch-list").append(tr);
         });
       } else {
         swal(response.trim(), response.trim(), "warning");
