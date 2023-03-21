@@ -105,6 +105,8 @@ echo '
       <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10 bg-white p-4 shadow-sm">
+          <div class="row">
+          <div class="col-md-6">
           <select name="select-category" class="form-select batch-category mb-3">
             <option value="choose-category">Choose Category</option>';
 
@@ -113,6 +115,9 @@ echo '
             }
 
          echo '</select>
+         </div>
+          <div class="col-md-6"></div>
+          </div>
           <h5 class="category-h5 mb-3">
             BATCH LIST
             <i class="fa-solid fa-circle-notch fa-spin float-end mt-1 text-danger batch-list-loader d-none" style="font-size: 20px"></i>
