@@ -12,18 +12,18 @@ $batch_from = $_POST['batch-from'];
 $batch_to = $_POST['batch-to'];
 $batch_from_date = $_POST['batch-from-date'];
 $batch_to_date = $_POST['batch-to-date'];
-$files = $_FILES['batch-logo'];
+$file = $_FILES['batch-logo'];
 $batch_added_by = $_POST['batch-added-by'];
 $status = $_POST['status'];
 
 $logo = "";
-$name = "":
+$name = "";
 $location = "";
 
-if($files['name'] == ""){
+if($file['name'] == ""){
     $logo = "";
     $name = "";
-    $location = "":
+    $location = "";
 }else{
     $name = $file['name'];
     $location = $file['tmp_name'];
@@ -39,11 +39,11 @@ if($response){
 
     if($db -> query($insert_data)){
 
-        echo "Success";
-        move_uploaded_file($location, "../Course/".$name);
+        echo "success";
+        move_uploaded_file($location, "../Batch/".$name);
 
     }else{
-        echo "Unable to store data!":
+        echo "Unable to Insert Data!";
     }
 }else{
     $create_table = "CREATE TABLE batch(
@@ -61,12 +61,20 @@ if($response){
         batch_added_by VARCHAR(55),
         status VARCHAR(55),
         PRIMARY KEY(id)
-    );"
+    )";
+
     if($db -> query($create_table)){
 
-        $insert_data = "INSERT INTO batch(category, course, batch_code, batch_name, detail, batch_from, batch_to, batch_from_date, batch_from_to, logo, batch_added_by, status) VALUES ('$category', '$course', '$batch_code', '$batch_name', '$detail', '$batch_from', '$batch_to', '$batch_from_date', '$batch_to_date', '$logo', '$batch_added_by', '$status')";
+        $insert_data = "INSERT INTO batch(category, course, batch_code, batch_name, detail, batch_from, batch_to, batch_from_date, batch_to_date, logo, batch_added_by, status) VALUES ('$category', '$course', '$batch_code', '$batch_name', '$detail', '$batch_from', '$batch_to', '$batch_from_date', '$batch_to_date', '$logo', '$batch_added_by', '$status')";
 
-        if($db -> )
+        if($db -> query($insert_data)){
+            echo "success";
+            move_uploaded_file($location, "../Batch/".$name);
+        }
+        else{
+            echo "Unable to Insert Data!";
+        }
+    
 
     }else{
         echo "Unable to Create Table!";
