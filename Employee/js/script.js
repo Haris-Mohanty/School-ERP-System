@@ -580,6 +580,7 @@ function createBatchFunc() {
       );
     }
   });
+  //form submit
   $(".batch-form").on("submit", function (e) {
     e.preventDefault();
     if ($("#batch-course").val() != "choose-course") {
@@ -590,7 +591,6 @@ function createBatchFunc() {
       let status = "";
       activeEl.checked == true ? (status = "Active") : (status = "Pending");
       formData.append("status", status);
-      
       //ajax request
       $.ajax({
         type: "POST",
@@ -603,15 +603,44 @@ function createBatchFunc() {
           $(".batch-loader").removeClass("d-none");
         },
         success: function (response) {
-          if(response.trim() == "success"){
-            swal("Successfully Added!", "Your Batch Added Successfully!", "success");
-          }else{
+          if (response.trim() == "success") {
+            swal(
+              "Successfully Added!",
+              "Your Batch Added Successfully!",
+              "success"
+            );
+          } else {
             swal(response.trim(), response.trim(), "error");
           }
         },
       });
     } else {
       swal("Select Course!", "Please select category & Course!", "warning");
+    }
+  });
+  //batch list
+  $("#batch-list-category").on("change", async function () {
+    let response = await ajaxGetAllCourse("course", this.value, "batch-loader");
+    if (response.trim() != "There is No Course Found!") {
+      let all_course = JSON.parse(response.trim());
+      $("#batch-list-course").html(
+        '<option value="choose-course">Choose Course</option>'
+      ); //empty
+      all_course.forEach((course) => {
+        let option = `
+        <option value="${course.name}">${course.name}</option>
+        `;
+        $("#batch-list-course").append(option);
+      });
+    } else {
+      $("#batch-list-course").html(
+        '<option value="choose-course">Choose Course</option>'
+      );
+      swal(
+        "Not Found any Course!",
+        "There is No Course Found in this Category!",
+        "error"
+      );
     }
   });
 }

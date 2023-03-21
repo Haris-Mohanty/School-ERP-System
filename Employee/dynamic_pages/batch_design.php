@@ -101,6 +101,8 @@ echo '
       </div>
       <!-- CREATE BATCH CODE END -->
     
+
+
       <!-- SHOW BATCH LIST CODE START -->
       <div class="row">
         <div class="col-md-1"></div>
@@ -124,7 +126,7 @@ echo '
           </div>
           <h5 class="category-h5 mb-3">
             BATCH LIST
-            <i class="fa-solid fa-circle-notch fa-spin float-end mt-1 text-danger batch-list-loader d-none" style="font-size: 20px"></i>
+            <i class="fa-solid fa-circle-notch fa-spin batch-list-loader d-none float-end mt-1 text-danger" style="font-size: 20px"></i>
           </h5>
           <hr>
             <div class="table-responsive">
