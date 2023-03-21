@@ -579,9 +579,12 @@ function createBatchFunc() {
   $(".batch-form").on("submit", function (e) {
     e.preventDefault();
     if($("#batch-course").val() != "choose-course"){
-      alert("succcess");
+      //active
+      let activeEl = document.querySelector("#batch-active");
+      let status = "";
+
     }else{
-      swal("Select Course!", "Please Select a Course First!", "warning")
+      swal("Select Course!", "Please select category & Course!", "warning")
     }
   });
 }
