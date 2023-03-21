@@ -583,17 +583,26 @@ function createBatchFunc() {
   $(".batch-form").on("submit", function (e) {
     e.preventDefault();
     if ($("#batch-course").val() != "choose-course") {
+      //form data
+      let formData = new FormData(this);
       //active
       let activeEl = document.querySelector("#batch-active");
       let status = "";
       activeEl.checked == true ? (status = "Active") : (status = "Pending");
       //ajax request
       $.ajax({
-        type : "POST", 
-        url : "php/create_batch.php",
-        data : formData,
-        contentType : false,
-        cache : false
+        type: "POST",
+        url: "php/create_batch.php",
+        data: formData,
+        processData: false,
+        contentType: false,
+        cache: false,
+        beforeSend: function () {
+          $(".batch-loader").removeClass("d-none");
+        },
+        success: function (response) {
+          alert(response);
+        },
       });
     } else {
       swal("Select Course!", "Please select category & Course!", "warning");
