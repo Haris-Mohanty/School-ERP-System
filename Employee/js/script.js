@@ -602,7 +602,11 @@ function createBatchFunc() {
           $(".batch-loader").removeClass("d-none");
         },
         success: function (response) {
-          alert(response);
+          if(response.trim() == "success"){
+            swal("Successfully Added!", "Your Batch Added Successfully!", "success");
+          }else{
+            swal(response.trim(), response.trim(), "error");
+          }
         },
       });
     } else {
