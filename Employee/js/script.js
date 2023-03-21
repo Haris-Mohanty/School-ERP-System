@@ -500,9 +500,6 @@ function createCourseFunc() {
         } else {
           allCourseInput[6].checked = false;
         }
-        allCourseInput[6].checked == true
-          ? (status = "Active")
-          : (status = "Pending");
         allSelectEl[0].value = allTd[1].innerHTML; //choose category
         allCourseInput[0].value = allTd[2].innerHTML; //course-code
         allCourseInput[1].value = allTd[3].innerHTML; //course-name
@@ -519,6 +516,9 @@ function createCourseFunc() {
 
         //ajax request
         allButton[1].onclick = function () {
+          allCourseInput[6].checked == true
+            ? (status = "Active")
+            : (status = "Pending");
           //formdata
           let formData = new FormData(courseForm);
           formData.append("status", status);
@@ -560,7 +560,9 @@ function createBatchFunc() {
     let response = await ajaxGetAllCourse("course", this.value, "batch-loader");
     if (response.trim() != "There is No Course Found!") {
       let all_course = JSON.parse(response.trim());
-      $("#batch-course").html('<option value="choose-course">Choose Course</option>'); //empty
+      $("#batch-course").html(
+        '<option value="choose-course">Choose Course</option>'
+      ); //empty
       all_course.forEach((course) => {
         let option = `
         <option value="${course.name}">${course.name}</option>
@@ -568,8 +570,19 @@ function createBatchFunc() {
         $("#batch-course").append(option);
       });
     } else {
-      $("#batch-course").html('<option value="choose-course">Choose Course</option>');
+      $("#batch-course").html(
+        '<option value="choose-course">Choose Course</option>'
+      );
       swal("Not Found any Course!", "There is No Course Found in this Category!", "error");
+    }
+  });
+  $(".batch-form").on("submit", function (e) {
+    e.preventDefault();
+    if($("#batch-course").val() != "choose-course"){
+      console.log(this)
+      alert("succcess");
+    }else{
+      swal("Select Course!", "Please Select a Course First!", "warning")
     }
   });
 }
