@@ -589,6 +589,7 @@ function createBatchFunc() {
       let activeEl = document.querySelector("#batch-active");
       let status = "";
       activeEl.checked == true ? (status = "Active") : (status = "Pending");
+      formData.append("status", status);
       //ajax request
       $.ajax({
         type: "POST",
