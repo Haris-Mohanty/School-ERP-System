@@ -7,7 +7,7 @@ $table = $_POST['table'];
 $category = $_POST['category'];
 $course = $_POST['course'];
 
-$get_batch = "SELECT name FROM $table WHERE category = '$category' AND course = '$course'"; //name-column name
+$get_batch = "SELECT * FROM $table WHERE category = '$category' AND course = '$course'"; //name-column name
 
 $response = $db -> query($get_batch);
 

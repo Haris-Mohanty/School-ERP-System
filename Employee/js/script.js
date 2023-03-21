@@ -335,7 +335,7 @@ function ajaxGetAllBatch(table, category, course, loader) {
         setTimeout(function () {
           $("." + loader).addClass("d-none");
           resolve(response);
-        }, 800);
+        }, 600);
       },
     });
   });
@@ -674,8 +674,27 @@ function createBatchFunc() {
     }
   });
   //get batch list
-  $("#batch-list-course").on("change", function () {
-    alert();
+  $("#batch-list-course").on("change", async function () {
+    try {
+      let response = await ajaxGetAllBatch(
+        "batch",
+        $("#batch-list-category").val(),
+        this.value,
+        "batch-list-loader"
+      );
+      if (response.trim() == "There is No Course Found!") {
+        let all_data = JSON.parse(response.trim());
+        all_data.forEach((data, index) => {
+          let tr = `
+          
+          `;
+        });
+      } else {
+        swal(response.trim(), response.trim(), "warning");
+      }
+    } catch (err) {
+      console.log(err);
+    }
   });
 }
 // CREATE BATCH CODE END
