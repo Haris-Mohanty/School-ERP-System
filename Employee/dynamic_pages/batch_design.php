@@ -149,23 +149,8 @@ echo '
                     <th class="text-nowrap">Action</th>
                   </tr>
                 </thead>
-                <tbody class="course-list">
-                  <tr>
-                    <td class="text-nowrap">Haris</td>
-                    <td class="text-nowrap">Haris</td>
-                    <td class="text-nowrap">Haris</td>
-                    <td class="text-nowrap">Haris</td>
-                    <td class="text-nowrap">Haris</td>
-                    <td class="text-nowrap">Haris</td>
-                    <td class="text-nowrap">Haris</td>
-                    <td class="text-nowrap">Haris</td>
-                    <td class="text-nowrap">Haris</td>
-                    <td class="text-nowrap">Haris</td>
-                    <td class="text-nowrap">Haris</td>
-                    <td class="text-nowrap">Haris</td>
-                    <td class="text-nowrap">Haris</td>
-                    <td class="text-nowrap">Haris</td>
-                  </tr>
+                <tbody class="batch-list">
+                  
                 </tbody>
               </table>
             </div>

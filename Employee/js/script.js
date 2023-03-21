@@ -686,7 +686,25 @@ function createBatchFunc() {
         let all_data = JSON.parse(response.trim());
         all_data.forEach((data, index) => {
           let tr = `
-          
+          <tr>
+             <td class="text-nowrap">Haris</td>
+             <td class="text-nowrap">Haris</td>
+             <td class="text-nowrap">Haris</td>
+             <td class="text-nowrap">Haris</td>
+             <td class="text-nowrap">Haris</td>
+             <td class="text-nowrap">Haris</td>
+             <td class="text-nowrap">Haris</td>
+             <td class="text-nowrap">Haris</td>
+             <td class="text-nowrap">Haris</td>
+             <td class="text-nowrap">Haris</td>
+             <td class="text-nowrap">Haris</td>
+             <td class="text-nowrap">Haris</td>
+             <td class="text-nowrap">Haris</td>
+             <td class="text-nowrap">
+               <button class="btn btn-primary px-2 p-1"><i class="fa fa-edit"></i></button>
+               <button class="btn btn-danger px-2 p-1"><i class="fa fa-trash"></i></button>
+             </td>
+          </tr>
           `;
         });
       } else {
