@@ -12,5 +12,10 @@ $batch_from = $_POST['batch-from'];
 $batch_to = $_POST['batch-to'];
 $batch_from_date = $_POST['batch-from-date'];
 $batch_to_date = $_POST['batch-to-date'];
+$files = $_FILES['batch-logo'];
+$batch_added_by = $_POST['batch-added-by'];
+$status = $_POST['status'];
+
+
 
 ?>
