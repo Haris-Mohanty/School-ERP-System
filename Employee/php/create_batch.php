@@ -29,4 +29,15 @@ if($files['name'] == ""){
     $location = $file['tmp_name'];
     $logo = "Batch/".$name;
 }
+
+$get_data = "SELECT * FROM batch";
+
+$response = $db -> query($get_data);
+
+if($response){
+    $insert_data = "INSERT INTO batch(category, course, batch_code, batch_name, detail, batch_from, batch_to) VALUES ()";
+}
+
+
+
 ?>
