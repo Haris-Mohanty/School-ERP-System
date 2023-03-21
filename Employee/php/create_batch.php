@@ -16,6 +16,17 @@ $files = $_FILES['batch-logo'];
 $batch_added_by = $_POST['batch-added-by'];
 $status = $_POST['status'];
 
+$logo = "";
+$name = "":
+$location = "";
 
-
+if($files['name'] == ""){
+    $logo = "";
+    $name = "";
+    $location = "":
+}else{
+    $name = $file['name'];
+    $location = $file['tmp_name'];
+    $logo = "Batch/".$name;
+}
 ?>
