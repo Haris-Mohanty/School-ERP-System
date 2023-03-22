@@ -803,6 +803,8 @@ function createBatchFunc() {
         //status check
         if(status == "Active"){
           allBatchInputEl[8].checked = true;
+        }else{
+          allBatchInputEl[8].checked = false;
         }
       });
     });
