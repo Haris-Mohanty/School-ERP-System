@@ -788,13 +788,17 @@ function createBatchFunc() {
 
   // EDIT & UPDATE BATCH CODE START
   function updateBatchFunc() {
+    let batchForm = document.querySelector(".batch-form");
+    let allSelectEl = batchForm.querySelectorAll("SELECT");
+    let allBatchInputEl = batchForm.querySelectorAll("INPUT");
+    
     let allEditBtn = $(".batch-list .edit-btn");
     $(allEditBtn).each(function () {
       $(this).on("click", function () {
         let parent = this.parentElement.parentElement;
         let id = $(parent).attr("index");
         let allTd = parent.querySelectorAll("TD");
-        alert(allTd)
+        
       });
     });
   }
