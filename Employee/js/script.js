@@ -729,6 +729,7 @@ function createBatchFunc() {
           $(".batch-list").append(tr);
         });
         deleteBatchFunc();
+        updateBatchFunc();
       } else {
         $(".batch-list").html("");
         swal(response.trim(), response.trim(), "warning");
@@ -754,10 +755,18 @@ function createBatchFunc() {
         }).then(async (willDelete) => {
           if (willDelete) {
             try {
-              let response = await ajaxDeleteById(id, "batch", "batch-list-loader");
+              let response = await ajaxDeleteById(
+                id,
+                "batch",
+                "batch-list-loader"
+              );
               if (response.trim() == "success") {
                 parent.remove();
-                swal("Deleted Successfully!", "Course Deleted Successfully!", "success");
+                swal(
+                  "Deleted Successfully!",
+                  "Course Deleted Successfully!",
+                  "success"
+                );
               } else {
                 swal(response.trim(), response.trim(), "warning");
               }
@@ -776,5 +785,11 @@ function createBatchFunc() {
     });
   }
   //DELETE BATCH CODE END
+
+  // EDIT & UPDATE BATCH CODE START
+  function updateBatchFunc() {
+    
+  }
+  // EDIT & UPDATE BATCH CODE END
 }
 // CREATE BATCH CODE END
