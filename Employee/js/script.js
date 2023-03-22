@@ -793,7 +793,8 @@ function createBatchFunc() {
       $(this).on("click", function () {
         let parent = this.parentElement.parentElement;
         let id = $(parent).attr("index");
-        alert(id)
+        let allTd = parent.querySelectorAll("TD");
+        alert(allTd)
       });
     });
   }
