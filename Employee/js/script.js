@@ -225,7 +225,11 @@ function categoryFunc() {
           dangerMode: true,
         }).then(async (willDelete) => {
           if (willDelete) {
-            let response = await ajaxDeleteById(id, "category", "show-category-loader");
+            let response = await ajaxDeleteById(
+              id,
+              "category",
+              "show-category-loader"
+            );
             if (response.trim() == "success") {
               getCategoryFunc();
               swal("Category Deleted", response.trim(), "success");
@@ -437,7 +441,11 @@ function createCourseFunc() {
               updateCourseFunc();
             } else {
               $(".course-list").html("");
-              swal("Not Found any Course!", "There is No Course Found in this Category!", "error");
+              swal(
+                "Not Found any Course!",
+                "There is No Course Found in this Category!",
+                "error"
+              );
             }
           },
         });
@@ -468,10 +476,18 @@ function createCourseFunc() {
         }).then(async (willDelete) => {
           if (willDelete) {
             try {
-              let response = await ajaxDeleteById(id, "course", "course-list-loader");
+              let response = await ajaxDeleteById(
+                id,
+                "course",
+                "course-list-loader"
+              );
               if (response.trim() == "success") {
                 parent.remove();
-                swal("Deleted Successfully!", "Course Deleted Successfully!", "success");
+                swal(
+                  "Deleted Successfully!",
+                  "Course Deleted Successfully!",
+                  "success"
+                );
               } else {
                 swal(response.trim(), response.trim(), "warning");
               }
@@ -526,7 +542,9 @@ function createCourseFunc() {
 
         //ajax request
         allButton[1].onclick = function () {
-          allCourseInput[6].checked == true ? (status = "Active") : (status = "Pending");
+          allCourseInput[6].checked == true
+            ? (status = "Active")
+            : (status = "Pending");
           //formdata
           let formData = new FormData(courseForm);
           formData.append("status", status);
@@ -544,7 +562,11 @@ function createCourseFunc() {
             success: function (response) {
               $(".course-loader").addClass("d-none");
               if (response.trim() == "success") {
-                swal("Course Updated!", "Course has been Updated Successfully!", "success");
+                swal(
+                  "Course Updated!",
+                  "Course has been Updated Successfully!",
+                  "success"
+                );
               } else {
                 swal("Failed!", response.trim(), "error");
               }
@@ -624,7 +646,11 @@ function createBatchFunc() {
   });
   //batch list- get course
   $("#batch-list-category").on("change", async function () {
-    let response = await ajaxGetAllCourse("course", this.value, "batch-list-loader");
+    let response = await ajaxGetAllCourse(
+      "course",
+      this.value,
+      "batch-list-loader"
+    );
     if (response.trim() != "There is No Course Found!") {
       let all_course = JSON.parse(response.trim());
       $("#batch-list-course").html(
@@ -642,13 +668,22 @@ function createBatchFunc() {
         '<option value="choose-course">Choose Course</option>'
       );
       // $(".batch-list").html("");
-      swal("Not Found any Course!", "There is No Course Found in this Category!", "error");
+      swal(
+        "Not Found any Course!",
+        "There is No Course Found in this Category!",
+        "error"
+      );
     }
   });
   //get batch list
   $("#batch-list-course").on("change", async function () {
     try {
-      let response = await ajaxGetAllBatch("batch", $("#batch-list-category").val(), this.value,"batch-list-loader");
+      let response = await ajaxGetAllBatch(
+        "batch",
+        $("#batch-list-category").val(),
+        this.value,
+        "batch-list-loader"
+      );
       if (response.trim() != "There is No Course Found!") {
         let all_data = JSON.parse(response.trim());
         //date-time customize start
@@ -703,9 +738,13 @@ function createBatchFunc() {
     }
   });
   //DELETE BATCH CODE START
-  function deleteBatchFunc(){
+  function deleteBatchFunc() {
     let allDelBtn = $(".batch-list .del-btn");
-    $(allDelBtn).each
+    $(allDelBtn).each(function () {
+      $(this).click(function () {
+        let parent = this.parentElement.parentElement;
+      });
+    });
   }
   //DELETE BATCH CODE END
 }
