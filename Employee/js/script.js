@@ -745,7 +745,13 @@ function createBatchFunc() {
         let parent = this.parentElement.parentElement;
         let id = $(parent).attr("INDEX");
         try{
-
+          let response = await ajaxDeleteById(id, "batch", "batch-list-loader");
+        if(response.trim() == "success"){
+          parent.remove();
+          swal("Deleted Successfully!", "Course Deleted Successfully!", "success");
+        }else{
+          swal(response.trim(), response.trim(), "warning");
+        }
         }catch (err){
           console.log(err);
         }
