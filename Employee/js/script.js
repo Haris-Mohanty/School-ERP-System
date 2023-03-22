@@ -792,6 +792,8 @@ function createBatchFunc() {
     $(allEditBtn).each(function () {
       $(this).on("click", function () {
         let parent = this.parentElement.parentElement;
+        let id = $(parent).attr("index");
+        alert(id)
       });
     });
   }
