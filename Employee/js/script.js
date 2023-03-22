@@ -225,11 +225,7 @@ function categoryFunc() {
           dangerMode: true,
         }).then(async (willDelete) => {
           if (willDelete) {
-            let response = await ajaxDeleteById(
-              id,
-              "category",
-              "show-category-loader"
-            );
+            let response = await ajaxDeleteById(id, "category", "show-category-loader");
             if (response.trim() == "success") {
               getCategoryFunc();
               swal("Category Deleted", response.trim(), "success");
@@ -441,11 +437,7 @@ function createCourseFunc() {
               updateCourseFunc();
             } else {
               $(".course-list").html("");
-              swal(
-                "Not Found any Course!",
-                "There is No Course Found in this Category!",
-                "error"
-              );
+              swal("Not Found any Course!", "There is No Course Found in this Category!", "error");
             }
           },
         });
@@ -476,18 +468,10 @@ function createCourseFunc() {
         }).then(async (willDelete) => {
           if (willDelete) {
             try {
-              let response = await ajaxDeleteById(
-                id,
-                "course",
-                "course-list-loader"
-              );
+              let response = await ajaxDeleteById(id, "course", "course-list-loader");
               if (response.trim() == "success") {
                 parent.remove();
-                swal(
-                  "Deleted Successfully!",
-                  "Course Deleted Successfully!",
-                  "success"
-                );
+                swal("Deleted Successfully!", "Course Deleted Successfully!", "success");
               } else {
                 swal(response.trim(), response.trim(), "warning");
               }
@@ -542,9 +526,7 @@ function createCourseFunc() {
 
         //ajax request
         allButton[1].onclick = function () {
-          allCourseInput[6].checked == true
-            ? (status = "Active")
-            : (status = "Pending");
+          allCourseInput[6].checked == true ? (status = "Active") : (status = "Pending");
           //formdata
           let formData = new FormData(courseForm);
           formData.append("status", status);
@@ -562,11 +544,7 @@ function createCourseFunc() {
             success: function (response) {
               $(".course-loader").addClass("d-none");
               if (response.trim() == "success") {
-                swal(
-                  "Course Updated!",
-                  "Course has been Updated Successfully!",
-                  "success"
-                );
+                swal("Course Updated!", "Course has been Updated Successfully!", "success");
               } else {
                 swal("Failed!", response.trim(), "error");
               }
@@ -646,16 +624,13 @@ function createBatchFunc() {
   });
   //batch list- get course
   $("#batch-list-category").on("change", async function () {
-    let response = await ajaxGetAllCourse(
-      "course",
-      this.value,
-      "batch-list-loader"
-    );
+    let response = await ajaxGetAllCourse("course", this.value, "batch-list-loader");
     if (response.trim() != "There is No Course Found!") {
       let all_course = JSON.parse(response.trim());
       $("#batch-list-course").html(
         '<option value="choose-course">Choose Course</option>'
       ); //empty
+      $(".batch-list").html("");
       all_course.forEach((course) => {
         let option = `
         <option value="${course.name}">${course.name}</option>
@@ -666,22 +641,14 @@ function createBatchFunc() {
       $("#batch-list-course").html(
         '<option value="choose-course">Choose Course</option>'
       );
-      swal(
-        "Not Found any Course!",
-        "There is No Course Found in this Category!",
-        "error"
-      );
+      // $(".batch-list").html("");
+      swal("Not Found any Course!", "There is No Course Found in this Category!", "error");
     }
   });
   //get batch list
   $("#batch-list-course").on("change", async function () {
     try {
-      let response = await ajaxGetAllBatch(
-        "batch",
-        $("#batch-list-category").val(),
-        this.value,
-        "batch-list-loader"
-      );
+      let response = await ajaxGetAllBatch("batch", $("#batch-list-category").val(), this.value,"batch-list-loader");
       if (response.trim() != "There is No Course Found!") {
         let all_data = JSON.parse(response.trim());
         //date-time customize start
@@ -701,6 +668,7 @@ function createBatchFunc() {
           all_time.push(time);
         }
         //date-time customize end
+        $(".batch-list").html("");
         all_data.forEach((data, index) => {
           let tr = `
           <tr index="${data.id}">
@@ -718,19 +686,22 @@ function createBatchFunc() {
              <td class="text-nowrap">${data.detail}</td>
              <td class="text-nowrap">${all_date[index]} ${all_time[index]}</td>
              <td class="text-nowrap">
-               <button class="btn btn-primary px-2 p-1"><i class="fa fa-edit"></i></button>
-               <button class="btn btn-danger px-2 p-1"><i class="fa fa-trash"></i></button>
+               <button class="btn edit-btn btn-primary px-2 p-1"><i class="fa fa-edit"></i></button>
+               <button class="btn del-btn btn-danger px-2 p-1"><i class="fa fa-trash"></i></button>
              </td>
           </tr>
           `;
           $(".batch-list").append(tr);
         });
+        deleteBatchFunc();
       } else {
+        $(".batch-list").html("");
         swal(response.trim(), response.trim(), "warning");
       }
     } catch (err) {
       console.log(err);
     }
   });
+  
 }
 // CREATE BATCH CODE END
