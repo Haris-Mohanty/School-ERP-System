@@ -704,7 +704,8 @@ function createBatchFunc() {
   });
   //DELETE BATCH CODE START
   function deleteBatchFunc(){
-    
+    let allDelBtn = $(".batch-list .del-btn");
+    $(allDelBtn).each
   }
   //DELETE BATCH CODE END
 }
