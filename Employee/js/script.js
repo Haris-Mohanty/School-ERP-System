@@ -743,6 +743,7 @@ function createBatchFunc() {
     $(allDelBtn).each(function () {
       $(this).click(function () {
         let parent = this.parentElement.parentElement;
+        let id = $(parent).attr("INDEX");
       });
     });
   }
