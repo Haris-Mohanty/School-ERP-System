@@ -791,7 +791,7 @@ function createBatchFunc() {
     let allEditBtn = $(".batch-list .edit-btn");
     $(allEditBtn).each(function () {
       $(this).on("click", function () {
-        alert();
+        let parent = this.parentElement.parentElement;
       });
     });
   }
