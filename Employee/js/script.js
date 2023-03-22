@@ -747,6 +747,9 @@ function createBatchFunc() {
         let response = await ajaxDeleteById(id, "batch", "batch-list-loader");
         if(response.trim() == "success"){
           parent.remove();
+          swal("Deleted Successfully!", "Course Deleted Successfully!", "success");
+        }else{
+          swal(response.trim(), response.trim(), "warning");
         }
       });
     });
