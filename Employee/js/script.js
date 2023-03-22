@@ -745,6 +745,9 @@ function createBatchFunc() {
         let parent = this.parentElement.parentElement;
         let id = $(parent).attr("INDEX");
         let response = await ajaxDeleteById(id, "batch", "batch-list-loader");
+        if(response.trim() == "success"){
+          parent.remove();
+        }
       });
     });
   }
