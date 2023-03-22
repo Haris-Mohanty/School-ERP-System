@@ -799,7 +799,8 @@ function createBatchFunc() {
         let parent = this.parentElement.parentElement;
         let id = $(parent).attr("index");
         let allTd = parent.querySelectorAll("TD");
-        
+        let status = allTd[9].innerHTML;
+        alert(status)
       });
     });
   }
