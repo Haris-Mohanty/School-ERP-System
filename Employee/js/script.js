@@ -789,7 +789,11 @@ function createBatchFunc() {
   // EDIT & UPDATE BATCH CODE START
   function updateBatchFunc() {
     let allEditBtn = $(".batch-list .edit-btn");
-    
+    $(allEditBtn).each(function () {
+      $(this).on("click", function () {
+        alert();
+      });
+    });
   }
   // EDIT & UPDATE BATCH CODE END
 }
