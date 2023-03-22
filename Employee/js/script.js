@@ -800,7 +800,10 @@ function createBatchFunc() {
         let id = $(parent).attr("index");
         let allTd = parent.querySelectorAll("TD");
         let status = allTd[9].innerHTML;
-        alert(status)
+        //status check
+        if(status == "Active"){
+          allBatchInputEl[8].checked = true;
+        }
       });
     });
   }
