@@ -702,6 +702,10 @@ function createBatchFunc() {
       console.log(err);
     }
   });
-  
+  //DELETE BATCH CODE START
+  function deleteBatchFunc(){
+    
+  }
+  //DELETE BATCH CODE END
 }
 // CREATE BATCH CODE END
