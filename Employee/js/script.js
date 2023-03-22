@@ -791,7 +791,8 @@ function createBatchFunc() {
     let batchForm = document.querySelector(".batch-form");
     let allSelectEl = batchForm.querySelectorAll("SELECT");
     let allBatchInputEl = batchForm.querySelectorAll("INPUT");
-    
+    let textareaEl = batchForm.querySelector("TEXTAREA");
+    let AllBtn = batchForm.querySelectorAll("BUTTON");
     let allEditBtn = $(".batch-list .edit-btn");
     $(allEditBtn).each(function () {
       $(this).on("click", function () {
