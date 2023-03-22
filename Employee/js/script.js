@@ -741,9 +741,10 @@ function createBatchFunc() {
   function deleteBatchFunc() {
     let allDelBtn = $(".batch-list .del-btn");
     $(allDelBtn).each(function () {
-      $(this).click(function () {
+      $(this).click(async function () {
         let parent = this.parentElement.parentElement;
         let id = $(parent).attr("INDEX");
+        let response = await ajaxDeleteById(id, "batch", "batch-list-loader");
       });
     });
   }
