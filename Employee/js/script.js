@@ -784,6 +784,7 @@ function createBatchFunc() {
   function updateBatchFunc() {
     let batchForm = document.querySelector(".batch-form");
     let allSelectEl = batchForm.querySelectorAll("SELECT");
+    let course = allSelectEl[1].querySelector("OPTION");
     let allBatchInputEl = batchForm.querySelectorAll("INPUT");
     let textareaEl = batchForm.querySelector("TEXTAREA");
     let AllBtn = batchForm.querySelectorAll("BUTTON");
@@ -803,8 +804,8 @@ function createBatchFunc() {
 
       //add value
       allSelectEl[0].value = allTd[1].innerHTML; //chhose course
-      let courseEl = allTd[2].innerHTML;
-      
+      course.value = allTd[2].innerHTML;
+      course.innerHTML = allTd[2].innerHTML;
       });
     });
   }
