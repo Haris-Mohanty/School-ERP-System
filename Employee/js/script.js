@@ -823,6 +823,7 @@ function createBatchFunc() {
       AllBtn[1].onclick = function(){
         if(allSelectEl[1].value != "choose-course"){
          status = allBatchInputEl[8].checked ? status = "Active" : status = "Pending";
+         let formData = new FormData(batchForm);
         }else{
           swal("Select Course", "Please Select a Course!", "warning")
         }
