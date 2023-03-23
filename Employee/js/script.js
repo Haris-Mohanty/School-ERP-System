@@ -562,11 +562,11 @@ function createCourseFunc() {
             success: function (response) {
               $(".course-loader").addClass("d-none");
               if (response.trim() == "success") {
-                swal(
-                  "Course Updated!",
-                  "Course has been Updated Successfully!",
-                  "success"
-                );
+                courseForm.reset('');
+                //button
+                  allButton[0].classList.remove("d-none");
+                  allButton[1].classList.add("d-none");
+                swal("Course Updated!", "Course has been Updated Successfully!", "success");
               } else {
                 swal("Failed!", response.trim(), "error");
               }
@@ -848,7 +848,14 @@ function createBatchFunc() {
               },
               success: function (response) {
                 if (response.trim() == "success") {
+                  //loader
                   $(".batch-loader").addClass("d-none");
+                  //form-reset
+                  batchForm.reset('');
+                  course.innerHTML = "Choose Course";
+                  //btn hide
+                  AllBtn[0].classList.remove("d-none");
+                  AllBtn[1].classList.add("d-none");
                   swal("Batch Updated!", "Batch has been Updated Successfully!", "success");
                 }else{
                   swal(response.trim(), response.trim(), "error");
