@@ -821,7 +821,11 @@ function createBatchFunc() {
 
       //ajax request
       AllBtn[1].onclick = function(){
-        if("#batch-course")
+        if(allSelectEl[1].value != "choose-course"){
+
+        }else{
+          swal("Select Course", "Please Select a Course!", "warning")
+        }
       }
       });
     });
