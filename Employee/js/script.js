@@ -808,6 +808,10 @@ function createBatchFunc() {
       course.innerHTML = allTd[2].innerHTML; //course
       allBatchInputEl[0].value = allTd[3].innerHTML; //Batch code
       allBatchInputEl[1].value = allTd[4].innerHTML; //Batch Name
+      allBatchInputEl[2].value = allTd[5].innerHTML; //Batch From time
+      allBatchInputEl[3].value = allTd[6].innerHTML; //Batch to time
+      allBatchInputEl[4].value = allTd[7].innerHTML; //Batch from date
+      allBatchInputEl[5].value = allTd[8].innerHTML; //Batch to date
       });
     });
   }
