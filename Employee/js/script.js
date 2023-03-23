@@ -805,7 +805,9 @@ function createBatchFunc() {
       //add value
       allSelectEl[0].value = allTd[1].innerHTML; //chhose course
       course.value = allTd[2].innerHTML;
-      course.innerHTML = allTd[2].innerHTML;
+      course.innerHTML = allTd[2].innerHTML; //course
+      allBatchInputEl[0].value = allTd[3].innerHTML; //Batch code
+      allBatchInputEl[1].value = allTd[4].innerHTML; //Batch Name
       });
     });
   }
