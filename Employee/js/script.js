@@ -542,9 +542,7 @@ function createCourseFunc() {
 
         //ajax request
         allButton[1].onclick = function () {
-          allCourseInput[6].checked == true
-            ? (status = "Active")
-            : (status = "Pending");
+          allCourseInput[6].checked == true ? (status = "Active"): (status = "Pending");
           //formdata
           let formData = new FormData(courseForm);
           formData.append("status", status);
@@ -562,11 +560,7 @@ function createCourseFunc() {
             success: function (response) {
               $(".course-loader").addClass("d-none");
               if (response.trim() == "success") {
-                swal(
-                  "Course Updated!",
-                  "Course has been Updated Successfully!",
-                  "success"
-                );
+                swal("Course Updated!", "Course has been Updated Successfully!", "success");
               } else {
                 swal("Failed!", response.trim(), "error");
               }
@@ -806,6 +800,11 @@ function createBatchFunc() {
         }else{
           allBatchInputEl[8].checked = false;
         }
+
+      //add value
+      allSelectEl[0].value = allTd[1].innerHTML; //chhose course
+      let courseEl = allTd[2].innerHTML;
+      
       });
     });
   }
