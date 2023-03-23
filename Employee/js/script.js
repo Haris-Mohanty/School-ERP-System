@@ -818,6 +818,11 @@ function createBatchFunc() {
       //button
       AllBtn[0].classList.add("d-none");
       AllBtn[1].classList.remove("d-none");
+
+      //ajax request
+      AllBtn[1].onclick = function(){
+        if("#batch-course")
+      }
       });
     });
   }
