@@ -847,7 +847,11 @@ function createBatchFunc() {
                 $(".batch-loader").removeClass("d-none");
               },
               success: function (response) {
-                document.write(response);
+                if (response.trim() == "success") {
+                  swal("Batch Updated!", "Batch has been Updated Successfully!", "success");
+                }else{
+                  swal(response.trim(), response.trim(), "error");
+                }
               },
             });
           } else {
