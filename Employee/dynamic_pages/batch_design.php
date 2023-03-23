@@ -93,6 +93,7 @@ echo '
               </div>
               <div class="col-md-6">
                 <button class="btn btn-primary float-end btn-audiowide">Add Batch</button>
+                <button type="button" class="btn btn-outline-success d-none float-end btn-audiowide">Update Batch</button>
               </div>
             </div>
           </form>
