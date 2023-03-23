@@ -812,6 +812,8 @@ function createBatchFunc() {
       allBatchInputEl[3].value = allTd[6].innerHTML; //Batch to time
       allBatchInputEl[4].value = allTd[7].innerHTML; //Batch from date
       allBatchInputEl[5].value = allTd[8].innerHTML; //Batch to date
+      allBatchInputEl[7].value = allTd[10].innerHTML; //Added by
+      textareaEl.value = allTd[11].innerHTML; //details
       });
     });
   }
