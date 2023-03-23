@@ -45,6 +45,7 @@ if($file['name'] == ""){
      
      if($db -> query($update_course)){
          echo "success";
+         move_uploaded_file($location, "../Course/".$name);
      }else{
          echo "Unable to Update Course!";
      }

@@ -16,6 +16,7 @@ $batch_to_date = $_POST['batch-to-date'];
 $file = $_FILES['batch-logo'];
 $batch_added_by = $_POST['batch-added-by'];
 $status = $_POST['status'];
+$id = $_POST['id'];
 
 $logo = "";
 $name = "";
@@ -32,18 +33,19 @@ if($file['name'] == ""){
 }
 
 if($file['name'] == ""){
-    $update_batch = "UPDATE batch SET category = '$category', course = '$course', batch_code = '$batch_code', batch_name = '$batch_name', detail = '$detail', duration = '$duration', course_time = '$time', fee = '$fee', fee_time = '$fee_time', added_by = '$added_by', status = '$status' WHERE id = '$id'";
+    $update_batch = "UPDATE batch SET category = '$category', course = '$course', batch_code = '$batch_code', batch_name = '$batch_name', detail = '$detail', batch_from = '$batch_from', batch_to = '$batch_to', batch_from_date = '$batch_from_date', batch_to_date = '$batch_to_date', batch_added_by = '$batch_added_by', status = '$status' WHERE id = '$id'";
 
-    if($db -> query($update_course)){
+    if($db -> query($update_batch)){
         echo "success";
     }else{
         echo "Unable to Update Course!";
     }
 }else{
-     $update_course = "UPDATE course SET category = '$category', code = '$code', name = '$course_name', detail = '$detail', duration = '$duration', course_time = '$time', fee = '$fee', fee_time = '$fee_time', logo = '$logo', added_by = '$added_by', status = '$status' WHERE id = '$id'";
+    $update_batch = "UPDATE batch SET category = '$category', course = '$course', batch_code = '$batch_code', batch_name = '$batch_name', detail = '$detail', batch_from = '$batch_from', batch_to = '$batch_to', batch_from_date = '$batch_from_date', batch_to_date = '$batch_to_date', logo = '$logo' ,batch_added_by = '$batch_added_by', status = '$status' WHERE id = '$id'";
      
-     if($db -> query($update_course)){
+     if($db -> query($update_batch)){
          echo "success";
+         move_uploaded_file($location, "../Batch/".$name);
      }else{
          echo "Unable to Update Course!";
      }
