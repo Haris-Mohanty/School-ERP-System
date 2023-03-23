@@ -542,7 +542,9 @@ function createCourseFunc() {
 
         //ajax request
         allButton[1].onclick = function () {
-          allCourseInput[6].checked == true ? (status = "Active"): (status = "Pending");
+          allCourseInput[6].checked == true
+            ? (status = "Active")
+            : (status = "Pending");
           //formdata
           let formData = new FormData(courseForm);
           formData.append("status", status);
@@ -560,7 +562,11 @@ function createCourseFunc() {
             success: function (response) {
               $(".course-loader").addClass("d-none");
               if (response.trim() == "success") {
-                swal("Course Updated!", "Course has been Updated Successfully!", "success");
+                swal(
+                  "Course Updated!",
+                  "Course has been Updated Successfully!",
+                  "success"
+                );
               } else {
                 swal("Failed!", response.trim(), "error");
               }
@@ -796,40 +802,58 @@ function createBatchFunc() {
         let allTd = parent.querySelectorAll("TD");
         let status = allTd[9].innerHTML;
         //status check
-        if(status == "Active"){
+        if (status == "Active") {
           allBatchInputEl[8].checked = true;
-        }else{
+        } else {
           allBatchInputEl[8].checked = false;
         }
 
-      //add value
-      allSelectEl[0].value = allTd[1].innerHTML; //chhose course
-      course.value = allTd[2].innerHTML;
-      course.innerHTML = allTd[2].innerHTML; //course
-      allBatchInputEl[0].value = allTd[3].innerHTML; //Batch code
-      allBatchInputEl[1].value = allTd[4].innerHTML; //Batch Name
-      allBatchInputEl[2].value = allTd[5].innerHTML; //Batch From time
-      allBatchInputEl[3].value = allTd[6].innerHTML; //Batch to time
-      allBatchInputEl[4].value = allTd[7].innerHTML; //Batch from date
-      allBatchInputEl[5].value = allTd[8].innerHTML; //Batch to date
-      allBatchInputEl[7].value = allTd[10].innerHTML; //Added by
-      textareaEl.value = allTd[11].innerHTML; //details
+        //add value
+        allSelectEl[0].value = allTd[1].innerHTML; //chhose course
+        course.value = allTd[2].innerHTML;
+        course.innerHTML = allTd[2].innerHTML; //course
+        allBatchInputEl[0].value = allTd[3].innerHTML; //Batch code
+        allBatchInputEl[1].value = allTd[4].innerHTML; //Batch Name
+        allBatchInputEl[2].value = allTd[5].innerHTML; //Batch From time
+        allBatchInputEl[3].value = allTd[6].innerHTML; //Batch to time
+        allBatchInputEl[4].value = allTd[7].innerHTML; //Batch from date
+        allBatchInputEl[5].value = allTd[8].innerHTML; //Batch to date
+        allBatchInputEl[7].value = allTd[10].innerHTML; //Added by
+        textareaEl.value = allTd[11].innerHTML; //details
 
-      //button
-      AllBtn[0].classList.add("d-none");
-      AllBtn[1].classList.remove("d-none");
+        //button
+        AllBtn[0].classList.add("d-none");
+        AllBtn[1].classList.remove("d-none");
 
-      //ajax request
-      AllBtn[1].onclick = function(){
-        if(allSelectEl[1].value != "choose-course"){
-         status = allBatchInputEl[8].checked ? status = "Active" : status = "Pending";
-         let formData = new FormData(batchForm);
-         formData.append("status", status);
-         formData.append("id", id);
-        }else{
-          swal("Select Course", "Please Select a Course!", "warning")
-        }
-      }
+        //ajax request
+        AllBtn[1].onclick = function () {
+          status = allBatchInputEl[8].checked
+            ? (status = "Active")
+            : (status = "Pending");
+          //formdata
+          let formData = new FormData(batchForm);
+          formData.append("status", status);
+          formData.append("id", id);
+          //check course
+          if (allSelectEl[1].value != "choose-course") {
+            $.ajax({
+              type: "POST",
+              url: "php/update_batch.php",
+              data: formData,
+              contentType: false,
+              processData: false,
+              cache: false,
+              beforeSend: function () {
+                $(".batch-loader").removeClass("d-none");
+              },
+              success: function (response) {
+                document.write(response);
+              },
+            });
+          } else {
+            swal("Select Course", "Please Select a Course!", "warning");
+          }
+        };
       });
     });
   }
