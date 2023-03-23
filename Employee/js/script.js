@@ -848,6 +848,7 @@ function createBatchFunc() {
               },
               success: function (response) {
                 if (response.trim() == "success") {
+                  $(".batch-loader").addClass("d-none");
                   swal("Batch Updated!", "Batch has been Updated Successfully!", "success");
                 }else{
                   swal(response.trim(), response.trim(), "error");
