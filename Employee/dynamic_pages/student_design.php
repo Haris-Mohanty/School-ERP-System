@@ -1,5 +1,8 @@
 <?php
 
+//LINK DATABASE
+require_once("../../Common_files/php/database.php");
+
 echo '
 
 <div class="container-fluid">
