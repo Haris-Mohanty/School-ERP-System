@@ -99,8 +99,31 @@
                 </div>
                 <div class="row mb-3">
                   <div class="col-md-6">
-                    <label for="batch-from">Batch From</label>
-                    <input type="time" id="batch-from" name="batch-from" class="form-control">
+                    <div class="row">
+                    <div class="col-md-4">
+                      <input type="number" name="day" placeholder="DD" class="form-control dd">
+                    </div>
+                    <div class="col-md-4">
+                      <select name="month" class="form-select">
+                        <option value="choose month">Month</option>
+                        <option value="january">January</option>
+                        <option value="february">February</option>
+                        <option value="march">March</option>
+                        <option value="april">April</option>
+                        <option value="may">May</option>
+                        <option value="june">June</option>
+                        <option value="july">July</option>
+                        <option value="august">August</option>
+                        <option value="september">September</option>
+                        <option value="october">October</option>
+                        <option value="november">November</option>
+                        <option value="december">December</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4">
+                      <input type="number" name="Year" placeholder="YY" class="form-control yy">
+                    </div>
+                    </div>
                   </div>
                   <div class="col-md-6">
                     <label for="batch-to">Batch To</label>
