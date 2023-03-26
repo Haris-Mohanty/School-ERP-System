@@ -996,6 +996,7 @@ function createStudentFunc() {
   //form submit/ add student
   $(".student-form").on("submit", function (e) {
     e.preventDefault();
+    if($("#stu-batch").val( != ))
   });
 }
 // STUDENT REGISTRATION FROM CODE END
