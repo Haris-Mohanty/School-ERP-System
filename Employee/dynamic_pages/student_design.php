@@ -174,8 +174,13 @@ echo '
           <div class="row">
           <div class="col-md-6">
             <select name="select-category" id="stu-list-category" class="form-select batch-category mb-3">
-               <option value="choose-category">Choose Category</option>
-            </select>
+               <option value="choose-category">Choose Category</option>';
+
+               for($i=0; $i<$length; $i++){
+                echo '<option value="'.$all_category[$i].'">'.$all_category[$i].'</option>';
+               }
+
+            echo '</select>
           </div>
           <div class="col-md-6">
               <select name="select-course" id="stu-list-course" class="form-select mb-3">
