@@ -1001,7 +1001,11 @@ function createStudentFunc() {
           let mm = $(".month").val();
           let yy = $(".yy").val();
           let dob = dd+"_"+mm+"_"+yy;
-          console.log(dob)
+          //Status
+          let statusEl = document.querySelector("#stu-active");
+          let status = "";
+          status = statusEl.checked == true ? status = "Active" : status = "Pending";
+          //
         }else{
           swal("Choose Gender!", "Please select a Gender!", "warning");
         }
