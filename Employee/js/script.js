@@ -1006,8 +1006,10 @@ function createStudentFunc() {
           let status = "";
           status = statusEl.checked == true ? status = "Active" : status = "Pending";
           //FORM DATA
-          let formData = new FormData();
-          console.log(formData);
+          let formData = new FormData(this);
+          formData.append("status", status);
+          formData.append("dob", dob);
+          
         }else{
           swal("Choose Gender!", "Please select a Gender!", "warning");
         }
