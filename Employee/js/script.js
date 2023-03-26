@@ -946,18 +946,12 @@ function createStudentFunc() {
   $("#stu-course").on("change", async function () {
     let response = await ajaxGetAllCourseFee("course", $("#stu-category").val() , this.value,"student-loader");
     if (response.trim() != "There is No Course Found!") {
-      let all_course = JSON.parse(response.trim());
-
-      $("#stu-batch").html('<option value="choose-course">Choose Batch</option>'); //empty
-      all_course.forEach((batch) => {
-        let option = `
-        <option value="${batch.batch_name}">${batch.batch_name}</option>
-        `;
-        $("#stu-batch").append(option);
-      });
+      let data = JSON.parse(response.trim());
+      $(".fee").val(data.fee);
+      $(".fee-time").val(data.fee_time);
+      
     } else {
-      $("#stu-batch").html('<option value="choose-course">Choose Batch</option>');
-      swal("Not Found any Batch!","There is No Batch Found in this Course!","error");
+      swal("Not Found any Batch!", "There is No Batch Found in this Course!", "error");
     }
   });
 }
