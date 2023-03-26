@@ -1009,7 +1009,21 @@ function createStudentFunc() {
           let formData = new FormData(this);
           formData.append("status", status);
           formData.append("dob", dob);
-          
+          //ajax request
+          $.ajax({
+            type : "POST",
+            url : "php/create_student.php",
+            data : FormData,
+            processData : false,
+            contentType : false,
+            cache : false,
+            beforeSend : function(){
+              $(".student-loader").removeClass("d-none");
+            },
+            success : function(response){
+              alert()
+            }
+          });
         }else{
           swal("Choose Gender!", "Please select a Gender!", "warning");
         }
