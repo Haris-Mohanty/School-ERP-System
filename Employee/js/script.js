@@ -52,6 +52,8 @@ function dynamic_request(access_link) {
         createCourseFunc();
       } else if (access_link == "batch_design.php") {
         createBatchFunc();
+      } else if (access_link == "student_design.php") {
+        createStudentFunc();
       }
     },
   });
@@ -186,7 +188,11 @@ function categoryFunc() {
               setTimeout(function () {
                 if (response == "success") {
                   $(".show-category-loader").addClass("d-none");
-                  swal("Data Updated !", "Your data has been Updated Successfully!", "success");
+                  swal(
+                    "Data Updated !",
+                    "Your data has been Updated Successfully!",
+                    "success"
+                  );
                   td[1].contentEditable = false;
                   td[1].focus();
                   td[2].contentEditable = false;
@@ -221,7 +227,11 @@ function categoryFunc() {
           dangerMode: true,
         }).then(async (willDelete) => {
           if (willDelete) {
-            let response = await ajaxDeleteById(id, "category", "show-category-loader");
+            let response = await ajaxDeleteById(
+              id,
+              "category",
+              "show-category-loader"
+            );
             if (response.trim() == "success") {
               getCategoryFunc();
               swal("Category Deleted", response.trim(), "success");
@@ -433,7 +443,11 @@ function createCourseFunc() {
               updateCourseFunc();
             } else {
               $(".course-list").html("");
-              swal("Not Found any Course!", "There is No Course Found in this Category!", "error");
+              swal(
+                "Not Found any Course!",
+                "There is No Course Found in this Category!",
+                "error"
+              );
             }
           },
         });
@@ -464,10 +478,18 @@ function createCourseFunc() {
         }).then(async (willDelete) => {
           if (willDelete) {
             try {
-              let response = await ajaxDeleteById(id, "course", "course-list-loader");
+              let response = await ajaxDeleteById(
+                id,
+                "course",
+                "course-list-loader"
+              );
               if (response.trim() == "success") {
                 parent.remove();
-                swal("Deleted Successfully!", "Course Deleted Successfully!", "success");
+                swal(
+                  "Deleted Successfully!",
+                  "Course Deleted Successfully!",
+                  "success"
+                );
               } else {
                 swal(response.trim(), response.trim(), "warning");
               }
@@ -522,7 +544,9 @@ function createCourseFunc() {
 
         //ajax request
         allButton[1].onclick = function () {
-          allCourseInput[6].checked == true ? (status = "Active") : (status = "Pending");
+          allCourseInput[6].checked == true
+            ? (status = "Active")
+            : (status = "Pending");
           //formdata
           let formData = new FormData(courseForm);
           formData.append("status", status);
@@ -540,11 +564,15 @@ function createCourseFunc() {
             success: function (response) {
               $(".course-loader").addClass("d-none");
               if (response.trim() == "success") {
-                courseForm.reset('');
+                courseForm.reset("");
                 //button
-                  allButton[0].classList.remove("d-none");
-                  allButton[1].classList.add("d-none");
-                swal("Course Updated!", "Course has been Updated Successfully!", "success");
+                allButton[0].classList.remove("d-none");
+                allButton[1].classList.add("d-none");
+                swal(
+                  "Course Updated!",
+                  "Course has been Updated Successfully!",
+                  "success"
+                );
               } else {
                 swal("Failed!", response.trim(), "error");
               }
@@ -577,14 +605,10 @@ function createBatchFunc() {
       $("#batch-course").html(
         '<option value="choose-course">Choose Course</option>'
       );
-      swal(
-        "Not Found any Course!",
-        "There is No Course Found in this Category!",
-        "error"
-      );
+      swal("Not Found any Course!","There is No Course Found in this Category!","error");
     }
   });
-  //form submit
+  //form submit/ add batch
   $(".batch-form").on("submit", function (e) {
     e.preventDefault();
     if ($("#batch-course").val() != "choose-course") {
@@ -624,7 +648,11 @@ function createBatchFunc() {
   });
   //batch list- get course
   $("#batch-list-category").on("change", async function () {
-    let response = await ajaxGetAllCourse("course", this.value, "batch-list-loader");
+    let response = await ajaxGetAllCourse(
+      "course",
+      this.value,
+      "batch-list-loader"
+    );
     if (response.trim() != "There is No Course Found!") {
       let all_course = JSON.parse(response.trim());
       $("#batch-list-course").html(
@@ -642,13 +670,22 @@ function createBatchFunc() {
         '<option value="choose-course">Choose Course</option>'
       );
       // $(".batch-list").html("");
-      swal("Not Found any Course!", "There is No Course Found in this Category!", "error");
+      swal(
+        "Not Found any Course!",
+        "There is No Course Found in this Category!",
+        "error"
+      );
     }
   });
   //get batch list
   $("#batch-list-course").on("change", async function () {
     try {
-      let response = await ajaxGetAllBatch("batch", $("#batch-list-category").val(), this.value, "batch-list-loader");
+      let response = await ajaxGetAllBatch(
+        "batch",
+        $("#batch-list-category").val(),
+        this.value,
+        "batch-list-loader"
+      );
       if (response.trim() != "There is No Course Found!") {
         let all_data = JSON.parse(response.trim());
         //date-time customize start
@@ -720,10 +757,18 @@ function createBatchFunc() {
         }).then(async (willDelete) => {
           if (willDelete) {
             try {
-              let response = await ajaxDeleteById(id, "batch", "batch-list-loader");
+              let response = await ajaxDeleteById(
+                id,
+                "batch",
+                "batch-list-loader"
+              );
               if (response.trim() == "success") {
                 parent.remove();
-                swal("Deleted Successfully!", "Course Deleted Successfully!", "success");
+                swal(
+                  "Deleted Successfully!",
+                  "Course Deleted Successfully!",
+                  "success"
+                );
               } else {
                 swal(response.trim(), response.trim(), "warning");
               }
@@ -784,7 +829,9 @@ function createBatchFunc() {
 
         //ajax request
         AllBtn[1].onclick = function () {
-          status = allBatchInputEl[8].checked ? (status = "Active") : (status = "Pending");
+          status = allBatchInputEl[8].checked
+            ? (status = "Active")
+            : (status = "Pending");
           //formdata
           let formData = new FormData(batchForm);
           formData.append("status", status);
@@ -806,13 +853,17 @@ function createBatchFunc() {
                   //loader
                   $(".batch-loader").addClass("d-none");
                   //form-reset
-                  batchForm.reset('');
+                  batchForm.reset("");
                   course.innerHTML = "Choose Course";
                   //btn hide
                   AllBtn[0].classList.remove("d-none");
                   AllBtn[1].classList.add("d-none");
-                  swal("Batch Updated!", "Batch has been Updated Successfully!", "success");
-                }else{
+                  swal(
+                    "Batch Updated!",
+                    "Batch has been Updated Successfully!",
+                    "success"
+                  );
+                } else {
                   swal(response.trim(), response.trim(), "error");
                 }
               },
@@ -829,5 +880,9 @@ function createBatchFunc() {
 // CREATE BATCH CODE END
 
 // STUDENT REGISTRATION FROM CODE START
-
+function createStudentFunc() {
+  $("#stu-category").on("change", function () {
+    
+  });
+}
 // STUDENT REGISTRATION FROM CODE END
