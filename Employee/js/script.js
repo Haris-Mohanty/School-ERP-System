@@ -349,7 +349,7 @@ function ajaxGetAllCourseFee(table, category, course, loader) {
   return new Promise(function (resolve, reject) {
     $.ajax({
       type: "POST",
-      url: "php/get_all_batch.php",
+      url: "php/get_all_course_fee.php",
       data: {
         table: table,
         category: category,
@@ -944,7 +944,7 @@ function createStudentFunc() {
   });
   //get course fees
   $("#stu-course").on("change", async function () {
-    let response = await ajaxGetAllBatch("batch", $("#stu-category").val() , this.value,"student-loader");
+    let response = await ajaxGetAllCourseFee("course", $("#stu-category").val() , this.value,"student-loader");
     if (response.trim() != "There is No Course Found!") {
       let all_course = JSON.parse(response.trim());
 
