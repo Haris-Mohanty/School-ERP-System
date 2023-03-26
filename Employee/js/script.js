@@ -881,8 +881,23 @@ function createBatchFunc() {
 
 // STUDENT REGISTRATION FROM CODE START
 function createStudentFunc() {
-  $("#stu-category").on("change", function () {
-    
+  //get course
+  $("#stu-category").on("change", async function () {
+    let response = await ajaxGetAllCourse("course", this.value,"student-loader");
+    if (response.trim() != "There is No Course Found!") {
+      let all_course = JSON.parse(response.trim());
+
+      $("#stu-course").html('<option value="choose-course">Choose Course</option>'); //empty
+      all_course.forEach((course) => {
+        let option = `
+        <option value="${course.name}">${course.name}</option>
+        `;
+        $("#stu-course").append(option);
+      });
+    } else {
+      $("#stu-course").html('<option value="choose-course">Choose Course</option>');
+      swal("Not Found any Course!","There is No Course Found in this Category!","error");
+    }
   });
 }
 // STUDENT REGISTRATION FROM CODE END
