@@ -53,7 +53,7 @@ if($response){
         status VARCHAR(255),
     )";
     if($db -> query($create_table)){
-        $insert_data = 
+        $insert_data = "INSERT INTO students(category, course, batch, enrollment, student_name, dob, gender, father, mother, email, password, mobile, country, state, city, pincode, fee, fee_time, status) VALUES ('$category', '$course', '$batch', '$enrollment', '$student_name', '$dob', '$gender', '$father', '$mother', '$email', '$password', '$mobile', '$country', '$state', '$city', '$pincode', '$fee', '$fee_time', '$status')";
     }else{
         echo "Unable to Create Table!";
     }
