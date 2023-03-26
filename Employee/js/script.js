@@ -1021,7 +1021,7 @@ function createStudentFunc() {
               $(".student-loader").removeClass("d-none");
             },
             success : function(response){
-              alert()
+              alert(response);
             }
           });
         }else{
