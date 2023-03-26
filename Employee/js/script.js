@@ -996,7 +996,12 @@ function createStudentFunc() {
       if($(".month").val() != "choose month"){
         //Gender
         if($(".gender").val() != "choose gender"){
-          //
+          //month, date and year together
+          let dd = $(".dd").val();
+          let mm = $(".month").val();
+          let yy = $(".yy").val();
+          let dob = dd+"_"+mm+"_"+yy;
+          console.log(dob)
         }else{
           swal("Choose Gender!", "Please select a Gender!", "warning");
         }
