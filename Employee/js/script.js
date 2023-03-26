@@ -951,9 +951,7 @@ function createStudentFunc() {
     if (response.trim() != "There is No Course Found!") {
       let all_course = JSON.parse(response.trim());
 
-      $("#stu-batch").html(
-        '<option value="choose-course">Choose Batch</option>'
-      ); //empty
+      $("#stu-batch").html('<option value="choose-course">Choose Batch</option>'); //empty
       all_course.forEach((batch) => {
         let option = `
         <option value="${batch.batch_name} from ${batch.batch_from} to ${batch.batch_to}">
@@ -964,7 +962,7 @@ function createStudentFunc() {
       });
     } else {
       $("#stu-batch").html(
-        '<option value="choose-course">Choose Batch</option>'
+        '<option value="choose-batch">Choose Batch</option>'
       );
       swal(
         "Not Found any Batch!",
@@ -986,17 +984,24 @@ function createStudentFunc() {
       $(".fee").val(data.fee);
       $(".fee-time").val(data.fee_time);
     } else {
-      swal(
-        "Not Found any Batch!",
-        "There is No Batch Found in this Course!",
-        "error"
-      );
+      swal("Not Found any Batch!", "There is No Batch Found in this Course!", "error");
     }
   });
   //form submit/ add student
   $(".student-form").on("submit", function (e) {
     e.preventDefault();
-    if($("#stu-batch").val( != ))
+    //batch
+    if($("#stu-batch").val() != "choose-batch"){
+      //month
+      if($(".month").val() != "choose month"){
+        //Gender
+        if($(""))
+      }else{
+        swal("Choose Month!", "Please select a month!", "warning")
+      }
+    }else{
+      swal("Choose Batch!", "Please select a Batch!", "warning");
+    }
   });
 }
 // STUDENT REGISTRATION FROM CODE END

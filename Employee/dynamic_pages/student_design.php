@@ -74,7 +74,7 @@ echo '
                   <input type="number" name="day" placeholder="DD" class="form-control dd">
                 </div>
                 <div class="col-md-4">
-                  <select name="month" class="form-select">
+                  <select name="month" class="month form-select">
                     <option value="choose month">Month</option>
                     <option value="january">January</option>
                     <option value="february">February</option>
@@ -96,7 +96,7 @@ echo '
                 </div>
               </div>
               <div class="col-md-6">
-                <select name="gender" class="form-select">
+                <select name="gender" class="gender form-select">
                   <option value="choose gender">Choose Gender</option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
@@ -191,7 +191,7 @@ echo '
           <div class="row">
             <div class="col-md-6">
               <select name="select-batch" id="stu-list-batch" class="form-select mb-3">
-              <option value="choose-course">Choose Batch</option>
+              <option value="choose-batch">Choose Batch</option>
               </select>
             </div>
            <div class="col-md-6">
