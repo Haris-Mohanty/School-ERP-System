@@ -1013,7 +1013,7 @@ function createStudentFunc() {
           $.ajax({
             type : "POST",
             url : "php/create_student.php",
-            data : FormData,
+            data : formData,
             processData : false,
             contentType : false,
             cache : false,

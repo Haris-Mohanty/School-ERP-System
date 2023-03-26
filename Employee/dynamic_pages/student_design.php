@@ -139,11 +139,14 @@ echo '
               </div>
             </div>
             <div class="row mb-3">
-              <div class="col-md-6">
+              <div class="col-md-4">
                 <input type="number" readonly name="fee" placeholder="Fee" class="fee form-control">
               </div>
-              <div class="col-md-6">
+              <div class="col-md-4">
                 <input type="text" readonly name="fee-time" placeholder="Fee-Time" class="fee-time form-control">
+              </div>
+              <div class="col-md-4">
+                <input type="text" name="stu-added-by" placeholder="Added_by" class="form-control">
               </div>
             </div>
             <div class="row mb-1">
