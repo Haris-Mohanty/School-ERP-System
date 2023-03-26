@@ -344,6 +344,31 @@ function ajaxGetAllBatch(table, category, course, loader) {
 }
 // GET BATCH DYNAMIC END
 
+// GET ALL COURSE FEES DYNAMIC CODE START
+function ajaxGetAllCourseFee(table, category, course, loader) {
+  return new Promise(function (resolve, reject) {
+    $.ajax({
+      type: "POST",
+      url: "php/get_all_batch.php",
+      data: {
+        table: table,
+        category: category,
+        course: course,
+      },
+      beforeSend: function () {
+        $("." + loader).removeClass("d-none");
+      },
+      success: function (response) {
+        setTimeout(function () {
+          $("." + loader).addClass("d-none");
+          resolve(response);
+        }, 600);
+      },
+    });
+  });
+}
+// GET ALL COURSE FEES DYNAMIC CODE END
+
 //CATEGORY CODE END
 
 // CREATE COURSE CODE START
@@ -900,6 +925,24 @@ function createStudentFunc() {
     }
   });
   //get batch
+  $("#stu-course").on("change", async function () {
+    let response = await ajaxGetAllBatch("batch", $("#stu-category").val() , this.value,"student-loader");
+    if (response.trim() != "There is No Course Found!") {
+      let all_course = JSON.parse(response.trim());
+
+      $("#stu-batch").html('<option value="choose-course">Choose Batch</option>'); //empty
+      all_course.forEach((batch) => {
+        let option = `
+        <option value="${batch.batch_name}">${batch.batch_name}</option>
+        `;
+        $("#stu-batch").append(option);
+      });
+    } else {
+      $("#stu-batch").html('<option value="choose-course">Choose Batch</option>');
+      swal("Not Found any Batch!","There is No Batch Found in this Course!","error");
+    }
+  });
+  //get course fees
   $("#stu-course").on("change", async function () {
     let response = await ajaxGetAllBatch("batch", $("#stu-category").val() , this.value,"student-loader");
     if (response.trim() != "There is No Course Found!") {
