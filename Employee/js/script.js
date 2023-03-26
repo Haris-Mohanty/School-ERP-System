@@ -630,7 +630,11 @@ function createBatchFunc() {
       $("#batch-course").html(
         '<option value="choose-course">Choose Course</option>'
       );
-      swal("Not Found any Course!","There is No Course Found in this Category!","error");
+      swal(
+        "Not Found any Course!",
+        "There is No Course Found in this Category!",
+        "error"
+      );
     }
   });
   //form submit/ add batch
@@ -908,11 +912,17 @@ function createBatchFunc() {
 function createStudentFunc() {
   //get course
   $("#stu-category").on("change", async function () {
-    let response = await ajaxGetAllCourse("course", this.value,"student-loader");
+    let response = await ajaxGetAllCourse(
+      "course",
+      this.value,
+      "student-loader"
+    );
     if (response.trim() != "There is No Course Found!") {
       let all_course = JSON.parse(response.trim());
 
-      $("#stu-course").html('<option value="choose-course">Choose Course</option>'); //empty
+      $("#stu-course").html(
+        '<option value="choose-course">Choose Course</option>'
+      ); //empty
       all_course.forEach((course) => {
         let option = `
         <option value="${course.name}">${course.name}</option>
@@ -920,39 +930,72 @@ function createStudentFunc() {
         $("#stu-course").append(option);
       });
     } else {
-      $("#stu-course").html('<option value="choose-course">Choose Course</option>');
-      swal("Not Found any Course!","There is No Course Found in this Category!","error");
+      $("#stu-course").html(
+        '<option value="choose-course">Choose Course</option>'
+      );
+      swal(
+        "Not Found any Course!",
+        "There is No Course Found in this Category!",
+        "error"
+      );
     }
   });
   //get batch
   $("#stu-course").on("change", async function () {
-    let response = await ajaxGetAllBatch("batch", $("#stu-category").val() , this.value,"student-loader");
+    let response = await ajaxGetAllBatch(
+      "batch",
+      $("#stu-category").val(),
+      this.value,
+      "student-loader"
+    );
     if (response.trim() != "There is No Course Found!") {
       let all_course = JSON.parse(response.trim());
 
-      $("#stu-batch").html('<option value="choose-course">Choose Batch</option>'); //empty
+      $("#stu-batch").html(
+        '<option value="choose-course">Choose Batch</option>'
+      ); //empty
       all_course.forEach((batch) => {
         let option = `
-        <option value="${batch.batch_name}">${batch.batch_name}</option>
+        <option value="${batch.batch_name} from ${batch.batch_from} to ${batch.batch_to}">
+              ${batch.batch_name} from ${batch.batch_from} to ${batch.batch_to}
+        </option>
         `;
         $("#stu-batch").append(option);
       });
     } else {
-      $("#stu-batch").html('<option value="choose-course">Choose Batch</option>');
-      swal("Not Found any Batch!","There is No Batch Found in this Course!","error");
+      $("#stu-batch").html(
+        '<option value="choose-course">Choose Batch</option>'
+      );
+      swal(
+        "Not Found any Batch!",
+        "There is No Batch Found in this Course!",
+        "error"
+      );
     }
   });
   //get course fees
   $("#stu-course").on("change", async function () {
-    let response = await ajaxGetAllCourseFee("course", $("#stu-category").val() , this.value,"student-loader");
+    let response = await ajaxGetAllCourseFee(
+      "course",
+      $("#stu-category").val(),
+      this.value,
+      "student-loader"
+    );
     if (response.trim() != "There is No Course Found!") {
       let data = JSON.parse(response.trim());
       $(".fee").val(data.fee);
       $(".fee-time").val(data.fee_time);
-      
     } else {
-      swal("Not Found any Batch!", "There is No Batch Found in this Course!", "error");
+      swal(
+        "Not Found any Batch!",
+        "There is No Batch Found in this Course!",
+        "error"
+      );
     }
+  });
+  //form submit/ add student
+  $(".student-form").on("submit", function (e) {
+    e.preventDefault();
   });
 }
 // STUDENT REGISTRATION FROM CODE END
