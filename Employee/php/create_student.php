@@ -30,7 +30,33 @@ $response = $db -> query($get_data);
 if($response){
 
 }else{
-    $create_table = 
+    $create_table = "CREATE TABLE students(
+        id INT(11) NOT NULL AUTO_INCREMENT,
+        category VARCHAR(255),
+        course VARCHAR(255),
+        batch VARCHAR(255),
+        enrollment VARCHAR(255),
+        student_name VARCHAR(255),
+        dob VARCHAR(255),
+        gender VARCHAR(255),
+        father VARCHAR(255),
+        mother VARCHAR(255),
+        email VARCHAR(255),
+        password VARCHAR(255),
+        mobile VARCHAR(255),
+        country VARCHAR(255),
+        state VARCHAR(255),
+        city VARCHAR(255),
+        pincode VARCHAR(255),
+        fee VARCHAR(255),
+        fee_time VARCHAR(255),
+        status VARCHAR(255),
+    )";
+    if($db -> query($create_table)){
+        $insert_data = 
+    }else{
+        echo "Unable to Create Table!";
+    }
 }
 
 ?>
