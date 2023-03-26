@@ -995,9 +995,13 @@ function createStudentFunc() {
       //month
       if($(".month").val() != "choose month"){
         //Gender
-        if($(""))
+        if($(".gender").val() != "choose gender"){
+          //
+        }else{
+          swal("Choose Gender!", "Please select a Gender!", "warning");
+        }
       }else{
-        swal("Choose Month!", "Please select a month!", "warning")
+        swal("Choose Month!", "Please select a month!", "warning");
       }
     }else{
       swal("Choose Batch!", "Please select a Batch!", "warning");
