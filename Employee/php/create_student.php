@@ -18,5 +18,19 @@ $mobile = $_POST['mobile'];
 $country = $_POST['country'];
 $state = $_POST['state'];
 $city = $_POST['city'];
+$pincode = $_POST['pincode'];
+$fee = $_POST['fee'];
+$fee_time = $_POST['fee-time'];
+$status = $_POST['status'];
+
+$get_data = "SELECT * FROM students";
+
+$response = $db -> query($get_data);
+
+if($response){
+
+}else{
+    $create_table = 
+}
 
 ?>
