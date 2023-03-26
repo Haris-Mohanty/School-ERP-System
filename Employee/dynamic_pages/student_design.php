@@ -19,7 +19,9 @@ if($response){
   }
 }
 
-print_r($all_category);
+$length = count($all_category);
+
+// print_r($all_category);
 
 echo '
 
@@ -38,8 +40,13 @@ echo '
             <div class="row">
               <div class="col-md-4">
                 <select name="stu-category" id="stu-category" class="form-select mb-3">
-                  <option value="choose-category">Choose Category</option>
-                </select>
+                  <option value="choose-category">Choose Category</option>';
+
+                for($i=0; $i<$length; $i++){
+                  echo '<option value="'.$all_category[$i].'">'.$all_category[$i].'</option>';
+                }
+                  
+               echo  '</select>
               </div>
               <div class="col-md-4">
                 <select name="stu-course" id="stu-course" class="form-select mb-3">
