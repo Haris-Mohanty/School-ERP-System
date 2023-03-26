@@ -105,7 +105,7 @@ echo '
             </div>
             <div class="row mb-3">
               <div class="col-md-6">
-                <input type="text" name="fathe" placeholder="Father Name" class="form-control">
+                <input type="text" name="father" placeholder="Father Name" class="form-control">
               </div>
               <div class="col-md-6">
                 <input type="text" name="mother" placeholder="Mother Name" class="form-control">
