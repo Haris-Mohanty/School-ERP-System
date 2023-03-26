@@ -1021,7 +1021,12 @@ function createStudentFunc() {
               $(".student-loader").removeClass("d-none");
             },
             success : function(response){
-              alert(response);
+              $(".student-loader").addClass("d-none");
+              if(response.trim() == "success"){
+                swal("Student Added!", "Student Added Successfully!", "success");
+              }else{
+                swal(response.trim(), response.trim(), "warning");
+              }
             }
           });
         }else{
