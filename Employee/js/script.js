@@ -936,6 +936,7 @@ function createStudentFunc() {
       );
     }
   });
+  
   //get batch
   $("#stu-course").on("change", async function () {
     let response = await ajaxGetAllBatch(
@@ -967,6 +968,7 @@ function createStudentFunc() {
       );
     }
   });
+
   //get course fees
   $("#stu-course").on("change", async function () {
     let response = await ajaxGetAllCourseFee(
@@ -983,6 +985,7 @@ function createStudentFunc() {
       swal("Not Found any Batch!", "There is No Batch Found in this Course!", "error");
     }
   });
+
   //form submit/ add student
   $(".student-form").on("submit", function (e) {
     e.preventDefault();
@@ -1036,6 +1039,7 @@ function createStudentFunc() {
       swal("Choose Batch!", "Please select a Batch!", "warning");
     }
   });
+  
    //student list - get course
    $("#stu-list-category").on("change", async function () {
     let response = await ajaxGetAllCourse("course",this.value,"student-loader");
@@ -1054,6 +1058,7 @@ function createStudentFunc() {
       swal("Not Found any Course!", "There is No Course Found in this Category!", "error");
     }
   });
+
   //student-list - get batch
   $("#stu-course").on("change", async function () {
     let response = await ajaxGetAllBatch(
