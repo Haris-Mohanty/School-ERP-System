@@ -1182,13 +1182,33 @@ function createStudentFunc() {
       $(this).click(async function () {
         let parent = this.parentElement.parentElement;
         let id = $(parent).attr("INDEX");
-        let response = await ajaxDeleteById(id, "students", "student-list-loader");
-        if(response.trim() == "success"){
-          parent.remove();
-          swal("Deleted!", "Student Deleted Successfully!", "success")
-        }else{
-          swal(response.trim(), response.trim(), "warning");
-        }
+        //swal start
+        swal({
+          title: "Are you sure?",
+          text: "Once deleted, you will not be able to recover this imaginary file!",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+        }).then(async (willDelete) => {
+          if (willDelete) {
+            try {
+              let response = await ajaxDeleteById(id, "students", "student-list-loader");
+                    if(response.trim() == "success"){
+                      parent.remove();
+                    }else{
+                      swal(response.trim(), response.trim(), "warning");
+                    }
+            } catch (err) {
+              console.log(err);
+            }
+            swal("Poof! Student has been Deleted Successfully!!", {
+              icon: "success",
+            });
+          } else {
+            swal("Your imaginary file is safe!");
+          }
+        });
+        //swal end
       });
     });
   }
