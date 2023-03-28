@@ -1186,6 +1186,9 @@ function createStudentFunc() {
              </td>
         </tr>
         `;
+
+        //append
+        $(".student-list").append(tr);
       });
     } else {
       swal("Not Found any Students!","There is No Students Found in this Batch!","error");
