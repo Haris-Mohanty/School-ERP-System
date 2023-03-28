@@ -686,7 +686,11 @@ function createBatchFunc() {
         },
         success: function (response) {
           if (response.trim() == "success") {
-            swal("Successfully Added!","Your Batch Added Successfully!","success");
+            swal(
+              "Successfully Added!",
+              "Your Batch Added Successfully!",
+              "success"
+            );
           } else {
             swal(response.trim(), response.trim(), "error");
           }
@@ -961,7 +965,7 @@ function createStudentFunc() {
       );
     }
   });
-  
+
   //get batch
   $("#stu-course").on("change", async function () {
     let response = await ajaxGetAllBatch(
@@ -973,7 +977,9 @@ function createStudentFunc() {
     if (response.trim() != "There is No Batch Found!") {
       let all_course = JSON.parse(response.trim());
 
-      $("#stu-batch").html('<option value="choose-course">Choose Batch</option>'); //empty
+      $("#stu-batch").html(
+        '<option value="choose-course">Choose Batch</option>'
+      ); //empty
       all_course.forEach((batch) => {
         let option = `
         <option value="${batch.batch_name} from ${batch.batch_from} to ${batch.batch_to}">
@@ -1007,7 +1013,11 @@ function createStudentFunc() {
       $(".fee").val(data.fee);
       $(".fee-time").val(data.fee_time);
     } else {
-      swal("Not Found any Batch!", "There is No Batch Found in this Course!", "error");
+      swal(
+        "Not Found any Batch!",
+        "There is No Batch Found in this Course!",
+        "error"
+      );
     }
   });
 
@@ -1015,63 +1025,76 @@ function createStudentFunc() {
   $(".student-form").on("submit", function (e) {
     e.preventDefault();
     //batch
-    if($("#stu-batch").val() != "choose-batch"){
+    if ($("#stu-batch").val() != "choose-batch") {
       //month
-      if($(".month").val() != "choose month"){
+      if ($(".month").val() != "choose month") {
         //Gender
-        if($(".gender").val() != "choose gender"){
+        if ($(".gender").val() != "choose gender") {
           //month, date and year together
           let dd = $(".dd").val();
           let mm = $(".month").val();
           let yy = $(".yy").val();
-          let dob = dd+"_"+mm+"_"+yy;
+          let dob = dd + "_" + mm + "_" + yy;
           //Status
           let statusEl = document.querySelector("#stu-active");
           let status = "";
-          status = statusEl.checked == true ? status = "Active" : status = "Pending";
+          status =
+            statusEl.checked == true
+              ? (status = "Active")
+              : (status = "Pending");
           //FORM DATA
           let formData = new FormData(this);
           formData.append("status", status);
           formData.append("dob", dob);
           //ajax request
           $.ajax({
-            type : "POST",
-            url : "php/create_student.php",
-            data : formData,
-            processData : false,
-            contentType : false,
-            cache : false,
-            beforeSend : function(){
+            type: "POST",
+            url: "php/create_student.php",
+            data: formData,
+            processData: false,
+            contentType: false,
+            cache: false,
+            beforeSend: function () {
               $(".student-loader").removeClass("d-none");
             },
-            success : function(response){
-              if(response.trim() == "success"){
+            success: function (response) {
+              if (response.trim() == "success") {
                 $(".student-loader").addClass("d-none");
-                swal("Student Added!", "Student Added Successfully!", "success");
+                swal(
+                  "Student Added!",
+                  "Student Added Successfully!",
+                  "success"
+                );
                 formData.reset();
-              }else{
+              } else {
                 swal(response.trim(), response.trim(), "warning");
               }
-            }
+            },
           });
-        }else{
+        } else {
           swal("Choose Gender!", "Please select a Gender!", "warning");
         }
-      }else{
+      } else {
         swal("Choose Month!", "Please select a month!", "warning");
       }
-    }else{
+    } else {
       swal("Choose Batch!", "Please select a Batch!", "warning");
     }
   });
-  
-   //student list - get course
-   $("#stu-list-category").on("change", async function () {
-    let response = await ajaxGetAllCourse("course",this.value,"student-list-loader");
+
+  //student list - get course
+  $("#stu-list-category").on("change", async function () {
+    let response = await ajaxGetAllCourse(
+      "course",
+      this.value,
+      "student-list-loader"
+    );
     if (response.trim() != "There is No Course Found!") {
       let all_course = JSON.parse(response.trim());
 
-      $("#stu-list-course").html('<option value="choose-course">Choose Course</option>'); //empty
+      $("#stu-list-course").html(
+        '<option value="choose-course">Choose Course</option>'
+      ); //empty
       all_course.forEach((course) => {
         let option = `
         <option value="${course.name}">${course.name}</option>
@@ -1079,18 +1102,31 @@ function createStudentFunc() {
         $("#stu-list-course").append(option);
       });
     } else {
-      $("#stu-list-course").html('<option value="choose-course">Choose Course</option>');
-      swal("Not Found any Course!", "There is No Course Found in this Category!", "error");
+      $("#stu-list-course").html(
+        '<option value="choose-course">Choose Course</option>'
+      );
+      swal(
+        "Not Found any Course!",
+        "There is No Course Found in this Category!",
+        "error"
+      );
     }
   });
 
   //student-list - get batch
   $("#stu-list-course").on("change", async function () {
-    let response = await ajaxGetAllBatch("batch", $("#stu-list-category").val(), this.value, "student-list-loader");
+    let response = await ajaxGetAllBatch(
+      "batch",
+      $("#stu-list-category").val(),
+      this.value,
+      "student-list-loader"
+    );
     if (response.trim() != "There is No Batch Found!") {
       let all_course = JSON.parse(response.trim());
 
-      $("#stu-list-batch").html('<option value="choose-course">Choose Batch</option>'); //empty
+      $("#stu-list-batch").html(
+        '<option value="choose-course">Choose Batch</option>'
+      ); //empty
       all_course.forEach((batch) => {
         let option = `
         <option value="${batch.batch_name} from ${batch.batch_from} to ${batch.batch_to}">
@@ -1103,19 +1139,56 @@ function createStudentFunc() {
       $("#stu-list-batch").html(
         '<option value="choose-batch">Choose Batch</option>'
       );
-      swal("Not Found any Batch!", "There is No Batch Found in this Course!", "error");
+      swal(
+        "Not Found any Batch!",
+        "There is No Batch Found in this Course!",
+        "error"
+      );
     }
   });
 
   //Get Students List
   $("#stu-list-batch").on("change", async function () {
-    let response = await ajaxGetAllStudents("students", $("#stu-list-category").val(), this.value, "student-list-loader");
+    let response = await ajaxGetAllStudents("students", $("#stu-list-category").val(), this.value,"student-list-loader");
     if (response.trim() != "There is No Student Found!") {
-     
       let all_data = JSON.parse(response.trim());
-
+      all_data.forEach((data, index) => {
+        let tr = `
+        <tr>
+             <td class="text-nowrap"></td>
+             <td class="text-nowrap"></td>
+             <td class="text-nowrap"></td>
+             <td class="text-nowrap"></td>
+             <td class="text-nowrap"></td>
+             <td class="text-nowrap"></td>
+             <td class="text-nowrap"></td>
+             <td class="text-nowrap"></td>
+             <td class="text-nowrap"></td>
+             <td class="text-nowrap"></td>
+             <td class="text-nowrap"></td>
+             <td class="text-nowrap"></td>
+             <td class="text-nowrap"></td>
+             <td class="text-nowrap"></td>
+             <td class="text-nowrap"></td>
+             <td class="text-nowrap"></td>
+             <td class="text-nowrap"></td>
+             <td class="text-nowrap"></td>
+             <td class="text-nowrap"></td>
+             <td class="text-nowrap"></td>
+             <td class="text-nowrap"></td>
+             <td class="text-nowrap"></td>
+             <td class="text-nowrap"></td>
+             <td class="text-nowrap"></td>
+             <td class="text-nowrap"></td>
+             <td class="text-nowrap">
+               <button class="btn btn-primary px-2 p-1"><i class="fa fa-edit edit-btn"></i></button>
+               <button class="btn btn-danger px-2 p-1"><i class="fa fa-trash del-btn"></i></button>
+             </td>
+        </tr>
+        `;
+      });
     } else {
-      swal("Not Found any Students!", "There is No Students Found in this Batch!", "error");
+      swal("Not Found any Students!","There is No Students Found in this Batch!","error");
     }
   });
 }
