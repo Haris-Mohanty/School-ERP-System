@@ -1093,6 +1093,7 @@ function createStudentFunc() {
         $("#stu-list-course").append(option);
       });
     } else {
+      $(".student-list").html(''); //table empty
       $("#stu-list-course").html('<option value="choose-course">Choose Course</option>');
       $("#stu-list-batch").html('<option value="choose-batch">Choose Batch</option>');
       swal("Not Found any Course!","There is No Course Found in this Category!","error");
@@ -1117,6 +1118,7 @@ function createStudentFunc() {
         $("#stu-list-batch").append(option);
       });
     } else {
+      $(".student-list").html(''); //table empty
       $("#stu-list-batch").html('<option value="choose-batch">Choose Batch</option>');
       swal("Not Found any Batch!","There is No Batch Found in this Course!","error");
     }
@@ -1168,6 +1170,7 @@ function createStudentFunc() {
         $(".student-list").append(tr);
       });
     } else {
+      $(".student-list").html('');
       swal("Empty Batch!","There is No Students Found in this Batch!","error");
     }
   });
