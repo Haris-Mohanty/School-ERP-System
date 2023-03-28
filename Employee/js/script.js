@@ -369,6 +369,31 @@ function ajaxGetAllCourseFee(table, category, course, loader) {
 }
 // GET ALL COURSE FEES DYNAMIC CODE END
 
+// GET ALL STUDENTS DYNAMIC CODE START
+function ajaxGetAllCourseFee(table, category, course, loader) {
+  return new Promise(function (resolve, reject) {
+    $.ajax({
+      type: "POST",
+      url: "php/get_all_course_fee.php",
+      data: {
+        table: table,
+        category: category,
+        course: course,
+      },
+      beforeSend: function () {
+        $("." + loader).removeClass("d-none");
+      },
+      success: function (response) {
+        setTimeout(function () {
+          $("." + loader).addClass("d-none");
+          resolve(response);
+        }, 600);
+      },
+    });
+  });
+}
+// GET ALL STUDENTS DYNAMIC CODE END
+
 //CATEGORY CODE END
 
 // CREATE COURSE CODE START
