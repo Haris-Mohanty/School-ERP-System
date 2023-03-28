@@ -955,14 +955,9 @@ function createStudentFunc() {
         $("#stu-course").append(option);
       });
     } else {
-      $("#stu-course").html(
-        '<option value="choose-course">Choose Course</option>'
-      );
-      swal(
-        "Not Found any Course!",
-        "There is No Course Found in this Category!",
-        "error"
-      );
+      $("#stu-course").html('<option value="choose-course">Choose Course</option>');
+      $("#stu-batch").html('<option value="choose-batch">Choose Batch</option>');
+      swal("Not Found any Course!","There is No Course Found in this Category!","error");
     }
   });
 
@@ -1143,25 +1138,25 @@ function createStudentFunc() {
              <td class="text-nowrap">${data.batch}</td>
              <td class="text-nowrap">${data.enrollment}</td>
              <td class="text-nowrap">${data.student_name}</td>
-             <td class="text-nowrap">${data.}</td>
-             <td class="text-nowrap">${}</td>
-             <td class="text-nowrap">${}</td>
-             <td class="text-nowrap">${}</td>
-             <td class="text-nowrap">${}</td>
-             <td class="text-nowrap">${}</td>
-             <td class="text-nowrap">${}</td>
-             <td class="text-nowrap">${}</td>
-             <td class="text-nowrap">${}</td>
-             <td class="text-nowrap">${}</td>
-             <td class="text-nowrap">${}</td>
-             <td class="text-nowrap">${}</td>
-             <td class="text-nowrap">${}</td>
-             <td class="text-nowrap">${}</td>
-             <td class="text-nowrap">${}</td>
-             <td class="text-nowrap">${}</td>
-             <td class="text-nowrap">${}</td>
-             <td class="text-nowrap">${}</td>
-             <td class="text-nowrap">${}</td>
+             <td class="text-nowrap">${data.father}</td>
+             <td class="text-nowrap">${data.mother}</td>
+             <td class="text-nowrap">${data.dob}</td>
+             <td class="text-nowrap">${data.gender}</td>
+             <td class="text-nowrap">${data.email}</td>
+             <td class="text-nowrap">${data.password}</td>
+             <td class="text-nowrap">${data.mobile}</td>
+             <td class="text-nowrap">${data.country}</td>
+             <td class="text-nowrap">${data.state}</td>
+             <td class="text-nowrap">${data.city}</td>
+             <td class="text-nowrap">${data.pincode}</td>
+             <td class="text-nowrap">${data.fee}</td>
+             <td class="text-nowrap">${data.fee_time}</td>
+             <td class="text-nowrap">${data.photo}</td>
+             <td class="text-nowrap">${data.signature}</td>
+             <td class="text-nowrap">${data.id_proof}</td>
+             <td class="text-nowrap">${data.status}</td>
+             <td class="text-nowrap">${data.added_by}</td>
+             <td class="text-nowrap">${data.added_date}</td>
              <td class="text-nowrap">
                <button class="btn btn-primary px-2 p-1"><i class="fa fa-edit edit-btn"></i></button>
                <button class="btn btn-danger px-2 p-1"><i class="fa fa-trash del-btn"></i></button>
@@ -1173,7 +1168,7 @@ function createStudentFunc() {
         $(".student-list").append(tr);
       });
     } else {
-      swal("Not Found any Students!","There is No Students Found in this Batch!","error");
+      swal("Empty Batch!","There is No Students Found in this Batch!","error");
     }
   });
 }
