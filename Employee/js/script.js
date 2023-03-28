@@ -1108,6 +1108,13 @@ function createStudentFunc() {
   });
 
   //Get Students List
-  
+  $("#stu-list-batch").on("change", async function () {
+    let response = await ajaxGetAllStudents("batch", $("#stu-list-category").val(), this.value, "student-list-loader");
+    if (response.trim() != "There is No Course Found!") {
+     
+    } else {
+      swal("Not Found any Batch!", "There is No Batch Found in this Course!", "error");
+    }
+  });
 }
 // STUDENT REGISTRATION FROM CODE END
