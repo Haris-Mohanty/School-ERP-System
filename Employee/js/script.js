@@ -1042,7 +1042,7 @@ function createStudentFunc() {
   
    //student list - get course
    $("#stu-list-category").on("change", async function () {
-    let response = await ajaxGetAllCourse("course",this.value,"student-loader");
+    let response = await ajaxGetAllCourse("course",this.value,"student-list-loader");
     if (response.trim() != "There is No Course Found!") {
       let all_course = JSON.parse(response.trim());
 
@@ -1061,7 +1061,7 @@ function createStudentFunc() {
 
   //student-list - get batch
   $("#stu-list-course").on("change", async function () {
-    let response = await ajaxGetAllBatch("batch", $("#stu-list-category").val(), this.value, "student-loader");
+    let response = await ajaxGetAllBatch("batch", $("#stu-list-category").val(), this.value, "student-list-loader");
     if (response.trim() != "There is No Course Found!") {
       let all_course = JSON.parse(response.trim());
 

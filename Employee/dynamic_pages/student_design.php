@@ -171,7 +171,7 @@ echo '
         <div class="col-md-10 bg-white p-4 shadow-sm">
           <h5 class="category-h5 mb-3">
             Registered Students List
-            <i class="fa-solid fa-circle-notch fa-spin batch-list-loader float-end mt-1 text-danger" style="font-size: 20px"></i>
+            <i class="fa-solid fa-circle-notch fa-spin student-list-loader float-end mt-1 text-danger" style="font-size: 20px"></i>
           </h5>
           <hr>
           <div class="row">
