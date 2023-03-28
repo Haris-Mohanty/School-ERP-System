@@ -1160,8 +1160,8 @@ function createStudentFunc() {
              <td class="text-nowrap">${data.added_by}</td>
              <td class="text-nowrap">${data.added_date}</td>
              <td class="text-nowrap">
-               <button class="btn btn-primary px-2 p-1"><i class="fa fa-edit edit-btn"></i></button>
-               <button class="btn btn-danger px-2 p-1"><i class="fa fa-trash del-btn"></i></button>
+               <button class="btn btn-primary px-2 p-1 edit-btn"><i class="fa fa-edit"></i></button>
+               <button class="btn btn-danger px-2 p-1 del-btn"><i class="fa fa-trash"></i></button>
              </td>
         </tr>
         `;
@@ -1177,8 +1177,15 @@ function createStudentFunc() {
     }
   });
   //STUDENT LIST - DELETE CODING START
-  deleteStudentFunc(){
-    $(".student-list")
+  function deleteStudentFunc(){
+    let allDelBtn = $(".student-list .del-btn");
+    $(allDelBtn).each(function () {
+      $(this).click(function () {
+        let parent = this.parentElement.parentElement;
+        let id = $(parent).attr("INDEX");
+        alert(id)
+      });
+    });
   }
   //STUDENT LIST - DELETE CODING END
 }
