@@ -1169,10 +1169,17 @@ function createStudentFunc() {
         //append
         $(".student-list").append(tr);
       });
+      //delete function call
+      deleteStudentFunc();
     } else {
       $(".student-list").html('');
       swal("Empty Batch!","There is No Students Found in this Batch!","error");
     }
   });
+  //STUDENT LIST - DELETE CODING START
+  deleteStudentFunc(){
+    $(".student-list")
+  }
+  //STUDENT LIST - DELETE CODING END
 }
 // STUDENT REGISTRATION FROM CODE END
