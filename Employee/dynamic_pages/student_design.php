@@ -233,7 +233,7 @@ echo '
                     <th class="text-nowrap">Action</th>
                   </tr>
                 </thead>
-                <tbody class="stu-list">
+                <tbody class="student-list">
                   
                 </tbody>
               </table>
