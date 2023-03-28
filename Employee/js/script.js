@@ -736,7 +736,7 @@ function createBatchFunc() {
         this.value,
         "batch-list-loader"
       );
-      if (response.trim() != "There is No Course Found!") {
+      if (response.trim() != "There is No Batch Found!") {
         let all_data = JSON.parse(response.trim());
         //date-time customize start
         let i;
@@ -970,7 +970,7 @@ function createStudentFunc() {
       this.value,
       "student-loader"
     );
-    if (response.trim() != "There is No Course Found!") {
+    if (response.trim() != "There is No Batch Found!") {
       let all_course = JSON.parse(response.trim());
 
       $("#stu-batch").html('<option value="choose-course">Choose Batch</option>'); //empty
@@ -1087,7 +1087,7 @@ function createStudentFunc() {
   //student-list - get batch
   $("#stu-list-course").on("change", async function () {
     let response = await ajaxGetAllBatch("batch", $("#stu-list-category").val(), this.value, "student-list-loader");
-    if (response.trim() != "There is No Course Found!") {
+    if (response.trim() != "There is No Batch Found!") {
       let all_course = JSON.parse(response.trim());
 
       $("#stu-list-batch").html('<option value="choose-course">Choose Batch</option>'); //empty
@@ -1106,5 +1106,8 @@ function createStudentFunc() {
       swal("Not Found any Batch!", "There is No Batch Found in this Course!", "error");
     }
   });
+
+  //Get Students List
+  
 }
 // STUDENT REGISTRATION FROM CODE END
