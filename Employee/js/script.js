@@ -370,15 +370,15 @@ function ajaxGetAllCourseFee(table, category, course, loader) {
 // GET ALL COURSE FEES DYNAMIC CODE END
 
 // GET ALL STUDENTS DYNAMIC CODE START
-function ajaxGetAllCourseFee(table, category, course, loader) {
+function ajaxGetAllStudents(table, category, batch, loader) {
   return new Promise(function (resolve, reject) {
     $.ajax({
       type: "POST",
-      url: "php/get_all_course_fee.php",
+      url: "php/get_all_student.php",
       data: {
         table: table,
         category: category,
-        course: course,
+        batch: batch,
       },
       beforeSend: function () {
         $("." + loader).removeClass("d-none");
