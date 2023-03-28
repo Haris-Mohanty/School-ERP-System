@@ -1129,7 +1129,6 @@ function createStudentFunc() {
     let response = await ajaxGetAllStudents("students", $("#stu-list-category").val(), this.value,"student-list-loader");
     if (response.trim() != "There is No Student Found!") {
       let all_data = JSON.parse(response.trim());
-      console.log(all_data)
       $(".student-list").html('');
       all_data.forEach((data, index) => {
         let tr = `
@@ -1180,10 +1179,16 @@ function createStudentFunc() {
   function deleteStudentFunc(){
     let allDelBtn = $(".student-list .del-btn");
     $(allDelBtn).each(function () {
-      $(this).click(function () {
+      $(this).click(async function () {
         let parent = this.parentElement.parentElement;
         let id = $(parent).attr("INDEX");
-        alert(id)
+        let response = await ajaxDeleteById(id, "students", "student-list-loader");
+        if(response.trim() == "success"){
+          parent.remove();
+          swal("Deleted!", "Student Deleted Successfully!", "success")
+        }else{
+          swal(response.trim(), response.trim(), "warning");
+        }
       });
     });
   }
