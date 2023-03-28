@@ -1084,11 +1084,7 @@ function createStudentFunc() {
 
   //student list - get course
   $("#stu-list-category").on("change", async function () {
-    let response = await ajaxGetAllCourse(
-      "course",
-      this.value,
-      "student-list-loader"
-    );
+    let response = await ajaxGetAllCourse("course",this.value,"student-list-loader");
     if (response.trim() != "There is No Course Found!") {
       let all_course = JSON.parse(response.trim());
 
@@ -1102,25 +1098,15 @@ function createStudentFunc() {
         $("#stu-list-course").append(option);
       });
     } else {
-      $("#stu-list-course").html(
-        '<option value="choose-course">Choose Course</option>'
-      );
-      swal(
-        "Not Found any Course!",
-        "There is No Course Found in this Category!",
-        "error"
-      );
+      $("#stu-list-course").html('<option value="choose-course">Choose Course</option>');
+      $("#stu-list-batch").html('<option value="choose-batch">Choose Batch</option>');
+      swal("Not Found any Course!","There is No Course Found in this Category!","error");
     }
   });
 
   //student-list - get batch
   $("#stu-list-course").on("change", async function () {
-    let response = await ajaxGetAllBatch(
-      "batch",
-      $("#stu-list-category").val(),
-      this.value,
-      "student-list-loader"
-    );
+    let response = await ajaxGetAllBatch("batch",$("#stu-list-category").val(),this.value,"student-list-loader");
     if (response.trim() != "There is No Batch Found!") {
       let all_course = JSON.parse(response.trim());
 
@@ -1136,14 +1122,8 @@ function createStudentFunc() {
         $("#stu-list-batch").append(option);
       });
     } else {
-      $("#stu-list-batch").html(
-        '<option value="choose-batch">Choose Batch</option>'
-      );
-      swal(
-        "Not Found any Batch!",
-        "There is No Batch Found in this Course!",
-        "error"
-      );
+      $("#stu-list-batch").html('<option value="choose-batch">Choose Batch</option>');
+      swal("Not Found any Batch!","There is No Batch Found in this Course!","error");
     }
   });
 
@@ -1152,34 +1132,36 @@ function createStudentFunc() {
     let response = await ajaxGetAllStudents("students", $("#stu-list-category").val(), this.value,"student-list-loader");
     if (response.trim() != "There is No Student Found!") {
       let all_data = JSON.parse(response.trim());
+      console.log(all_data)
+      $(".student-list").html('');
       all_data.forEach((data, index) => {
         let tr = `
-        <tr>
-             <td class="text-nowrap"></td>
-             <td class="text-nowrap"></td>
-             <td class="text-nowrap"></td>
-             <td class="text-nowrap"></td>
-             <td class="text-nowrap"></td>
-             <td class="text-nowrap"></td>
-             <td class="text-nowrap"></td>
-             <td class="text-nowrap"></td>
-             <td class="text-nowrap"></td>
-             <td class="text-nowrap"></td>
-             <td class="text-nowrap"></td>
-             <td class="text-nowrap"></td>
-             <td class="text-nowrap"></td>
-             <td class="text-nowrap"></td>
-             <td class="text-nowrap"></td>
-             <td class="text-nowrap"></td>
-             <td class="text-nowrap"></td>
-             <td class="text-nowrap"></td>
-             <td class="text-nowrap"></td>
-             <td class="text-nowrap"></td>
-             <td class="text-nowrap"></td>
-             <td class="text-nowrap"></td>
-             <td class="text-nowrap"></td>
-             <td class="text-nowrap"></td>
-             <td class="text-nowrap"></td>
+        <tr index="${data.id}">
+             <td class="text-nowrap">${index+1}</td>
+             <td class="text-nowrap">${data.category}</td>
+             <td class="text-nowrap">${data.course}</td>
+             <td class="text-nowrap">${data.batch}</td>
+             <td class="text-nowrap">${data.enrollment}</td>
+             <td class="text-nowrap">${data.student_name}</td>
+             <td class="text-nowrap">${data.}</td>
+             <td class="text-nowrap">${}</td>
+             <td class="text-nowrap">${}</td>
+             <td class="text-nowrap">${}</td>
+             <td class="text-nowrap">${}</td>
+             <td class="text-nowrap">${}</td>
+             <td class="text-nowrap">${}</td>
+             <td class="text-nowrap">${}</td>
+             <td class="text-nowrap">${}</td>
+             <td class="text-nowrap">${}</td>
+             <td class="text-nowrap">${}</td>
+             <td class="text-nowrap">${}</td>
+             <td class="text-nowrap">${}</td>
+             <td class="text-nowrap">${}</td>
+             <td class="text-nowrap">${}</td>
+             <td class="text-nowrap">${}</td>
+             <td class="text-nowrap">${}</td>
+             <td class="text-nowrap">${}</td>
+             <td class="text-nowrap">${}</td>
              <td class="text-nowrap">
                <button class="btn btn-primary px-2 p-1"><i class="fa fa-edit edit-btn"></i></button>
                <button class="btn btn-danger px-2 p-1"><i class="fa fa-trash del-btn"></i></button>
