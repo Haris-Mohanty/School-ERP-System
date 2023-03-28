@@ -20,10 +20,10 @@ if($response){
         }
         echo json_encode($all_data);
     }else{
-        echo "There is No Course Found!";
+        echo "There is No Batch Found!";
     }
 }else{
-    echo "There is No Course Found!";
+    echo "There is No Batch Found!";
 }
 
 ?>

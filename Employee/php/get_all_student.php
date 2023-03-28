@@ -20,10 +20,10 @@ if($response){
         }
         echo json_encode($all_data);
     }else{
-        echo "There is No Batch Found!";
+        echo "There is No Student Found!";
     }
 }else{
-    echo "There is No Batch Found!";
+    echo "There is No Student Found!";
 }
 
 ?>
