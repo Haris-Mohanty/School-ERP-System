@@ -1111,7 +1111,9 @@ function createStudentFunc() {
   $("#stu-list-batch").on("change", async function () {
     let response = await ajaxGetAllStudents("students", $("#stu-list-category").val(), this.value, "student-list-loader");
     if (response.trim() != "There is No Student Found!") {
-     console.log(JSON.parse(response.trim()));
+     
+      let all_data = JSON.parse(response.trim());
+
     } else {
       swal("Not Found any Students!", "There is No Students Found in this Batch!", "error");
     }
