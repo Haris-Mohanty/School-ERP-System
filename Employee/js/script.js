@@ -661,11 +661,7 @@ function createBatchFunc() {
         },
         success: function (response) {
           if (response.trim() == "success") {
-            swal(
-              "Successfully Added!",
-              "Your Batch Added Successfully!",
-              "success"
-            );
+            swal("Successfully Added!","Your Batch Added Successfully!","success");
           } else {
             swal(response.trim(), response.trim(), "error");
           }
@@ -1021,9 +1017,10 @@ function createStudentFunc() {
               $(".student-loader").removeClass("d-none");
             },
             success : function(response){
-              $(".student-loader").addClass("d-none");
               if(response.trim() == "success"){
+                $(".student-loader").addClass("d-none");
                 swal("Student Added!", "Student Added Successfully!", "success");
+                formData.reset();
               }else{
                 swal(response.trim(), response.trim(), "warning");
               }
@@ -1037,6 +1034,55 @@ function createStudentFunc() {
       }
     }else{
       swal("Choose Batch!", "Please select a Batch!", "warning");
+    }
+  });
+   //student list - get course
+   $("#stu-list-category").on("change", async function () {
+    let response = await ajaxGetAllCourse("course",this.value,"student-loader");
+    if (response.trim() != "There is No Course Found!") {
+      let all_course = JSON.parse(response.trim());
+
+      $("#stu-list-course").html('<option value="choose-course">Choose Course</option>'); //empty
+      all_course.forEach((course) => {
+        let option = `
+        <option value="${course.name}">${course.name}</option>
+        `;
+        $("#stu-list-course").append(option);
+      });
+    } else {
+      $("#stu-list-course").html('<option value="choose-course">Choose Course</option>');
+      swal("Not Found any Course!", "There is No Course Found in this Category!", "error");
+    }
+  });
+  //student-list - get batch
+  $("#stu-course").on("change", async function () {
+    let response = await ajaxGetAllBatch(
+      "batch",
+      $("#stu-category").val(),
+      this.value,
+      "student-loader"
+    );
+    if (response.trim() != "There is No Course Found!") {
+      let all_course = JSON.parse(response.trim());
+
+      $("#stu-batch").html('<option value="choose-course">Choose Batch</option>'); //empty
+      all_course.forEach((batch) => {
+        let option = `
+        <option value="${batch.batch_name} from ${batch.batch_from} to ${batch.batch_to}">
+              ${batch.batch_name} from ${batch.batch_from} to ${batch.batch_to}
+        </option>
+        `;
+        $("#stu-batch").append(option);
+      });
+    } else {
+      $("#stu-batch").html(
+        '<option value="choose-batch">Choose Batch</option>'
+      );
+      swal(
+        "Not Found any Batch!",
+        "There is No Batch Found in this Course!",
+        "error"
+      );
     }
   });
 }
