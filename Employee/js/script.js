@@ -1060,17 +1060,12 @@ function createStudentFunc() {
   });
 
   //student-list - get batch
-  $("#stu-course").on("change", async function () {
-    let response = await ajaxGetAllBatch(
-      "batch",
-      $("#stu-category").val(),
-      this.value,
-      "student-loader"
-    );
+  $("#stu-list-course").on("change", async function () {
+    let response = await ajaxGetAllBatch("batch", $("#stu-category").val(), this.value, "student-loader");
     if (response.trim() != "There is No Course Found!") {
       let all_course = JSON.parse(response.trim());
 
-      $("#stu-batch").html('<option value="choose-course">Choose Batch</option>'); //empty
+      $("#stu-list-batch").html('<option value="choose-course">Choose Batch</option>'); //empty
       all_course.forEach((batch) => {
         let option = `
         <option value="${batch.batch_name} from ${batch.batch_from} to ${batch.batch_to}">
