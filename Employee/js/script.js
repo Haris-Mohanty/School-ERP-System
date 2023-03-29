@@ -1215,6 +1215,7 @@ function createStudentFunc() {
     let allSelect = stuForm.querySelectorAll("SELECT");
     let course = allSelect[1].querySelector("OPTION");
     let batch = allSelect[2].querySelector("OPTION");
+    let allBtn = stuForm.querySelectorAll("BUTTON");
     let allEditBtn = $(".student-list .edit-btn");
     $(allEditBtn).each(function () {
       $(this).click(function () {
@@ -1258,6 +1259,8 @@ function createStudentFunc() {
         allInput[15].value = allTd[23].innerHTML; //added-by
 
         //button
+        allBtn[0].classList.add("d-none");
+        allBtn[1].classList.remove("d-none");
       });
     });
   }
