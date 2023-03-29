@@ -1257,7 +1257,7 @@ function createStudentFunc() {
         allInput[14].value = allTd[18].innerHTML; //fee-time
         allInput[15].value = allTd[23].innerHTML; //added-by
 
-        
+        //button
       });
     });
   }

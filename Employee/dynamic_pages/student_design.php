@@ -156,6 +156,7 @@ echo '
               </div>
               <div class="col-md-6">
                 <button class="btn btn-primary float-end btn-audiowide">Add Student</button>
+                <button type="button" class="btn btn-outline-success d-none float-end btn-audiowide">Update Student</button>
               </div>
             </div>
           </form>
