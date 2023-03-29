@@ -1266,7 +1266,8 @@ function createStudentFunc() {
         allBtn[1].onclick = function(){
           let formData = new FormData(stuForm);
           status = allInput[16].checked == true ? (status = "Active") : (status = "Pending");
-          console.log(status)
+          formData.append("status", status);
+          formData.append("id", id);
         }
       });
     });
