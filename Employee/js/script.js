@@ -1264,6 +1264,19 @@ function createStudentFunc() {
           formData.append("status", status);
           formData.append("id", id);
           formData.append("dob", dob);
+
+          //ajax
+          $.ajax({
+            type : "POST",
+            url : "php/",
+            data : formData,
+            contentType : false,
+            cache : false,
+            beforeSend : function(){},
+            success : function(response){
+              alert()
+            }
+          });
         }
       });
     });
