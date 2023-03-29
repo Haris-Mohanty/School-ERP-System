@@ -1218,7 +1218,14 @@ function createStudentFunc() {
 
   // STUDENT LIST - EDIT & UPDATE CODE START
   function updateStudentFunc(){
-    alert();
+    let allEditBtn = $(".student-list .edit-btn");
+    $(allEditBtn).each(function () {
+      $(this).click(function () {
+        let parent = this.parentElement.parentElement;
+        let id = $(parent).attr("INDEX");
+        alert(id);
+      });
+    });
   }
   // STUDENT LIST - EDIT & UPDATE CODE END
 }
