@@ -1278,6 +1278,14 @@ function createStudentFunc() {
             },
             success: function (response) {
               if(response.trim() == "success"){
+                //loader
+                $(".student-loader").addClass("d-none");
+                //btn hide
+                allBtn[0].classList.remove("d-none");
+                allBtn[1].classList.add("d-none");
+                //
+                course.innerHTML = "";
+                batch.innerHTML = "";
                 swal("Updated!", "Student Updated Successfully!", "success");
                 stuForm.reset("");
               }else{
