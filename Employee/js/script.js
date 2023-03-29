@@ -1226,6 +1226,9 @@ function createStudentFunc() {
         }else{
           allInput[16].checked = false;
         }
+
+        //add value
+        allSelect[0].value = allTd[1].innerHTML;
       });
     });
   }
