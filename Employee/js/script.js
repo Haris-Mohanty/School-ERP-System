@@ -684,11 +684,8 @@ function createBatchFunc() {
         },
         success: function (response) {
           if (response.trim() == "success") {
-            swal(
-              "Successfully Added!",
-              "Your Batch Added Successfully!",
-              "success"
-            );
+            swal("Successfully Added!", "Your Batch Added Successfully!", "success");
+            $(".batch-form")[0].reset();
           } else {
             swal(response.trim(), response.trim(), "error");
           }
@@ -1026,9 +1023,7 @@ function createStudentFunc() {
           let statusEl = document.querySelector("#stu-active");
           let status = "";
           status =
-            statusEl.checked == true
-              ? (status = "Active")
-              : (status = "Pending");
+            statusEl.checked == true ? (status = "Active") : (status = "Pending");
           //FORM DATA
           let formData = new FormData(this);
           formData.append("status", status);
@@ -1047,12 +1042,8 @@ function createStudentFunc() {
             success: function (response) {
               if (response.trim() == "success") {
                 $(".student-loader").addClass("d-none");
-                swal(
-                  "Student Added!",
-                  "Student Added Successfully!",
-                  "success"
-                );
-                formData.reset();
+                swal("Student Added!", "Student Added Successfully!", "success");
+                $(".student-form")[0].reset();
               } else {
                 swal(response.trim(), response.trim(), "warning");
               }
