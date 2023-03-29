@@ -1261,6 +1261,11 @@ function createStudentFunc() {
         //button
         allBtn[0].classList.add("d-none");
         allBtn[1].classList.remove("d-none");
+
+        //update btn
+        allBtn[1].onclick = function(){
+          alert();
+        }
       });
     });
   }
