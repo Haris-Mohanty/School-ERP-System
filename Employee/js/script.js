@@ -594,9 +594,7 @@ function createCourseFunc() {
 
         //ajax request
         allButton[1].onclick = function () {
-          allCourseInput[6].checked == true
-            ? (status = "Active")
-            : (status = "Pending");
+          allCourseInput[6].checked == true ? (status = "Active") : (status = "Pending");
           //formdata
           let formData = new FormData(courseForm);
           formData.append("status", status);
@@ -883,9 +881,7 @@ function createBatchFunc() {
 
         //ajax request
         AllBtn[1].onclick = function () {
-          status = allBatchInputEl[8].checked
-            ? (status = "Active")
-            : (status = "Pending");
+          status = allBatchInputEl[8].checked ? (status = "Active") : (status = "Pending");
           //formdata
           let formData = new FormData(batchForm);
           formData.append("status", status);
@@ -1223,7 +1219,13 @@ function createStudentFunc() {
         let parent = this.parentElement.parentElement;
         let id = $(parent).attr("INDEX");
         let allTd = parent.querySelectorAll("TD");
-        let statusEl = allTd[22].innerHTML;
+        let status = allTd[22].innerHTML;
+        //status check
+        if(status == "Active"){
+          allInput[16].checked = true;
+        }else{
+          allInput[16].checked = false;
+        }
       });
     });
   }
