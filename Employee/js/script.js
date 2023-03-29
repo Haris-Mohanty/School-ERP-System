@@ -1218,8 +1218,10 @@ function createStudentFunc() {
 
   // STUDENT LIST - EDIT & UPDATE CODE START
   function updateStudentFunc(){
-    let allEditBtn = $(".student-list .edit-btn");
     let stuForm = document.querySelector(".student-form");
+    let allInput = stuForm.querySelectorAll("INPUT");
+    let allSelect = stuForm.querySelectorAll("SELECT");
+    let allEditBtn = $(".student-list .edit-btn");
     $(allEditBtn).each(function () {
       $(this).click(function () {
         let parent = this.parentElement.parentElement;
