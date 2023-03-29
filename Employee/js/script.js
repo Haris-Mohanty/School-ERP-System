@@ -1279,7 +1279,7 @@ function createStudentFunc() {
             success: function (response) {
               if(response.trim() == "success"){
                 swal("Updated!", "Student Updated Successfully!", "success");
-                
+                stuForm.reset("");
               }else{
                 swal(response.trim(), response.trim(), "error");
               }
