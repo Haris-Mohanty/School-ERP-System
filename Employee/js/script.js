@@ -1213,6 +1213,8 @@ function createStudentFunc() {
     let stuForm = document.querySelector(".student-form");
     let allInput = stuForm.querySelectorAll("INPUT");
     let allSelect = stuForm.querySelectorAll("SELECT");
+    let course = allSelect[1].querySelector("OPTION");
+    let batch = allSelect[2].querySelector("OPTION");
     let allEditBtn = $(".student-list .edit-btn");
     $(allEditBtn).each(function () {
       $(this).click(function () {
@@ -1228,7 +1230,34 @@ function createStudentFunc() {
         }
 
         //add value
-        allSelect[0].value = allTd[1].innerHTML;
+        allSelect[0].value = allTd[1].innerHTML; //choose course
+        course.value = allTd[2].innerHTML;
+        course.innerHTML =  allTd[2].innerHTML; //choose course
+        batch.value = allTd[3].innerHTML;
+        batch.innerHTML = allTd[3].innerHTML; //choose batch
+        allInput[0].value = allTd[4].innerHTML; //enrollment
+        allInput[1].value = allTd[5].innerHTML; //name
+        allInput[4].value = allTd[6].innerHTML; //father
+        allInput[5].value = allTd[7].innerHTML; //mother
+        //dob
+        let dob = allTd[8].innerHTML.split("_");
+        allInput[2].value = dob[0];
+        allSelect[3].value = dob[1];
+        allInput[3].value = dob[2];
+        //dob
+        allSelect[4].value = allTd[9].innerHTML; //gender
+        allInput[6].value = allTd[10].innerHTML; //email
+        allInput[7].value = allTd[11].innerHTML; //password
+        allInput[8].value = allTd[12].innerHTML; //mobile
+        allInput[9].value = allTd[13].innerHTML; //country
+        allInput[10].value = allTd[14].innerHTML; //state
+        allInput[11].value = allTd[15].innerHTML; //city
+        allInput[12].value = allTd[16].innerHTML; //pincode
+        allInput[13].value = allTd[17].innerHTML; //fee
+        allInput[14].value = allTd[18].innerHTML; //fee-time
+        allInput[15].value = allTd[23].innerHTML; //added-by
+
+        
       });
     });
   }
