@@ -23,5 +23,9 @@ $fee = $_POST['fee'];
 $fee_time = $_POST['fee-time'];
 $status = $_POST['status'];
 $added_by = $_POST['stu-added-by'];
+$id = $_POST['id'];
+
+$update_student = "UPDATE students SET category = '$category', course = '$course', batch = '$batch', enrollment = '$enrollment', student_name = '$student_name', dob = '$dob', gender = '$gender', "
+
 
 ?>
