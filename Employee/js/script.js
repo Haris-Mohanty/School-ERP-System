@@ -912,11 +912,7 @@ function createBatchFunc() {
                   //btn hide
                   AllBtn[0].classList.remove("d-none");
                   AllBtn[1].classList.add("d-none");
-                  swal(
-                    "Batch Updated!",
-                    "Batch has been Updated Successfully!",
-                    "success"
-                  );
+                  swal("Batch Updated!", "Batch has been Updated Successfully!", "success");
                 } else {
                   swal(response.trim(), response.trim(), "error");
                 }
@@ -1227,6 +1223,7 @@ function createStudentFunc() {
         let parent = this.parentElement.parentElement;
         let id = $(parent).attr("INDEX");
         let allTd = parent.querySelectorAll("TD");
+        let statusEl = allTd[22].innerHTML;
       });
     });
   }
