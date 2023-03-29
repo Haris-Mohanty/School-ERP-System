@@ -1274,7 +1274,7 @@ function createStudentFunc() {
             contentType: false,
             cache: false,
             beforeSend: function () {
-
+              $(".student-loader").removeClass("d-none");
             },
             success: function (response) {
               if(response.trim() == "success"){
