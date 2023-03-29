@@ -1,5 +1,8 @@
 <?php
 
+// NAV LINK
+require_once("../php/nav.php");
+
 echo '
 
 <!-- UPLOAD STUDENT DOCUMENT - CODE START -->
@@ -24,7 +27,7 @@ echo '
                 <img src="Photo/avtar.png" width="150" height="150" alt="Profile Pic">
               </div>
             </div>
-            
+
             <div class="row">
               <div class="col-md-8">
                 <label for="stu-signature" class="fw-bold">Upload Signature</label>
