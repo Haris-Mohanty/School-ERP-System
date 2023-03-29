@@ -1223,7 +1223,8 @@ function createStudentFunc() {
       $(this).click(function () {
         let parent = this.parentElement.parentElement;
         let id = $(parent).attr("INDEX");
-        alert(id);
+        let allTd = parent.querySelectorAll("TD");
+        console.log(allTd);
       });
     });
   }
