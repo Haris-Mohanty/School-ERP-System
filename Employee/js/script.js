@@ -1274,10 +1274,15 @@ function createStudentFunc() {
             contentType: false,
             cache: false,
             beforeSend: function () {
-              
+
             },
             success: function (response) {
-              alert(response);
+              if(response.trim() == "success"){
+                swal("Updated!", "Student Updated Successfully!", "success");
+                
+              }else{
+                swal(response.trim(), response.trim(), "error");
+              }
             },
           });
         }
