@@ -1264,7 +1264,8 @@ function createStudentFunc() {
 
         //update btn
         allBtn[1].onclick = function(){
-          alert();
+          let formData = new FormData(stuForm);
+          
         }
       });
     });
