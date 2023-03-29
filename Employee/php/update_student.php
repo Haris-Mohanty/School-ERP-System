@@ -1,5 +1,6 @@
 <?php
 
+//Link database
 
 
 ?>
