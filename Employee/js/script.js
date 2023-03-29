@@ -1170,6 +1170,8 @@ function createStudentFunc() {
       });
       //delete function call
       deleteStudentFunc();
+      //updatr
+      updateStudentFunc();
     } else {
       $(".student-list").html('');
       swal("Empty Batch!","There is No Students Found in this Batch!","error");
@@ -1213,5 +1215,11 @@ function createStudentFunc() {
     });
   }
   //STUDENT LIST - DELETE CODING END
+
+  // STUDENT LIST - EDIT & UPDATE CODE START
+  function updateStudentFunc(){
+    alert();
+  }
+  // STUDENT LIST - EDIT & UPDATE CODE END
 }
 // STUDENT REGISTRATION FROM CODE END
