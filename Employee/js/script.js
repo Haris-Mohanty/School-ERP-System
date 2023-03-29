@@ -1268,14 +1268,17 @@ function createStudentFunc() {
           //ajax
           $.ajax({
             type : "POST",
-            url : "php/",
+            url : "php/update_student.php",
             data : formData,
-            contentType : false,
-            cache : false,
-            beforeSend : function(){},
-            success : function(response){
-              alert()
-            }
+            processData: false,
+            contentType: false,
+            cache: false,
+            beforeSend: function () {
+              
+            },
+            success: function (response) {
+              alert(response);
+            },
           });
         }
       });
