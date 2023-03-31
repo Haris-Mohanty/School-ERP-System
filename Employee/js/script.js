@@ -1363,7 +1363,10 @@ function createDocumentFunc() {
   //upload document code
   $(".document-form").submit(function (e) {
     e.preventDefault();
-    alert();
+    //ajax request
+    $.ajax({
+      type 
+    });
   });
 }
 // UPLOAD STUDENT DOCUMENT - CODE END
