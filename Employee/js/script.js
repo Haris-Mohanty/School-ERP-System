@@ -1325,7 +1325,14 @@ function createStudentFunc() {
   // STUDENT LIST - EDIT & UPDATE CODE END
 
   // ENROLLMENT CHECK - UNIQUE ENROLLMENT CODE START
-
+  $(".enrollment-el").on("change", async function () {
+    try{
+      let response = await ajaxGetColumnData("students", "enrollment", this.value, "student-loader");
+      
+    }catch(err){
+      console.log(err);
+    }
+  });
   // ENROLLMENT CHECK - UNIQUE ENROLLMENT CODE END
 }
 // STUDENT REGISTRATION FROM CODE END
