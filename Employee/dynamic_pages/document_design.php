@@ -32,7 +32,7 @@ echo '
             <div class="row">
               <div class="col-md-8">
                 <label for="stu-signature" class="fw-bold">Upload Signature</label>
-                <input type="file" required name="c" id="stu-signature" class="form-control mb-3">
+                <input type="file" required name="signature" id="stu-signature" class="form-control mb-3">
                 <label for="stu-id" class="fw-bold">Upload ID Proof In PDF Form</label>
                 <input type="file" required name="id-proof" id="stu-id" class="form-control mb-3">
               </div>

@@ -20,7 +20,14 @@ $proof_url = "Document/stu_".$enrollment.".pdf";
 $update_student = "UPDATE students SET photo = '$photo_url', signature = '$signature_url', id_proof = '$proof_url' WHERE enrollment = '$enrollment'";
 
 if($db -> query($update_student)){
-    echo ""
+
+    echo "success";
+    move_uploaded_file($photo_location, "../".$photo_url);
+    move_uploaded_file($signature_location, "../".$signature_url);
+    move_uploaded_file($proof_location, "../".$proof_url);
+    
+}else{
+    echo "Unable to Upload Data!";
 }
 
 
