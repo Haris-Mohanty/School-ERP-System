@@ -409,10 +409,8 @@ function ajaxGetColumnData(table, column, data, loader) {
         $("." + loader).removeClass("d-none");
       },
       success: function (response) {
-        setTimeout(function () {
-          $("." + loader).addClass("d-none");
+        $("." + loader).addClass("d-none");
           resolve(response);
-        }, 600);
       },
     });
   });
@@ -1325,10 +1323,16 @@ function createStudentFunc() {
   // STUDENT LIST - EDIT & UPDATE CODE END
 
   // ENROLLMENT CHECK - UNIQUE ENROLLMENT CODE START
-  $(".enrollment-el").on("change", async function () {
+  $(".enrollment-el").on("input", async function () {
     try{
       let response = await ajaxGetColumnData("students", "enrollment", this.value, "student-loader");
-      
+      if(response.trim() == "Not Match!"){
+        $(".stu-add-btn").attr("disabled", false);
+        $(".enroll-msg").html('');
+      }else{
+        $(".enroll-msg").html("This Enrollment is "+response.trim());
+        $(".stu-add-btn").attr("disabled", true);
+      }
     }catch(err){
       console.log(err);
     }
