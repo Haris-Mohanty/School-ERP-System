@@ -394,6 +394,31 @@ function ajaxGetAllStudents(table, category, batch, loader) {
 }
 // GET ALL STUDENTS DYNAMIC CODE END
 
+// ENROLLMENT CHECK DYNAMIC CODE START
+function ajaxGetColumnData(table, column, data, loader) {
+  return new Promise(function (resolve, reject) {
+    $.ajax({
+      type: "POST",
+      url: "php/get_column_data.php",
+      data: {
+        table: table,
+        category: category,
+        batch: batch,
+      },
+      beforeSend: function () {
+        $("." + loader).removeClass("d-none");
+      },
+      success: function (response) {
+        setTimeout(function () {
+          $("." + loader).addClass("d-none");
+          resolve(response);
+        }, 600);
+      },
+    });
+  });
+}
+// ENROLLMENT CHECK DYNAMIC CODE END
+
 //CATEGORY CODE END
 
 // CREATE COURSE CODE START
@@ -1298,5 +1323,9 @@ function createStudentFunc() {
     });
   }
   // STUDENT LIST - EDIT & UPDATE CODE END
+
+  // ENROLLMENT CHECK - UNIQUE ENROLLMENT CODE START
+
+  // ENROLLMENT CHECK - UNIQUE ENROLLMENT CODE END
 }
 // STUDENT REGISTRATION FROM CODE END
