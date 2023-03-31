@@ -402,8 +402,8 @@ function ajaxGetColumnData(table, column, data, loader) {
       url: "php/get_column_data.php",
       data: {
         table: table,
-        category: category,
-        batch: batch,
+        column: column,
+        user_data: data,
       },
       beforeSend: function () {
         $("." + loader).removeClass("d-none");
