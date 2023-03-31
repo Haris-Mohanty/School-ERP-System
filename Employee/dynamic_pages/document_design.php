@@ -19,6 +19,7 @@ echo '
             <div class="row mb-3">
               <div class="col-md-8">
                 <label for="stu-enrollment" class="fw-bold">Student Enrollment</label>
+                <span class="text-danger enroll-doc-msg"></span>
                 <input type="text" name="enrollment" id="stu-enrollment" class="form-control mb-3">
                 <label for="stu-photo" class="fw-bold">Upload Passport Size Photo</label>
                 <input type="file" name="photo" id="stu-photo" class="form-control mb-3">

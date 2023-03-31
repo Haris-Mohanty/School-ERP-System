@@ -1347,14 +1347,14 @@ function createStudentFunc() {
 
 // UPLOAD STUDENT DOCUMENT - CODE START
 function createDocumentFunc() {
-  $(".enrollment-el").on("input", async function () {
+  $(".stu-enrollment").on("input", async function () {
     try{
       let response = await ajaxGetColumnData("students", "enrollment", this.value, "student-loader");
       if(response.trim() == "Not Match!"){
         $(".stu-add-btn").removeClass("disabled");
-        $(".enroll-msg").html('');
+        $(".enroll-doc-msg").html('');
       }else{
-        $(".enroll-msg").html("This Enrollment is "+response.trim());
+        $(".enroll-doc-msg").html("This Enrollment is "+response.trim());
         $(".stu-add-btn").addClass("disabled");
         // $(".stu-add-btn").attr("disabled", true);
       }
