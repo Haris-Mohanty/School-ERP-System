@@ -1360,5 +1360,10 @@ function createDocumentFunc() {
       console.log(err);
     }
   });
+  //upload document code
+  $(".document-form").submit(function (e) {
+    e.preventDefault();
+    alert();
+  });
 }
 // UPLOAD STUDENT DOCUMENT - CODE END
