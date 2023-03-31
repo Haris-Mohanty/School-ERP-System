@@ -17,7 +17,11 @@ $signature_url = "Signature/stu_".$enrollment.".png";
 $proof_url = "Document/stu_".$enrollment.".pdf";
 
 //update in student table
-$update_student = "UPDATE students SET photo = '$photo_url'"
+$update_student = "UPDATE students SET photo = '$photo_url', signature = '$signature_url', id_proof = '$proof_url' WHERE enrollment = '$enrollment'";
+
+if($db -> query($update_student)){
+    echo ""
+}
 
 
 ?>
