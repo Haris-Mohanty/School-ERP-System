@@ -54,6 +54,8 @@ function dynamic_request(access_link) {
         createBatchFunc();
       } else if (access_link == "student_design.php") {
         createStudentFunc();
+      }else if (access_link == "document_design.php") {
+        createDocumentFunc();
       }
     },
   });
@@ -1344,5 +1346,7 @@ function createStudentFunc() {
 
 
 // UPLOAD STUDENT DOCUMENT - CODE START
-
+function createDocumentFunc() {
+  
+}
 // UPLOAD STUDENT DOCUMENT - CODE END
