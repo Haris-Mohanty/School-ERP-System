@@ -58,6 +58,7 @@ if($response){
         pincode VARCHAR(255),
         fee VARCHAR(255),
         fee_time VARCHAR(255),
+        paid_fee VARCHAR(20) DEFAULT 0,
         photo VARCHAR(255),
         signature VARCHAR(255),
         id_proof VARCHAR(255),
