@@ -1348,12 +1348,12 @@ function createStudentFunc() {
 function createDocumentFunc() {
   $("#stu-enrollment").on("input", async function () {
     try{
-      let response = await ajaxGetColumnData("students", "enrollment", this.value, "student-loader");
-      if(response.trim() == "Not Match!"){
+      let response = await ajaxGetColumnData("students", "enrollment", this.value, "document-loader");
+      if(response.trim() != "Not Match!"){
         $(".doc-btn").removeClass("disabled");
         $(".enroll-doc-msg").html('');
       }else{
-        $(".enroll-doc-msg").html("This Enrollment is "+response.trim());
+        $(".enroll-doc-msg").html("Enrollment not Found!");
         $(".doc-btn").addClass("disabled");
       }
     }catch(err){
