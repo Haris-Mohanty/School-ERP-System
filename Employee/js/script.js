@@ -1365,7 +1365,18 @@ function createDocumentFunc() {
     e.preventDefault();
     //ajax request
     $.ajax({
-      type 
+      type: "POST",
+      url: "php/upload_document.php",
+      data: new FormData(this),
+      processData: false,
+      contentType: false,
+      cache: false,
+      beforeSend: function () {
+        $(".document-loader").removeClass("d-none");
+      },
+      success: function (response) {
+        alert(response);
+      },
     });
   });
 }
