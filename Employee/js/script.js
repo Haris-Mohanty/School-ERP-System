@@ -1327,11 +1327,12 @@ function createStudentFunc() {
     try{
       let response = await ajaxGetColumnData("students", "enrollment", this.value, "student-loader");
       if(response.trim() == "Not Match!"){
-        $(".stu-add-btn").attr("disabled", false);
+        $(".stu-add-btn").removeClass("disabled");
         $(".enroll-msg").html('');
       }else{
         $(".enroll-msg").html("This Enrollment is "+response.trim());
-        $(".stu-add-btn").attr("disabled", true);
+        $(".stu-add-btn").addClass("disabled");
+        // $(".stu-add-btn").attr("disabled", true);
       }
     }catch(err){
       console.log(err);
