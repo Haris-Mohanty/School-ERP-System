@@ -1376,7 +1376,9 @@ function createDocumentFunc() {
       },
       success: function (response) {
         if(response.trim() == "success"){
-
+          $(".document-loader").addClass("d-none");
+          swal("Congrats!", "Your Document Uploaded Successfully", "success");
+          $(".document-form")[0].reset();
         }else{
           swal(response.trim(), response.trim(), "error");
         }
