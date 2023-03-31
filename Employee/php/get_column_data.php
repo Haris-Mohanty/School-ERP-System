@@ -15,7 +15,7 @@ if($response){
     if($response -> num_rows == 0){
         echo "Not Match!";
     }else{
-        echo "Already Exists!";
+        echo "already Exists!";
     }
 }else{
     echo "Not Match";

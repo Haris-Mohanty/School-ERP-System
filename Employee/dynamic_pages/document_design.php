@@ -42,7 +42,7 @@ echo '
             </div>
 
             <!-- button -->
-            <button class="btn btn-primary w-100">Upload Document</button>
+            <button class="btn btn-primary disabled doc-btn w-100">Upload Document</button>
           </form>
         </div>
         <div class="col-md-1"></div>
