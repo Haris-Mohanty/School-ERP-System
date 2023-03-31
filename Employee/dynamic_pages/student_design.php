@@ -61,7 +61,8 @@ echo '
             </div>
             <div class="row mb-3">
               <div class="col-md-6">
-                <input type="text" name="enrollment" placeholder="Enrollment No." class="form-control">
+                <input type="text" name="enrollment" placeholder="Enrollment No." class="enrollment-el form-control">
+                <span class="text-danger enroll-msg"></span>
               </div>
               <div class="col-md-6">
                 <input type="text" name="name" placeholder="Enter Name" class="form-control">
@@ -155,7 +156,7 @@ echo '
                 <label for="stu-active">Is Active</label>
               </div>
               <div class="col-md-6">
-                <button class="btn btn-primary float-end btn-audiowide">Add Student</button>
+                <button class="btn disabled btn-primary float-end btn-audiowide">Add Student</button>
                 <button type="button" class="btn btn-outline-success d-none float-end btn-audiowide">Update Student</button>
               </div>
             </div>
