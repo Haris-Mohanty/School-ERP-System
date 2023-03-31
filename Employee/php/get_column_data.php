@@ -9,6 +9,16 @@ $data = $_POST['user_data'];
 
 $get_data = "SELECT $column FROM $table WHERE $column = '$data'";
 
+$response = $db -> query($get_data);
 
+if($response){
+    if($response -> num_rows == 0){
+        echo "Not Match";
+    }else{
+        echo "Already Exists!";
+    }
+}else{
+    echo "Not Match";
+}
 
 ?>
