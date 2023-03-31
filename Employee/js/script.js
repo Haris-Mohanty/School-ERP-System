@@ -1375,7 +1375,11 @@ function createDocumentFunc() {
         $(".document-loader").removeClass("d-none");
       },
       success: function (response) {
-        alert(response);
+        if(response.trim() == "success"){
+
+        }else{
+          swal(response.trim(), response.trim(), "error");
+        }
       },
     });
   });
