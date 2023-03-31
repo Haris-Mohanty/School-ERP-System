@@ -7,4 +7,11 @@ $photo = $_FILES['photo'];
 $signature = $_FILES['signature'];
 $id_proof = $_FILES['id-proof'];
 
+$photo_location = $photo['tmp_name'];
+$signature_location = $signature['tmp_name'];
+$proof_location = $id_proof['tmp_name'];
+
+
+
+
 ?>
