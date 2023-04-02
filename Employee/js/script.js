@@ -421,6 +421,29 @@ function ajaxGetColumnData(table, column, data, loader) {
 }
 // ENROLLMENT CHECK DYNAMIC CODE END
 
+// GET ENROLLMENT DATA DYNAMICALLY CODE START
+function ajaxGetEnrollmentData(table, data, loader) {
+  return new Promise(function (resolve, reject) {
+    $.ajax({
+      type: "POST",
+      url: "php/get_enrollment_data.php",
+      data: {
+        table: table,
+        column: column,
+        user_data: data,
+      },
+      beforeSend: function () {
+        $("." + loader).removeClass("d-none");
+      },
+      success: function (response) {
+        $("." + loader).addClass("d-none");
+          resolve(response);
+      },
+    });
+  });
+}
+// GET ENROLLMENT DATA DYNAMICALLY CODE END
+
 //CATEGORY CODE END
 
 // CREATE COURSE CODE START
