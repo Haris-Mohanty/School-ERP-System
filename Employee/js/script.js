@@ -429,7 +429,6 @@ function ajaxGetEnrollmentData(table, data, loader) {
       url: "php/get_enrollment_data.php",
       data: {
         table: table,
-        column: column,
         user_data: data,
       },
       beforeSend: function () {
