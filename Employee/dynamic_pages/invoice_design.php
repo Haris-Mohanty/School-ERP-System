@@ -3,6 +3,9 @@
 // NAV LINK
 require_once("../php/nav.php");
 
+//LINK DATABASE
+require_once("../../Common_files/php/database.php");
+
 echo '
 <!-- CREATE INVOICE - CODE START -->
     <div class="container-fluid">
