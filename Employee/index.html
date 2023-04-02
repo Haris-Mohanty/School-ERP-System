@@ -74,13 +74,28 @@
                 <span class="text-danger invoice-msg"></span>
                 <input type="text" id="invoice-enrollment" class="form-control mb-3">
 
-                <table class="table">
+                <table class="table mb-3">
                   <thead>
                     <tr>
-                      <th></th>
+                      <th>Enrollment</th>
+                      <th>Name</th>
+                      <th>Category</th>
+                      <th>Course</th>
+                      <th>Batch</th>
                     </tr>
                   </thead>
+                  <tbody>
+                    <tr>
+                      <td><input type="text" name="invoice-enrollment" readonly class="form-control"></td>
+                      <td><input type="text" name="invoice-name" readonly class="form-control"></td>
+                      <td><input type="text" name="invoice-category" readonly class="form-control"></td>
+                      <td><input type="text" name="invoice-course" readonly class="form-control"></td>
+                      <td><input type="text" name="invoice-batch" readonly class="form-control"></td>
+                    </tr>
+                  </tbody>
                 </table>
+
+
               </form>
             </div>
             <div class="col-md-1"></div>
