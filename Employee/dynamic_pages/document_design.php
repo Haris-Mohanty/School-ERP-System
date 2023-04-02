@@ -34,7 +34,7 @@ echo '
                 <label for="stu-signature" class="fw-bold">Upload Signature</label>
                 <input type="file" required name="signature" id="stu-signature" class="form-control mb-3">
                 <label for="stu-id" class="fw-bold">Upload ID Proof In PDF Form</label>
-                <input type="file" required name="id-proof" id="stu-id" class="form-control mb-3">
+                <input type="file" required accept=".pdf" name="id-proof" id="stu-id" class="form-control mb-3">
               </div>
               <div class="col-md-4 d-flex justify-content-center align-items-center">
                 <img src="Signature/NapoleonSignature2_1050x700.webp" width="150" height="150" alt="Profile Pic">
