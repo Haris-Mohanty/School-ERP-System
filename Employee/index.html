@@ -70,36 +70,42 @@
               <hr />
 
               <form class="invoice-form">
-                <label for="invoice-enrollment">Enter Enrollment No.</label>
-                <span class="text-danger invoice-msg"></span>
-                <input type="text" id="invoice-enrollment" class="form-control mb-3">
+                <div class="row">
+                  <div class="col-md-12">
+                    <label for="invoice-enrollment">Enter Enrollment No.</label>
+                    <span class="text-danger invoice-msg"></span>
+                    <input type="text" id="invoice-enrollment" class="form-control mb-3">
+                  </div>
+                </div>
 
-                <table class="table mb-3">
-                  <thead>
-                    <tr>
-                      <th>Enrollment</th>
-                      <th>Name</th>
-                      <th>Category</th>
-                      <th>Course</th>
-                      <th>Batch</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td><input type="text" name="invoice-enrollment" readonly class="form-control"></td>
-                      <td><input type="text" name="invoice-name" readonly class="form-control"></td>
-                      <td><input type="text" name="invoice-category" readonly class="form-control"></td>
-                      <td><input type="text" name="invoice-course" readonly class="form-control"></td>
-                      <td><input type="text" name="invoice-batch" readonly class="form-control"></td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div class="row mb-3">
+                  <table class="table">.
+                    <thead>
+                      <tr>
+                        <th>Enrollment</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Course</th>
+                        <th>Batch</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><input type="text" name="invoice-enrollment" readonly class="form-control"></td>
+                        <td><input type="text" name="invoice-name" readonly class="form-control"></td>
+                        <td><input type="text" name="invoice-category" readonly class="form-control"></td>
+                        <td><input type="text" name="invoice-course" readonly class="form-control"></td>
+                        <td><input type="text" name="invoice-batch" readonly class="form-control"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
 
                 <div class="row mb-3">
                   <div class="col-md-2"></div>
                   <div class="col-md-4">
                     <div class="d-flex justify-content-between">
-                      <h5>Total Fee </h5><span>10000</span>
+                      <h5>Total Fee </h5><span></span>
                     </div>
                   </div>
                   <div class="col-md-7"></div>
@@ -109,7 +115,7 @@
                   <div class="col-md-2"></div>
                   <div class="col-md-4">
                     <div class="d-flex justify-content-between">
-                      <h5>Paid Fee </h5><span>10000</span>
+                      <h5>Paid Fee </h5><span></span>
                     </div>
                   </div>
                   <div class="col-md-7"></div>
@@ -118,9 +124,9 @@
                 <table class="table mb-3">
                   <thead>
                     <tr>
-                      <th>Fee Time</th>
-                      <th>Fee Pending</th>
-                      <th>Fee Payable</th>
+                      <th class="text-nowrap">Fee Time</th>
+                      <th class="text-nowrap">Fee Pending</th>
+                      <th class="text-nowrap">Fee Payable</th>
                     </tr>
                   </thead>
                   <tbody>
