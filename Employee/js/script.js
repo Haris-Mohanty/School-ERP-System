@@ -1416,7 +1416,7 @@ function createDocumentFunc() {
 // CREATE INVOICE - CODE START
 function createInvoiceFunc(){
   $("#invoice-enrollment").on("input", function () {
-    
+    let response = ajaxGetEnrollmentData();
   });
 }
 // CREATE INVOICE - CODE END
