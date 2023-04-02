@@ -56,6 +56,8 @@ function dynamic_request(access_link) {
         createStudentFunc();
       }else if (access_link == "document_design.php") {
         createDocumentFunc();
+      }else if (access_link == "invoice_design.php") {
+        createInvoiceFunc();
       }
     },
   });
@@ -1388,3 +1390,9 @@ function createDocumentFunc() {
   });
 }
 // UPLOAD STUDENT DOCUMENT - CODE END
+
+// CREATE INVOICE - CODE START
+function createInvoiceFunc(){
+  alert();
+}
+// CREATE INVOICE - CODE END
