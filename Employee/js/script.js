@@ -1415,6 +1415,8 @@ function createDocumentFunc() {
 
 // CREATE INVOICE - CODE START
 function createInvoiceFunc(){
-  alert();
+  $("#invoice-enrollment").on("input", function () {
+    
+  });
 }
 // CREATE INVOICE - CODE END
