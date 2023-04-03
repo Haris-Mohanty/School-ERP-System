@@ -1415,12 +1415,20 @@ function createDocumentFunc() {
 
 // CREATE INVOICE - CODE START
 function createInvoiceFunc(){
+    let invoiceForm = document.querySelector(".invoice-form");
+    let allInput = invoiceForm.querySelectorAll("INPUT");
+    let allSpan = invoiceForm.querySelectorAll(".invoice-fee");
+
+
+  //show data by oninput
   $("#invoice-enrollment").on("input", async function () {
     let response = await ajaxGetEnrollmentData("students", this.value, "invoice-loader");
     if(response.trim() != "Not Match!"){
       $(".invoice-btn").removeClass("disabled");
       $(".invoice-msg").html('');
-      console.log(JSON.parse(response.trim()))
+
+      const data = JSON.pa
+      
     }else{
       $(".invoice-msg").html("Enrollment not Found!");
       $(".invoice-btn").addClass("disabled");

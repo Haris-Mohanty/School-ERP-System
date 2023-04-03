@@ -53,7 +53,7 @@ echo '
               <div class="col-md-2"></div>
               <div class="col-md-4">
                 <div class="d-flex justify-content-between">
-                  <h5>Total Fee </h5><span></span>
+                  <h5>Total Fee </h5><span class="invoice-fee"></span>
                 </div>
               </div>
               <div class="col-md-7"></div>
@@ -62,7 +62,7 @@ echo '
               <div class="col-md-2"></div>
               <div class="col-md-4">
                 <div class="d-flex justify-content-between">
-                  <h5>Paid Fee </h5><span></span>
+                  <h5>Paid Fee </h5><span class="invoice-fee"></span>
                 </div>
               </div>
               <div class="col-md-7"></div>
