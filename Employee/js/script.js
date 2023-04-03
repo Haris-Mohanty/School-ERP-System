@@ -1467,22 +1467,23 @@ function createInvoiceFunc(){
 
   //invoice create
   $(invoiceForm).submit(function (e) {
+    let formData = new FormData(this);
     e.preventDefault();
     //ajax request
-    $.ajax({
-      type: "POST",
-      url: "php/create_invoice.php",
-      data: formData,
-      processData: false,
-      contentType: false,
-      cache: false,
-      beforeSend: function () {
-        $(".invoice-loader").removeClass("d-none");
-      },
-      success: function (response) {
-        alert(response);
-      },
-    });
+    // $.ajax({
+    //   type: "POST",
+    //   url: "php/create_invoice.php",
+    //   data: formData,
+    //   processData: false,
+    //   contentType: false,
+    //   cache: false,
+    //   beforeSend: function () {
+    //     $(".invoice-loader").removeClass("d-none");
+    //   },
+    //   success: function (response) {
+    //     alert(response);
+    //   },
+    // });
   });
 }
 // CREATE INVOICE - CODE END
