@@ -15,7 +15,7 @@ echo '
         <div class="col-md-10 bg-white shadow-sm mt-3 p-4">
           <h5 class="category-h5 mb-3">
             ADD INVOICE
-            <i class="fa-solid fa-circle-notch fa-spin invoice-loader float-end mt-1 text-danger" 
+            <i class="fa-solid fa-circle-notch fa-spin d-none invoice-loader float-end mt-1 text-danger" 
             style="font-size: 20px"></i>
           </h5>
           <hr />

@@ -1465,12 +1465,23 @@ function createInvoiceFunc(){
     }
   });
 
-  //Paid fee store in database
+  //invoice create
   $(invoiceForm).submit(function (e) {
     e.preventDefault();
     //ajax request
     $.ajax({
-      type : "POST"
+      type: "POST",
+      url: "php/create_invoice.php",
+      data: formData,
+      processData: false,
+      contentType: false,
+      cache: false,
+      beforeSend: function () {
+        $(".invoice-loader").removeClass("d-none");
+      },
+      success: function (response) {
+        alert(response);
+      },
     });
   });
 }
