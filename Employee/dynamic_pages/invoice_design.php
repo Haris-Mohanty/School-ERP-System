@@ -77,7 +77,7 @@ echo '
               </thead>
               <tbody>
                 <tr>
-                  <td><input type="text" name="invoice-time" readonly class="form-control"></td>
+                  <td><input type="text" name="invoice-fee-time" readonly class="form-control"></td>
                   <td><input type="text" name="invoice-pending" readonly class="form-control"></td>
                   <td><input type="text" name="invoice-recent" placeholder="Enter the Fees" class="recent-paid form-control"></td>
                 </tr>

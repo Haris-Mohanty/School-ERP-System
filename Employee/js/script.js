@@ -1478,7 +1478,6 @@ function createInvoiceFunc(){
     }
   });
 
-  
 
   //invoice create
   $(invoiceForm).submit(function (e) {
