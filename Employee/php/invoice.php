@@ -6,6 +6,17 @@ require("../../dompdf/autoload.inc.php");
 //LINK DATABASE
 require_once("../../Common_files/php/database.php");
 
+$enrollment = $_GET['enrollment'];
+$name = $_GET['name'];
+$category = $_GET['category'];
+$course = $_GET['course'];
+$batch = $_GET['batch'];
+$fee_time = $_GET['fee-time'];
+$paid_fee = $_GET['paid-fee'];
+$date = $_GET['date'];
+$pending = $_GET['pending'];
+$recent = $_GET['recent'];
+
 use Dompdf\Dompdf;
 
 $x = new Dompdf();
