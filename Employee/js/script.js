@@ -1480,9 +1480,17 @@ function createInvoiceFunc(){
 
   //add invoice
   $(invoiceForm).submit(function (e) {
+    let date = new Date();
+    let dd = date.getDate();
+    let mm = date.getMonth();
+    let yy = date.getFullYear();
+    mm < 10 ? "0"+mm : mm;
+    dd < 10 ? "0"+dd : dd;
+    let finalDate = dd+"-"+mm+"-"+yy;
     let formData = new FormData(this);
     formData.append("paid_fee", total);
     formData.append("pending", fee_pending);
+    formData.append("date", finalDate);
     e.preventDefault();
     //ajax request
     $.ajax({
