@@ -1467,11 +1467,15 @@ function createInvoiceFunc(){
 
   //fee payable
   let total = 0;
+  let fee_pending = 0;
   $(".recent-paid").on("input", function(){
     let paid = +allSpan[1].innerHTML;
     let recent = +this.value;
     total = paid+recent;
-    alert(total);
+    
+    //fee pending
+    let pending = allInput[7].value
+
   });
 
   //invoice create
