@@ -1468,7 +1468,10 @@ function createInvoiceFunc(){
   //Paid fee store in database
   $(invoiceForm).submit(function (e) {
     e.preventDefault();
-    
+    //ajax request
+    $.ajax({
+      type : "POST"
+    });
   });
 }
 // CREATE INVOICE - CODE END
