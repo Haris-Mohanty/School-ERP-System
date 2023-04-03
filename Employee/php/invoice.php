@@ -34,11 +34,11 @@ $design = '
         <h1 style="text-align: center; color: azure; background-color: red;">Massachusetts Institute of Technology (MIT)</h1>
         <p style="text-align: center; font-size: 18px;">77 Massachusetts Ave, Cambridge, MA 02139, USA</p>
         <div style="width: 500px;">
-            <b>Name : </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<span>1415545</span><br><br>
-            <b>Enrollment : </b>&nbsp;&nbsp;&nbsp;&nbsp;<span>1415545</span><br><br>
-            <b>Date : </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>1415545</span><br><br>
-            <b>Fee Time : </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>1415545</span><br><br>
-            <b>Paid Fee : </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>1415545</span><br>
+            <b>Name : </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<span>'.$name.'</span><br><br>
+            <b>Enrollment : </b>&nbsp;&nbsp;&nbsp;&nbsp;<span>'.$enrollment.'</span><br><br>
+            <b>Date : </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>'.$date.'</span><br><br>
+            <b>Fee Time : </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>'.$fee_time.'</span><br><br>
+            <b>Paid Fee : </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>'.$paid_fee.'</span><br>
         </div><br><br>
         <table style="width: 100%; border: 2px solid red;">
             <thead>
@@ -48,15 +48,17 @@ $design = '
                     <td style="padding: 5px; text-align: center;">Course</td>
                     <td style="padding: 5px; text-align: center;">Batch</td>
                     <td style="padding: 5px; text-align: center;">Pending Amount</td>
+                    <td style="padding: 5px; text-align: center;">Recent Paid</td>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td style="text-align: center; padding: 5px;">1</td>
-                    <td style="text-align: center; padding: 5px;">MCA</td>
-                    <td style="text-align: center; padding: 5px;">PHP</td>
-                    <td style="text-align: center; padding: 5px;">New Batch</td>
-                    <td style="text-align: center; padding: 5px;">1244</td>
+                    <td style="text-align: center; padding: 5px;">'.$category.'</td>
+                    <td style="text-align: center; padding: 5px;">'.$course.'</td>
+                    <td style="text-align: center; padding: 5px;">'.$batch.'</td>
+                    <td style="text-align: center; padding: 5px;">'.$pending.'</td>
+                    <td style="text-align: center; padding: 5px;">'.$recent.'</td>
                 </tr>
             </tbody>
         </table>
