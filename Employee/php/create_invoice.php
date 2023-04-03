@@ -8,7 +8,7 @@ $name = $_POST['invoice-name'];
 $category = $_POST['invoice-category'];
 $course = $_POST['invoice-course'];
 $batch = $_POST['invoice-batch'];
-$paid_fee = $_POST['paid-fee'];
+$paid_fee = $_POST['paid_fee'];
 $pending = $_POST['pending'];
 
 $fee_time = $_POST['invoice-fee-time'];
@@ -19,7 +19,7 @@ $get_data = "SELECT * FROM invoice";
 
 $response = $db -> query($get_data);
 if($response){
-    $insert_data = "INSERT INTO invoice(enrollment, name, category, course, batch, paid_fee, pending, fee_time, invoice_pending, invoice_recent) VALUES('$enrollment', '$name', '$category', '$course', '$batch', '$paid_fee', '$pending', '$fee_time', '$invoice_pending' '$invoice_recent')";
+    $insert_data = "INSERT INTO invoice(enrollment, name, category, course, batch, paid_fee, pending, fee_time, invoice_pending, invoice_recent) VALUES('$enrollment', '$name', '$category', '$course', '$batch', '$paid_fee', '$pending', '$fee_time', '$invoice_pending', '$invoice_recent')";
     if($db -> query($insert_data)){
         echo "success";
     }else{
@@ -41,7 +41,7 @@ if($response){
         PRIMARY KEY(id)
     )";
     if($db -> query($create_table)){
-        $insert_data = "INSERT INTO invoice(enrollment, name, category, course, batch, paid_fee, pending, fee_time, invoice_pending, invoice_recent) VALUES('$enrollment', '$name', '$category', '$course', '$batch', '$paid_fee', '$pending', '$fee_time', '$invoice_pending' '$invoice_recent')";
+        $insert_data = "INSERT INTO invoice(enrollment, name, category, course, batch, paid_fee, pending, fee_time, invoice_pending, invoice_recent) VALUES('$enrollment', '$name', '$category', '$course', '$batch', '$paid_fee', '$pending', '$fee_time', '$invoice_pending', '$invoice_recent')";
         if($db -> query($insert_data)){
             echo "success";
         }else{

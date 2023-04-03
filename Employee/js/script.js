@@ -1478,8 +1478,7 @@ function createInvoiceFunc(){
     }
   });
 
-
-  //invoice create
+  //add invoice
   $(invoiceForm).submit(function (e) {
     let formData = new FormData(this);
     formData.append("paid_fee", total);
