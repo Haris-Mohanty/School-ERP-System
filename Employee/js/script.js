@@ -1439,6 +1439,11 @@ function createInvoiceFunc(){
       allSpan[0].innerHTML = data.fee;
       allSpan[1].innerHTML = data.paid_fee;
 
+      //
+      allInput[6].value = data.fee_time;
+      let pending_amount = data.fee - data.paid_fee;
+      allInput[7].value = pending_amount;
+
       
     }else{
       $(".invoice-msg").html("Enrollment not Found!");
