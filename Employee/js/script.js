@@ -1465,6 +1465,15 @@ function createInvoiceFunc(){
     }
   });
 
+  //fee payable
+  let total = 0;
+  $(".recent-paid").on("input", function(){
+    let paid = +allSpan[1].innerHTML;
+    let recent = +this.value;
+    total = paid+recent;
+    alert(total);
+  });
+
   //invoice create
   $(invoiceForm).submit(function (e) {
     let formData = new FormData(this);
