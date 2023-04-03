@@ -1428,11 +1428,17 @@ function createInvoiceFunc(){
       $(".invoice-msg").html('');
 
       const data = JSON.parse(response.trim());
+      //Table input
       allInput[1].value = data.enrollment;
       allInput[2].value = data.student_name;
       allInput[3].value = data.category;
       allInput[4].value = data.course;
       allInput[5].value = data.batch;
+
+      //span input
+      allSpan[0].innerHTML = data.fee;
+      allSpan[1].innerHTML = data.paid_fee;
+
       
     }else{
       $(".invoice-msg").html("Enrollment not Found!");
