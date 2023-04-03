@@ -1496,6 +1496,7 @@ function createInvoiceFunc(){
         $(".invoice-loader").removeClass("d-none");
       },
       success: function (response) {
+        $(".invoice-loader").addClass("d-none");
         alert(response);
       },
     });
