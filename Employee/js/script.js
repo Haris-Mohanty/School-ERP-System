@@ -1421,11 +1421,13 @@ function createInvoiceFunc(){
 
 
   //show data by oninput
+  let total = 0;
+  let fee_pending = 0;
   $("#invoice-enrollment").on("input", async function () {
     let response = await ajaxGetEnrollmentData("students", this.value, "invoice-loader");
-    if(response.trim() != "Not Match!"){
+    if (response.trim() != "Not Match!") {
       $(".invoice-btn").removeClass("disabled");
-      $(".invoice-msg").html('');
+      $(".invoice-msg").html("");
 
       const data = JSON.parse(response.trim());
       //Table input
@@ -1444,44 +1446,45 @@ function createInvoiceFunc(){
       let pending_amount = data.fee - data.paid_fee;
       allInput[7].value = pending_amount;
 
-    }else{
+      //fee payable
+      let pending = Number(allInput[7].value);
+      $(".recent-paid").on("input", function () {
+        let paid = Number(allSpan[1].innerHTML);
+        let recent = Number(this.value);
+        total = paid + recent;
+
+        //fee pending
+        fee_pending = pending - recent;
+        allInput[7].value = fee_pending;
+      });
+    } else {
       $(".invoice-msg").html("Enrollment not Found!");
       $(".invoice-btn").addClass("disabled");
 
       //DATA EMPTY
-      allInput[1].value = '';
-      allInput[2].value = '';
-      allInput[3].value = '';
-      allInput[4].value = '';
-      allInput[5].value = '';
+      allInput[1].value = "";
+      allInput[2].value = "";
+      allInput[3].value = "";
+      allInput[4].value = "";
+      allInput[5].value = "";
 
       //span input
-      allSpan[0].innerHTML = '';
-      allSpan[1].innerHTML = '';
+      allSpan[0].innerHTML = "";
+      allSpan[1].innerHTML = "";
 
       //fee time & pending-fee
-      allInput[6].value = '';
-      allInput[7].value = '';
+      allInput[6].value = "";
+      allInput[7].value = "";
     }
   });
 
-  //fee payable
-  let total = 0;
-  let fee_pending = 0;
-  $(".recent-paid").on("input", function(){
-    let paid = +allSpan[1].innerHTML;
-    let recent = +this.value;
-    total = paid+recent;
-    
-    //fee pending
-    let pending = allInput[7].value
-
-  });
+  
 
   //invoice create
   $(invoiceForm).submit(function (e) {
     let formData = new FormData(this);
     formData.append("paid_fee", total);
+    formData.append("paid_fee", fee_pending);
     e.preventDefault();
     //ajax request
     // $.ajax({
