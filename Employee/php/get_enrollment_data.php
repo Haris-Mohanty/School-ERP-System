@@ -6,7 +6,7 @@ require_once("../../Common_files/php/database.php");
 $table = $_POST['table'];
 $user_data = $_POST['user_data'];
 
-$get_data = "SELECT $column FROM $table WHERE $column = '$data'";
+$get_data = "SELECT * FROM $table WHERE enrollment = '$user_data'";
 
 $response = $db -> query($get_data);
 

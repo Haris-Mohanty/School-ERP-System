@@ -1415,8 +1415,16 @@ function createDocumentFunc() {
 
 // CREATE INVOICE - CODE START
 function createInvoiceFunc(){
-  $("#invoice-enrollment").on("input", function () {
-    let response = ajaxGetEnrollmentData();
+  $("#invoice-enrollment").on("input", async function () {
+    let response = await ajaxGetEnrollmentData("students", this.value, "invoice-loader");
+    if(response.trim() != "Not Match!"){
+      $(".invoice-btn").removeClass("disabled");
+      $(".invoice-msg").html('');
+      console.log(JSON.parse(response.trim()))
+    }else{
+      $(".invoice-msg").html("Enrollment not Found!");
+      $(".invoice-btn").addClass("disabled");
+    }
   });
 }
 // CREATE INVOICE - CODE END

@@ -83,7 +83,7 @@ echo '
                 </tr>
               </tbody>
             </table>
-            <button class="btn btn-primary float-end disabled">Add Invoice</button>
+            <button class="btn btn-primary float-end disabled invoice-btn">Add Invoice</button>
           </form>
         </div>
         <div class="col-md-1"></div>
