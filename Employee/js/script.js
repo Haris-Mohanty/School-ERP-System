@@ -1499,6 +1499,7 @@ function createInvoiceFunc(){
         $(".invoice-loader").addClass("d-none");
         if(response.trim() == "success"){
           swal("Invoice Created!", "Your Invoice Created Successully!", "success");
+          window.location = "php/invoice.php";
           invoiceForm.reset();
         }else{
           swal(response.trim(), response.trim(), "error");

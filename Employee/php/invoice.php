@@ -55,7 +55,7 @@ $design = '
     </html>
 ';
 
-$x -> loadHtml($design);
+$x -> LoadHtml($design);
 $x -> setPaper('A4', 'portrait');
 $x -> render();
 
