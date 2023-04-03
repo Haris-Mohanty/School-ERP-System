@@ -21,6 +21,8 @@ $response = $db -> query($get_data);
 if($response){
     $insert_data = "INSERT INTO invoice(enrollment, name, category, course, batch, paid_fee, pending, fee_time, invoice_pending, invoice_recent) VALUES('$enrollment', '$name', '$category', '$course', '$batch', '$paid_fee', '$pending', '$fee_time', '$invoice_pending', '$invoice_recent')";
     if($db -> query($insert_data)){
+
+        $update_student = "UPDATE students SET paid_fee = '$paid_fee' WHERE enrollment";    
         echo "success";
     }else{
         echo "Unable to Create Invoice!";
@@ -43,6 +45,8 @@ if($response){
     if($db -> query($create_table)){
         $insert_data = "INSERT INTO invoice(enrollment, name, category, course, batch, paid_fee, pending, fee_time, invoice_pending, invoice_recent) VALUES('$enrollment', '$name', '$category', '$course', '$batch', '$paid_fee', '$pending', '$fee_time', '$invoice_pending', '$invoice_recent')";
         if($db -> query($insert_data)){
+
+           $update_student = "UPDATE students SET paid_fee = '$paid_fee' WHERE enrollment";         
             echo "success";
         }else{
             echo "Unable to Create Invoice!";
