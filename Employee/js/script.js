@@ -1427,7 +1427,12 @@ function createInvoiceFunc(){
       $(".invoice-btn").removeClass("disabled");
       $(".invoice-msg").html('');
 
-      const data = JSON.pa
+      const data = JSON.parse(response.trim());
+      allInput[1].value = data.enrollment;
+      allInput[2].value = data.student_name;
+      allInput[3].value = data.category;
+      allInput[4].value = data.course;
+      allInput[5].value = data.batch;
       
     }else{
       $(".invoice-msg").html("Enrollment not Found!");
