@@ -1439,16 +1439,36 @@ function createInvoiceFunc(){
       allSpan[0].innerHTML = data.fee;
       allSpan[1].innerHTML = data.paid_fee;
 
-      //
+      //fee time & pending-fee
       allInput[6].value = data.fee_time;
       let pending_amount = data.fee - data.paid_fee;
       allInput[7].value = pending_amount;
 
-      
     }else{
       $(".invoice-msg").html("Enrollment not Found!");
       $(".invoice-btn").addClass("disabled");
+
+      //DATA EMPTY
+      allInput[1].value = '';
+      allInput[2].value = '';
+      allInput[3].value = '';
+      allInput[4].value = '';
+      allInput[5].value = '';
+
+      //span input
+      allSpan[0].innerHTML = '';
+      allSpan[1].innerHTML = '';
+
+      //fee time & pending-fee
+      allInput[6].value = '';
+      allInput[7].value = '';
     }
+  });
+
+  //Paid fee store in database
+  $(invoiceForm).submit(function (e) {
+    e.preventDefault();
+    
   });
 }
 // CREATE INVOICE - CODE END
