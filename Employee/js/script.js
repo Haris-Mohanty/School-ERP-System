@@ -1497,7 +1497,12 @@ function createInvoiceFunc(){
       },
       success: function (response) {
         $(".invoice-loader").addClass("d-none");
-        alert(response);
+        if(response.trim() == "success"){
+          swal("Invoice Created!", "Your Invoice Created Successully!", "success");
+          invoiceForm.reset();
+        }else{
+          swal(response.trim(), response.trim(), "error");
+        }
       },
     });
   });

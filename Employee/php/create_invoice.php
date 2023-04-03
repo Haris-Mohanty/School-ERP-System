@@ -23,7 +23,7 @@ if($response){
     if($db -> query($insert_data)){
         echo "success";
     }else{
-        echo "Unable to Insert Data";
+        echo "Unable to Create Invoice!";
     }
 }else{
     $create_table = "CREATE TABLE invoice(
@@ -45,7 +45,7 @@ if($response){
         if($db -> query($insert_data)){
             echo "success";
         }else{
-            echo "Unable to Insert Data";
+            echo "Unable to Create Invoice!";
         }
     }else{
         echo "Unable to Create Table!";
