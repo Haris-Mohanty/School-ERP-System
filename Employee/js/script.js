@@ -1477,6 +1477,7 @@ function createInvoiceFunc(){
   //invoice create
   $(invoiceForm).submit(function (e) {
     let formData = new FormData(this);
+    formData.append("paid_fee", total);
     e.preventDefault();
     //ajax request
     // $.ajax({
