@@ -1527,7 +1527,10 @@ function createInvoiceFunc(){
 function createBrandFunc(){
   $(".brand-form").on("submit", function (e) {
     e.preventDefault();
-    
+    //ajax request
+    $.ajax({
+      type : "POST",
+    })
   });
 }
 // BRANDING DETAILS - CODE END
