@@ -17,6 +17,16 @@ $brand_privacy = $_POST['brand-privacy']
 $brand_cookie = $_POST['brand-cookie']
 $brand_terms = $_POST['brand-terms']
 
-$brand_logo = $_FILES['brand-logo']
+// $brand_logo = $_FILES['brand-logo']
+
+$get_data = "SELECT * FROM branding";
+
+$response = $db -> query($response);
+
+if($response){
+
+}else{
+    $create_table = "";
+}
 
 ?>
