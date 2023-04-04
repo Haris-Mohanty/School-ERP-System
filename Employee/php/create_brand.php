@@ -43,6 +43,12 @@ if($response){
         brand_terms VARCHAR(255),
         PRIMARY KEY(id)
     )"; 
-    
+    if($db -> query($create_table)){
+
+        $insert_data = "INSERT INTO branding() VALUES ()";
+
+    }else{
+        echo "Unable to Create Table!";
+    }
   }
 ?>
