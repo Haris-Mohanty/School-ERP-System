@@ -1520,3 +1520,9 @@ function createInvoiceFunc(){
   });
 }
 // CREATE INVOICE - CODE END
+
+// BRANDING DETAILS - CODE START
+function createBrandFunc(){
+  alert();
+}
+// BRANDING DETAILS - CODE END
