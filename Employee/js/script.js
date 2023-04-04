@@ -58,6 +58,8 @@ function dynamic_request(access_link) {
         createDocumentFunc();
       }else if (access_link == "invoice_design.php") {
         createInvoiceFunc();
+      }else if (access_link == "branding_design.php") {
+        createBrandFunc();
       }
     },
   });
