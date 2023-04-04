@@ -1525,6 +1525,9 @@ function createInvoiceFunc(){
 
 // BRANDING DETAILS - CODE START
 function createBrandFunc(){
-  alert();
+  $(".brand-form").on("submit", function (e) {
+    e.preventDefault();
+    
+  });
 }
 // BRANDING DETAILS - CODE END
