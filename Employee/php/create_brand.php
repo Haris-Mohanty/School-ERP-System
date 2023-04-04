@@ -3,27 +3,34 @@
 //LINK DATABASE
 require_once("../../Common_files/php/database.php");
 
-$brand_name = $_POST['brand-name']
-$brand_domain = $_POST['brand-domain']
-$brand_email = $_POST['brand-email']
-$brand_twitter = $_POST['brand-twitter']
-$brand_facebook = $_POST['brand-facebook']
-$brand_instagram = $_POST['brand-instagram']
-$brand_whatsapp = $_POST['brand-whatsapp']
-$brand_address = $_POST['brand-address']
-$brand_mobile = $_POST['brand-mobile']
-$brand_about = $_POST['brand-about']
-$brand_privacy = $_POST['brand-privacy']
-$brand_cookie = $_POST['brand-cookie']
-$brand_terms = $_POST['brand-terms']
+$brand_name = $_POST['brand-name'];
+$brand_domain = $_POST['brand-domain'];
+$brand_email = $_POST['brand-email'];
+$brand_twitter = $_POST['brand-twitter'];
+$brand_facebook = $_POST['brand-facebook'];
+$brand_instagram = $_POST['brand-instagram'];
+$brand_whatsapp = $_POST['brand-whatsapp'];
+$brand_address = $_POST['brand-address'];
+$brand_mobile = $_POST['brand-mobile'];
+$brand_about = $_POST['brand-about'];
+$brand_privacy = $_POST['brand-privacy'];
+$brand_cookie = $_POST['brand-cookie'];
+$brand_terms = $_POST['brand-terms'];
 
 // $brand_logo = $_FILES['brand-logo']
 
 $get_data = "SELECT * FROM branding";
 
-$response = $db -> query($response);
+$response = $db -> query($get_data);
 
 if($response){
+    $insert_data = "INSERT INTO branding(brand_name, brand_domain, brand_email, brand_twitter, brand_facebook, brand_instagram, brand_whatsapp,brand_address,brand_mobile, brand_about, brand_privacy, brand_cookie, brand_terms) VALUES ('$brand_name', '$brand_domain', '$brand_email', '$brand_twitter', '$brand_facebook', '$brand_instagram', '$brand_whatsapp', '$brand_address', '$brand_mobile', '$brand_about', '$brand_privacy', '$brand_cookie', '$brand_terms')";
+
+        if($db -> query($insert_data)){
+            echo "success";
+        }else{
+            echo "Unable to Create Brand!";
+        }
 
 }else{
     $create_table = "CREATE TABLE branding(
@@ -47,7 +54,11 @@ if($response){
 
         $insert_data = "INSERT INTO branding(brand_name, brand_domain, brand_email, brand_twitter, brand_facebook, brand_instagram, brand_whatsapp,brand_address,brand_mobile, brand_about, brand_privacy, brand_cookie, brand_terms) VALUES ('$brand_name', '$brand_domain', '$brand_email', '$brand_twitter', '$brand_facebook', '$brand_instagram', '$brand_whatsapp', '$brand_address', '$brand_mobile', '$brand_about', '$brand_privacy', '$brand_cookie', '$brand_terms')";
 
-        if($db)
+        if($db -> query($insert_data)){
+            echo "success";
+        }else{
+            echo "Unable to Create Brand!";
+        }
 
     }else{
         echo "Unable to Create Table!";
