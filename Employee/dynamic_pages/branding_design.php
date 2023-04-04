@@ -1,5 +1,8 @@
 <?php
 
+// NAV LINK
+require_once("../php/nav.php");
+
 echo '
 
 <!-- BRANDING DETAILS- CODE START -->
