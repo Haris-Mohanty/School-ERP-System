@@ -1482,10 +1482,10 @@ function createInvoiceFunc(){
   $(invoiceForm).submit(function (e) {
     let date = new Date();
     let dd = date.getDate();
-    let mm = date.getMonth();
+    let mm = date.getMonth()+1;
     let yy = date.getFullYear();
-    mm < 10 ? "0"+mm : mm;
-    dd < 10 ? "0"+dd : dd;
+    dd = dd < 10 ? "0" + dd : dd;
+    mm = mm < 10 ? "0"+mm : mm;
     let finalDate = dd+"-"+mm+"-"+yy;
     let formData = new FormData(this);
     formData.append("paid_fee", total);
@@ -1509,8 +1509,9 @@ function createInvoiceFunc(){
           swal("Invoice Created!", "Your Invoice Created Successully!", "success");
 
           window.location = "php/invoice.php?enrollment="+allInput[1].value+"&name="+allInput[2].value+"&category="+allInput[3].value+"&date="+finalDate+"&course="+allInput[4].value+"&batch="+allInput[5].value+"&fee-time="+allInput[6].value+"&paid-fee="+total+"&pending="+fee_pending+"&recent="+allInput[8].value;
-          
+
           invoiceForm.reset();
+          $(".invoice-btn").addClass("disabled");
         }else{
           swal(response.trim(), response.trim(), "error");
         }
