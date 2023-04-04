@@ -1507,7 +1507,9 @@ function createInvoiceFunc(){
         $(".invoice-loader").addClass("d-none");
         if(response.trim() == "success"){
           swal("Invoice Created!", "Your Invoice Created Successully!", "success");
+
           window.location = "php/invoice.php?enrollment="+allInput[1].value+"&name="+allInput[2].value+"&category="+allInput[3].value+"&date="+finalDate+"&course="+allInput[4].value+"&batch="+allInput[5].value+"&fee-time="+allInput[6].value+"&paid-fee="+total+"&pending="+fee_pending+"&recent="+allInput[8].value;
+          
           invoiceForm.reset();
         }else{
           swal(response.trim(), response.trim(), "error");
