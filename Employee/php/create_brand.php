@@ -26,7 +26,23 @@ $response = $db -> query($response);
 if($response){
 
 }else{
-    $create_table = "";
-}
-
+    $create_table = "CREATE TABLE branding(
+        id INT(11) NOT NULL AUTO_INCREMENT,
+        brand_name VARCHAR(255),
+        brand_domain VARCHAR(255),
+        brand_email VARCHAR(255),
+        brand_twitter VARCHAR(255),
+        brand_facebook VARCHAR(255),
+        brand_instagram VARCHAR(255),
+        brand_whatsapp VARCHAR(255),
+        brand_address VARCHAR(255),
+        brand_mobile VARCHAR(255),
+        brand_about VARCHAR(255),
+        brand_privacy VARCHAR(255),
+        brand_cookie VARCHAR(255),
+        brand_terms VARCHAR(255),
+        PRIMARY KEY(id)
+    )"; 
+    
+  }
 ?>
