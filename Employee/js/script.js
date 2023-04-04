@@ -1529,8 +1529,19 @@ function createBrandFunc(){
     e.preventDefault();
     //ajax request
     $.ajax({
-      type : "POST",
-    })
+      type: "POST",
+      url: "php/create_brand.php",
+      data: new FormData(this),
+      processData: false,
+      contentType: false,
+      cache: false,
+      beforeSend: function () {
+        $(".brand-loader").removeClass("d-none");
+      },
+      success: function (response) {
+        alert(response);
+      },
+    });
   });
 }
 // BRANDING DETAILS - CODE END
