@@ -59,7 +59,63 @@
       <div class="page page-open">
         <!-- BRANDING DETAILS- CODE START -->
         <div class="container-fluid">
-
+          <div class="row mb-4">
+            <div class="col-md-1"></div>
+            <div class="col-md-10 bg-white shadow-sm mt-3 p-4">
+              <h5 class="category-h5 mb-3">
+                CREATE BRAND
+                <i class="fa-solid fa-circle-notch fa-spin d-none brand-loader float-end mt-1 text-danger" 
+                style="font-size: 20px"></i>
+              </h5>
+              <hr />
+              <form class="invoice-form">
+                <div class="row">
+                  <div class="col-md-12">
+                    <label for="invoice-enrollment">Enter Enrollment No.</label>
+                    <span class="text-danger invoice-msg"></span>
+                    <input type="text" id="invoice-enrollment" class="form-control mb-3">
+                  </div>
+                </div>
+                
+                <div class="row mb-3">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-4">
+                    <div class="d-flex justify-content-between">
+                      <h5>Total Fee </h5><span class="invoice-fee"></span>
+                    </div>
+                  </div>
+                  <div class="col-md-7"></div>
+                </div>
+                <div class="row mb-4">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-4">
+                    <div class="d-flex justify-content-between">
+                      <h5>Paid Fee </h5><span class="invoice-fee"></span>
+                    </div>
+                  </div>
+                  <div class="col-md-7"></div>
+                </div>
+                <table class="table mb-3">
+                  <thead>
+                    <tr>
+                      <th class="text-nowrap">Fee Time</th>
+                      <th class="text-nowrap">Fee Pending</th>
+                      <th class="text-nowrap">Fee Payable</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><input type="text" name="invoice-fee-time" readonly class="form-control"></td>
+                      <td><input type="text" name="invoice-pending" readonly class="form-control"></td>
+                      <td><input type="text" name="invoice-recent" placeholder="Enter the Fees" class="recent-paid form-control"></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <button class="btn btn-primary float-end disabled invoice-btn">Add Invoice</button>
+              </form>
+            </div>
+            <div class="col-md-1"></div>
+          </div>
         </div>
         <!-- BRANDING DETAILS- CODE END -->
       </div>
