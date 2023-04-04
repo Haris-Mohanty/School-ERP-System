@@ -45,7 +45,9 @@ if($response){
     )"; 
     if($db -> query($create_table)){
 
-        $insert_data = "INSERT INTO branding() VALUES ()";
+        $insert_data = "INSERT INTO branding(brand_name, brand_domain, brand_email, brand_twitter, brand_facebook, brand_instagram, brand_whatsapp,brand_address,brand_mobile, brand_about, brand_privacy, brand_cookie, brand_terms) VALUES ('$brand_name', '$brand_domain', '$brand_email', '$brand_twitter', '$brand_facebook', '$brand_instagram', '$brand_whatsapp', '$brand_address', '$brand_mobile', '$brand_about', '$brand_privacy', '$brand_cookie', '$brand_terms')";
+
+        if($db)
 
     }else{
         echo "Unable to Create Table!";
