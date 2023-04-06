@@ -46,7 +46,7 @@ if($response){
     $create_table = "CREATE TABLE branding(
         id INT(11) NOT NULL AUTO_INCREMENT,
         brand_name VARCHAR(255),
-        brand_logo BLOB
+        brand_logo BLOB,
         brand_domain VARCHAR(255),
         brand_email VARCHAR(255),
         brand_twitter VARCHAR(255),
@@ -63,7 +63,7 @@ if($response){
     )"; 
     if($db -> query($create_table)){
 
-        $insert_data = "INSERT INTO branding(brand_name, brand_domain, brand_email, brand_twitter, brand_facebook, brand_instagram, brand_whatsapp,brand_address,brand_mobile, brand_about, brand_privacy, brand_cookie, brand_terms) VALUES ('$brand_name', '$brand_domain', '$brand_email', '$brand_twitter', '$brand_facebook', '$brand_instagram', '$brand_whatsapp', '$brand_address', '$brand_mobile', '$brand_about', '$brand_privacy', '$brand_cookie', '$brand_terms')";
+        $insert_data = "INSERT INTO branding(brand_name, brand_logo, brand_domain, brand_email, brand_twitter, brand_facebook, brand_instagram, brand_whatsapp,brand_address,brand_mobile, brand_about, brand_privacy, brand_cookie, brand_terms) VALUES ('$brand_name', '$logo', '$brand_domain', '$brand_email', '$brand_twitter', '$brand_facebook', '$brand_instagram', '$brand_whatsapp', '$brand_address', '$brand_mobile', '$brand_about', '$brand_privacy', '$brand_cookie', '$brand_terms')";
 
         if($db -> query($insert_data)){
             echo "success";
