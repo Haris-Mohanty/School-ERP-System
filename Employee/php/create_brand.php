@@ -18,8 +18,16 @@ $brand_cookie = $_POST['brand-cookie'];
 $brand_terms = $_POST['brand-terms'];
 
 $brand_logo = $_FILES['brand-logo'];
+$logo = "";
+$location = "";
+if($brand_logo['name'] == ""){
+    $logo = "";
+    $location = "";
+}else{
+    $location = $brand_logo['tmp-name'];
+    $logo = addslashes(file_get_contents($location));
+}
 
-// $brand_logo = $_FILES['brand-logo']
 
 $get_data = "SELECT * FROM branding";
 
@@ -38,6 +46,7 @@ if($response){
     $create_table = "CREATE TABLE branding(
         id INT(11) NOT NULL AUTO_INCREMENT,
         brand_name VARCHAR(255),
+        brand_logo BLOB
         brand_domain VARCHAR(255),
         brand_email VARCHAR(255),
         brand_twitter VARCHAR(255),
