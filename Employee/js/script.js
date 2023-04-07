@@ -1592,9 +1592,13 @@ function createBrandFunc(){
           }
           brandBtn.disabled = true;
 
+          $(".brand-edit-btn").removeClass("d-none");
+
+
 
           
         }else{
+          $(".brand-edit-btn").addClass("d-none");
           //enabled
           for(i=0; i<allInput.length; i++){
             allInput[i].disabled = false;

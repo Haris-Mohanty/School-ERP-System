@@ -16,7 +16,7 @@ echo '
           <h5 class="category-h5 mb-3">
             CREATE BRAND
             <i class="fa-solid fa-circle-notch fa-spin d-none brand-loader float-end mt-1 text-danger" style="font-size: 20px;"></i>
-            <i class="fa fa-edit brand-edit-btn float-end mt-1 text-danger" style="font-size: 17px; cursor: pointer;">&nbspEdit Brand</i>
+            <i class="fa fa-edit brand-edit-btn d-none float-end mt-1 text-danger" style="font-size: 17px; cursor: pointer;">&nbspEdit Brand</i>
           </h5>
           <hr />
 
