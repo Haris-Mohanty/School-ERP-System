@@ -1594,8 +1594,6 @@ function createBrandFunc(){
 
           $(".brand-edit-btn").removeClass("d-none");
 
-
-
           
         }else{
           $(".brand-edit-btn").addClass("d-none");
