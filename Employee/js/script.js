@@ -1549,7 +1549,7 @@ function createBrandFunc(){
       url: "php/get_brand.php",
       cache: false,
       beforeSend: function () {
-        $(".brand-loader").removeClass("d-none");
+        $(".brand-loader").removeClass("d-none")
       },
       success: function (response) {
         alert(response);
