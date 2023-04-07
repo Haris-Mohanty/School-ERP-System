@@ -1569,6 +1569,18 @@ function createBrandFunc(){
 
           let data = JSON.parse(response.trim());
           allInput[0].value = data.brand_name;
+          allInput[2].value = data.brand_domain;
+          allInput[3].value = data.brand_email;
+          allInput[4].value = data.brand_twitter;
+          allInput[5].value = data.brand_facebook;
+          allInput[6].value = data.brand_instagram;
+          allInput[7].value = data.brand_whatsapp;
+          textarea[0].value = data.brand_address;
+          allInput[8].value = data.brand_mobile;
+          textarea[1].value = data.brand_about;
+          textarea[2].value = data.brand_privacy;
+          textarea[3].value = data.brand_cookie;
+          textarea[4].value = data.brand_terms;
           
         }else{
 
