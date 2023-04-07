@@ -1543,10 +1543,17 @@ function createBrandFunc(){
       },
     });
   });
-  function getBrandDataFunc(){
+  function getBrandDataFunc() {
     $.ajax({
-      type : "POST",
-      url : "php/get_brand.php",
+      type: "POST",
+      url: "php/get_brand.php",
+      cache: false,
+      beforeSend: function () {
+        $(".brand-loader").removeClass("d-none");
+      },
+      success: function (response) {
+        alert(response);
+      },
     });
   }
   getBrandDataFunc();
