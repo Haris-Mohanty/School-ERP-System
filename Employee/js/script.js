@@ -1591,9 +1591,18 @@ function createBrandFunc(){
             textarea[i].disabled = true;
           }
           brandBtn.disabled = true;
+
+
           
         }else{
-
+          //enabled
+          for(i=0; i<allInput.length; i++){
+            allInput[i].disabled = false;
+          }
+          for(i=0; i<textarea.length; i++){
+            textarea[i].disabled = false;
+          }
+          brandBtn.disabled = false;
         }
       },
     });
