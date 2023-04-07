@@ -1590,6 +1590,7 @@ function createBrandFunc(){
           for(i=0; i<textarea.length; i++){
             textarea[i].disabled = true;
           }
+          brandBtn.disabled = true;
           
         }else{
 
