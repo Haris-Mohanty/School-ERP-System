@@ -1610,5 +1610,8 @@ function createBrandFunc(){
     });
   }
   getBrandDataFunc();
+  $(".brand-edit-btn").click(function () {
+    
+  });
 }
 // BRANDING DETAILS - CODE END
