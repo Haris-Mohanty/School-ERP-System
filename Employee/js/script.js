@@ -1582,9 +1582,13 @@ function createBrandFunc(){
           textarea[3].value = data.brand_cookie;
           textarea[4].value = data.brand_terms;
 
+          //disabled
           let i;
           for(i=0; i<allInput.length; i++){
             allInput[i].disabled = true;
+          }
+          for(i=0; i<textarea.length; i++){
+            textarea[i].disabled = true;
           }
           
         }else{
