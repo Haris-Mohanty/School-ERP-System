@@ -1556,12 +1556,18 @@ function createBrandFunc(){
       url: "php/get_brand.php",
       cache: false,
       beforeSend: function () {
-        $(".brand-loader").removeClass("d-none")
+        $(".brand-loader").removeClass("d-none");
       },
       success: function (response) {
-        $(".brand-loader").addClass("d-none")
-        let data = JSON.parse(response.trim());
-        console.log(data)
+        $(".brand-loader").addClass("d-none");
+
+        if(response.trim() != "There is No Data!"){
+
+          let data = JSON.parse(response.trim());
+          
+        }else{
+
+        }
       },
     });
   }
