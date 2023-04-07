@@ -1543,10 +1543,11 @@ function createBrandFunc(){
         $(".brand-loader").removeClass("d-none");
       },
       success: function (response) {
+
         if(response.trim() == "success"){
           $(".brand-loader").addClass("d-none");
-          swal("Brand Created!", "Your Brand has been Created Successfully!", "success");
-          $(".brand-form")[0].reset();
+          swal("Data Updated!", "Your Brand has been Updated Successfully!", "success");
+          getBrandDataFunc();
 
         }else{
           swal(response.trim(), response.trim(), "error");
