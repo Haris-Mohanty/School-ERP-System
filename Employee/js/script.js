@@ -1539,7 +1539,7 @@ function createBrandFunc(){
         $(".brand-loader").removeClass("d-none");
       },
       success: function (response) {
-        alert(response);
+        if(response.trim() == "")
       },
     });
   });
@@ -1552,7 +1552,8 @@ function createBrandFunc(){
         $(".brand-loader").removeClass("d-none")
       },
       success: function (response) {
-        alert(response);
+        let data = JSON.parse(response.trim());
+        console.log(data)
       },
     });
   }
