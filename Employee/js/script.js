@@ -1611,7 +1611,13 @@ function createBrandFunc(){
   }
   getBrandDataFunc();
   $(".brand-edit-btn").click(function () {
-    
+    for(i=0; i<allInput.length; i++){
+      allInput[i].disabled = false;
+    }
+    for(i=0; i<textarea.length; i++){
+      textarea[i].disabled = false;
+    }
+    brandBtn.disabled = false;
   });
 }
 // BRANDING DETAILS - CODE END
