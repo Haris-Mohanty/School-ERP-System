@@ -1544,7 +1544,10 @@ function createBrandFunc(){
     });
   });
   function getBrandDataFunc(){
-    alert();
+    $.ajax({
+      type : "POST",
+      url : "php/get_brand.php",
+    });
   }
   getBrandDataFunc();
 }
