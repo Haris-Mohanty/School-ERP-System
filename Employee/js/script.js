@@ -1525,6 +1525,10 @@ function createInvoiceFunc(){
 
 // BRANDING DETAILS - CODE START
 function createBrandFunc(){
+  let brandForm = document.querySelector(".brand-form");
+  let allInput = brandForm.querySelectorAll("INPUT");
+  let textarea = brandForm.querySelectorAll("TEXTAREA");
+  let brandBtn = brandForm.querySelector("button");
   $(".brand-form").on("submit", function (e) {
     e.preventDefault();
     //ajax request
@@ -1564,6 +1568,7 @@ function createBrandFunc(){
         if(response.trim() != "There is No Data!"){
 
           let data = JSON.parse(response.trim());
+          allInput[0].value = data.brand_name;
           
         }else{
 
