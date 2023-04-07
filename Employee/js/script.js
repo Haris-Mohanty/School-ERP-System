@@ -1612,6 +1612,7 @@ function createBrandFunc(){
   }
   getBrandDataFunc();
   $(".brand-edit-btn").click(function () {
+    $(".brand-edit-btn").addClass("d-none");
     for(i=0; i<allInput.length; i++){
       allInput[i].disabled = false;
     }
