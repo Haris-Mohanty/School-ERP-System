@@ -1539,7 +1539,14 @@ function createBrandFunc(){
         $(".brand-loader").removeClass("d-none");
       },
       success: function (response) {
-        if(response.trim() == "")
+        if(response.trim() == "success"){
+          $(".brand-loader").addClass("d-none");
+          swal("Brand Created!", "Your Brand has been Created Successfully!", "success");
+          $(".brand-form")[0].reset();
+
+        }else{
+          swal(response.trim(), response.trim(), "error");
+        }
       },
     });
   });
@@ -1549,7 +1556,7 @@ function createBrandFunc(){
       url: "php/get_brand.php",
       cache: false,
       beforeSend: function () {
-        $(".brand-loader").removeClass("d-none")
+        // $(".brand-loader").removeClass("d-none")
       },
       success: function (response) {
         let data = JSON.parse(response.trim());
