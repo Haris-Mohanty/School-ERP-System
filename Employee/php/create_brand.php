@@ -34,13 +34,7 @@ $get_data = "SELECT * FROM branding";
 $response = $db -> query($get_data);
 
 if($response){
-    $insert_data = "INSERT INTO branding(brand_name, brand_logo, brand_domain, brand_email, brand_twitter, brand_facebook, brand_instagram, brand_whatsapp,brand_address,brand_mobile, brand_about, brand_privacy, brand_cookie, brand_terms) VALUES ('$brand_name', '$logo', '$brand_domain', '$brand_email', '$brand_twitter', '$brand_facebook', '$brand_instagram', '$brand_whatsapp', '$brand_address', '$brand_mobile', '$brand_about', '$brand_privacy', '$brand_cookie', '$brand_terms')";
-
-        if($db -> query($insert_data)){
-            echo "success";
-        }else{
-            echo "Unable to Create Brand!";
-        }
+    echo "found";
 
 }else{
     $create_table = "CREATE TABLE branding(
