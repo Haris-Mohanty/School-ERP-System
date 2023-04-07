@@ -12,10 +12,10 @@ $brand_instagram = $_POST['brand-instagram'];
 $brand_whatsapp = $_POST['brand-whatsapp'];
 $brand_address = $_POST['brand-address'];
 $brand_mobile = $_POST['brand-mobile'];
-$brand_about = $_POST['brand-about'];
-$brand_privacy = $_POST['brand-privacy'];
-$brand_cookie = $_POST['brand-cookie'];
-$brand_terms = $_POST['brand-terms'];
+$brand_about = addslashes($_POST['brand-about']);
+$brand_privacy = addslashes($_POST['brand-privacy']);
+$brand_cookie = addslashes($_POST['brand-cookie']);
+$brand_terms = addslashes($_POST['brand-terms']);
 
 $brand_logo = $_FILES['brand-logo'];
 $logo = "";
@@ -68,10 +68,10 @@ if($response){
         brand_whatsapp VARCHAR(255),
         brand_address VARCHAR(255),
         brand_mobile VARCHAR(255),
-        brand_about VARCHAR(255),
-        brand_privacy VARCHAR(255),
-        brand_cookie VARCHAR(255),
-        brand_terms VARCHAR(255),
+        brand_about MEDIUMTEXT,
+        brand_privacy MEDIUMTEXT,
+        brand_cookie MEDIUMTEXT,
+        brand_terms MEDIUMTEXT,
         PRIMARY KEY(id)
     )"; 
     if($db -> query($create_table)){
