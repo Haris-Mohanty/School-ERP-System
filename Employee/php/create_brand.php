@@ -36,7 +36,23 @@ $response = $db -> query($get_data);
 if($response){
 
     if($logo == ""){
-        $update_brand = "UPDATE branding SET brand_name, brand_domain, brand_email, brand_twitter, brand_facebook, brand_instagram, brand_whatsapp,brand_address,brand_mobile, brand_about, brand_privacy, brand_cookie, brand_terms";
+        $update_brand = "UPDATE branding SET brand_name = '$brand_name', brand_domain = '$brand_domain', brand_email = '$brand_email', brand_twitter = '$brand_twitter', brand_facebook = '$brand_facebook', brand_instagram = '$brand_instagram', brand_whatsapp = '$brand_whatsapp', brand_address = '$brand_address',brand_mobile = '$brand_mobile', brand_about = '$brand_about', brand_privacy = '$brand_privacy', brand_cookie = '$brand_cookie', brand_terms = '$brand_terms'";
+
+        if($db -> query($update_brand)){
+            echo "success";
+        }else{
+            echo "Unable to Update Data!";
+        }
+    }else{
+
+        $update_brand = "UPDATE branding SET brand_name = '$brand_name', brand_logo = '$logo', brand_domain = '$brand_domain', brand_email = '$brand_email', brand_twitter = '$brand_twitter', brand_facebook = '$brand_facebook', brand_instagram = '$brand_instagram', brand_whatsapp = '$brand_whatsapp', brand_address = '$brand_address',brand_mobile = '$brand_mobile', brand_about = '$brand_about', brand_privacy = '$brand_privacy', brand_cookie = '$brand_cookie', brand_terms = '$brand_terms'";
+
+        if($db -> query($update_brand)){
+            echo "success";
+        }else{
+            echo "Unable to Update Data!";
+        }
+
     }
 
 }else{
