@@ -1543,5 +1543,9 @@ function createBrandFunc(){
       },
     });
   });
+  function getBrandDataFunc(){
+    alert();
+  }
+  getBrandDataFunc();
 }
 // BRANDING DETAILS - CODE END
