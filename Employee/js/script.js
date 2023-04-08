@@ -1667,5 +1667,8 @@ function createAttendanceFunc(){
       swal("Not Found any Batch!", "There is No Batch Found in this Course!", "error");
     }
   });
+  //date
+  let date = new Date();
+  let dd = date.getDate();
 }
 // STUDENT ATTENDANCE - CODE END

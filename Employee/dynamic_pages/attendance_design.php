@@ -58,7 +58,7 @@ echo '
               </div>
               </div>
 
-              <input type="date" class="date form-control mb-3" max="2023-04-08">
+              <input type="date" class="date form-control mb-3">
                   
             <table class="table mb-3">
               <thead>
