@@ -58,7 +58,7 @@ echo '
               </div>
               </div>
 
-              <input type="date" class="date form-control mb-3">
+              <input type="date" class="form-control mb-3 date">
                   
             <table class="table mb-3">
               <thead>
@@ -70,23 +70,8 @@ echo '
                   <th class="text-nowrap">Attendance</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>102145</td>
-                  <td>Haris</td>
-                  <td>New Batch</td>
-                  <td class="d-flex justify-content-between">
-                    <div>
-                      <input type="radio" name="absent" id="absent" value="absent" >
-                      <label for="absent">Absent</label>
-                    </div>
-                    <div>
-                      <input type="radio" name="abset" id="present" value="present" >
-                      <label for="present">Present</label>
-                    </div>
-                  </td>
-                </tr>
+              <tbody class="att-list">
+                
               </tbody>
             </table>
             <button class="btn btn-primary float-end att-btn">Add Attendance</button>
