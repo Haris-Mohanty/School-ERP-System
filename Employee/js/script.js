@@ -1676,5 +1676,7 @@ function createAttendanceFunc(){
   mm = mm<10 ? "0"+mm : mm;
   let maxDate = yy+"-"+mm+"-"+dd;
   $(".date").attr("max", maxDate);
+  //Show students
+  $(".att-batch")
 }
 // STUDENT ATTENDANCE - CODE END
