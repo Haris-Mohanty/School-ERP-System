@@ -1647,5 +1647,27 @@ function createAttendanceFunc(){
       swal("Not Found any Course!","There is No Course Found in this Category!","error");
     }
   });
+  //get batch
+  $("#att-course").on("change", async function () {
+    let response = await ajaxGetAllBatch("batch", $("#att-category").val(), this.value,"att-loader");
+    if (response.trim() != "There is No Batch Found!") {
+      let all_course = JSON.parse(response.trim());
+
+      $("#att-batch").html('<option value="choose-course">Choose Batch</option>'); //empty
+      all_course.forEach((batch) => {
+        let option = `
+        <option value="${batch.batch_name} from ${batch.batch_from} to ${batch.batch_to}">
+              ${batch.batch_name} from ${batch.batch_from} to ${batch.batch_to}
+        </option>
+        `;
+        $("#att-batch").append(option);
+      });
+    } else {
+      $("#stu-batch").html(
+        '<option value="choose-batch">Choose Batch</option>'
+      );
+      swal("Not Found any Batch!", "There is No Batch Found in this Course!", "error");
+    }
+  });
 }
 // STUDENT ATTENDANCE - CODE END
