@@ -1628,6 +1628,26 @@ function createBrandFunc(){
 
 // STUDENT ATTENDANCE - CODE START
 function createAttendanceFunc(){
-  alert();
+  //get course
+  $("#att-category").on("change", async function () {
+    let response = await ajaxGetAllCourse("course", this.value, "att-loader");
+    if (response.trim() != "There is No Course Found!") {
+      let all_course = JSON.parse(response.trim());
+
+      $("#stu-course").html(
+        '<option value="choose-course">Choose Course</option>'
+      ); //empty
+      all_course.forEach((course) => {
+        let option = `
+        <option value="${course.name}">${course.name}</option>
+        `;
+        $("#stu-course").append(option);
+      });
+    } else {
+      $("#stu-course").html('<option value="choose-course">Choose Course</option>');
+      $("#stu-batch").html('<option value="choose-batch">Choose Batch</option>');
+      swal("Not Found any Course!","There is No Course Found in this Category!","error");
+    }
+  });
 }
 // STUDENT ATTENDANCE - CODE END
