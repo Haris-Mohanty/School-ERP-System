@@ -1696,11 +1696,11 @@ function createAttendanceFunc(){
             <td>${student.batch}</td>
             <td class="d-flex justify-content-between">
               <div>
-                <input type="radio" name="absent" checked="true" id="absent" value="absent" >
+                <input type="radio" name="absent-${index}" checked id="absent" value="absent" >
                 <label for="absent">Absent</label>
               </div>
               <div>
-                <input type="radio" name="abset" id="present" value="present" >
+                <input type="radio" name="absent-${index}" id="present" value="present" >
                 <label for="present">Present</label>
               </div>
             </td>
