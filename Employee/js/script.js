@@ -1642,6 +1642,7 @@ function createAttendanceFunc(){
         $("#att-course").append(option);
       });
     } else {
+      $(".att-list").html('');
       $("#att-course").html('<option value="choose-course">Choose Course</option>');
       $("#att-batch").html('<option value="choose-batch">Choose Batch</option>');
       swal("Not Found any Course!","There is No Course Found in this Category!","error");
@@ -1663,6 +1664,7 @@ function createAttendanceFunc(){
         $("#att-batch").append(option);
       });
     } else {
+      $(".att-list").html('');
       $("#att-batch").html('<option value="choose-batch">Choose Batch</option>');
       swal("Not Found any Batch!", "There is No Batch Found in this Course!", "error");
     }
@@ -1681,7 +1683,35 @@ function createAttendanceFunc(){
     try{
 
       let response = await ajaxGetAllStudents("students", $("#att-category").val(), this.value, "att-loader");
-      console.log(response)
+      if(response.trim() != "There is No Student Found!"){
+
+        let students = JSON.parse(response.trim());
+        $(".att-list").html('');
+        students.forEach((student, index) => {
+          let tr = `
+          <tr>
+            <td>${index+1}</td>
+            <td>${student.enrollment}</td>
+            <td>${student.student_name}</td>
+            <td>${student.batch}</td>
+            <td class="d-flex justify-content-between">
+              <div>
+                <input type="radio" name="absent" id="absent" value="absent" >
+                <label for="absent">Absent</label>
+              </div>
+              <div>
+                <input type="radio" name="abset" id="present" value="present" >
+                <label for="present">Present</label>
+              </div>
+            </td>
+          </tr>
+          `;
+          $(".att-list").append(tr);
+        });
+
+      }else{
+        $(".att-list").html('');
+      }
 
     }catch(err){
       console.log(err);
