@@ -1677,6 +1677,15 @@ function createAttendanceFunc(){
   let maxDate = yy+"-"+mm+"-"+dd;
   $(".date").attr("max", maxDate);
   //Show students
-  $(".att-batch")
+  $("#att-batch").on("change", async function () {
+    try{
+
+      let response = await ajaxGetAllStudents("students", $("#att-category").val(), this.value, "att-loader");
+      console.log(response)
+
+    }catch(err){
+      console.log(err);
+    }
+  });
 }
 // STUDENT ATTENDANCE - CODE END
