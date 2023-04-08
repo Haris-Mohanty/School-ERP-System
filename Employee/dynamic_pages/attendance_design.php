@@ -38,8 +38,13 @@ echo '
             <div class="row">
               <div class="col-md-4">
                 <select name="select-category" id="att-category" class="form-select invoice-category mb-3">
-                   <option value="choose-category">Choose Category</option></select>
-              </div>
+                   <option value="choose-category">Choose Category</option></select>';
+
+                   for($i=0; $i<$length; $i++){
+                    echo '<option value="'.$all_category[$i].'">'.$all_category[$i].'</option>';
+                  }
+
+            echo  '</div>
               <div class="col-md-4">
                   <select name="select-course" id="att-course" class="form-select mb-3">
                        <option value="choose-course">Choose Course</option>
