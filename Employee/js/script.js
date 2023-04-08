@@ -1663,9 +1663,7 @@ function createAttendanceFunc(){
         $("#att-batch").append(option);
       });
     } else {
-      $("#att-batch").html(
-        '<option value="choose-batch">Choose Batch</option>'
-      );
+      $("#att-batch").html('<option value="choose-batch">Choose Batch</option>');
       swal("Not Found any Batch!", "There is No Batch Found in this Course!", "error");
     }
   });
