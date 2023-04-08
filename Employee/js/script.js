@@ -1623,3 +1623,9 @@ function createBrandFunc(){
   });
 }
 // BRANDING DETAILS - CODE END
+
+// STUDENT ATTENDANCE - CODE START
+function createAttendanceFunc(){
+  alert();
+}
+// STUDENT ATTENDANCE - CODE END
