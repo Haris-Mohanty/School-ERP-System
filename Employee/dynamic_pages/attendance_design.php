@@ -3,6 +3,9 @@
 //LINK DATABASE
 require_once("../../Common_files/php/database.php");
 
+// NAV LINK
+require_once("../php/nav.php");
+
 echo '
 
 <!-- STUDENT ATTENDANCE - CODE START -->
