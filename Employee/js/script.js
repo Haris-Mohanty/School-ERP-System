@@ -1692,10 +1692,10 @@ function createAttendanceFunc(){
           let tr = `
           <tr>
             <td>${index+1}</td>
-            <td>${student.enrollment}</td>
-            <td>${student.student_name}</td>
-            <td>${student.batch}</td>
-            <td class="d-flex justify-content-between">
+            <td class="enrollment">${student.enrollment}</td>
+            <td class="name">${student.student_name}</td>
+            <td class="batch">${student.batch}</td>
+            <td class="d-flex justify-content-between attendance">
               <div>
                 <input type="radio" name="absent-${index}" checked id="absent" value="absent" >
                 <label for="absent">Absent</label>
@@ -1730,8 +1730,25 @@ function createAttendanceFunc(){
     //check date
     if($(".date").val() != ""){
 
-      
+      let enrollmentEl = document.querySelectorAll(".enrollmet");
+      let allNameEl = document.querySelectorAll(".name");
+      let allBatchEl = document.querySelectorAll(".batch");
+      let allAttEl = document.querySelector(".att-list");
+      let allInput = allAttEl.querySelectorAll("INPUT");
 
+      let i;
+      for(i=0; i<enrollmentEl.length; i++){
+        enrollment[i] = enrollmentEl[i].innerHTML;
+        name[i] = allNameEl[i].innerHTML;
+        batch[i] = allBatchEl[i].innerHTML;
+      }
+      for(i=0; i<allInput.length; i++){
+        if(allInput[i].checked == true){
+          attendance[i] = allInput[i].value;
+        }
+      }
+      attendance = $.grep(attendance, n=> n == 0 || n); //extra space remover
+      console.log(attendance)
     }else{
       swal("Date!", "Please Select a Date!", "warning")
     }
