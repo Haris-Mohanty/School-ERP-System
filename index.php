@@ -45,7 +45,8 @@ require("Common_files/php/database.php");
 <body>
     <?php
     
-    $
+    $brand_res = "";
+    $get_brand = "SELECT * FROM branding"
 
     ?>
     <div class="bg-light shadow-sm container-fluid">
