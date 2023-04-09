@@ -1726,6 +1726,15 @@ function createAttendanceFunc(){
     let name = [];
     let batch = [];
     let attendance = [];
+
+    //check date
+    if($(".date").val() != ""){
+
+      
+
+    }else{
+      swal("Date!", "Please Select a Date!", "warning")
+    }
   });
 }
 // STUDENT ATTENDANCE - CODE END
