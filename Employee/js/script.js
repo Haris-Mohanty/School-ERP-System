@@ -1759,6 +1759,7 @@ function createAttendanceFunc(){
           enrollment: JSON.stringify(enrollment),
           batch: JSON.stringify(batch),
           attendance: JSON.stringify(attendance),
+          date : $(".date").val()
         },
         cache: false,
         beforeSend: function () {
@@ -1767,7 +1768,7 @@ function createAttendanceFunc(){
         success: function (response) {
           if(response.trim() == "success"){
             $(".att-loader").addClass("d-none");
-            
+            $(".stu-att-form")[0].reset();
 
           }else{
             swal(response.trim(), response.trim(), "error");

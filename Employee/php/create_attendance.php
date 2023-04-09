@@ -7,6 +7,7 @@ $enrollment = json_decode($_POST['enrollment']);
 $name = json_decode($_POST['name']);
 $batch = json_decode($_POST['batch']);
 $attendance = json_decode($_POST['attendance']);
+$date = $_POST['date'];
 
 $length = count($name); //get length
 
@@ -19,8 +20,8 @@ if($response)
 {
     for($i=0;$i<$length;$i++)
     {
-        $insert_data = "INSERT INTO attendance(name,enrollment,batch,attendance)
-        VALUES('$name[$i]','$enrollment[$i]','$batch[$i]','$attendance[$i]')";
+        $insert_data = "INSERT INTO attendance(name,enrollment,batch,attendance, date)
+        VALUES('$name[$i]','$enrollment[$i]','$batch[$i]','$attendance[$i]', '$date')";
         if($db -> query($insert_data))
         {
             $message = "success";
@@ -41,14 +42,15 @@ else
         enrollment VARCHAR(55),
         batch VARCHAR(55),
         attendance VARCHAR(55),
+        date VARCHAR(55),
         PRIMARY KEY (id)
     )";
     if($db -> query($create_table))
     {
         for($i=0;$i<$length;$i++)
         {
-            $insert_data = "INSERT INTO attendance(name,enrollment,batch,attendance)
-            VALUES('$name[$i]','$enrollment[$i]','$batch[$i]','$attendance[$i]')";
+            $insert_data = "INSERT INTO attendance(name,enrollment,batch,attendance, date)
+            VALUES('$name[$i]','$enrollment[$i]','$batch[$i]','$attendance[$i]', '$date')";
             if($db -> query($insert_data))
             {
                 $message = "success";
