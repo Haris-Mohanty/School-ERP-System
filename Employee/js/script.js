@@ -1770,6 +1770,7 @@ function createAttendanceFunc(){
             $(".att-loader").addClass("d-none");
             $(".stu-att-form")[0].reset();
             $(".att-list").html('');
+            swal("Successful!", "Attendance Added Successfully!", "success")
           }else{
             swal(response.trim(), response.trim(), "error");
           }
