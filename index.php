@@ -1,3 +1,9 @@
+<?php
+
+require("Common_files/php/database.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,6 +43,11 @@
     <title>School ERP System</title>
 </head>
 <body>
+    <?php
+    
+    $
+
+    ?>
     <div class="bg-light shadow-sm container-fluid">
         <!-- NAV BAR - CODE START -->
         <nav class="navbar navbar-expand-sm fixed-top shadow-lg navbar-light">
