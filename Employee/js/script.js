@@ -1730,7 +1730,7 @@ function createAttendanceFunc(){
     //check date
     if($(".date").val() != ""){
 
-      let enrollmentEl = document.querySelectorAll(".enrollmet");
+      let enrollmentEl = document.querySelectorAll(".enrollment");
       let allNameEl = document.querySelectorAll(".name");
       let allBatchEl = document.querySelectorAll(".batch");
       let allAttEl = document.querySelector(".att-list");
@@ -1748,6 +1748,8 @@ function createAttendanceFunc(){
         }
       }
       attendance = $.grep(attendance, n=> n == 0 || n); //extra space remover
+
+
       //ajax request
       $.ajax({
         type: "POST",
