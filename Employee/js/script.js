@@ -1719,5 +1719,7 @@ function createAttendanceFunc(){
       console.log(err);
     }
   });
+  //submit(add attendance)
+  $(".att-btn").
 }
 // STUDENT ATTENDANCE - CODE END
