@@ -80,7 +80,7 @@ require("Common_files/php/database.php");
                             while($data = $cat_res -> fetch_assoc()){
                                 echo '
                                 <li class="nav-item">
-                                  <a href="" class="nav-link"></a>
+                                  <a href="#" class="nav-link">'.$data['category_name'].'</a>
                                 </li>
                                 ';
                             }
