@@ -8,7 +8,7 @@ $name = json_decode($_POST['name']);
 $batch = json_decode($_POST['batch']);
 $attendance = json_decode($_POST['attendance']);
 
-$count = count($name); //get length
+$length = count($name); //get length
 
 $get_att = "SELECT * FROM attendance";
 
@@ -28,7 +28,14 @@ if($response){
         PRIMARY KEY(id)
     )";
     if($db -> query($create_table)){
-        $insert_data = "INSERT INTO attendance(name, enrollment, batch, attendance) VALUES ('$name', '$enrollment', '$batch', '$attendance')";
+        
+        for($i=0; $i<$length; $i++){
+            $insert_data = "INSERT INTO attendance(name, enrollment, batch, attendance) VALUES 
+            ('$name[$i]', '$enrollment[$i]', '$batch[$i]', '$attendance[$i]')";
+
+            if()
+        }
+
     }else{
         echo "Unable to Create Table!";
     }
