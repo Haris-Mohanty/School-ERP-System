@@ -1748,7 +1748,10 @@ function createAttendanceFunc(){
         }
       }
       attendance = $.grep(attendance, n=> n == 0 || n); //extra space remover
-      console.log(attendance)
+      //ajax request
+      $.ajax({
+        type : "POST",
+      });
     }else{
       swal("Date!", "Please Select a Date!", "warning")
     }
