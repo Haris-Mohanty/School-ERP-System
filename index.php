@@ -46,14 +46,27 @@ require("Common_files/php/database.php");
     <?php
     
     $brand_res = "";
-    $get_brand = "SELECT * FROM branding"
+    $get_brand = "SELECT * FROM branding";
+    $response = $db -> query($get_brand);
+    if($response){
+        $brand_res = $response -> fetch_assoc();
+    }
 
     ?>
     <div class="bg-light shadow-sm container-fluid">
         <!-- NAV BAR - CODE START -->
         <nav class="navbar navbar-expand-sm fixed-top shadow-lg navbar-light">
             <div class="container">
-                <a href="#" class="navbar-brand text-uppercase border">Massachusetts Institute of Technology</a>
+                <a href="#" class="navbar-brand text-uppercase border">
+                    <?php
+                    $logo_string = base64_encode($brand_res['brand_logo']);
+                    $src = "data:image/png;base64,".$logo_string;
+
+                    echo "<img src='".$src."' width='40'>";
+                    echo "&nbsp";
+                    echo "<small>".$brand_res['brand_name']."</small>";
+                    ?>
+                </a>
                 <button class="navbar-toggler" type="button">
                     <span class="navbar-toggler-icon"></span>
                 </button>
