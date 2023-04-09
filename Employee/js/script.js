@@ -1685,6 +1685,7 @@ function createAttendanceFunc(){
       let response = await ajaxGetAllStudents("students", $("#att-category").val(), this.value, "att-loader");
       if(response.trim() != "There is No Student Found!"){
 
+        $(".att-btn").removeClass("disabled");
         let students = JSON.parse(response.trim());
         $(".att-list").html('');
         students.forEach((student, index) => {
@@ -1710,6 +1711,7 @@ function createAttendanceFunc(){
         });
 
       }else{
+        $(".att-btn").addClass("disabled");
         $(".att-list").html('');
       }
 

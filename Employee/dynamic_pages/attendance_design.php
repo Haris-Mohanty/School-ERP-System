@@ -74,7 +74,7 @@ echo '
                 
               </tbody>
             </table>
-            <button class="btn btn-primary float-end att-btn">Add Attendance</button>
+            <button class="btn btn-primary disabled float-end att-btn">Add Attendance</button>
           </form>
         </div>
         <div class="col-md-1"></div>
