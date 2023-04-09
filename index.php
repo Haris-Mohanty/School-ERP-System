@@ -41,7 +41,15 @@
         <!-- NAV BAR - CODE START -->
         <nav class="navbar navbar-expand-sm fixed-top shadow-lg navbar-light">
             <div class="container">
-                
+                <a href="#" class="navbar-brand text-uppercase border">Massachusetts Institute of Technology</a>
+                <button class="navbar-toggler" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="myNavbar">
+                    <ul class="navbar-nav">
+                        
+                    </ul>
+                </div>
             </div>
         </nav>
         <!-- NAV BAR - CODE END -->
