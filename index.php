@@ -64,14 +64,20 @@ require("Common_files/php/database.php");
 
                     echo "<img src='".$src."' width='40'>";
                     echo "&nbsp";
-                    echo "<small>".$brand_res['brand_name']."</small>";
+                    echo "<small class='fw-bold'>".$brand_res['brand_name']."</small>";
                     ?>
                 </a>
                 <button class="navbar-toggler" type="button">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse" id="myNavbar">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav w-100 justify-content-end">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">About</a>
+                        </li>
                         <?php
                         
                         $get_menu = "SELECT * FROM category";
@@ -87,6 +93,23 @@ require("Common_files/php/database.php");
                         }
 
                         ?>
+                        <!-- Create and login code start -->
+                        <div class="dropdown btn-group shadow-sm ml-auto">
+                            <button class="btn">
+                                <i class="fa fa-user" data-bs-toggle="dropdown"></i>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item">
+                                        <i class="fa fa-user"></i>
+                                        Register
+                                    </a>
+                                    <a href="#" class="dropdown-item">
+                                        <i class="fa fa-sign-in"></i>
+                                        Login
+                                    </a>
+                                </div>
+                            </button>
+                        </div>
+                        <!-- Create and login code end -->
                     </ul>
                 </div>
             </div>
