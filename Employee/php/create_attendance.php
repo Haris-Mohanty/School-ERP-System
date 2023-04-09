@@ -18,8 +18,18 @@ if($response){
 }else{
 
     $create_table = "CREATE TABLE attendance(
-        
+        id INT(11) NOT NULL AUTO_INCREMENT,
+        name VARCHAR(55),
+        enrollment VARCHAR(55),
+        batch VARCHAR(55),
+        attendance VARCHAR(55),
+        PRIMARY KEY(id)
     )";
+    if($db -> query($create_table)){
+
+    }else{
+        echo "Unable to Create Table!";
+    }
 
 }
 
