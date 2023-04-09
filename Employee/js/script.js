@@ -1720,6 +1720,12 @@ function createAttendanceFunc(){
     }
   });
   //submit(add attendance)
-  $(".att-btn").
+  $(".att-btn").click(function (e) {
+    e.preventDefault();
+    let enrollment = [];
+    let name = [];
+    let batch = [];
+    let attendance = [];
+  });
 }
 // STUDENT ATTENDANCE - CODE END
