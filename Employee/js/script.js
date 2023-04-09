@@ -1750,7 +1750,21 @@ function createAttendanceFunc(){
       attendance = $.grep(attendance, n=> n == 0 || n); //extra space remover
       //ajax request
       $.ajax({
-        type : "POST",
+        type: "POST",
+        url: "php/create_attendance.php",
+        data: {
+          name: JSON.stringify(name),
+          enrollment: JSON.stringify(enrollment),
+          batch: JSON.stringify(batch),
+          attendance: JSON.stringify(attendance),
+        },
+        cache: false,
+        beforeSend: function () {
+          $(".att-loader").removeClass("d-none");
+        },
+        success: function (response) {
+          alert(response);
+        },
       });
     }else{
       swal("Date!", "Please Select a Date!", "warning")
