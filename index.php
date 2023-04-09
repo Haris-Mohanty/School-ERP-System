@@ -72,7 +72,21 @@ require("Common_files/php/database.php");
                 </button>
                 <div class="navbar-collapse collapse" id="myNavbar">
                     <ul class="navbar-nav">
+                        <?php
                         
+                        $get_menu = "SELECT * FROM category";
+                        $cat_res = $db -> query($get_menu);
+                        if($cat_res){
+                            while($data = $cat_res -> fetch_assoc()){
+                                echo '
+                                <li class="nav-item">
+                                  <a href="" class="nav-link"></a>
+                                </li>
+                                ';
+                            }
+                        }
+
+                        ?>
                     </ul>
                 </div>
             </div>
