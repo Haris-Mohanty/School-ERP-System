@@ -1765,7 +1765,7 @@ function createAttendanceFunc(){
           $(".att-loader").removeClass("d-none");
         },
         success: function (response) {
-          alert(response);
+          if(response.trim() == "success")
         },
       });
     }else{
