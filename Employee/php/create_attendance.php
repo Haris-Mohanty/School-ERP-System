@@ -26,7 +26,7 @@ if($response){
         PRIMARY KEY(id)
     )";
     if($db -> query($create_table)){
-
+        $insert_data = "INSERT INTO attendance() VALUES ()";
     }else{
         echo "Unable to Create Table!";
     }
