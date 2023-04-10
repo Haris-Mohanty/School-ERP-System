@@ -46,5 +46,8 @@ require("Common_files/php/database.php");
     <?php
         require("assets/nav.php");
     ?>
+    <!-- FOOTER CODE START -->
+    
+    <!-- FOOTER CODE CODE -->
 </body>
 </html>
