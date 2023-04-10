@@ -43,6 +43,8 @@ require("Common_files/php/database.php");
     <title>School ERP System</title>
 </head>
 <body>
-    
+    <?php
+        require("assets/nav.php");
+    ?>
 </body>
 </html>
