@@ -48,7 +48,7 @@ require("Common_files/php/database.php");
     ?>
 
      <!-- FOOTER CODE START -->
-<div class="container">
+        <div class="container" style="margin-top: 100px;">
             <div class="row">
                 <div class="col-md-6 mb-2 d-flex justify-content-center align-items-center">
                     <div class="input-group w-100">
@@ -67,9 +67,29 @@ require("Common_files/php/database.php");
                 </div>
             </div>
         </div>
+        <div class="container-fuild bg-dark">
+            <div class="row">
+                <div class="col-md-3">
+                    <?php
+                        $get_menu = "SELECT * FROM category";
+                        $cat_res = $db -> query($get_menu);
+                        if($cat_res){
+                            while($data = $cat_res -> fetch_assoc()){
+                                echo '
+                                <li class="nav-item">
+                                  <a href="#" class="nav-link">'.$data['category_name'].'</a>
+                                </li>
+                                ';
+                            }
+                        }
+                    ?>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-3"></div>
+                <div class="col-md-1"></div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
     <!-- FOOTER CODE END -->
-    <div class="container-fuild bg-dark">
-        
-    </div>
 </body>
 </html>
