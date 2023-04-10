@@ -44,10 +44,30 @@ require("Common_files/php/database.php");
 </head>
 <body>
     <?php
-        require("assets/nav.php");
+        // require("assets/nav.php");
     ?>
     <!-- FOOTER CODE START -->
-    
+    <div class="container-fuild bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-3 d-flex justify-content-center align-items-center">
+                    <div class="input-group w-100">
+                        <input type="email" name="" placeholder="email@gmail.com" id="" class="form-control">
+                        <span class="input-group-text">Subscribe</span>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3 d-flex justify-content-center align-items-center">
+                    <div class="btn-group">
+                        <button class="btn btn-dark">FOLLOW US</button>
+                        <button class="btn border"> <a href="#"> <i class="fa-brands fa-twitter"></i> </a> </button>
+                        <button class="btn border"> <a href="#"> <i class="fa-brands fa-facebook"></i> </a> </button>
+                        <button class="btn border"> <a href="#"> <i class="fa-brands fa-instagram"></i> </a> </button>
+                        <button class="btn border"> <a href="#"> <i class="fa-brands fa-youtube"></i> </a> </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- FOOTER CODE CODE -->
 </body>
 </html>
