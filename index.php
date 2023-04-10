@@ -67,9 +67,9 @@ require("Common_files/php/database.php");
                 </div>
             </div>
         </div>
-        <div class="container-fuild bg-dark">
+        <div class="container-fuild bg-dark p-4">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-3"><h4 class="text-white">CATEGORY</h4>
                     <?php
                         $get_menu = "SELECT * FROM category";
                         $cat_res = $db -> query($get_menu);
@@ -82,7 +82,9 @@ require("Common_files/php/database.php");
                     ?>
                 </div>
                 <div class="col-md-1"></div>
-                <div class="col-md-3"></div>
+                <div class="col-md-3">
+                    
+                </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-4"></div>
             </div>
