@@ -44,11 +44,11 @@ require("Common_files/php/database.php");
 </head>
 <body>
     <?php
-        // require("assets/nav.php");
+        require("assets/nav.php");
     ?>
-    <!-- FOOTER CODE START -->
-    <div class="container-fuild bg-dark">
-        <div class="container">
+
+     <!-- FOOTER CODE START -->
+<div class="container">
             <div class="row">
                 <div class="col-md-6 mb-2 d-flex justify-content-center align-items-center">
                     <div class="input-group w-100">
@@ -67,7 +67,9 @@ require("Common_files/php/database.php");
                 </div>
             </div>
         </div>
+    <!-- FOOTER CODE END -->
+    <div class="container-fuild bg-dark">
+        
     </div>
-    <!-- FOOTER CODE CODE -->
 </body>
 </html>
