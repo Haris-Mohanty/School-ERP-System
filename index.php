@@ -43,10 +43,14 @@ require("Common_files/php/database.php");
     <title>School ERP System</title>
 </head>
 <body>
+    <!-- nav -->
     <?php
         require("assets/nav.php");
     ?>
-
+    <!-- footer -->
+    <?php
+        require("assets/footer.php");
+    ?>
      
 </body>
 </html>
