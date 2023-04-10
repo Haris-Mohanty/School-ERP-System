@@ -83,7 +83,13 @@ require("Common_files/php/database.php");
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-3">
-                    
+                <h4 class="text-white">POLICIES</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item text-white bg-transparent" style="cursor: pointer;">Privacy Policy</li>
+                        <li class="list-group-item text-white bg-transparent" style="cursor: pointer;">Cookie Policy</li>
+                        <li class="list-group-item text-white bg-transparent" style="cursor: pointer;">Terms & Conditions</li>
+                        <li class="list-group-item text-white bg-transparent" style="cursor: pointer;">About Us</li>
+                    </ul>
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-4"></div>
