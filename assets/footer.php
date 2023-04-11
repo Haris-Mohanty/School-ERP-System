@@ -46,9 +46,9 @@
                 <div class="col-md-4 mb-3">
                 <h4 class="text-white">CONTACT</h4>
                     <p class="text-white py-2"> <b>Venue</b>: <?php echo $brand_res['brand_address']?> </p>
-                    <p class="text-white py-2"> <b>Call us</b>: </p>
-                    <p class="text-white py-2"> <b>Email</b>: </p>
-                    <p class="text-white py-2"> <b>Website</b>: </p>
+                    <p class="text-white py-2"> <b>Call us</b>: <?php echo $brand_res['brand_mobile']?> </p>
+                    <p class="text-white py-2"> <b>Email</b>: <?php echo $brand_res['brand_email']?> </p>
+                    <p class="text-white py-2"> <b>Website</b>: <?php echo $brand_res['brand_domain']?> </p>
                 </div>
             </div>
         </div>
