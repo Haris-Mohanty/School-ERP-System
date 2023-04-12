@@ -47,6 +47,10 @@ require("Common_files/php/database.php");
     <?php
         require("assets/nav.php");
     ?>
+
+    <!-- Main Page code start -->
+    <!-- Main Page code end -->
+
     <!-- footer -->
     <?php
         require("assets/footer.php");
