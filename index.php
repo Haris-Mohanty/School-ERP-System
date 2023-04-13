@@ -78,7 +78,14 @@ require("Common_files/php/database.php");
    <div class="course-section">
     <div class="container">
       <h1 class="mt-5 fw-bold mb-4">Trending Courses</h1>
-      <div class="row mb-5"></div>
+      <div class="row mb-5">
+        <div class="col-md-3 p-0 mb-3 course-box">
+          <div class="card">
+            <img src="" class="card-img-top" alt="">
+            <div class="card-body"></div>
+          </div>
+        </div>
+      </div>
     </div>
    </div>
   <!-- COURSE SECTION CODE END-->
