@@ -41,6 +41,7 @@ require("Common_files/php/database.php");
     <!--   GOOGLE FONT END -->
 
     <title>School ERP System</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <!-- nav -->
