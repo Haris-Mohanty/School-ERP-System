@@ -3,7 +3,7 @@
             <div class="row">
                 <div class="col-md-6 mb-2 d-flex justify-content-center align-items-center">
                     <div class="input-group w-100">
-                        <input type="email" name="" placeholder="email@gmail.com" id="" class="form-control">
+                        <input type="email" name="" placeholder="someone@gmail.com" id="" class="form-control">
                         <span class="input-group-text" style="cursor: pointer;">Subscribe</span>
                     </div>
                 </div>
