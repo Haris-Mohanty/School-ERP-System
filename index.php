@@ -90,7 +90,7 @@ require("Common_files/php/database.php");
               <img src="Employee/'.$data['logo'].'" class="card-img-top" alt="">
               <div class="card-body">
                 <h4 class="card-title">
-                  PYTHON
+                  '.$data.'
                 </h4>
                 <p class="card-text fw-bold">2000</p>
               </div>
