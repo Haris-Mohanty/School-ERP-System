@@ -79,7 +79,9 @@ require("Common_files/php/database.php");
     <div class="container">
       <h1 class="mt-5 fw-bold mb-4">Trending Courses</h1>
       <div class="row mb-5">
-        <?php?>
+        <?php
+         $get_course = 
+        ?>
       </div>
     </div>
    </div>
