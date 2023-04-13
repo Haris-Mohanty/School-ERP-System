@@ -81,8 +81,13 @@ require("Common_files/php/database.php");
       <div class="row mb-5">
         <div class="col-md-3 p-0 mb-3 course-box">
           <div class="card">
-            <img src="" class="card-img-top" alt="">
-            <div class="card-body"></div>
+            <img src="Employee/Course/python.png" class="card-img-top" alt="">
+            <div class="card-body">
+              <h4 class="card-title">
+                PYTHON
+              </h4>
+              <p class="card-text fw-bold">2000</p>
+            </div>
           </div>
         </div>
       </div>
