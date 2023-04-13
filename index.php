@@ -80,7 +80,25 @@ require("Common_files/php/database.php");
       <h1 class="mt-5 fw-bold mb-4">Trending Courses</h1>
       <div class="row mb-5">
         <?php
-         $get_course = 
+         $get_course = "SELECT * FROM course";
+         $course_res = $db -> query($get_course);
+         if($course_res){
+          while($data = $course_res -> fetch_assoc()){
+            echo '
+            <div class="col-md-3 p-0 mb-3 course-box">
+            <div class="card">
+              <img src="Employee/Course/python.png" class="card-img-top" alt="">
+              <div class="card-body">
+                <h4 class="card-title">
+                  PYTHON
+                </h4>
+                <p class="card-text fw-bold">2000</p>
+              </div>
+            </div>
+          </div>
+            ';
+          }
+         }
         ?>
       </div>
     </div>
