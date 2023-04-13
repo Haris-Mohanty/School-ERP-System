@@ -92,7 +92,7 @@ require("Common_files/php/database.php");
                 <h4 class="card-title">
                   '.$data['name'].'
                 </h4>
-                <p class="card-text fw-bold">'.$data.'</p>
+                <p class="card-text fw-bold">'.$data['fee'].'</p>
               </div>
             </div>
           </div>
