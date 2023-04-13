@@ -50,28 +50,36 @@ require("Common_files/php/database.php");
 
     <!-- Main Page code start -->
   <div class="container-fluid" style="margin-top: 90px;">
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner" stylr="height: 400px;">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="Images/mitt.png" alt="First slide">
+  <!-- CAROUSAL CODE START -->
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+       <div class="carousel-inner">
+         <div class="carousel-item active">
+           <img class="d-block w-100" src="Images/mitt.png" alt="First slide">
+         </div>
+         <div class="carousel-item">
+           <img class="d-block w-100" src="Images/mc2.png" alt="Second slide">
+         </div>
+         <div class="carousel-item">
+           <img class="d-block w-100" src="Images/buss.png" alt="Third slide">
+         </div>
+       </div>
+       <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+         <span class="sr-only">Previous</span>
+       </a>
+       <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+         <span class="carousel-control-next-icon" aria-hidden="true"></span>
+         <span class="sr-only">Next</span>
+       </a>
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="Images/mc2.png" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="Images/buss.jpg" alt="Third slide">
-    </div>
+  <!-- CAROUSAL CODE END -->
+
+  <!-- COURSE SECTION CODE START-->
+   <div class="course-section">
+    
+   </div>
+  <!-- COURSE SECTION CODE END-->
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
- </div>
     <!-- Main Page code end -->
 
     <!-- footer -->
