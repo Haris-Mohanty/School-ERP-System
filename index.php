@@ -87,7 +87,7 @@ require("Common_files/php/database.php");
             echo '
             <div class="col-md-3 p-0 mb-3 course-box">
             <div class="card">
-              <img src="Employee/Course/python.png" class="card-img-top" alt="">
+              <img src="Employee/'.$data['logo'].'" class="card-img-top" alt="">
               <div class="card-body">
                 <h4 class="card-title">
                   PYTHON
