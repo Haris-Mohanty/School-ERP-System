@@ -49,7 +49,11 @@ require("Common_files/php/database.php");
         require("assets/nav.php");
     ?>
 
-    
+    <div class="container shadow-lg bg-white p-4 border">
+        <?php
+            
+        ?>
+    </div>
 
     <!-- footer -->
     <?php require("assets/footer.php"); ?>
