@@ -12,7 +12,7 @@
         <!-- NAV BAR - CODE START -->
         <nav class="navbar navbar-expand-sm fixed-top shadow-lg navbar-light">
             <div class="container">
-                <a href="#" class="navbar-brand text-uppercase border">
+                <a href="https://www.mit.edu/" class="navbar-brand text-uppercase border">
                     <?php
                     $logo_string = base64_encode($brand_res['brand_logo']);
                     $src = "data:image/png;base64,".$logo_string;
