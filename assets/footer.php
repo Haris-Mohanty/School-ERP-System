@@ -38,7 +38,7 @@
                         <a href="privacy.php" class="nav-link text-white mb-2">Privacy Policy</a>
                         <a href="cookie.php" class="nav-link text-white mb-2">Cookie</a>
                         <a href="#" class="nav-link text-white mb-2">About Us</a>
-                        <a href="#" class="nav-link text-white">Terms & Condition</a>
+                        <a href="conditions.php" class="nav-link text-white">Terms & Condition</a>
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-4 mb-3">
