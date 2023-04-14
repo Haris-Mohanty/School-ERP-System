@@ -51,7 +51,7 @@ require("Common_files/php/database.php");
 
     <div class="container shadow-lg bg-white p-4 border">
         <?php
-            
+            echo $brand_res['brand_privacy'];
         ?>
     </div>
 
