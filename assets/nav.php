@@ -28,7 +28,7 @@
                 <div class="navbar-collapse collapse" id="myNavbar">
                     <ul class="navbar-nav w-100 justify-content-end">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Home</a>
+                            <a href="index.php" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item">
                             <a href="aboutus.php" class="nav-link">About</a>
