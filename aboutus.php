@@ -40,7 +40,7 @@ require("Common_files/php/database.php");
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide"/>
     <!--   GOOGLE FONT END -->
 
-    <title>Terms & Conditions</title>
+    <title>About Us</title>
     <link rel="stylesheet" href="pages/index.css">
 </head>
 <body>
@@ -51,7 +51,7 @@ require("Common_files/php/database.php");
 
     <div class="container shadow-lg bg-white p-4 border" style="margin-top: 100px;">
         <?php
-            echo $brand_res['brand_terms'];
+            echo $brand_res['brand_about'];
         ?>
     </div>
 
