@@ -41,7 +41,6 @@ require("Common_files/php/database.php");
     <!--   GOOGLE FONT END -->
 
     <title>About Us</title>
-    <link rel="stylesheet" href="pages/index.css">
 </head>
 <body>
     <!-- nav -->
