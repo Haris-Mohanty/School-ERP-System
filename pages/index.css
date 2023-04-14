@@ -4,5 +4,14 @@
     box-sizing: border-box;
 }
 .course-box{
-    
+    width: 22% !important;
+    margin: 0px auto !important;
+}
+.course-box img{
+    padding: 19px;
+}
+@media(max-width: 768px){
+    .course-box{
+        width: 100%;
+    }
 }

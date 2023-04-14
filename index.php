@@ -41,7 +41,7 @@ require("Common_files/php/database.php");
     <!--   GOOGLE FONT END -->
 
     <title>School ERP System</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="pages/index.css">
 </head>
 <body>
     <!-- nav -->
@@ -61,7 +61,7 @@ require("Common_files/php/database.php");
            <img class="d-block w-100" src="Images/mc2.png" alt="Second slide">
          </div>
          <div class="carousel-item">
-           <img class="d-block w-100" src="Images/buss.png" alt="Third slide">
+           <img class="d-block w-100" src="Images/buss.jpg" alt="Third slide">
          </div>
        </div>
        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
