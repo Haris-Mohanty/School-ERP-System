@@ -75,6 +75,7 @@ require("Common_files/php/database.php");
     </div>
   <!-- CAROUSAL CODE END -->
 
+
   <!-- COURSE SECTION CODE START-->
    <div class="course-section">
     <div class="container">
@@ -110,6 +111,7 @@ require("Common_files/php/database.php");
 
     <!-- footer -->
     <?php require("assets/footer.php"); ?>
+    
      
 </body>
 </html>
