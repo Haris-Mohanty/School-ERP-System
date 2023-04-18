@@ -10,10 +10,10 @@
                 <div class="col-md-6 mb-2 d-flex justify-content-center align-items-center">
                     <div class="btn-group">
                         <button class="btn btn-dark">FOLLOW US</button>
-                        <button class="btn border"> <a href="<?php echo $brand_res['brand-twitter'] ?>"> <i class="fa-brands fa-twitter"></i> </a> </button>
-                        <button class="btn border"> <a href="#"> <i class="fa-brands fa-facebook"></i> </a> </button>
-                        <button class="btn border"> <a href="#"> <i class="fa-brands fa-instagram"></i> </a> </button>
-                        <button class="btn border"> <a href="#"> <i class="fa-brands fa-youtube"></i> </a> </button>
+                        <button class="btn border"> <a href="<?php echo $brand_res['brand_twitter'] ?>"> <i class="fa-brands fa-twitter"></i> </a> </button>
+                        <button class="btn border"> <a href="<?php echo $brand_res['brand_facebook'] ?>"> <i class="fa-brands fa-facebook"></i> </a> </button>
+                        <button class="btn border"> <a href="<?php echo $brand_res['brand_instagram'] ?>"> <i class="fa-brands fa-instagram"></i> </a> </button>
+                        <button class="btn border"> <a href="<?php echo $brand_res['brand_whatsapp'] ?>"> <i class="fa-brands fa-youtube"></i> </a> </button>
                     </div>
                 </div>
             </div>
