@@ -57,9 +57,9 @@ require("Common_files/php/database.php");
                <input type="email" id="email" class="form-control mb-3">
                <label for="password">Password</label>
                <input type="password" id="password" class="form-control mb-3">
-               <input type="radio" name="user" id="admin">
-               <label for="admin"></label>
-               <button class="btn btn-primary">Login Now</button>
+               <input type="radio" name="user" id="admin"><label for="admin">Admin</label> &nbsp; &nbsp;
+               <input type="radio" name="user" id="student"><label for="student">Student</label><br><br>
+               <button class="btn btn-primary w-100">Login Now</button>
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-5 text-center mt-5">

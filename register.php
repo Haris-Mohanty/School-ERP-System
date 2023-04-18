@@ -61,7 +61,7 @@ require("Common_files/php/database.php");
                <input type="text" id="mobile" class="form-control mb-3">
                <label for="description">Description</label>
                <textarea id="description" class="form-control mb-3"></textarea>
-               <button class="btn btn-primary">Register Now</button>
+               <button class="btn btn-primary w-100">Register Now</button>
             </div>
 
             <div class="col-md-1"></div>
