@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    // LOGIN CODE - START
+  // LOGIN CODE - START
   $(".login-btn").click(function () {
     let userEl = document.querySelectorAll(".user");
     let i,
@@ -11,8 +11,8 @@ $(document).ready(function () {
     }
     //
     $.ajax({
-
+      type: "POST",
     });
   });
-    // LOGIN CODE - END
+  // LOGIN CODE - END
 });
