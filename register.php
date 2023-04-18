@@ -51,6 +51,15 @@ require("Common_files/php/database.php");
     <div class="container bg-white shadow-lg border p-4" style="margin-top:100px">
         <h2>CREATE AN ACCOUNT</h2>
         <hr>
+        <label for="name">Name</label>
+        <input type="text" id="name" class="form-control mb-3">
+        <label for="email">Email</label>
+        <input type="text" id="email" class="form-control mb-3">
+        <label for="mobile">Mobile</label>
+        <input type="text" id="mobile" class="form-control mb-3">
+        <label for="description">Description</label>
+        <textarea id="description" class="form-control mb-3"></textarea>
+        <button class="btn btn-primary">Register</button>
     </div>
     <!-- REGISTRATION CODE END -->
 
