@@ -54,7 +54,8 @@
           <li class="border-start collapse-item p-2" access-link="student_design.php">Student Registration</li>
           <li class="border-start collapse-item p-2" access-link="document_design.php">Upload Student Document</li>
           <li class="border-start collapse-item p-2" access-link="invoice_design.php">Create Invoice</li>
-          <li class="border-start collapse-item p-2 active" access-link="attendance_design.php">Student Attendance</li>
+          <li class="border-start collapse-item p-2" access-link="attendance_design.php">Student Attendance</li>
+          <li class="border-start collapse-item p-2 active" access-link="access_design.php">Give Access Link</li>
         </ul>
       </div>
       <div class="page page-open">
@@ -69,48 +70,26 @@
               </h5>
               <hr />
               <form class="stu-att-form">
-    
-                <div class="row">
-                  <div class="col-md-4">
-                    <select name="select-category" id="att-category" class="form-select invoice-category mb-3">
-                       <option value="choose-category">Choose Category</option>';
-    
-                       for($i=0; $i<$length; $i++){
-                        echo '<option value="'.$all_category[$i].'">'.$all_category[$i].'</option>';
-                      }
-    
-                echo '</select>
-                 </div>
-                  <div class="col-md-4">
-                      <select name="select-course" id="att-course" class="form-select mb-3">
-                           <option value="choose-course">Choose Course</option>
-                      </select>
-                  </div>
-                  <div class="col-md-4">
-                    <select name="select-batch" id="att-batch" class="form-select mb-3">
-                    <option value="choose-batch">Choose Batch</option>
-                    </select>
-                  </div>
-                  </div>
-    
-                  <input type="date" class="form-control mb-3 date">
-                      
-                <table class="table mb-3">
-                  <thead>
-                    <tr>
-                      <th class="text-nowrap">S/N</th>
-                      <th class="text-nowrap">Enrollment</th>
-                      <th class="text-nowrap">Name</th>
-                      <th class="text-nowrap">Batch</th>
-                      <th class="text-nowrap">Attendance</th>
-                    </tr>
-                  </thead>
-                  <tbody class="att-list">
-                    
-                  </tbody>
-                </table>
+
+                <input type="text" class="form-control">      
                 <button class="btn btn-primary disabled float-end att-btn">Add Attendance</button>
               </form>
+
+              <table class="table mb-3">
+                <thead>
+                  <tr>
+                    <th class="text-nowrap">S/N</th>
+                    <th class="text-nowrap">Enrollment</th>
+                    <th class="text-nowrap">Name</th>
+                    <th class="text-nowrap">Batch</th>
+                    <th class="text-nowrap">Attendance</th>
+                  </tr>
+                </thead>
+                <tbody class="att-list">
+                  
+                </tbody>
+              </table>
+
             </div>
             <div class="col-md-1"></div>
           </div>
@@ -120,6 +99,6 @@
     </div>
   </body>
   <!-- JS FILE LINK START -->
-  <script src="js/script.js"></script>
+  <!-- <script src="js/script.js"></script> -->
   <!-- JS FILE LINK END -->
 </html>
