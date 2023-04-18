@@ -24,7 +24,7 @@ $length = count($all_category);
 echo '
 
 <!-- STUDENT ATTENDANCE - CODE START -->
-    <div class="container-fluid">    
+  <div class="container-fluid">    
       <div class="row mb-4">
         <div class="col-md-1"></div>
         <div class="col-md-10 bg-white shadow-sm mt-3 p-4">
@@ -79,8 +79,8 @@ echo '
         </div>
         <div class="col-md-1"></div>
       </div>
- </div>
-        <!-- STUDENT ATTENDANCE - CODE END -->
+  </div>
+<!-- STUDENT ATTENDANCE - CODE END -->
 
 ';
 

@@ -16,7 +16,7 @@ if($user == "admin"){
         $pass_res = $db -> query($get_pass);
 
         if($pass_res -> num_rows != 0){
-            echo "l s";
+            echo "login success";
             
         }else{
             echo "Wrong Password!";
@@ -35,7 +35,7 @@ if($user == "admin"){
         $pass_res = $db -> query($get_pass);
 
         if($pass_res -> num_rows != 0){
-            echo "l s";
+            echo "login success";
             
         }else{
             echo "Wrong Password!";
