@@ -63,7 +63,9 @@ require("Common_files/php/database.php");
                <textarea id="description" class="form-control mb-3"></textarea>
                <button class="btn btn-primary">Register Now</button>
             </div>
+            
             <div class="col-md-1"></div>
+
             <div class="col-md-5 text-center mt-5">
                 <h3>
                     I have already an Account!
