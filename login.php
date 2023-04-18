@@ -48,7 +48,28 @@ require("Common_files/php/database.php");
     <?php require("assets/nav.php"); ?>
 
     <!-- LOGIN CODE START -->
-    
+    <div class="container bg-white shadow-lg border p-4" style="margin-top:100px">
+        <h2>CREATE AN ACCOUNT</h2>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+               <label for="email">Email</label>
+               <input type="email" id="email" class="form-control mb-3">
+               <label for="password">Password</label>
+               <input type="password" id="password" class="form-control mb-3">
+               <button class="btn btn-primary">Login Now</button>
+            </div>
+            
+            <div class="col-md-1"></div>
+
+            <div class="col-md-5 text-center mt-5">
+                <h3>
+                    I have already an Account!
+                </h3>
+                <a href="login.php" class="btn btn-success">Login</a>
+            </div>
+        </div>
+    </div>
     <!-- LOGIN CODE END -->
 
     <!-- footer -->
