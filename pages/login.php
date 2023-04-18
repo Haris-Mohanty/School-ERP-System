@@ -14,9 +14,16 @@ if($user == "admin"){
     $email_res = $db -> query($get_email);
     
     if($email_res -> num_rows != 0){
-        $get_pass = 
+        $get_pass = "SELECT password FROM students WHERE password = '$password'";
+        $pass_res = $db -> query($get_pass);
+
+        if($pass_res -> num_rows != 0){
+            echo "l s";
+        }else{
+            echo "Wrong Password!";
+        }
     }else{
-        echo "Wrong Username";
+        echo "Wrong Username!";
     }
 }
 
