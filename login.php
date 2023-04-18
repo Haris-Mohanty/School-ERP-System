@@ -45,15 +45,11 @@ require("Common_files/php/database.php");
 </head>
 <body>
     <!-- nav -->
-    <?php
-        require("assets/nav.php");
-    ?>
+    <?php require("assets/nav.php"); ?>
 
-    <div class="container shadow-lg bg-white p-4 border" style="margin-top: 100px;">
-        <?php
-            echo $brand_res['brand_privacy'];
-        ?>
-    </div>
+    <!-- LOGIN CODE START -->
+    
+    <!-- LOGIN CODE END -->
 
     <!-- footer -->
     <?php require("assets/footer.php"); ?>
