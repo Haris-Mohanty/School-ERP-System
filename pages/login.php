@@ -7,7 +7,24 @@ $password = $_POST['password'];
 $user = $_POST['user'];
 
 if($user == "admin"){
-    echo "Admin";
+    $get_email = "SELECT email FROM access WHERE email = '$email'";
+
+    $email_res = $db -> query($get_email);
+    
+    if($email_res -> num_rows != 0){
+        $get_pass = "SELECT password FROM access WHERE password = '$password'";
+        $pass_res = $db -> query($get_pass);
+
+        if($pass_res -> num_rows != 0){
+            echo "l s";
+            
+        }else{
+            echo "Wrong Password!";
+        }
+    }else{
+        echo "Wrong Username!";
+    }
+
 }else{
     $get_email = "SELECT email FROM students WHERE email = '$email'";
 
@@ -19,6 +36,7 @@ if($user == "admin"){
 
         if($pass_res -> num_rows != 0){
             echo "l s";
+            
         }else{
             echo "Wrong Password!";
         }
