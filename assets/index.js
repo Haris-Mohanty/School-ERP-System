@@ -14,8 +14,8 @@ $(document).ready(function () {
       type: "POST",
       url: "pages/login.php",
       data: {
-        email: $("username").val(),
-        password: $("password").val(),
+        email: $("#username").val(),
+        password: $("#password").val(),
         user: user,
       },
       beforeSend: function () {
