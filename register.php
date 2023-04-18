@@ -48,7 +48,9 @@ require("Common_files/php/database.php");
     <?php require("assets/nav.php"); ?>
 
     <!-- REGISTRATION CODE START -->
+    <div class="container bg-white shadow-lg border p-4" style="margin-top:100px">
     
+    </div>
     <!-- REGISTRATION CODE END -->
 
     <!-- footer -->

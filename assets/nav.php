@@ -53,11 +53,11 @@
                             <button class="btn">
                                 <i class="fa fa-user" data-bs-toggle="dropdown"></i>
                                 <div class="dropdown-menu">
-                                    <a href="#" class="dropdown-item">
+                                    <a href="register.php" class="dropdown-item">
                                         <i class="fa fa-user"></i>
                                         Register
                                     </a>
-                                    <a href="#" class="dropdown-item">
+                                    <a href="login.php" class="dropdown-item">
                                         <i class="fa fa-sign-in"></i>
                                         Login
                                     </a>
