@@ -64,9 +64,9 @@ require("Common_files/php/database.php");
 
             <div class="col-md-5 text-center mt-5">
                 <h3>
-                    I have already an Account!
+                    I don't have any Account!
                 </h3>
-                <a href="login.php" class="btn btn-success">Login</a>
+                <a href="register.php" class="btn btn-success">Register</a>
             </div>
         </div>
     </div>
