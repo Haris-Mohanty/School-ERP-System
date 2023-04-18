@@ -1,5 +1,10 @@
 <?php
 
+
+//LINK DATABASE
+require_once("../../Common_files/php/database.php");
+
+
 echo '
 <!-- GIVE ACCESS LINK - CODE START -->
         <div class="container-fluid">    
