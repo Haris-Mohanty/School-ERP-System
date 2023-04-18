@@ -12,6 +12,18 @@ $(document).ready(function () {
     //
     $.ajax({
       type: "POST",
+      url: "pages/login.php",
+      data: {
+        email: $("username").val(),
+        password: $("password").val(),
+        user: user,
+      },
+      beforeSend: function () {
+        $(this).html("Please Wait....");
+      },
+      success: function (response) {
+        alert(response);
+      },
     });
   });
   // LOGIN CODE - END
