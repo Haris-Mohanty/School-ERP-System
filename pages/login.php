@@ -13,8 +13,8 @@ if($user == "admin"){
 
     $email_res = $db -> query($get_email);
     
-    if($email_res -> num_rows){
-        echo "s";
+    if($email_res -> num_rows != 0){
+        $get_pass = 
     }else{
         echo "Wrong Username";
     }
