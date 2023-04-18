@@ -10,7 +10,7 @@
     ?>
     <div class="bg-light shadow-sm container-fluid">
         <!-- NAV BAR - CODE START -->
-        <nav class="navbar navbar-expand-sm fixed-top shadow-lg navbar-light">
+        <nav class="navbar navbar-expand-sm fixed-top shadow-lg navbar-light bg-white">
             <div class="container">
                 <a href="https://www.mit.edu/" class="navbar-brand text-uppercase border">
                     <?php
