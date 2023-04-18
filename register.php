@@ -64,11 +64,11 @@ require("Common_files/php/database.php");
                <button class="btn btn-primary">Register Now</button>
             </div>
             <div class="col-md-1"></div>
-            <div class="col-md-5">
+            <div class="col-md-5 text-center mt-5">
                 <h3>
-                    I have already an Accout!
+                    I have already an Account!
                 </h3>
-                
+                <a href="login.php" class="btn btn-success">Login</a>
             </div>
         </div>
     </div>
