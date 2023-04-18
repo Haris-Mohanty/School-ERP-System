@@ -49,7 +49,8 @@ require("Common_files/php/database.php");
 
     <!-- REGISTRATION CODE START -->
     <div class="container bg-white shadow-lg border p-4" style="margin-top:100px">
-    
+        <h2>CREATE AN ACCOUNT</h2>
+        <hr>
     </div>
     <!-- REGISTRATION CODE END -->
 
