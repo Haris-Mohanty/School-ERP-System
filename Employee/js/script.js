@@ -1790,6 +1790,9 @@ function createAccessFunc() {
   $(".access-form").on("submit", function (e) {
     e.preventDefault();
     //ajax request
+    $.ajax({
+      type : "POST"
+    });
   });
 }
 // GIVE ACCESS LINK - CODE END
