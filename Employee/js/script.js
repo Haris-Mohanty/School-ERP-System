@@ -3,6 +3,9 @@ $(document).ready(function () {
   $(".institute-update-btn").click(function () {
     $(".institute-menu").collapse("toggle");
   });
+  $(".homepage-update-btn").click(function () {
+    $(".homepage-menu").collapse("toggle");
+  });
 });
 //INSTITUTE UPDATE COLLAPSEBLE CODE END
 
