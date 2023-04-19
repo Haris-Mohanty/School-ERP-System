@@ -114,4 +114,11 @@ input[type="checkbox"], label{
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 4px solid #cddc39;
+    padding: 2px;
+    border-top-color: #ff5722;
+    border-left-color: #ff5722;
 }

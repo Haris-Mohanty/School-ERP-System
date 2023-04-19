@@ -40,7 +40,7 @@ require("Common_files/php/database.php");
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide"/>
     <!--   GOOGLE FONT END -->
 
-    <title>Privacy Policy</title>
+    <title>Login</title>
     <link rel="stylesheet" href="pages/index.css">
 </head>
 <body>
