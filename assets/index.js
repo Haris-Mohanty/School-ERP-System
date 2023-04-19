@@ -23,7 +23,7 @@ $(document).ready(function () {
       },
       success: function (response) {
         if(response.trim() == "Admin Login"){
-          window.location = "Employee/index.html";
+          window.location = "Employee/index.php";
         }else if(response.trim() == "Student Login"){
           window.location = "Student/index.php";
         }else{

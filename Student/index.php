@@ -1,5 +1,8 @@
 
 <?php
+
+require_once("../Common_files/php/database.php");
+
   session_start();
   $username = $_SESSION['username'];
 
@@ -7,6 +10,9 @@
     header("Location:../");
     exit;
   }
+  $get_data = "SELECT * FROM students WHERE email = '$username'";
+
+  $stu_res = $db -> query($get_data);
 ?>
 
 <!DOCTYPE html>
