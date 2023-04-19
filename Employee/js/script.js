@@ -1801,7 +1801,7 @@ function createAccessFunc() {
         $(".access-loader").removeClass("d-none");
       },
       success: function (response) {
-        alert(response);
+        $(".access-loader").addClass("d-none");
       },
     });
   });
