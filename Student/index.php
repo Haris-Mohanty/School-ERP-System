@@ -13,6 +13,11 @@ require_once("../Common_files/php/database.php");
   $get_data = "SELECT * FROM students WHERE email = '$username'";
 
   $stu_res = $db -> query($get_data);
+  $all_students_data = "";
+
+  if($stu_res -> num_rows != 0){
+    $all_students_data = $stu_res -> fetch_assoc();
+  }
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +66,7 @@ require_once("../Common_files/php/database.php");
       <div class="side-nav side-nav-open">
         <button class="btn w-100 text-light text-start institute-update-btn">
           <i class="fa-solid fa-chart-line"></i>
-          Institute Update
+          <?php echo $all_students_data['student_name']; ?>
           <i class="fa-solid fa-angle-down float-end mt-2"></i>
         </button>
         <ul class="collapse show institute-menu">
