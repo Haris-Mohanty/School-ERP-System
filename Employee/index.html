@@ -114,8 +114,8 @@
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-7 p-4 bg-white rounded-lg shadow-lg position-relative showcase-preview">
-              <h1 class="showcase-title target">TITLE</h1>
-              <h4 class="showcase-subtitle target">SUB TITLE</h4>
+              <h1 class="showcase-title target fw-bold">TITLE</h1>
+              <h4 class="showcase-subtitle target fw-bold">SUB TITLE</h4>
               <div class="showcase-formatting">
                 <input type="color" name="color-selector" id="" class="color-selector">
               </div>
@@ -127,8 +127,18 @@
   </body>
   <script>
     $(document).ready(function(){
-      $(".target").click(function(){
-        
+      $(".target").each(function(){
+        $(this).click(function(e){
+          let element = e.target;
+          let index_number = $(element).index();
+          sessionStorage.setItem("color-index-number", index_number);
+          $(".color-selector").on("input", function(){
+            let color = this.value;
+            let in_number = +sessionStorage.getItem("color-index-number");
+            let element = document.getElementsByClassName("target")[in_number];
+            element.style.color = color;
+          });
+        });
       });
     });
   </script>
