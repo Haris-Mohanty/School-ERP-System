@@ -23,9 +23,9 @@ $(document).ready(function () {
       },
       success: function (response) {
         if(response.trim() == "Admin Login"){
-          window.location = "Employee/index.php";
+          window.location = "Employee/index.html";
         }else if(response.trim() == "Student Login"){
-          window.location = "student/index.php";
+          window.location = "Student/index.html";
         }else{
           swal(response.trim(), response.trim(), "error");
         }
