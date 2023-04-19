@@ -21,8 +21,8 @@ echo '
               <hr />
               <form class="access-form">
 
-                <input type="email" class="form-control mb-3" placeholder="Username" required>      
-                <input type="password" class="form-control mb-3" placeholder="Password" required>      
+                <input type="email" class="form-control mb-3" placeholder="Username" required name="username">      
+                <input type="password" class="form-control mb-3" placeholder="Password" required name="password">      
                 <button class="btn btn-primary float-end access-btn mb-4">Give Access</button>
               </form>
 
