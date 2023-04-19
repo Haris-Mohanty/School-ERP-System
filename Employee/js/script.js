@@ -1829,6 +1829,7 @@ function createAccessFunc() {
              </td>
            </tr>
           `;
+        $(".access-list").append(tr);
         });
       }else{
         swal("There is no accessed data!", response.trim(), "error");
