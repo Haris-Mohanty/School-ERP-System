@@ -1782,3 +1782,7 @@ function createAttendanceFunc(){
   });
 }
 // STUDENT ATTENDANCE - CODE END
+
+// GIVE ACCESS LINK - CODE START
+ 
+// GIVE ACCESS LINK - CODE END

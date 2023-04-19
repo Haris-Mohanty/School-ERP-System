@@ -23,7 +23,7 @@ echo '
 
                 <input type="text" class="form-control mb-3" placeholder="Username">      
                 <input type="password" class="form-control mb-3" placeholder="Password">      
-                <button class="btn btn-primary disabled float-end access-btn mb-4">Give Access</button>
+                <button class="btn btn-primary float-end access-btn mb-4">Give Access</button>
               </form>
 
               <table class="table mb-3">
