@@ -1819,20 +1819,21 @@ function createAccessFunc() {
       let response = await ajaxGetAllData("access", "access-loader");
       if(response.trim() != "There is no data in the table!"){
         let data = JSON.parse(response.trim());
-        $(".access-list").html();
+        $(".access-list").html('');
         data.forEach((access, index) => {
           let tr = `
            <tr>
              <td>${index+1}</td>
-             <td>${access.username}</td>
+             <td>${access.email}</td>
              <td>${access.password}</td>
              <td>
-               <button class="btn btn-danger px-2 p-1"><i class="fa fa-trash"></i></button>
+               <button class="btn btn-danger del-btn px-2 p-1"><i class="fa fa-trash"></i></button>
              </td>
            </tr>
           `;
         $(".access-list").append(tr);
         });
+        // Delete code
       }else{
         swal("There is no accessed data!", response.trim(), "error");
       }
