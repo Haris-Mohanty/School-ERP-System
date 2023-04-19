@@ -62,6 +62,8 @@ function dynamic_request(access_link) {
         createBrandFunc();
       }else if (access_link == "attendance_design.php") {
         createAttendanceFunc();
+      }else if (access_link == "access_design.php") {
+        createAccessFunc();
       }
     },
   });
@@ -1784,5 +1786,7 @@ function createAttendanceFunc(){
 // STUDENT ATTENDANCE - CODE END
 
 // GIVE ACCESS LINK - CODE START
- 
+ function createAccessFunc(){
+  alert();
+ }
 // GIVE ACCESS LINK - CODE END
