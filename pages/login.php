@@ -18,7 +18,7 @@ if($user == "admin"){
         if($pass_res -> num_rows != 0){
             echo "Admin Login";
             session_start();
-            $_SESSION['username']; = $email;
+            $_SESSION['username'] = $email;
             
         }else{
             echo "Wrong Password!";
@@ -39,7 +39,7 @@ if($user == "admin"){
         if($pass_res -> num_rows != 0){
             echo "Student Login";
             session_start();
-            $_SESSION['username']; = $email;
+            $_SESSION['username'] = $email;
             
         }else{
             echo "Wrong Password!";
