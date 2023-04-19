@@ -1805,6 +1805,7 @@ function createAccessFunc() {
         if(response.trim() == "success"){
           swal("Successful!","Give Access Successfully!","success");
           $(".access-form")[0].reset();
+          getAccessData();
         }else{
           swal(response.trim(), response.trim(), "error");
         }
@@ -1818,6 +1819,7 @@ function createAccessFunc() {
       let response = await ajaxGetAllData("access", "access-loader");
       if(response.trim() != "There is no data in the table!"){
         let data = JSON.parse(response.trim());
+        $(".access-list").html();
         data.forEach((access, index) => {
           let tr = `
            <tr>
