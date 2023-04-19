@@ -22,7 +22,7 @@
                     echo "<small class='fw-bold'>".$brand_res['brand_name']."</small>";
                     ?>
                 </a>
-                <button class="navbar-toggler" type="button">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse" id="myNavbar">

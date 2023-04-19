@@ -22,7 +22,13 @@ $(document).ready(function () {
         $(this).html("Please Wait....");
       },
       success: function (response) {
-        alert(response);
+        if(response.trim() == "Admin Login"){
+          window.location = "Employee/index.php";
+        }else if(response.trim() == "Student Login"){
+          window.location = "student/index.php";
+        }else{
+          swal(response.trim(), response.trim(), "error");
+        }
       },
     });
   });
