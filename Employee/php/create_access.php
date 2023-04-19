@@ -28,6 +28,7 @@ if($response){
 
         if($db -> query($insert_data)){
             echo "success";
+            
         }else{
             echo "Unable to Give Access!";
         }
