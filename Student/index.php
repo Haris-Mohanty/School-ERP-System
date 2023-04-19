@@ -64,9 +64,13 @@ require_once("../Common_files/php/database.php");
   <body>
     <div class="container-fluid p-0">
       <div class="side-nav side-nav-open">
-        <div></div>
+        <!-- student profile pic -->
+        <div class="stu-profile">
+          
+        </div>
         <button class="btn w-100 text-light text-start institute-update-btn">
           <i class="fa-solid fa-chart-line"></i>
+          <!-- Student name -->
           <?php echo $all_students_data['student_name']; ?>
           <i class="fa-solid fa-angle-down float-end mt-2"></i>
         </button>
