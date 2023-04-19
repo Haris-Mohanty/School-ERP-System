@@ -1839,6 +1839,7 @@ function createAccessFunc() {
           $(this).click(async function () {
             let parent = this.parentElement.parentElement;
             let id = $(parent).attr("INDEX");
+            
             let response = await ajaxDeleteById(id, "access", "access-loader");
             
             if(response.trim() == "success"){
