@@ -1789,7 +1789,7 @@ function createAttendanceFunc(){
 function createAccessFunc() {
   $(".access-form").on("submit", function (e) {
     e.preventDefault();
-    alert();
+    //ajax request
   });
 }
 // GIVE ACCESS LINK - CODE END
