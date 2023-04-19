@@ -105,3 +105,14 @@ input[type="checkbox"], label{
 .btn-audiowide{
     font-family: "Audiowide", sans-serif;
 }
+.showcase-formatting{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: black;
+}
+.target{
+    cursor: pointer;
+}
