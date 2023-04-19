@@ -1786,7 +1786,10 @@ function createAttendanceFunc(){
 // STUDENT ATTENDANCE - CODE END
 
 // GIVE ACCESS LINK - CODE START
- function createAccessFunc(){
-  alert();
- }
+function createAccessFunc() {
+  $(".access-form").on("submit", function (e) {
+    e.preventDefault();
+    alert();
+  });
+}
 // GIVE ACCESS LINK - CODE END
