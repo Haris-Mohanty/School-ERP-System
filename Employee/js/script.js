@@ -1802,6 +1802,12 @@ function createAccessFunc() {
       },
       success: function (response) {
         $(".access-loader").addClass("d-none");
+        if(response.trim() == "success"){
+          swal("Successful!","Give Access Successfully!","success");
+          $(".access-form")[0].reset();
+        }else{
+          swal(response.trim(), response.trim(), "error");
+        }
       },
     });
   });

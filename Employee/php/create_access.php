@@ -11,7 +11,14 @@ $get_user = "SELECT * FROM access";
 $response = $db -> query($get_user);
 
 if($response){
-    echo "Found";
+    $insert_data = "INSERT INTO access(username, password) VALUES ('$username', '$password')";
+
+    if($db -> query($insert_data)){
+        echo "success";
+
+    }else{
+        echo "Unable to Give Access!";
+    }
 
 }else{
 
@@ -28,7 +35,7 @@ if($response){
 
         if($db -> query($insert_data)){
             echo "success";
-            
+
         }else{
             echo "Unable to Give Access!";
         }
