@@ -15,7 +15,18 @@ if($response){
 
 }else{
 
-    $create_table = "";
+    $create_table = "CREATE TABLE access(
+        id INT(11) NOT NULL AUTO_INCREMENT,
+        username VARCHAR(55),
+        password VARCHAR(55),
+        PRIMARY KEY(id)
+    )";
+
+    if($db -> query($create_table)){
+
+    }else{
+        echo "Unable to Create Table!";
+    }
 }
 
 ?>
