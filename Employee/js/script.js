@@ -1791,7 +1791,18 @@ function createAccessFunc() {
     e.preventDefault();
     //ajax request
     $.ajax({
-      type : "POST"
+      type: "POST",
+      url: "php/create_access.php",
+      data: new FormData(this),
+      processData: false,
+      contentType: false,
+      cache: false,
+      beforeSend: function () {
+        $(".access-loader").removeClass("d-none");
+      },
+      success: function (response) {
+        alert(response);
+      },
     });
   });
 }
