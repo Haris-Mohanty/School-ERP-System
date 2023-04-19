@@ -1841,8 +1841,9 @@ function createAccessFunc() {
             let id = $(parent).attr("INDEX");
             let response = await ajaxDeleteById(id, "access", "access-loader");
             
-            if(response.trim() != "success"){
+            if(response.trim() == "success"){
               swal("Access Removed!","Access Removed Successfully!","success");
+              parent.remove();
 
             }else{
               swal(response.trim(), response.trim(), "error");
