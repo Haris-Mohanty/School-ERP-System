@@ -1836,9 +1836,17 @@ function createAccessFunc() {
         // Delete code
         let allDelBtn = $(".access-list .del-btn");
         $(allDelBtn).each(function () {
-          $(this).click(function () {
+          $(this).click(async function () {
             let parent = this.parentElement.parentElement;
             let id = $(parent).attr("INDEX");
+            let response = await ajaxDeleteById(id, "access", "access-loader");
+            
+            if(response.trim() != "success"){
+              swal("Access Removed!","Access Removed Successfully!","success");
+
+            }else{
+              swal(response.trim(), response.trim(), "error");
+            }
           });
         });
       }else{
