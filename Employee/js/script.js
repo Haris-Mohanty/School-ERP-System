@@ -1822,7 +1822,7 @@ function createAccessFunc() {
         $(".access-list").html('');
         data.forEach((access, index) => {
           let tr = `
-           <tr>
+           <tr index="${access.id}">
              <td>${index+1}</td>
              <td>${access.email}</td>
              <td>${access.password}</td>
@@ -1837,7 +1837,8 @@ function createAccessFunc() {
         let allDelBtn = $(".access-list .del-btn");
         $(allDelBtn).each(function () {
           $(this).click(function () {
-            alert();
+            let parent = this.parentElement.parentElement;
+            let id = $(parent).attr("INDEX");
           });
         });
       }else{
