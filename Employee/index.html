@@ -184,6 +184,13 @@
           image.onload = function(){
             let o_width = image.width;
             let o_height = image.height;
+
+            if(o_height == 1920 && o_height == 978){
+              alert("Done");
+            }else
+            {
+              swal("Size not Matched!","Upload 1920*978 Size Image!", "error");
+            }
           }
         }
         else
