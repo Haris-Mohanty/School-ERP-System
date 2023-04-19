@@ -1,3 +1,14 @@
+
+<?php
+  session_start();
+  $username = $_SESSION['username'];
+
+  if(empty($username)){
+    header("Location:../");
+    exit;
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
