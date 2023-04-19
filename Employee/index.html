@@ -185,8 +185,9 @@
             let o_width = image.width;
             let o_height = image.height;
 
-            if(o_height == 1920 && o_height == 978){
-              alert("Done");
+            if(o_width == 1920 && o_height == 978)
+            {
+              $(".showcase-preview").append(image);
             }else
             {
               swal("Size not Matched!","Upload 1920*978 Size Image!", "error");
@@ -195,7 +196,7 @@
         }
         else
         {
-          swal("Large Size!", "Please Upload Image Under 200kb!", "warning")
+          swal("Large Size!", "Please Upload Image Under 200kb!", "warning");
         }
       });
     });
