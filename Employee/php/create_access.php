@@ -24,7 +24,13 @@ if($response){
 
     if($db -> query($create_table)){
 
-        $insert_data = "INSERT INTO access";
+        $insert_data = "INSERT INTO access(username, password) VALUES ('$username', '$password')";
+
+        if($db -> query($insert_data)){
+            echo "success";
+        }else{
+            echo "Unable to Give Access!";
+        }
 
     }else{
         echo "Unable to Create Table!";
