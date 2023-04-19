@@ -117,7 +117,7 @@
               <h1 class="showcase-title target fw-bold">TITLE</h1>
               <h4 class="showcase-subtitle target fw-bold">SUB TITLE</h4>
               <div class="showcase-formatting">
-                <input type="color" name="color-selector" id="" class="color-selector">
+                <input type="color" name="color-selector" id="" class="color-selector form-control">
               </div>
             </div>
           </div>
@@ -132,6 +132,24 @@
           let element = e.target;
           let index_number = $(element).index();
           sessionStorage.setItem("color-index-number", index_number);
+
+          let i;
+          for(i=0; i<$(".target").length; i++){
+            $(".target").css({
+              border : "",
+              boxShadow : "",
+              padding : "",
+              width : ""
+            });
+          }
+
+          $(this).css({
+            border : "4px solid red",
+            boxShadow : "0px opx 3px grey",
+            padding : "2px",
+            width : "fit-content"
+          });
+
           $(".color-selector").on("input", function(){
             let color = this.value;
             let in_number = +sessionStorage.getItem("color-index-number");
