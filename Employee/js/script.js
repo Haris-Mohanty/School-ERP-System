@@ -1812,5 +1812,16 @@ function createAccessFunc() {
     });
   });
   //show accessed data
+  async function getAccessData(){
+    try{
+
+      let response = await ajaxGetAllData("access", "access-loader");
+      
+
+    }catch(err){
+      console.log(err);
+    }
+  }
+  getAccessData();
 }
 // GIVE ACCESS LINK - CODE END
