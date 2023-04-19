@@ -35,15 +35,8 @@ echo '
                     <th class="text-nowrap">Action</th>
                   </tr>
                 </thead>
-                <tbody class="att-list">
-                    <tr>
-                      <td>1</td>
-                      <td>h@gamil.com</td>
-                      <td>12345</td>
-                      <td>
-                        <button class="btn btn-danger px-2 p-1"><i class="fa fa-trash"></i></button>
-                      </td>
-                    </tr>
+                <tbody class="access-list">
+                    
                 </tbody>
               </table>
 

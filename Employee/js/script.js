@@ -1816,7 +1816,23 @@ function createAccessFunc() {
     try{
 
       let response = await ajaxGetAllData("access", "access-loader");
-      
+      if(response.trim() != "There is no data in the table!"){
+        let data = JSON.parse(response.trim());
+        data.forEach((access, index) => {
+          let tr = `
+           <tr>
+             <td>${index+1}</td>
+             <td>${access.username}</td>
+             <td>${access.password}</td>
+             <td>
+               <button class="btn btn-danger px-2 p-1"><i class="fa fa-trash"></i></button>
+             </td>
+           </tr>
+          `;
+        });
+      }else{
+        swal("There is no accessed data!", response.trim(), "error");
+      }
 
     }catch(err){
       console.log(err);
