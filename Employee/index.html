@@ -61,7 +61,7 @@
           <i class="fa-solid fa-angle-down float-end mt-2"></i>
         </button>
 
-        <ul class="collapse homepage-menu">
+        <ul class="collapse show homepage-menu">
           <li class="border-start collapse-item p-2" access-link="branding_design.php">Header Showcase</li>
           <li class="border-start collapse-item p-2" access-link="category_design.php">Category Showcase</li>
         </ul>
@@ -88,11 +88,24 @@
         <!-- INSTITUTE UPDATE - CODE END -->
       </div>
       <div class="page page-open">
-        
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-4 p-4 bg-white rounded-lg shadow-lg">
+              <form class="header-showcase-form">
+                <div class="form-group">
+                  <label for="title-image">Title Image</label>
+                  <input type="file" name="title-image" id="title-image" class="form-control">
+                </div>
+              </form>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-7 p-4 bg-white rounded-lg shadow-lg"></div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
   <!-- JS FILE LINK START -->
-  <script src="js/script.js"></script>
+  <!-- <script src="js/script.js"></script> -->
   <!-- JS FILE LINK END -->
 </html>
