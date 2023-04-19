@@ -24,6 +24,8 @@ if($response){
 
     if($db -> query($create_table)){
 
+        $insert_data = "INSERT INTO access";
+
     }else{
         echo "Unable to Create Table!";
     }
