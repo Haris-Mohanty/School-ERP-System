@@ -1834,6 +1834,12 @@ function createAccessFunc() {
         $(".access-list").append(tr);
         });
         // Delete code
+        let allDelBtn = $(".access-list .del-btn");
+        $(allDelBtn).each(function () {
+          $(this).click(function () {
+            alert();
+          });
+        });
       }else{
         swal("There is no accessed data!", response.trim(), "error");
       }
