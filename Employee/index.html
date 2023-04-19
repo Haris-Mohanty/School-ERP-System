@@ -150,6 +150,18 @@
             width : "fit-content"
           });
 
+          $(this).on("dblclick", function(){
+            let i;
+          for(i=0; i<$(".target").length; i++){
+            $(".target").css({
+              border : "",
+              boxShadow : "",
+              padding : "",
+              width : ""
+            });
+          }
+          });
+
           $(".color-selector").on("input", function(){
             let color = this.value;
             let in_number = +sessionStorage.getItem("color-index-number");
