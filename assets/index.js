@@ -25,7 +25,7 @@ $(document).ready(function () {
         if(response.trim() == "Admin Login"){
           window.location = "Employee/index.html";
         }else if(response.trim() == "Student Login"){
-          window.location = "Student/index.html";
+          window.location = "Student/index.php";
         }else{
           swal(response.trim(), response.trim(), "error");
         }

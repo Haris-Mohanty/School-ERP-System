@@ -34,7 +34,7 @@
     <!--   GOOGLE FONT END -->
 
     <!-- CSS FILE LINK START -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../Employee/css/style.css" />
     <!-- CSS FILE LINK END -->
     <title>Employee</title>
     <link rel="shortcut icon" href="../Images/shortcut.jpg">
@@ -60,7 +60,7 @@
         </ul>
       </div>
       <div class="page page-open">
-        
+        <?php require_once("../Employee/php/nav.php") ?>
       </div>
     </div>
   </body>
