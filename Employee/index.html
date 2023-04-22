@@ -178,7 +178,8 @@
         let file = this.files[0];
         if(file.size < 200000)
         {
-          let url = url.createObjectURL(file);
+         
+          let url = URL.createObjectURL(file);
           let image = new Image();
           image.src = url;
           image.onload = function(){
