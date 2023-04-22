@@ -121,3 +121,6 @@ input[type="checkbox"], label{
 .target::selection{
     background-color: inherit;
 }
+.showcase-subtitle{
+    top: 70px;
+}
