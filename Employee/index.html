@@ -173,6 +173,7 @@
       });
     });
    
+    // SHOW TITLE IMAGE CODE START
     $(document).ready(function(){
       $("#title-image").on("change", function(){
         let file = this.files[0];
@@ -205,13 +206,27 @@
         }
       });
     });
-  
+     // SHOW TITLE IMAGE CODE END
+
+    //  TITLE UNDER 40 LETTER CODE START
     $(document).ready(function () {
       $("#title-text").on("input", function(){
         let length = this.value.length;
         $(".title-limit").html(" " + length);
       });
     });
+    //  TITLE UNDER 40 LETTER CODE END
+
+
+    //  SUB-TITLE UNDER 100 LETTER CODE START
+    $(document).ready(function () {
+      $("#subtitle-text").on("input", function(){
+        let length = this.value.length;
+        $(".subtitle-limit").html(" " + length);
+      });
+    });
+    //  SUB-TITLE UNDER 100 LETTER CODE END
+    
   </script>
   <!-- JS FILE LINK START -->
   <!-- <script src="js/script.js"></script> -->
