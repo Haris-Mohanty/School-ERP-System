@@ -212,6 +212,7 @@
     $(document).ready(function () {
       $("#title-text").on("input", function(){
         let length = this.value.length;
+        $(".showcase-title").html(this.value);
         $(".title-limit").html(" " + length);
       });
     });
@@ -226,7 +227,7 @@
       });
     });
     //  SUB-TITLE UNDER 100 LETTER CODE END
-    
+
   </script>
   <!-- JS FILE LINK START -->
   <!-- <script src="js/script.js"></script> -->
