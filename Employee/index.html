@@ -103,8 +103,8 @@
                 </div>
 
                 <div class="form-group mb-3">
-                  <label for="subtitle-text" class="fw-bold">Sub-Title Text</label><span class="title-limit"> 0</span><span>/100</span>
-                  <textarea name="subtitle-text" id="subtitle-text" class="form-control" rows="4"></textarea>
+                  <label for="subtitle-text" class="fw-bold">Sub-Title Text</label><span class="subtitle-limit"> 0</span><span>/100</span>
+                  <textarea name="subtitle-text" id="subtitle-text" maxlength="100" class="form-control" rows="4"></textarea>
                 </div>
 
                 <div class="form-group mb-3">
@@ -203,6 +203,13 @@
         {
           swal("Large Size!", "Please Upload Image Under 200kb!", "warning");
         }
+      });
+    });
+  
+    $(document).ready(function () {
+      $("#title-text").on("input", function(){
+        let length = this.value.length;
+        $(".title-limit").html(" " + length);
       });
     });
   </script>
