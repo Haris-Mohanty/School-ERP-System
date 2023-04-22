@@ -223,6 +223,7 @@
     $(document).ready(function () {
       $("#subtitle-text").on("input", function(){
         let length = this.value.length;
+        $(".showcase-subtitle").html(this.value);
         $(".subtitle-limit").html(" " + length);
       });
     });
