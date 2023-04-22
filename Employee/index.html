@@ -130,7 +130,7 @@
                 <div class="btn-group">
                   <button class="btn btn-light">Font Size</button>
                   <button class="btn btn-light">
-                    <input type="number" name="font-size" id="" class="font-size form-control">
+                    <input type="range" min="100" max="500" name="font-size" id="" class="font-size form-control">
                   </button>
                 </div>
 
@@ -192,12 +192,22 @@
           }
           });
 
+          // Color Change
           $(".color-selector").on("input", function(){
             let color = this.value;
             let in_number = +sessionStorage.getItem("color-index-number");
             let element = document.getElementsByClassName("target")[in_number];
             element.style.color = color;
           });
+
+          // Control Font size
+          $(".font-size").on("input", function(){
+            let size = this.value;
+            let in_number = +sessionStorage.getItem("color-index-number");
+            let element = document.getElementsByClassName("target")[in_number];
+            element.style.fontSize = size+"%";
+          });
+
         });
       });
     });
