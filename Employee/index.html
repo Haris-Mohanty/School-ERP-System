@@ -234,6 +234,18 @@
       $(".header-showcase-form").on("submit", function (e) {
         e.preventDefault();
         // ajax request
+        $.ajax({
+          type: "POST",
+          url: "php/create_showcase.php",
+          data: new FormData(this),
+          contentType: false,
+          processData: false,
+          cache: false,
+          beforeSend: function () {},
+          success: function (response) {
+            alert(response);
+          },
+        });
       });
     });
     // ADD SHOW CASE IN DATABASE - CODE END
