@@ -110,8 +110,8 @@
                 <div class="form-group my-3">
                   <label for="create-button">Create Buttons</label>
                   <div class="input-group">
-                    <input type="url" name="btn-url" placeholder="Enter the Url" class="form-control">
-                    <input type="text" name="btn-name" placeholder="Button 1" class="form-control">
+                    <input type="url" name="btn-url" placeholder="Enter the Url" class="form-control btn-url">
+                    <input type="text" name="btn-name" placeholder="Button 1" class="form-control btn-name">
                   </div>
                 </div>
 
@@ -327,7 +327,13 @@
     // ADD BUTTON CODE START
     $(document).ready(function(){
       $(".add-btn").click(function(){
-        alert();
+        let button = document.createElement("BUTTON");
+        button.className = "btn mr-2";
+        let a = document.createElement("A");
+        a.href = $(".btn-url").val();
+        a.innerHTML = $(".btn-name").val();
+        button.append(a);
+        $(".title-buttons").append(button);
       });
     });
     // ADD BUTTON CODE END
