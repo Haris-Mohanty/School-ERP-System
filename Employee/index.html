@@ -126,7 +126,7 @@
 
                 <div class="input-group mb-2">
                   <span class="input-group-text">Size</span>
-                  <select name="" id="" class="form-select">
+                  <select name="font-size" id="" class="font-size form-select">
                     <option value="16px">Small</option>
                     <option value="20px">Medium</option>
                     <option value="24px">Large</option>
@@ -328,10 +328,14 @@
     $(document).ready(function(){
       $(".add-btn").click(function(){
         let button = document.createElement("BUTTON");
-        button.className = "btn mr-2";
+        button.className = "btn mx-2";
         let a = document.createElement("A");
         a.href = $(".btn-url").val();
         a.innerHTML = $(".btn-name").val();
+        a.style.color = $(".btn-textcolor").val();
+        a.style.fontSize = $(".font-size").val();
+        a.style.textDecoration = "none";
+        button.style.backgroundColor = $(".btn-bgcolor").val();
         button.append(a);
         $(".title-buttons").append(button);
       });
