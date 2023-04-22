@@ -147,7 +147,7 @@
                 <h1 class="showcase-title target fw-bold">TITLE</h1>
                 <h4 class="showcase-subtitle target fw-bold">SUB TITLE</h4>
                 <!-- add button -->
-                <div class="title-buttons my-3">
+                <div class="title-buttons">
 
                 </div>
               </div>
@@ -337,7 +337,16 @@
         a.style.textDecoration = "none";
         button.style.backgroundColor = $(".btn-bgcolor").val();
         button.append(a);
-        $(".title-buttons").append(button);
+        
+        let title_button = document.querySelector(".title-buttons");
+        let title_child = title_button.getElementsByTagName("BUTTON");
+        let button_length = title_child.length;
+
+        if(button_length == 0 || button_length == 1){
+          $(".title-buttons").append(button);
+        }else{
+          swal("Add 2 Button!", "Only Two Buttons Are Allowed!", "warning");
+        }
       });
     });
     // ADD BUTTON CODE END
