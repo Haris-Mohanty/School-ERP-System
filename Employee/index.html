@@ -308,8 +308,9 @@
       $(".header-showcase-form").on("submit", function (e) {
         e.preventDefault();
 
-        let title = document.querySelector(".show-title");
-        let subtitle = document.querySelector(".show-subtitle");
+        let title = document.querySelector(".showcase-title");
+        let subtitle = document.querySelector(".showcase-subtitle");
+        let file = document.querySelector("#title-image").files[0]; //get file
 
         //getting title size and color
         let title_size = "";
@@ -332,12 +333,12 @@
         if(subtitle.style.fontSize == ""){
           subtitle_size = "300%"; //default value
         }else{
-          subtitle_size = title.style.fontSize;
+          subtitle_size = subtitle.style.fontSize;
         }
         if(subtitle.style.color == ""){
           subtitle_color = "black"; //default value
         }else{
-          subtitle_color = title.style.color;
+          subtitle_color = subtitle.style.color;
         }
 
         // getting alignment
@@ -366,6 +367,7 @@
         };
 
         let formData = new FormData(this);
+        
         // ajax request
         $.ajax({
           type: "POST",
