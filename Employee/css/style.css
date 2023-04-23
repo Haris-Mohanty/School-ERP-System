@@ -113,10 +113,12 @@ input[type="checkbox"], label{
     height: 60px;
     background-color: black;
 }
-.target{
-    cursor: pointer;
+.title-box{
     position: absolute;
     z-index: 2;
+}
+.target{
+    cursor: pointer;
 }
 .target::selection{
     background-color: inherit;
