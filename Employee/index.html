@@ -172,12 +172,12 @@
                 <!-- Align -->
                 <button class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown">Alignment
                   <div class="dropdown-menu">
-                    <span class="dropdown-item" value="left">Left</span>
-                    <span class="dropdown-item" value="center">Center</span>
-                    <span class="dropdown-item" value="right">Right</span>
-                    <span class="dropdown-item" value="top">Top</span>
-                    <span class="dropdown-item" value="v-center">V-Center</span>
-                    <span class="dropdown-item" value="buttom">Buttom</span>
+                    <span class="dropdown-item alignment" align-position="h" align-value="flex-start">Left</span>
+                    <span class="dropdown-item alignment" align-position="h" align-value="center">Center</span>
+                    <span class="dropdown-item alignment" align-position="h" align-value="flex-end">Right</span>
+                    <span class="dropdown-item alignment" align-position="v" align-value="flex-start">Top</span>
+                    <span class="dropdown-item alignment" align-position="v" align-value="center">V-Center</span>
+                    <span class="dropdown-item alignment" align-position="v" align-value="flex-end">Buttom</span>
                   </div>
                 </button>
                 
@@ -350,6 +350,29 @@
       });
     });
     // ADD BUTTON CODE END
+
+    // ALIGNMENT CODE START
+    $(document).ready(function() {
+      $(".alignment").each(function(){
+        $(this).click(function(){
+          let align_position = $(this).attr("align-position");
+          let align_value = $(this).attr("align-value");
+          if(align_position == "h")
+          {
+            $(".showcase-preview").css({
+              justifyContent : align_value
+            });
+          }else if(align_position == "v"){
+            $(".showcase-preview").css({
+              alignItems : align_value
+            });
+          }else{
+
+          }
+        });
+      });
+    });
+    // ALIGNMENT CODE END
 
   </script>
   <!-- JS FILE LINK START -->
