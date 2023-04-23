@@ -367,7 +367,9 @@
         };
 
         let formData = new FormData(this);
-        
+        formData.append("css_data", JSON.stringify(css_data));
+        formData.append("file_data", file);
+
         // ajax request
         $.ajax({
           type: "POST",
