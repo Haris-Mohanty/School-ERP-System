@@ -311,8 +311,36 @@
         let title = document.querySelector(".show-title");
         let subtitle = document.querySelector(".show-subtitle");
 
-        let title_size = title.style.fontSize;
-        let title_color = title.style.color;
+        //getting title size and color
+        let title_size = "";
+        let title_color = "";
+        if(title.style.fontSize == ""){
+          title_size = "300%"; //default value
+        }else{
+          title_size = title.style.fontSize;
+        }
+        if(title.style.color == ""){
+          title_color = "black"; //default value
+        }else{
+          title_color = title.style.color;
+        }
+
+
+        //getting sub-title size and color
+        let subtitle_size = "";
+        let subtitle_color = "";
+        if(subtitle.style.fontSize == ""){
+          subtitle_size = "300%"; //default value
+        }else{
+          subtitle_size = title.style.fontSize;
+        }
+        if(subtitle.style.color == ""){
+          subtitle_color = "black"; //default value
+        }else{
+          subtitle_color = title.style.color;
+        }
+
+        // getting
 
         let formData = new FormData(this);
         // ajax request
