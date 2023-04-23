@@ -344,6 +344,16 @@
         let flex_box = document.querySelector(".showcase-preview");
         let h_align = "";
         let v_align = "";
+        if(flex_box.style.justifyContent == ""){
+          h_align = "flex-start";
+        }else{
+          h_align = flex_box.style.justifyContent;
+        }
+        if(flex_box.style.alignItems == ""){
+          v_align = "flex-start";
+        }else{
+          v_align = flex_box.style.alignItems;
+        }
 
         let formData = new FormData(this);
         // ajax request
