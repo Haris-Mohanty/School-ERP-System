@@ -307,11 +307,18 @@
     $(document).ready(function () {
       $(".header-showcase-form").on("submit", function (e) {
         e.preventDefault();
+
+        let title = document.querySelector(".show-title");
+        let subtitle = document.querySelector(".show-subtitle");
+
+        let 
+
+        let formData = new FormData(this);
         // ajax request
         $.ajax({
           type: "POST",
           url: "php/create_showcase.php",
-          data: new FormData(this),
+          data: formData,
           contentType: false,
           processData: false,
           cache: false,
