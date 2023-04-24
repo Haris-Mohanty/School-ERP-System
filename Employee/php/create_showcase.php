@@ -31,7 +31,27 @@ $response = $db -> query($check_table);
 if($response){
 
 }else{
-    $create_table = 
+    $create_table = "CREATE TABLE header_showcase(
+        id int(11) NOT NULL AUTO_INCREMENT,
+        title_image MEDIUMBLOB,
+        title_text VARCHAR(255),
+        title_size VARCHAR(120),
+        title_color VARCHAR(120),
+        subtitle_text VARCHAR(255),
+        subtitle_size VARCHAR(120),
+        subtitle_color VARCHAR(120),
+        h_align VARCHAR(120),
+        v_align VARCHAR(120),
+        buttons MEDIUMTEXT,
+        PRIMARY KEY(id)
+    )";
+    if($db -> query($create_table)){
+
+        $insert_data = "INSERT INTO header_showcase(title_image, title_text, title_) VALUES ()";
+
+    }else{
+        echo "Unable to Create Table!";
+    }
 }
 
 
