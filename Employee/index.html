@@ -385,9 +385,9 @@
           beforeSend: function () {},
           success: function (response) {
             if(response == "success"){
-
+              swal("", "", "success");
             }else{
-              
+              swal(response.trim(), response.trim(), "error");
             }
           },
         });
