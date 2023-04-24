@@ -47,7 +47,7 @@ if($response){
     )";
     if($db -> query($create_table)){
 
-        $insert_data = "INSERT INTO header_showcase(title_image, title_text, title_) VALUES ()";
+        $insert_data = "INSERT INTO header_showcase(title_image, title_text, title_size, subtitle_image, subtitle_text, subtitle_size,) VALUES ()";
 
     }else{
         echo "Unable to Create Table!";
