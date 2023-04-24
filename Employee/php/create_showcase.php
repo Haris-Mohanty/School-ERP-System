@@ -24,19 +24,28 @@ $v_align = $all_data['v_align'];
 
 $buttons = addslashes($all_data['buttons']);
 
-$check_table = "SELECT count(id) FROM header_showcase";
+$check_table = "SELECT count(id) AS result FROM header_showcase"; //result is a column name(Using AS column declare.)
 
 $response = $db -> query($check_table);
 
 if($response){
 
-    $insert_data = "INSERT INTO header_showcase(title_image, title_text, title_color, title_size, subtitle_text, subtitle_color, subtitle_size, h_align, v_align, buttons) VALUES ('$file_binary', '$title_text', '$title_color', '$title_size', '$subtitle_text', '$subtitle_color', '$subtitle_size', '$h_align', '$v_align', '$buttons')";
+    $data = $response -> fetch_assoc();
+    $count_rows = $data['result'];
+
+    if($count_rows < 3){
+        $insert_data = "INSERT INTO header_showcase(title_image, title_text, title_color, title_size, subtitle_text, subtitle_color, subtitle_size, h_align, v_align, buttons) VALUES ('$file_binary', '$title_text', '$title_color', '$title_size', '$subtitle_text', '$subtitle_color', '$subtitle_size', '$h_align', '$v_align', '$buttons')";
 
         if($db -> query($insert_data)){
             echo "success";
         }else{
             echo "Unable to add Showcase!";
         }
+    }else if($count_rows >= 3){
+        echo "Upto 3 Limits You Can Add!";
+    }
+
+    
 }else{
     $create_table = "CREATE TABLE header_showcase(
         id int(11) NOT NULL AUTO_INCREMENT,
