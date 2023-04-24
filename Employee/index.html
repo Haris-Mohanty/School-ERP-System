@@ -385,7 +385,7 @@
           beforeSend: function () {},
           success: function (response) {
             if(response == "success"){
-              swal("", "", "success");
+              swal("Successfully!", "Showcase added successfully!", "success");
             }else{
               swal(response.trim(), response.trim(), "error");
             }
