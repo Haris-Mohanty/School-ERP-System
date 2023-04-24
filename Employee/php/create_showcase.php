@@ -4,6 +4,9 @@
 require_once("../../Common_files/php/database.php");
 
 $file = $_FILES['file_data'];
+$location = $file['tmp_name'];
+$file_binary = addslashes(file_get_contents($location));
+
 $json_data = json_encode($_POST['css_data']); //receive by encoding
 $tmp_data = json_decode($json_data, true);
 $all_data = json_decode($tmp_data, true);
@@ -20,6 +23,16 @@ $h_align = $all_data['h_align'];
 $v_align = $all_data['v_align'];
 
 $buttons = addslashes($all_data['buttons']);
+
+$check_table = "SELECT * FROM header_showcase";
+
+$response = $db -> query($check_table);
+
+if($response){
+
+}else{
+    $create_table = 
+}
 
 
 ?>
