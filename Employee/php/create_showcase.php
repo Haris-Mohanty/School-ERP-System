@@ -29,7 +29,13 @@ $check_table = "SELECT * FROM header_showcase";
 $response = $db -> query($check_table);
 
 if($response){
+    $insert_data = "INSERT INTO header_showcase(title_image, title_text, title_color, title_size, subtitle_text, subtitle_color, subtitle_size, h_align, v_align, buttons) VALUES ('$file_binary', '$title_text', '$title_color', '$title_size', '$subtitle_text', '$subtitle_color', '$subtitle_size', '$h_align', '$v_align', '$buttons')";
 
+        if($db -> query($insert_data)){
+            echo "success";
+        }else{
+            echo "Unable to add Showcase!";
+        }
 }else{
     $create_table = "CREATE TABLE header_showcase(
         id int(11) NOT NULL AUTO_INCREMENT,
@@ -47,7 +53,13 @@ if($response){
     )";
     if($db -> query($create_table)){
 
-        $insert_data = "INSERT INTO header_showcase(title_image, title_text, title_size, subtitle_image, subtitle_text, subtitle_size,) VALUES ()";
+        $insert_data = "INSERT INTO header_showcase(title_image, title_text, title_color, title_size, subtitle_text, subtitle_color, subtitle_size, h_align, v_align, buttons) VALUES ('$file_binary', '$title_text', '$title_color', '$title_size', '$subtitle_text', '$subtitle_color', '$subtitle_size', '$h_align', '$v_align', '$buttons')";
+
+        if($db -> query($insert_data)){
+            echo "success";
+        }else{
+            echo "Unable to add Showcase!";
+        }
 
     }else{
         echo "Unable to Create Table!";
