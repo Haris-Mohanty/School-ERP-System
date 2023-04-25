@@ -552,8 +552,12 @@
               fontSize : all_data[6]
             });
 
-            //alignment
+            //Buttons
             $(".title-buttons").html(all_data[9]);
+
+            //show data in input field
+            $("#title-text").val(all_data[1]);
+            $("#subtitle-text").val(all_data[4]);
           }
          }); 
         }
