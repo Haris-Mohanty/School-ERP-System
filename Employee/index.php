@@ -517,6 +517,24 @@
     });
     // PREVIEW CODE END
 
+    // ALL SHOWCASE EDIT CODE START
+    $(document).ready(function(){
+      $("#edit-title").on("change", function(){
+        if($(this).val() == "choose title")
+        {
+         //ajax
+         $.ajax({
+          type : 
+         }); 
+        }
+        else
+        {
+          alert("failed");
+        }
+      });
+    });
+    // ALL SHOWCASE EDIT CODE END
+
   </script>
   <!-- JS FILE LINK START -->
   <!-- <script src="js/script.js"></script> -->
