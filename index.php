@@ -65,9 +65,13 @@ require("Common_files/php/database.php");
               echo "<div class='carousel-item carousel-control'>";
                 $image = "data:image/png;base64,".base64_encode($data['title_image']);
                 echo "<img src='".$image."' class='w-100'>";
-                echo "<div class='carousel-caption'>";
-                echo "<h1>".$data['title_text']."</h1>";
-                echo "<h4>".$data['subtitle_text']."</h4>";
+                echo "<div class='carousel-caption d-flex' style='justify-content:".$h_align."'>";
+
+               echo "<div>";
+               echo "<h1>".$data['title_text']."</h1>";
+               echo "<h4>".$data['subtitle_text']."</h4>";
+               echo "</div>";
+
                 echo "</div>";
               echo "</div>";
             }
