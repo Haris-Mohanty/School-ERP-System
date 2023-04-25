@@ -12,6 +12,21 @@ $text = $data[0];
 $h_align = $data[1];
 $v_align = $data[2];
 
+$text_align = "";
+ 
+    if($h_align == "center")
+    {
+        $text_align = "text-center";
+    }
+    else if($h_align == "flex-start")
+    {
+        $text_align = "text-start";
+    }
+    else if($h_align == "flex-end")
+    {
+        $text_align = "text-end";
+    }
+
 
 
 ?>
@@ -62,10 +77,12 @@ $v_align = $data[2];
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="<?php echo $image; ?>" class="w-100" alt="">
-                    <div class="carousel-caption h-100 d-flex" style="justify-content: <?php echo $h_align; ?>; align-items: <?php echo $v_align; ?>">
-                        <?php
-                            echo $text;
-                        ?>
+                    <div class="carousel-caption <?php echo $text_align; ?> h-100 d-flex" style="justify-content: <?php echo $h_align; ?>; align-items: <?php echo $v_align; ?>">
+                        <div>
+                         <?php
+                             echo $text;
+                         ?>
+                        </div>
                     </div>
                 </div>
             </div>
