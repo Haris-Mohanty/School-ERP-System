@@ -41,7 +41,7 @@ require_once("../../Common_files/php/database.php");
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide"/>
     <!--   GOOGLE FONT END -->
 
-    <title>School ERP System</title>
+    <title>Preview</title>
     <link rel="stylesheet" href="pages/index.css">
 </head>
 <body>
