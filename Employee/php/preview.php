@@ -24,7 +24,7 @@ $text_align = "";
     }
     else if($h_align == "flex-end")
     {
-        $text_align = "text-end";
+        $text_align = "text-start";
     }
 
 
