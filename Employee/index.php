@@ -538,9 +538,11 @@
             image.style.position = "absolute";
             image.style.left = "0";
             image.style.top = "0";
-            $(".showcase-preview").append(image);
-            $(".showcase-title").html(all_data[1]);
-            $(".showcase-subtitle").html(all_data[4]);
+            $(".showcase-preview").append(image); //image
+            $(".showcase-title").html(all_data[1]); //title text
+            $(".showcase-subtitle").html(all_data[4]); //sub title text
+
+            //color and font size
             $(".showcase-title").css({
               color : all_data[2],
               fontSize : all_data[3]
@@ -549,6 +551,9 @@
               color : all_data[5],
               fontSize : all_data[6]
             });
+
+            //alignment
+            $(".title-buttons").html(all_data[9]);
           }
          }); 
         }
