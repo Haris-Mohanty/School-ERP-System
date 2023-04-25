@@ -66,6 +66,11 @@ require("Common_files/php/database.php");
               $h_align = $data['h_align'];
               $v_align = $data['v_align'];
 
+              $title_size = $data['title_size'];
+              $title_color = $data['title_color'];
+              $subtitle_size = $data['subtitle_size'];
+              $subtitle_color = $data['subtitle_color'];
+
               echo "<div class='carousel-item carousel-control'>";
                 $image = "data:image/png;base64,".base64_encode($data['title_image']);
                 echo "<img src='".$image."' class='w-100'>";
