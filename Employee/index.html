@@ -136,7 +136,7 @@
 
                 <div class="form-group mb-3">
                   <button class="btn btn-primary py-2">Add Showcase</button>
-                  <button class="btn btn-success float-end preview-btn w-50 py-2">Preview</button>
+                  <button type="button" class="btn btn-success float-end preview-btn w-50 py-2">Preview</button>
                 </div>
               </form>
             </div>
@@ -443,6 +443,36 @@
       });
     });
     // ALIGNMENT CODE END
+
+    // PREVIEW CODE START
+    $(document).ready(function() {
+      $(".preview-btn").click(function(){
+        let file = document.querySelector("#title-image").files[0];
+        let formData = new FormData();
+        formData.append("photo", file);
+
+        // getting alignment
+        let flex_box = document.querySelector(".showcase-preview");
+        let h_align = "";
+        let v_align = "";
+        if(flex_box.style.justifyContent == ""){
+          h_align = "flex-start";
+        }else{
+          h_align = flex_box.style.justifyContent;
+        }
+        if(flex_box.style.alignItems == ""){
+          v_align = "flex-start";
+        }else{
+          v_align = flex_box.style.alignItems;
+        }
+
+        let array = [$(".title-box").htmL().trim(), h_align, v_align];
+        formData.append("data", JSON.stringify(array));
+
+        
+      });
+    });
+    // PREVIEW CODE END
 
   </script>
   <!-- JS FILE LINK START -->
