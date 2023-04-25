@@ -143,7 +143,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="edit-title">Edit Title</label>
+                  <label for="edit-title">Edit Showcase</label>
                   <select id="edit-title" class="form-select">
                     <option value="choose title">Choose Title</option>
                     <?php
@@ -532,7 +532,13 @@
           beforeSend : function(){},
           success : function(response){
             let all_data = JSON.parse(response.trim());
-            let image = 
+            let image = document.createElement("IMG");
+            image.src = all_data[0];
+            image.style.width = "100%";
+            image.style.position = "absolute";
+            image.style.left = "0";
+            image.style.top = "0";
+            $(".showcase-preview").append(image);
           }
          }); 
         }
