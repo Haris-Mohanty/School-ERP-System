@@ -77,8 +77,8 @@ require("Common_files/php/database.php");
                 echo "<div class='carousel-caption d-flex' style='justify-content:".$h_align."; align-items:".$v_align.";'>";
 
                echo "<div>";
-               echo "<h1>".$data['title_text']."</h1>";
-               echo "<h4>".$data['subtitle_text']."</h4>";
+               echo "<h1 style='font-size:".$title_size."; color:".$title_color.";'>".$data['title_text']."</h1>";
+               echo "<h4 style='font-size:".$subtitle_size."; color:".$subtitle_color.";'>".$data['subtitle_text']."</h4>";
                echo "</div>";
 
                 echo "</div>";
