@@ -525,7 +525,15 @@
          //ajax
          $.ajax({
           type : "POST",
-          url : "php/"
+          url : "php/edit_showcase.php",
+          data : {
+            $(this).val()
+          },
+          cache : false,
+          beforeSend : function(){},
+          success : function(response){
+            alert(response);
+          }
          }); 
         }
         else
