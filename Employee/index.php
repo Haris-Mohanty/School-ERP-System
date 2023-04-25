@@ -539,12 +539,14 @@
             image.style.left = "0";
             image.style.top = "0";
             $(".showcase-preview").append(image);
+            $(".showcase-title").html(all_data[1]);
+            $(".showcase-subtitle").html(all_data[4]);
           }
          }); 
         }
         else
         {
-          alert("failed");
+          swal("Invalid Choice!", "Please Select A Title!","error");
         }
       });
     });
