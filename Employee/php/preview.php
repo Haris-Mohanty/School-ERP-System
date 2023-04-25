@@ -62,7 +62,7 @@ $v_align = $data[2];
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="<?php echo $image; ?>" class="w-100" alt="">
-                    <div class="carousel-caption">
+                    <div class="carousel-caption h-100 d-flex" style="justify-content: <?php echo $h_align; ?>; align-items: <?php echo $v_align; ?>">
                         <?php
                             echo $text;
                         ?>
