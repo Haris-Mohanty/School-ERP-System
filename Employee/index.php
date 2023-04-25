@@ -524,7 +524,8 @@
         {
          //ajax
          $.ajax({
-          type : 
+          type : "POST",
+          url : "php/"
          }); 
         }
         else
