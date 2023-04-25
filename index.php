@@ -44,6 +44,11 @@ require("Common_files/php/database.php");
     <title>School ERP System</title>
     <link rel="stylesheet" href="pages/index.css">
 </head>
+<style>
+  .carousel-caption{
+    line-height:80px;
+  }
+</style>
 <body>
     <!-- nav -->
     <?php
@@ -66,6 +71,21 @@ require("Common_files/php/database.php");
               $h_align = $data['h_align'];
               $v_align = $data['v_align'];
 
+              $text_align = "";
+ 
+              if($h_align == "center")
+              {
+                  $text_align = "text-center";
+              }
+              else if($h_align == "flex-start")
+              {
+                  $text_align = "text-start";
+              }
+              else if($h_align == "flex-end")
+              {
+                  $text_align = "text-start";
+              }
+
               $title_size = $data['title_size'];
               $title_color = $data['title_color'];
               $subtitle_size = $data['subtitle_size'];
@@ -75,7 +95,7 @@ require("Common_files/php/database.php");
               echo "<div class='carousel-item carousel-control'>";
                 $image = "data:image/png;base64,".base64_encode($data['title_image']);
                 echo "<img src='".$image."' class='w-100'>";
-                echo "<div class='carousel-caption d-flex' style='justify-content:".$h_align."; align-items:".$v_align.";'>";
+                echo "<div class='carousel-caption ".$text_align." d-flex h-100' style='justify-content:".$h_align."; align-items:".$v_align.";'>";
 
                echo "<div>";
                echo "<h1 style='font-size:".$title_size."; color:".$title_color.";'>".$data['title_text']."</h1>";

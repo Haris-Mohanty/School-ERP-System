@@ -12,7 +12,7 @@ $text = $data[0];
 $h_align = $data[1];
 $v_align = $data[2];
 
-$text_align = "";
+   $text_align = "";
  
     if($h_align == "center")
     {
