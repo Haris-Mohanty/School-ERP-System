@@ -62,6 +62,9 @@ require("Common_files/php/database.php");
           if($response){
             while($data = $response -> fetch_assoc())
             {
+
+              $h_align = $data['h_align'];
+
               echo "<div class='carousel-item carousel-control'>";
                 $image = "data:image/png;base64,".base64_encode($data['title_image']);
                 echo "<img src='".$image."' class='w-100'>";
