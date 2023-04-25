@@ -429,7 +429,7 @@
     $(document).ready(function(){
       $(".add-btn").click(function(){
         let button = document.createElement("BUTTON");
-        button.className = "btn mx-2";
+        button.className = "btn mx-2 title-btn";
         let a = document.createElement("A");
         a.href = $(".btn-url").val();
         a.innerHTML = $(".btn-name").val();
@@ -559,7 +559,13 @@
             $("#title-text").val(all_data[1]);
             $("#subtitle-text").val(all_data[4]);
 
-            //show buttons
+            //edit buttons
+            $(".title-btn").each(function(){
+              $(this).click(function(){
+                alert();
+              });
+            });
+
           }
          }); 
         }
