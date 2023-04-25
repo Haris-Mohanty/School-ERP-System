@@ -19,6 +19,7 @@ require("Common_files/php/database.php");
     <script src="Common_files/js/bootstrap.bundle.min.js"></script>
     <!-- BOOTSTRAP JS LINK END -->
 
+    
     <!-- ANIMATE CSS LINK START -->
     <link rel="stylesheet" href="Common_files/css/animate.min.css" />
     <!-- ANIMATE CSS LINK END -->
@@ -52,18 +53,32 @@ require("Common_files/php/database.php");
     <!-- Main Page code start -->
   <div class="container-fluid" style="margin-top: 90px;">
   <!-- CAROUSAL CODE START -->
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
        <div class="carousel-inner">
-         <?php?>
+         <?php
+          $showcase = "SELECT * FROM header_showcase";
+          $response = $db -> query($showcase);
+
+          if($response){
+            while($data = $response -> fetch_assoc())
+            {
+              echo "<div class='carousel-item carousel-control'>";
+                $image = "data:image/png;base64,".base64_encode($data['title_image']);
+                echo "<img src='".$image."' class='w-100'>";
+              echo "</div>";
+            }
+          }
+         ?>
        </div>
-       <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-         <span class="sr-only">Previous</span>
-       </a>
-       <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-         <span class="sr-only">Next</span>
-       </a>
+       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+       </button>
+       <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+       </button>
+       
     </div>
   <!-- CAROUSAL CODE END -->
 
@@ -106,4 +121,10 @@ require("Common_files/php/database.php");
     
      
 </body>
+<script>
+  $(document).ready(function(){
+    let carousel_item = document.querySelector(".carousel-control");
+    $(carousel_item).addClass("active");
+  });
+</script>
 </html>
