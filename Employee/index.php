@@ -520,19 +520,19 @@
     // ALL SHOWCASE EDIT CODE START
     $(document).ready(function(){
       $("#edit-title").on("change", function(){
-        if($(this).val() == "choose title")
+        if($(this).val() != "choose title")
         {
          //ajax
          $.ajax({
           type : "POST",
           url : "php/edit_showcase.php",
           data : {
-            $(this).val()
+           id : $(this).val()
           },
-          cache : false,
           beforeSend : function(){},
           success : function(response){
-            alert(response);
+            let all_data = JSON.parse(response.trim());
+            console.log(all_data)
           }
          }); 
         }
