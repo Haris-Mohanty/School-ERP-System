@@ -545,6 +545,10 @@
               color : all_data[2],
               fontSize : all_data[3]
             });
+            $(".showcase-subtitle").css({
+              color : all_data[5],
+              fontSize : all_data[6]
+            });
           }
          }); 
         }
