@@ -470,7 +470,18 @@
         formData.append("data", JSON.stringify(array));
 
         //ajax request
-        $.ajax({});
+        $.ajax({
+          type: "POST",
+          url: "php/preview.php",
+          data: formData,
+          contentType: false,
+          processData: false,
+          cache: false,
+          beforeSend: function () {},
+          success: function (response) {
+            alert(response);
+          },
+        });
       });
     });
     // PREVIEW CODE END
