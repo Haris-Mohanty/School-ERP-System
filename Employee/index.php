@@ -150,9 +150,18 @@
                       $get_data = "SELECT * FROM header_showcase";
 
                       $response = $db -> query($get_data);
+                      $count = 0;
 
-                      if($response){
-                        
+
+                      if($response)
+                      {
+                        while($data = $response -> fetch_assoc())
+                        {
+                          $count += 1;
+                          echo '
+                            <option value='.$data['id'].'>'.$count.'</option>
+                          ';
+                        }
                       }
                     ?>
                   </select>
