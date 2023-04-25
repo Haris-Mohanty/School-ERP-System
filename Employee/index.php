@@ -1,5 +1,8 @@
 
 <?php
+
+  require("../Common_files/php/database.php");
+
   session_start();
   $username = $_SESSION['username'];
 
