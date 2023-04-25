@@ -532,7 +532,7 @@
           beforeSend : function(){},
           success : function(response){
             let all_data = JSON.parse(response.trim());
-            console.log(all_data)
+            let image = 
           }
          }); 
         }
