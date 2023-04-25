@@ -71,6 +71,7 @@ require("Common_files/php/database.php");
               $subtitle_size = $data['subtitle_size'];
               $subtitle_color = $data['subtitle_color'];
 
+
               echo "<div class='carousel-item carousel-control'>";
                 $image = "data:image/png;base64,".base64_encode($data['title_image']);
                 echo "<img src='".$image."' class='w-100'>";
@@ -79,6 +80,7 @@ require("Common_files/php/database.php");
                echo "<div>";
                echo "<h1 style='font-size:".$title_size."; color:".$title_color.";'>".$data['title_text']."</h1>";
                echo "<h4 style='font-size:".$subtitle_size."; color:".$subtitle_color.";'>".$data['subtitle_text']."</h4>";
+              echo $data['buttons'];
                echo "</div>";
 
                 echo "</div>";
