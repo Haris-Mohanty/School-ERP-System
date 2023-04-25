@@ -146,6 +146,15 @@
                   <label for="edit-title">Edit Title</label>
                   <select id="edit-title" class="form-select">
                     <option value="choose title">Choose Title</option>
+                    <?php
+                      $get_data = "SELECT * FROM header_showcase";
+
+                      $response = $db -> query($get_data);
+
+                      if($response){
+                        
+                      }
+                    ?>
                   </select>
                 </div>
 
