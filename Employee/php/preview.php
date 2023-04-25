@@ -62,6 +62,11 @@ $v_align = $data[2];
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="<?php echo $image; ?>" class="w-100" alt="">
+                    <div class="carousel-caption">
+                        <?php
+                            echo $text;
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>
