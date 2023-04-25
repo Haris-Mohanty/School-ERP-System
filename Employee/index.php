@@ -541,6 +541,10 @@
             $(".showcase-preview").append(image);
             $(".showcase-title").html(all_data[1]);
             $(".showcase-subtitle").html(all_data[4]);
+            $(".showcase-title").css({
+              color : all_data[2],
+              fontSize : all_data[3]
+            });
           }
          }); 
         }
