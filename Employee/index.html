@@ -94,12 +94,12 @@
               <form class="header-showcase-form">
                 <div class="form-group mb-3">
                   <label for="title-image" class="fw-bold">Title Image </label> <span> 200kb (1920*978)</span>
-                  <input type="file" name="title-image" id="title-image" class="form-control">
+                  <input type="file" required name="title-image" id="title-image" class="form-control">
                 </div>
 
                 <div class="form-group mb-3">
                   <label for="title-text" class="fw-bold">Title Text </label><span class="title-limit"> 0</span><span>/40</span>
-                  <textarea name="title-text" id="title-text" maxlength="40" class="form-control" rows="2"></textarea>
+                  <textarea name="title-text" required id="title-text" maxlength="40" class="form-control" rows="2"></textarea>
                 </div>
 
                 <div class="form-group mb-3">
@@ -479,7 +479,9 @@
           cache: false,
           beforeSend: function () {},
           success: function (response) {
-            alert(response);
+            let page = window.open("about:blank");
+            page.document.open();
+            page.document.write(response);
           },
         });
       });

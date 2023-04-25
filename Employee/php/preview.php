@@ -4,10 +4,15 @@
 require_once("../../Common_files/php/database.php");
 
 $file = $_FILES['photo'];
+$location = $file['tmp_name'];
+$image = "data:image/png;base64,".base64_encode(file_get_contents($location));
+
 $data = json_decode($_POST['data']);
 $text = $data[0];
 $h_align = $data[1];
 $v_align = $data[2];
+
+
 
 ?>
 
@@ -19,19 +24,19 @@ $v_align = $data[2];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- BOOTSTRAP CSS LINK START -->
-    <link rel="stylesheet" href="Common_files/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../Common_files/css/bootstrap.min.css" />
     <!-- BOOTSTRAP CSS LINK END -->
 
     <!-- BOOTSTRAP JS LINK START -->
-    <script src="Common_files/js/bootstrap.bundle.min.js"></script>
+    <script src="../Common_files/js/bootstrap.bundle.min.js"></script>
     <!-- BOOTSTRAP JS LINK END -->
 
     <!-- ANIMATE CSS LINK START -->
-    <link rel="stylesheet" href="Common_files/css/animate.min.css" />
+    <link rel="stylesheet" href="../Common_files/css/animate.min.css" />
     <!-- ANIMATE CSS LINK END -->
 
     <!-- SWEET ALERT JS LINK START -->
-    <script src="Common_files/js/sweetalert.min.js"></script>
+    <script src="../Common_files/js/sweetalert.min.js"></script>
     <!-- SWEET ALERT JS LINK END -->
 
     <!--FONT AWESOME LINK START -->
@@ -39,7 +44,7 @@ $v_align = $data[2];
     <!--FONT AWESOME LINK END -->
 
     <!-- JQUERY LINK START -->
-    <script src="Common_files/js/jquery.min.js"></script>
+    <script src="../Common_files/js/jquery.min.js"></script>
     <!-- JQUERY LINK END -->
 
     <!--   GOOGLE FONT START -->
@@ -51,16 +56,16 @@ $v_align = $data[2];
     <link rel="stylesheet" href="pages/index.css">
 </head>
 <body>
-    <!-- nav -->
-    <?php
-        require("assets/nav.php");
-    ?>
-
-
-
-    <!-- footer -->
-    <?php require("assets/footer.php"); ?>
     
-     
+    <div class="container-fluid">
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="<?php echo $image; ?>" class="w-100" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
