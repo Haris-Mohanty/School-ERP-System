@@ -562,7 +562,12 @@
             //edit buttons
             $(".title-btn").each(function(){
               $(this).click(function(){
-                alert();
+                let url = $(this).children().attr("href");
+                let name = $(this).children().html();
+                $(".btn-url").val(url);
+                $(".btn-name").val(name);
+                let color = $(this).css("backgroundColor").replace("rgb(","").replace(")","");
+                alert(color);
               });
             });
 
