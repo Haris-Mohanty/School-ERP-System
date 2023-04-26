@@ -569,11 +569,14 @@
                 let color = $(this).css("backgroundColor").replace("rgb(","").replace(")","");
                 let rgb = color.split(",");
                 let i;
+                let color_code = "";
                 for(i=0; i<rgb.length; i++)
                 {
                   let hex_code = Number(rgb[i]).toString(16);
-                  alert(hex_code)
+                    color_code += hex_code.length == 1 ? "0"+hex_code : hex_code;
                 }
+                $(".btn-bgcolor").val("#"+color_code);
+                $(".btn-color").val("#"+color_code);
               });
             });
 
