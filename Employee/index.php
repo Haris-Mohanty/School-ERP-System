@@ -576,7 +576,17 @@
                     color_code += hex_code.length == 1 ? "0"+hex_code : hex_code;
                 }
                 $(".btn-bgcolor").val("#"+color_code);
-                $(".btn-color").val("#"+color_code);
+               
+
+                let text_color = $(this).children().css("color").replace("rgb(","").replace(")","");
+                let text_rgb = text_color.split(",");
+                let text_color_code = "";
+                for(i=0; i<text_rgb.length; i++)
+                {
+                  let text_hex_code = Number(text_rgb[i]).toString(16);
+                  text_color_code += text_hex_code.length == 1 ? "0"+text_hex_code : text_hex_code;
+                }
+                $(".btn-textcolor").val("#"+text_color_code);
               });
             });
 
