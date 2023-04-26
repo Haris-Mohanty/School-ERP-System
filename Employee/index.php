@@ -567,7 +567,13 @@
                 $(".btn-url").val(url);
                 $(".btn-name").val(name);
                 let color = $(this).css("backgroundColor").replace("rgb(","").replace(")","");
-                alert(color);
+                let rgb = color.split(",");
+                let i;
+                for(i=0; i<rgb.length; i++)
+                {
+                  let hex_code = Number(rgb[i]).toString(16);
+                  alert(hex_code)
+                }
               });
             });
 
