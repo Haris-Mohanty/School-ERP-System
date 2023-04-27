@@ -620,10 +620,10 @@
               });
 
             //Update button text color
-              $(".btn-bgcolor").on("input", function(){
+              $(".btn-textcolor").on("input", function(){
                 let i_number = sessionStorage.getItem("btn_key");
                 let selected_btn = document.getElementsByClassName("title-btn")[i_number];
-                selected_btn.style.backgroundColor = this.value;
+                selected_btn.getElementsByTagName("A")[0].style.color = this.value;
               });
 
           }
