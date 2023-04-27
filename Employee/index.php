@@ -608,7 +608,8 @@
             //session get
               $(".btn-name").on("input", function(){
                 let i_number = sessionStorage.getItem("btn_key");
-                let selected_btn
+                let selected_btn = document.getElementsByClassName("title-btn")[i_number];
+                selected_btn.getElementsByTagName("A")[0].innerHTML = this.value;
               });
 
           }
