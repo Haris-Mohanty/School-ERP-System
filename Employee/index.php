@@ -587,7 +587,17 @@
                   text_color_code += text_hex_code.length == 1 ? "0"+text_hex_code : text_hex_code;
                 }
                 $(".btn-textcolor").val("#"+text_color_code);
-                $(".btn-textcolor").val("#"+text_color_code);
+
+                //size of button
+                let font_size = $(this).children().css("fontSize");
+                for(i=0; i<$(".font-size").children().length; i++)
+                {
+                  let option = $(".font-size").children();
+                  if(option[i].value == font_size)
+                  {
+                    option[i].selected = "selected";
+                  }
+                }
               });
             });
 
