@@ -612,10 +612,10 @@
                 selected_btn.getElementsByTagName("A")[0].innerHTML = this.value;
               });
             //Update button color
-              $(".btn-name").on("input", function(){
+              $(".btn-bgcolor").on("input", function(){
                 let i_number = sessionStorage.getItem("btn_key");
                 let selected_btn = document.getElementsByClassName("title-btn")[i_number];
-                selected_btn.getElementsByTagName("A")[0].innerHTML = this.value;
+                selected_btn.style.backgroundColor = this.value;
               });
 
           }
