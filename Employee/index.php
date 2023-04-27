@@ -566,6 +566,8 @@
 
                 sessionStorage.setItem("btn_key", $(this).index());
 
+                $(".delete-btn").removeClass("d-none");
+
                 let url = $(this).children().attr("href");
                 let name = $(this).children().html();
                 $(".btn-url").val(url);
@@ -629,6 +631,14 @@
               
             //Update button size
               $(".font-size").on("change", function(){
+                let i_number = sessionStorage.getItem("btn_key");
+                let selected_btn = document.getElementsByClassName("title-btn")[i_number];
+                selected_btn.getElementsByTagName("A")[0].style.fontSize = this.value;
+              });
+
+
+            //Update button size
+              $(".delete-btn").on("change", function(){
                 let i_number = sessionStorage.getItem("btn_key");
                 let selected_btn = document.getElementsByClassName("title-btn")[i_number];
                 selected_btn.getElementsByTagName("A")[0].style.fontSize = this.value;
