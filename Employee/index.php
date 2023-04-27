@@ -645,7 +645,8 @@
                 $(".delete-btn").addClass("d-none");
                 $(".btn-url, .btn-name").val("");
                 $(".btn-bgcolor, .btn-textcolor").val("#000000");
-                $(".font-size").val("");
+                let options = $(".font-size option");
+                options[0].selected = "selected";
               });
 
           }
