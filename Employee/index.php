@@ -625,6 +625,13 @@
                 let selected_btn = document.getElementsByClassName("title-btn")[i_number];
                 selected_btn.getElementsByTagName("A")[0].style.color = this.value;
               });
+              
+            //Update button size
+              $(".font-size").on("input", function(){
+                let i_number = sessionStorage.getItem("btn_key");
+                let selected_btn = document.getElementsByClassName("title-btn")[i_number];
+                selected_btn.getElementsByTagName("A")[0].style.color = this.value;
+              });
 
           }
          }); 
