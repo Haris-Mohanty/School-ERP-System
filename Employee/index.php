@@ -139,7 +139,7 @@
                 </div>
 
                 <div class="form-group mb-3">
-                  <button class="btn btn-primary py-2">Add Showcase</button>
+                  <button class="btn btn-primary add-showcase-btn py-2">Add Showcase</button>
                   <button type="button" class="btn btn-success float-end preview-btn w-50 py-2">Preview</button>
                 </div>
 
@@ -532,6 +532,13 @@
           },
           beforeSend : function(){},
           success : function(response){
+
+            //save btn code start
+            $(".add-showcase-btn").html("Save Edit");
+            $(".add-showcase-btn").removeClass("btn-primary");
+            $(".add-showcase-btn").addClass("btn-warning");
+            //save btn code end
+
             let all_data = JSON.parse(response.trim());
             let image = document.createElement("IMG");
             image.src = all_data[0];
@@ -654,7 +661,10 @@
         }
         else
         {
-          swal("Invalid Choice!", "Please Select A Title!","error");
+          // swal("Invalid Choice!", "Please Select A Title!","error");
+          $(".add-showcase-btn").html("Add Showcase");
+          $(".add-showcase-btn").removeClass("btn-warning");
+          $(".add-showcase-btn").addClass("btn-primary");
         }
       });
     });
