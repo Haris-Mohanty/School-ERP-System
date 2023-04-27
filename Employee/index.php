@@ -112,7 +112,7 @@
 
                 <div class="form-group my-3">
                   <label for="create-button">Create Buttons</label>
-                  <i class="fa fa-trash float-end d-none delete-btn text-danger"></i>
+                  <i class="fa fa-trash float-end d-none delete-btn text-danger" style="cursor: pointer;"></i>
                   <div class="input-group">
                     <input type="url" name="btn-url" placeholder="Enter the Url" class="form-control btn-url">
                     <input type="text" name="btn-name" placeholder="Button 1" class="form-control btn-name">
@@ -637,11 +637,12 @@
               });
 
 
-            //Update button size
-              $(".delete-btn").on("change", function(){
+            //Delete button
+              $(".delete-btn").on("click", function(){
                 let i_number = sessionStorage.getItem("btn_key");
                 let selected_btn = document.getElementsByClassName("title-btn")[i_number];
-                
+                selected_btn.remove();
+                $(".delete-btn").addClass("d-none");
               });
 
           }
