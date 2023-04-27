@@ -665,6 +665,7 @@
           $(".add-showcase-btn").html("Add Showcase");
           $(".add-showcase-btn").removeClass("btn-warning");
           $(".add-showcase-btn").addClass("btn-primary");
+          $()
         }
       });
     });
