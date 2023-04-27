@@ -112,7 +112,7 @@
 
                 <div class="form-group my-3">
                   <label for="create-button">Create Buttons</label>
-                  <i></i>
+                  <i class="fa"></i>
                   <div class="input-group">
                     <input type="url" name="btn-url" placeholder="Enter the Url" class="form-control btn-url">
                     <input type="text" name="btn-name" placeholder="Button 1" class="form-control btn-name">
