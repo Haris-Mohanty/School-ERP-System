@@ -562,6 +562,9 @@
             //edit buttons
             $(".title-btn").each(function(){
               $(this).click(function(){
+
+                sessionStorage.setItem("btn_key", $(this).index());
+
                 let url = $(this).children().attr("href");
                 let name = $(this).children().html();
                 $(".btn-url").val(url);
@@ -598,6 +601,7 @@
                     option[i].selected = "selected";
                   }
                 }
+
               });
             });
 
