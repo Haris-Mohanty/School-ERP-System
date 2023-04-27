@@ -643,6 +643,7 @@
                 let selected_btn = document.getElementsByClassName("title-btn")[i_number];
                 selected_btn.remove();
                 $(".delete-btn").addClass("d-none");
+                $(".btn-url")
               });
 
           }
