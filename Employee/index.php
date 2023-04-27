@@ -605,6 +605,11 @@
               });
             });
 
+            //session get
+              $(".btn-name").on("input", function(){
+                let i_number = sessionStorage.getItem("btn_key");
+              });
+
           }
          }); 
         }
