@@ -587,6 +587,7 @@
                   text_color_code += text_hex_code.length == 1 ? "0"+text_hex_code : text_hex_code;
                 }
                 $(".btn-textcolor").val("#"+text_color_code);
+                $(".btn-textcolor").val("#"+text_color_code);
               });
             });
 
