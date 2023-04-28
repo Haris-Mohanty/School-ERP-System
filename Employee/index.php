@@ -520,6 +520,7 @@
 
     // ALL SHOWCASE EDIT CODE START
     $(document).ready(function(){
+      let showcase_preview = $(".showcase-preview").html();
       $("#edit-title").on("change", function(){
         if($(this).val() != "choose title")
         {
@@ -666,6 +667,8 @@
           $(".add-showcase-btn").removeClass("btn-warning");
           $(".add-showcase-btn").addClass("btn-primary");
           $(".header-showcase-form").trigger('reset');
+          $(".showcase-preview").html(showcase_preview);
+
         }
       });
     });
