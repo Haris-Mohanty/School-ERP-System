@@ -543,7 +543,7 @@
               data : ,
               cache : false,
               beforeSend : function(){},
-              success : func
+              success : function(){},
             });
             // Delete Showcase code end
 
