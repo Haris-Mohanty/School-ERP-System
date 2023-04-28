@@ -547,8 +547,13 @@
                 cache : false,
                 beforeSend : function(){},
                 success : function(response){
-                  if(response == "success"){
-                    
+                  if(response.trim() == "success"){
+                    $(".add-showcase-btn").html("Add Showcase");
+                    $(".add-showcase-btn").removeClass("btn-warning");
+                    $(".add-showcase-btn").addClass("btn-primary");
+                    $(".header-showcase-form").trigger('reset');
+                    $(".showcase-preview").html(showcase_preview);
+                    $(".delete-title").addClass("d-none");
                   }
                 },
               });
