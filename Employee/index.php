@@ -535,9 +535,16 @@
           beforeSend : function(){},
           success : function(response){
 
-
             // Delete Showcase code start
             $(".delete-title").removeClass("d-none");
+            $(".delete-title").click(function(){
+              type : "POST",
+              url : "php/delete_showcase.php",
+              data : ,
+              cache : false,
+              beforeSend : function(){},
+              success : func
+            });
             // Delete Showcase code end
 
             //save btn code start
