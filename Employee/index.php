@@ -540,10 +540,14 @@
             $(".delete-title").click(function(){
               type : "POST",
               url : "php/delete_showcase.php",
-              data : ,
+              data : {
+                id : $(".edit-title").val()
+              },
               cache : false,
               beforeSend : function(){},
-              success : function(){},
+              success : function(response){
+                alert(response);
+              },
             });
             // Delete Showcase code end
 
