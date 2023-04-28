@@ -535,6 +535,8 @@
           beforeSend : function(){},
           success : function(response){
 
+            $("#title-image").removeAttr("required");
+
             // Delete Showcase code start
             $(".delete-title").removeClass("d-none");
             $(".delete-title").click(function(){
@@ -566,7 +568,7 @@
                     for(i=0; i<op.length; i++){
                       if(op[i].value == selected_value);
                       {
-                        
+
                       }
                     }
                     
