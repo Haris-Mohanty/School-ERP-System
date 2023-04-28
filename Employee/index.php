@@ -548,12 +548,22 @@
                 beforeSend : function(){},
                 success : function(response){
                   if(response.trim() == "success"){
+
+                    swal("Deleted!", "Showcase Deleted Successfully!", "success");
+
                     $(".add-showcase-btn").html("Add Showcase");
                     $(".add-showcase-btn").removeClass("btn-warning");
                     $(".add-showcase-btn").addClass("btn-primary");
                     $(".header-showcase-form").trigger('reset');
                     $(".showcase-preview").html(showcase_preview);
                     $(".delete-title").addClass("d-none");
+
+                    //remove select option
+                    let op = $("#edit-title option");
+                    op[0].selected = selected;
+                    let i;
+                    for(i=0; i<op.length)
+                    
                   }
                   else
                   {
