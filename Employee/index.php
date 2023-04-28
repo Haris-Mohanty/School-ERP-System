@@ -560,9 +560,15 @@
 
                     //remove select option
                     let op = $("#edit-title option");
-                    op[0].selected = selected;
+                    op[0].selected = "selected";
+                    let selected_value = $("#edit-title").val();
                     let i;
-                    for(i=0; i<op.length)
+                    for(i=0; i<op.length; i++){
+                      if(op[i].value == selected_value);
+                      {
+                        
+                      }
+                    }
                     
                   }
                   else
