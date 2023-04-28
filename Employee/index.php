@@ -555,6 +555,10 @@
                     $(".showcase-preview").html(showcase_preview);
                     $(".delete-title").addClass("d-none");
                   }
+                  else
+                  {
+                    swal(response.trim(), response.trim(), "error");
+                  }
                 },
               });
             });
