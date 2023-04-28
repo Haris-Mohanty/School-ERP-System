@@ -145,7 +145,7 @@
 
                 <div class="form-group">
                   <label for="edit-title">Edit Showcase</label>
-                  <i class="fa fa-trash float-end text-danger"></i>
+                  <i class="fa fa-trash float-end text-danger d-none delete-title"></i>
                   <select id="edit-title" class="form-select">
                     <option value="choose title">Choose Title</option>
                     <?php
@@ -534,6 +534,11 @@
           },
           beforeSend : function(){},
           success : function(response){
+
+
+            // Delete Showcase code start
+            $(".delete-title").removeClass("d-none");
+            // Delete Showcase code end
 
             //save btn code start
             $(".add-showcase-btn").html("Save Edit");
