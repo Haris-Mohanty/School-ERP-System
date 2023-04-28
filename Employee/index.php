@@ -145,7 +145,7 @@
 
                 <div class="form-group">
                   <label for="edit-title">Edit Showcase</label>
-                  <i class="fa fa-trash float-end text-danger d-none delete-title"></i>
+                  <i class="fa fa-trash float-end text-danger d-none delete-title" style="cursor: pointer;"></i>
                   <select id="edit-title" class="form-select">
                     <option value="choose title">Choose Title</option>
                     <?php
@@ -674,6 +674,7 @@
           $(".add-showcase-btn").addClass("btn-primary");
           $(".header-showcase-form").trigger('reset');
           $(".showcase-preview").html(showcase_preview);
+          $(".delete-title").addClass("d-none");
 
         }
       });
