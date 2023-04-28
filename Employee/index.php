@@ -145,6 +145,7 @@
 
                 <div class="form-group">
                   <label for="edit-title">Edit Showcase</label>
+                  <i class="fa "></i>
                   <select id="edit-title" class="form-select">
                     <option value="choose title">Choose Title</option>
                     <?php
