@@ -58,7 +58,30 @@ if($response){
             }
 
         }else{
-            $update_data
+
+            if($file_binary == "")
+            {
+
+                $update_data = "UPDATE header_showcase SET title_text = '$title_text', title_color = '$title_color', title_size = '$title_size', subtitle_text = '$subtitle_text', subtitle_color = '$subtitle_color', subtitle_size = '$subtitle_size', h_align = '$h_align', v_align = '$v_align', buttons = '$buttons'";
+
+                if($db -> query($update_data)){
+                    echo "Showcase Updated";
+                }else{
+                    echo "Unable to Update Showcase!";
+                }
+
+            }else{
+
+                $update_data = "UPDATE header_showcase SET title_image = '$file_binary', title_text = '$title_text', title_color = '$title_color', title_size = '$title_size', subtitle_text = '$subtitle_text', subtitle_color = '$subtitle_color', subtitle_size = '$subtitle_size', h_align = '$h_align', v_align = '$v_align', buttons = '$buttons'";
+
+                if($db -> query($update_data)){
+                    echo "Showcase Updated";
+                }else{
+                    echo "Unable to Update Showcase!";
+                }
+
+            }
+
         }
 
     }else if($count_rows >= 3){
