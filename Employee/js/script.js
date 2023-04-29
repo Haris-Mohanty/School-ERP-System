@@ -1867,5 +1867,504 @@ function createAccessFunc() {
 // GIVE ACCESS LINK - CODE END
 
 // HEADER SHOWCASE - CODE START
+function createShowcaseFunc(){
+  
+  $(document).ready(function(){
+      
+    $(".target").each(function(){
+      $(this).click(function(e){
+        let element = e.target;
+        let index_number = $(element).index();
+        sessionStorage.setItem("color-index-number", index_number);
 
+        let i;
+        for(i=0; i<$(".target").length; i++){
+          $(".target").css({
+            border : "",
+            boxShadow : "",
+            padding : "",
+            width : ""
+          });
+        }
+
+        $(this).css({
+          border : "4px solid red",
+          boxShadow : "0px opx 3px grey",
+          padding : "2px",
+          width : "fit-content"
+        });
+
+        $(this).on("dblclick", function(){
+          let i;
+        for(i=0; i<$(".target").length; i++){
+          $(".target").css({
+            border : "",
+            boxShadow : "",
+            padding : "",
+            width : ""
+          });
+        }
+        });
+
+        // Color Change
+        $(".color-selector").on("input", function(){
+          let color = this.value;
+          let in_number = +sessionStorage.getItem("color-index-number");
+          let element = document.getElementsByClassName("target")[in_number];
+          element.style.color = color;
+        });
+
+        // Control Font size
+        $(".font-size").on("input", function(){
+          let size = this.value;
+          let in_number = +sessionStorage.getItem("color-index-number");
+          let element = document.getElementsByClassName("target")[in_number];
+          element.style.fontSize = size+"%";
+        });
+
+      });
+    });
+  });
+ 
+  // SHOW TITLE IMAGE CODE START
+  $(document).ready(function(){
+    $("#title-image").on("change", function(){
+      let file = this.files[0];
+      if(file.size < 200000)
+      {
+       
+        let url = URL.createObjectURL(file);
+        let image = new Image();
+        image.src = url;
+        image.onload = function(){
+          let o_width = image.width;
+          let o_height = image.height;
+
+          if(o_width == 1920 && o_height == 978)
+          {
+            image.style.width = "100%";
+            image.style.position = "absolute";
+            image.style.top = "0";
+            image.style.left = "0";
+            $(".showcase-preview").append(image);
+          }else
+          {
+            swal("Size not Matched!","Upload 1920*978 Size Image!", "error");
+          }
+        }
+      }
+      else
+      {
+        swal("Large Size!", "Please Upload Image Under 200kb!", "warning");
+      }
+    });
+  });
+   // SHOW TITLE IMAGE CODE END
+
+  //  TITLE UNDER 40 LETTER CODE START
+  $(document).ready(function () {
+    $("#title-text").on("input", function(){
+      let length = this.value.length;
+      $(".showcase-title").html(this.value);
+      $(".title-limit").html(" " + length);
+    });
+  });
+  //  TITLE UNDER 40 LETTER CODE END
+
+
+  //  SUB-TITLE UNDER 100 LETTER CODE START
+  $(document).ready(function () {
+    $("#subtitle-text").on("input", function(){
+      let length = this.value.length;
+      $(".showcase-subtitle").html(this.value);
+      $(".subtitle-limit").html(" " + length);
+    });
+  });
+  //  SUB-TITLE UNDER 100 LETTER CODE END
+
+  // ADD SHOW CASE IN DATABASE - CODE START
+  $(document).ready(function () {
+    $(".header-showcase-form").on("submit", function (e) {
+      e.preventDefault();
+
+      let title = document.querySelector(".showcase-title");
+      let subtitle = document.querySelector(".showcase-subtitle");
+      let file = document.querySelector("#title-image").files[0]; //get file
+
+      //getting title size and color
+      let title_size = "";
+      let title_color = "";
+      if(title.style.fontSize == ""){
+        title_size = "300%"; //default value
+      }else{
+        title_size = title.style.fontSize;
+      }
+      if(title.style.color == ""){
+        title_color = "black"; //default value
+      }else{
+        title_color = title.style.color;
+      }
+
+
+      //getting sub-title size and color
+      let subtitle_size = "";
+      let subtitle_color = "";
+      if(subtitle.style.fontSize == ""){
+        subtitle_size = "300%"; //default value
+      }else{
+        subtitle_size = subtitle.style.fontSize;
+      }
+      if(subtitle.style.color == ""){
+        subtitle_color = "black"; //default value
+      }else{
+        subtitle_color = subtitle.style.color;
+      }
+
+      // getting alignment
+      let flex_box = document.querySelector(".showcase-preview");
+      let h_align = "";
+      let v_align = "";
+      if(flex_box.style.justifyContent == ""){
+        h_align = "flex-start";
+      }else{
+        h_align = flex_box.style.justifyContent;
+      }
+      if(flex_box.style.alignItems == ""){
+        v_align = "flex-start";
+      }else{
+        v_align = flex_box.style.alignItems;
+      }
+
+      // Arrange all data
+      let css_data = {
+        title_size : title_size,
+        title_color : title_color,
+        subtitle_size : subtitle_size,
+        subtitle_color : subtitle_color,
+        h_align : h_align,
+        v_align : v_align,
+        title_text : title.innerHTML,
+        subtitle_text : subtitle.innerHTML,
+        buttons : $(".title-buttons").html().trim(),
+
+        //Save Showcase
+        option : $("#edit-title").val().trim()
+      };
+
+      let formData = new FormData(this);
+      formData.append("css_data", JSON.stringify(css_data));
+      formData.append("file_data", file);
+
+
+      // ajax request
+      $.ajax({
+        type: "POST",
+        url: "php/create_showcase.php",
+        data: formData,
+        contentType: false,
+        processData: false,
+        cache: false,
+        beforeSend: function () {},
+        success: function (response) {
+          if(response == "success"){
+            swal("Successfully!", "Showcase added successfully!", "success");
+          }
+          else if(response.trim() == "Showcase Updated")
+          {
+            swal("Successfully!", "Showcase added successfully!", "success");
+          }
+          else{
+            swal(response.trim(), response.trim(), "error");
+          }
+        },
+      });
+    });
+  });
+  // ADD SHOW CASE IN DATABASE - CODE END
+
+  // ADD BUTTON CODE START
+  $(document).ready(function(){
+    $(".add-btn").click(function(){
+      let button = document.createElement("BUTTON");
+      button.className = "btn mx-2 title-btn";
+      let a = document.createElement("A");
+      a.href = $(".btn-url").val();
+      a.innerHTML = $(".btn-name").val();
+      a.style.color = $(".btn-textcolor").val();
+      a.style.fontSize = $(".font-size").val();
+      a.style.textDecoration = "none";
+      button.style.backgroundColor = $(".btn-bgcolor").val();
+      button.append(a);
+      
+      let title_button = document.querySelector(".title-buttons");
+      let title_child = title_button.getElementsByTagName("BUTTON");
+      let button_length = title_child.length;
+
+      if(button_length == 0 || button_length == 1){
+        $(".title-buttons").append(button);
+      }else{
+        swal("Sorry!!", "Only Two Buttons Are Allowed!", "warning");
+      }
+    });
+  });
+  // ADD BUTTON CODE END
+
+  // ALIGNMENT CODE START
+  $(document).ready(function() {
+    $(".alignment").each(function(){
+      $(this).click(function(){
+        let align_position = $(this).attr("align-position");
+        let align_value = $(this).attr("align-value");
+        if(align_position == "h")
+        {
+          $(".showcase-preview").css({
+            justifyContent : align_value
+          });
+        }else if(align_position == "v"){
+          $(".showcase-preview").css({
+            alignItems : align_value
+          });
+        }
+      });
+    });
+  });
+  // ALIGNMENT CODE END
+
+  // PREVIEW CODE START
+  $(document).ready(function() {
+    $(".preview-btn").click(function(){
+      let file = document.querySelector("#title-image").files[0];
+      let formData = new FormData();
+      formData.append("photo", file);
+
+      // getting alignment
+      let flex_box = document.querySelector(".showcase-preview");
+      let h_align = "";
+      let v_align = "";
+      if(flex_box.style.justifyContent == ""){
+        h_align = "flex-start";
+      }else{
+        h_align = flex_box.style.justifyContent;
+      }
+      if(flex_box.style.alignItems == ""){
+        v_align = "flex-start";
+      }else{
+        v_align = flex_box.style.alignItems;
+      }
+
+      let array = [$(".title-box").html().trim(), h_align, v_align];
+      formData.append("data", JSON.stringify(array));
+
+      //ajax request
+      $.ajax({
+        type: "POST",
+        url: "php/preview.php",
+        data: formData,
+        contentType: false,
+        processData: false,
+        cache: false,
+        beforeSend: function () {},
+        success: function (response) {
+          let page = window.open("about:blank");
+          page.document.open();
+          page.document.write(response);
+        },
+      });
+    });
+  });
+  // PREVIEW CODE END
+
+  // ALL SHOWCASE EDIT CODE START
+  $(document).ready(function(){
+    let showcase_preview = $(".showcase-preview").html();
+    $("#edit-title").on("change", function(){
+      if($(this).val() != "choose title")
+      {
+       //ajax
+       $.ajax({
+        type : "POST",
+        url : "php/edit_showcase.php",
+        data : {
+         id : $(this).val()
+        },
+        beforeSend : function(){},
+        success : function(response){
+
+          $("#title-image").removeAttr("required");
+
+          // Delete Showcase code start
+          $(".delete-title").removeClass("d-none");
+          $(".delete-title").click(function(){
+            $.ajax({
+              type : "POST",
+              url : "php/delete_showcase.php",
+              data : {
+                id : $("#edit-title").val()
+              },
+              cache : false,
+              beforeSend : function(){},
+              success : function(response){
+                if(response.trim() == "success"){
+
+                  swal("Deleted!", "Showcase Deleted Successfully!", "success");
+                  
+                  $(".add-showcase-btn").html("Add Showcase");
+                  $(".add-showcase-btn").removeClass("btn-warning");
+                  $(".add-showcase-btn").addClass("btn-primary");
+                  $(".header-showcase-form").trigger('reset');
+                  $(".showcase-preview").html(showcase_preview);
+                  $(".delete-title").addClass("d-none");
+                  
+                }
+                else
+                {
+                  swal(response.trim(), response.trim(), "error");
+                }
+              },
+            });
+          });
+          // Delete Showcase code end
+
+          //save btn code start
+          $(".add-showcase-btn").html("Save Edit");
+          $(".add-showcase-btn").removeClass("btn-primary");
+          $(".add-showcase-btn").addClass("btn-warning");
+          //save btn code end
+
+          let all_data = JSON.parse(response.trim());
+          let image = document.createElement("IMG");
+          image.src = all_data[0];
+          image.style.width = "100%";
+          image.style.position = "absolute";
+          image.style.left = "0";
+          image.style.top = "0";
+          $(".showcase-preview").append(image); //image
+          $(".showcase-title").html(all_data[1]); //title text
+          $(".showcase-subtitle").html(all_data[4]); //sub title text
+
+          //color and font size
+          $(".showcase-title").css({
+            color : all_data[2],
+            fontSize : all_data[3]
+          });
+          $(".showcase-subtitle").css({
+            color : all_data[5],
+            fontSize : all_data[6]
+          });
+
+          //Buttons
+          $(".title-buttons").html(all_data[9]);
+
+          //show data in input field
+          $("#title-text").val(all_data[1]);
+          $("#subtitle-text").val(all_data[4]);
+
+          //edit buttons
+          $(".title-btn").each(function(){
+            $(this).click(function(){
+
+              sessionStorage.setItem("btn_key", $(this).index());
+
+              $(".delete-btn").removeClass("d-none");
+
+              let url = $(this).children().attr("href");
+              let name = $(this).children().html();
+              $(".btn-url").val(url);
+              $(".btn-name").val(name);
+              let color = $(this).css("backgroundColor").replace("rgb(","").replace(")","");
+              let rgb = color.split(",");
+              let i;
+              let color_code = "";
+              for(i=0; i<rgb.length; i++)
+              {
+                let hex_code = Number(rgb[i]).toString(16);
+                  color_code += hex_code.length == 1 ? "0"+hex_code : hex_code;
+              }
+              $(".btn-bgcolor").val("#"+color_code);
+             
+
+              let text_color = $(this).children().css("color").replace("rgb(","").replace(")","");
+              let text_rgb = text_color.split(",");
+              let text_color_code = "";
+              for(i=0; i<text_rgb.length; i++)
+              {
+                let text_hex_code = Number(text_rgb[i]).toString(16);
+                text_color_code += text_hex_code.length == 1 ? "0"+text_hex_code : text_hex_code;
+              }
+              $(".btn-textcolor").val("#"+text_color_code);
+
+              //size of button
+              let font_size = $(this).children().css("fontSize");
+              for(i=0; i<$(".font-size").children().length; i++)
+              {
+                let option = $(".font-size").children();
+                if(option[i].value == font_size)
+                {
+                  option[i].selected = "selected";
+                }
+              }
+
+            });
+          });
+
+          //Update button name
+            $(".btn-name").on("input", function(){
+              let i_number = sessionStorage.getItem("btn_key");
+              let selected_btn = document.getElementsByClassName("title-btn")[i_number];
+              selected_btn.getElementsByTagName("A")[0].innerHTML = this.value;
+            });
+
+          //Update button background color
+            $(".btn-bgcolor").on("input", function(){
+              let i_number = sessionStorage.getItem("btn_key");
+              let selected_btn = document.getElementsByClassName("title-btn")[i_number];
+              selected_btn.style.backgroundColor = this.value;
+            });
+
+          //Update button text color
+            $(".btn-textcolor").on("input", function(){
+              let i_number = sessionStorage.getItem("btn_key");
+              let selected_btn = document.getElementsByClassName("title-btn")[i_number];
+              selected_btn.getElementsByTagName("A")[0].style.color = this.value;
+            });
+            
+          //Update button size
+            $(".font-size").on("change", function(){
+              let i_number = sessionStorage.getItem("btn_key");
+              let selected_btn = document.getElementsByClassName("title-btn")[i_number];
+              selected_btn.getElementsByTagName("A")[0].style.fontSize = this.value;
+            });
+
+
+          //Delete button
+            $(".delete-btn").on("click", function(){
+              let i_number = sessionStorage.getItem("btn_key");
+              let selected_btn = document.getElementsByClassName("title-btn")[i_number];
+              selected_btn.remove();
+              $(".delete-btn").addClass("d-none");
+              $(".btn-url, .btn-name").val("");
+              $(".btn-bgcolor, .btn-textcolor").val("#000000");
+              let options = $(".font-size option");
+              options[0].selected = "selected";
+            });
+
+        }
+       }); 
+      }
+      else
+      {
+        // swal("Invalid Choice!", "Please Select A Title!","error");
+        $("#title-image").Attr("required", true);
+        $(".add-showcase-btn").html("Add Showcase");
+        $(".add-showcase-btn").removeClass("btn-warning");
+        $(".add-showcase-btn").addClass("btn-primary");
+        $(".header-showcase-form").trigger('reset');
+        $(".showcase-preview").html(showcase_preview);
+        $(".delete-title").addClass("d-none");
+
+      }
+    });
+  });
+  // ALL SHOWCASE EDIT CODE END
+}
 // HEADER SHOWCASE - CODE END
