@@ -46,13 +46,21 @@ if($response){
     $count_rows = $data['result'];
 
     if($count_rows < 3){
-        $insert_data = "INSERT INTO header_showcase(title_image, title_text, title_color, title_size, subtitle_text, subtitle_color, subtitle_size, h_align, v_align, buttons) VALUES ('$file_binary', '$title_text', '$title_color', '$title_size', '$subtitle_text', '$subtitle_color', '$subtitle_size', '$h_align', '$v_align', '$buttons')";
+        
+        if($option == "choose title")
+        {
+            $insert_data = "INSERT INTO header_showcase(title_image, title_text, title_color, title_size, subtitle_text, subtitle_color, subtitle_size, h_align, v_align, buttons) VALUES ('$file_binary', '$title_text', '$title_color', '$title_size', '$subtitle_text', '$subtitle_color', '$subtitle_size', '$h_align', '$v_align', '$buttons')";
 
-        if($db -> query($insert_data)){
-            echo "success";
+            if($db -> query($insert_data)){
+                echo "success";
+            }else{
+                echo "Unable to add Showcase!";
+            }
+
         }else{
-            echo "Unable to add Showcase!";
+            $update_data
         }
+
     }else if($count_rows >= 3){
         echo "Upto 3 Limits You Can Add!";
     }
