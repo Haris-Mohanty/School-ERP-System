@@ -13,7 +13,19 @@ $check_table = "SELECT * FROM register";
 $response = $db -> query($check_table);
 
 if($response){
-    
+    echo "found";
+}else
+{
+    $create_table = "CREATE TABLE register(
+        id INT(11) NOT NULL AUTO_INCREMENT,
+        name VARCHAR(55),
+        email VARCHAR(55),
+        mobile VARCHAR(25),
+        desc VARCHAR(255),
+        status DEFAULT 'pending',
+        reg_date datetime DEFAULT CURRENT_TIMESTAMP,
+        PRIMARY KEY(id)
+    )";
 }
 
 ?>
