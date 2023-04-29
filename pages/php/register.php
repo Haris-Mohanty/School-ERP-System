@@ -28,7 +28,7 @@ if($response){
     )";
     if($db -> query($create_table)){
 
-        
+        $insert_data = "INSERT";
 
     }else{
         echo "Unable to Create Table!";
