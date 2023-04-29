@@ -7,7 +7,7 @@ $file = "";
 $location = "";
 $file_binary = "";
 
-if(!$_FILES)
+if(!$_FILES) //compare
 {
     $file = $_FILES['file_data'];
     $location = $file['tmp_name'];
