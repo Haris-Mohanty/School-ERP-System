@@ -70,7 +70,7 @@ require("Common_files/php/database.php");
                             <button class="btn btn-light">
                                 <input type="text" placeholder="Enter OTP here!" class="form-control otp">
                             </button>
-                            but
+                            <button class="btn btn-success verify-btn">Verify</button>
                         </div>
                     </div>
                </form>
