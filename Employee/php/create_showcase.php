@@ -62,7 +62,7 @@ if($response){
             if($file_binary == "")
             {
 
-                $update_data = "UPDATE header_showcase SET title_text = '$title_text', title_color = '$title_color', title_size = '$title_size', subtitle_text = '$subtitle_text', subtitle_color = '$subtitle_color', subtitle_size = '$subtitle_size', h_align = '$h_align', v_align = '$v_align', buttons = '$buttons'";
+                $update_data = "UPDATE header_showcase SET title_text = '$title_text', title_color = '$title_color', title_size = '$title_size', subtitle_text = '$subtitle_text', subtitle_color = '$subtitle_color', subtitle_size = '$subtitle_size', h_align = '$h_align', v_align = '$v_align', buttons = '$buttons' WHERE id = '$option'";
 
                 if($db -> query($update_data)){
                     echo "Showcase Updated";
@@ -72,7 +72,7 @@ if($response){
 
             }else{
 
-                $update_data = "UPDATE header_showcase SET title_image = '$file_binary', title_text = '$title_text', title_color = '$title_color', title_size = '$title_size', subtitle_text = '$subtitle_text', subtitle_color = '$subtitle_color', subtitle_size = '$subtitle_size', h_align = '$h_align', v_align = '$v_align', buttons = '$buttons'";
+                $update_data = "UPDATE header_showcase SET title_image = '$file_binary', title_text = '$title_text', title_color = '$title_color', title_size = '$title_size', subtitle_text = '$subtitle_text', subtitle_color = '$subtitle_color', subtitle_size = '$subtitle_size', h_align = '$h_align', v_align = '$v_align', buttons = '$buttons' WHERE id = '$option'";
 
                 if($db -> query($update_data)){
                     echo "Showcase Updated";
@@ -85,7 +85,34 @@ if($response){
         }
 
     }else if($count_rows >= 3){
-        echo "Upto 3 Limits You Can Add!";
+        
+        if($option == "choose title")
+        {
+            echo "Upto 3 Limits You Can Add!";
+        }else{
+            if($file_binary == "")
+            {
+
+                $update_data = "UPDATE header_showcase SET title_text = '$title_text', title_color = '$title_color', title_size = '$title_size', subtitle_text = '$subtitle_text', subtitle_color = '$subtitle_color', subtitle_size = '$subtitle_size', h_align = '$h_align', v_align = '$v_align', buttons = '$buttons' WHERE id = '$option'";
+
+                if($db -> query($update_data)){
+                    echo "Showcase Updated";
+                }else{
+                    echo "Unable to Update Showcase!";
+                }
+
+            }else{
+
+                $update_data = "UPDATE header_showcase SET title_image = '$file_binary', title_text = '$title_text', title_color = '$title_color', title_size = '$title_size', subtitle_text = '$subtitle_text', subtitle_color = '$subtitle_color', subtitle_size = '$subtitle_size', h_align = '$h_align', v_align = '$v_align', buttons = '$buttons' WHERE id = '$option'";
+
+                if($db -> query($update_data)){
+                    echo "Showcase Updated";
+                }else{
+                    echo "Unable to Update Showcase!";
+                }
+
+            }
+        }
     }
 
     

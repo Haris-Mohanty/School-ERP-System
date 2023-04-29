@@ -421,7 +421,12 @@
           success: function (response) {
             if(response == "success"){
               swal("Successfully!", "Showcase added successfully!", "success");
-            }else{
+            }
+            else if(response.trim() == "Showcase Updated")
+            {
+              
+            }
+            else{
               swal(response.trim(), response.trim(), "error");
             }
           },
