@@ -57,7 +57,8 @@ echo '
                   <label for="edit-title">Edit Showcase</label>
                   <i class="fa fa-trash float-end text-danger d-none delete-title" style="cursor: pointer;"></i>
                   <select id="edit-title" class="form-select">
-                    <option value="choose title">Choose Title</option>
+                    <option value="choose title">Choose Title</option>'; ?>
+
                     <?php
                       $get_data = "SELECT * FROM header_showcase";
 
@@ -76,7 +77,7 @@ echo '
                         }
                       }
                     ?>
-                  </select>
+                 <?php echo '</select>
                 </div>
 
               </form>
