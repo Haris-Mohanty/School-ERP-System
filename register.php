@@ -65,7 +65,14 @@ require("Common_files/php/database.php");
                 <button class="btn btn-primary w-100">Register Now</button>
                </form>
                <form class="verify-form">
-                
+                    <div class="form-group">
+                        <div class="btn-group border shadow-sm">
+                            <button class="btn btn-light">
+                                <input type="text" placeholder="Enter OTP here!" class="form-control otp">
+                            </button>
+                            but
+                        </div>
+                    </div>
                </form>
             </div>
 
