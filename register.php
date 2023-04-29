@@ -93,5 +93,10 @@ require("Common_files/php/database.php");
     <?php require("assets/footer.php"); ?>
      
 </body>
+<script>
+    $(document).ready(function(){
+        alert();
+    });
+</script>
 <script src="assets/index.js"></script>
 </html>
