@@ -4,8 +4,18 @@
 require_once("../../Common_files/php/database.php");
 
 $file = $_FILES['file_data'];
-$location = $file['tmp_name'];
-$file_binary = addslashes(file_get_contents($location));
+$location = "";
+$file_binary = "";
+
+if($file['name'] != "")
+{
+    $location = $file['tmp_name'];
+    $file_binary = addslashes(file_get_contents($location));
+}else{
+    $location = "";
+    $file_binary = "";
+
+}
 
 $json_data = json_encode($_POST['css_data']); //receive by encoding
 $tmp_data = json_decode($json_data, true);
@@ -23,6 +33,8 @@ $h_align = $all_data['h_align'];
 $v_align = $all_data['v_align'];
 
 $buttons = addslashes($all_data['buttons']);
+
+$option = $all_data['option'];
 
 $check_table = "SELECT count(id) AS result FROM header_showcase"; //result is a column name(Using AS column declare.)
 

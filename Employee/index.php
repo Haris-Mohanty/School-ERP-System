@@ -401,7 +401,7 @@
           buttons : $(".title-buttons").html().trim(),
 
           //Save Showcase
-          
+          option : $("#edit-title").val().trim()
         };
 
         let formData = new FormData(this);
