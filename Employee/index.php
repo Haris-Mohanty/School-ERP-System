@@ -424,7 +424,7 @@
             }
             else if(response.trim() == "Showcase Updated")
             {
-              
+              swal("Successfully!", "Showcase added successfully!", "success");
             }
             else{
               swal(response.trim(), response.trim(), "error");

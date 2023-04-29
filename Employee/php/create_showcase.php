@@ -3,12 +3,13 @@
 //LINK DATABASE
 require_once("../../Common_files/php/database.php");
 
-$file = $_FILES['file_data'];
+$file = "";
 $location = "";
 $file_binary = "";
 
-if($file['name'] != "")
+if( $_FILES)
 {
+    $file = $_FILES['file_data'];
     $location = $file['tmp_name'];
     $file_binary = addslashes(file_get_contents($location));
 }else{
