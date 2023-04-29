@@ -67,6 +67,8 @@ function dynamic_request(access_link) {
         createAttendanceFunc();
       }else if (access_link == "access_design.php") {
         createAccessFunc();
+      }else if(access_link == "showcase_design.php"){
+        createShowcaseFunc();
       }
     },
   });
@@ -1868,7 +1870,7 @@ function createAccessFunc() {
 
 // HEADER SHOWCASE - CODE START
 function createShowcaseFunc(){
-  
+
   $(document).ready(function(){
       
     $(".target").each(function(){
