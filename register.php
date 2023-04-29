@@ -99,7 +99,18 @@ require("Common_files/php/database.php");
             e.preventDefault();
             //ajax
             $.ajax({
-                
+                type : "POST",
+                url : "pages/php/register.php",
+                data : new FormData(this),
+                processData: false,
+                contentType: false,
+                cache: false,
+                beforeSend: function () {
+                  $(".register-btn").html("Please Wait....");
+                },
+                success: function (response) {
+                    alert(response);
+                },
             });
         });
     });
