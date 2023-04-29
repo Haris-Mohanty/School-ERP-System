@@ -1865,3 +1865,7 @@ function createAccessFunc() {
   getAccessData();
 }
 // GIVE ACCESS LINK - CODE END
+
+// HEADER SHOWCASE - CODE START
+
+// HEADER SHOWCASE - CODE END
