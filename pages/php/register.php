@@ -26,6 +26,13 @@ if($response){
         reg_date datetime DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY(id)
     )";
+    if($db -> query($create_table)){
+
+        
+
+    }else{
+        echo "Unable to Create Table!";
+    }
 }
 
 ?>
