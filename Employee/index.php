@@ -65,7 +65,7 @@
         </button>
 
         <ul class="collapse show homepage-menu">
-          <li class="border-start collapse-item p-2" access-link="showcase_design.php">Header Showcase</li>
+          <li class="border-start collapse-item p-2 active" access-link="showcase_design.php">Header Showcase</li>
           <li class="border-start collapse-item p-2" access-link="">Category Showcase</li>
         </ul>
         <!-- HOME PAGE DESIGN - CODE END -->
@@ -86,7 +86,7 @@
           <li class="border-start collapse-item p-2" access-link="document_design.php">Upload Student Document</li>
           <li class="border-start collapse-item p-2" access-link="invoice_design.php">Create Invoice</li>
           <li class="border-start collapse-item p-2" access-link="attendance_design.php">Student Attendance</li>
-          <li class="border-start collapse-item p-2 active" access-link="access_design.php">Give Access Link</li>
+          <li class="border-start collapse-item p-2" access-link="access_design.php">Give Access Link</li>
         </ul>
         <!-- INSTITUTE UPDATE - CODE END -->
       </div>
