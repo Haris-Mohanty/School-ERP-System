@@ -95,7 +95,10 @@ require("Common_files/php/database.php");
 </body>
 <script>
     $(document).ready(function(){
-        alert();
+        $(".register-form").on("submit", function(e){
+            e.preventDefault();
+            
+        });
     });
 </script>
 <script src="assets/index.js"></script>
