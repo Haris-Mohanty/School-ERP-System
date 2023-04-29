@@ -398,7 +398,10 @@
           v_align : v_align,
           title_text : title.innerHTML,
           subtitle_text : subtitle.innerHTML,
-          buttons : $(".title-buttons").html().trim()
+          buttons : $(".title-buttons").html().trim(),
+
+          //Save Showcase
+          
         };
 
         let formData = new FormData(this);
@@ -552,25 +555,13 @@
                   if(response.trim() == "success"){
 
                     swal("Deleted!", "Showcase Deleted Successfully!", "success");
-
+                    
                     $(".add-showcase-btn").html("Add Showcase");
                     $(".add-showcase-btn").removeClass("btn-warning");
                     $(".add-showcase-btn").addClass("btn-primary");
                     $(".header-showcase-form").trigger('reset');
                     $(".showcase-preview").html(showcase_preview);
                     $(".delete-title").addClass("d-none");
-
-                    //remove select option
-                    let op = $("#edit-title option");
-                    op[0].selected = "selected";
-                    let selected_value = $("#edit-title").val();
-                    let i;
-                    for(i=0; i<op.length; i++){
-                      if(op[i].value == selected_value);
-                      {
-
-                      }
-                    }
                     
                   }
                   else
