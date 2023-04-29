@@ -62,15 +62,16 @@ require("Common_files/php/database.php");
                 <input type="text" id="mobile" class="form-control mb-3">
                 <label for="description">Description</label>
                 <textarea id="description" class="form-control mb-3"></textarea>
-                <button class="btn btn-primary w-100">Register Now</button>
+                <button class="btn btn-primary w-100 register-btn">Register Now</button>
                </form>
-               <form class="verify-form">
+               <form class="verify-form d-none">
                     <div class="form-group">
                         <div class="btn-group border shadow-sm">
                             <button class="btn btn-light">
                                 <input type="text" placeholder="Enter OTP here!" class="form-control otp">
                             </button>
-                            <button class="btn btn-success verify-btn">Verify</button>
+                            <button class="btn btn-success m-1 border verify-btn">Verify</button>
+                            <button class="btn btn-warning m-1 border resend-btn">Resend</button>
                         </div>
                     </div>
                </form>
