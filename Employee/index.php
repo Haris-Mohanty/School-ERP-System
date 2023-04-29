@@ -65,8 +65,8 @@
         </button>
 
         <ul class="collapse show homepage-menu">
-          <li class="border-start collapse-item p-2" access-link="branding_design.php">Header Showcase</li>
-          <li class="border-start collapse-item p-2" access-link="category_design.php">Category Showcase</li>
+          <li class="border-start collapse-item p-2" access-link="showcase_design.php">Header Showcase</li>
+          <li class="border-start collapse-item p-2" access-link="">Category Showcase</li>
         </ul>
         <!-- HOME PAGE DESIGN - CODE END -->
 
@@ -95,11 +95,7 @@
       </div>
     </div>
   </body>
-  <script>
-    
-
-  </script>
   <!-- JS FILE LINK START -->
-  <!-- <script src="js/script.js"></script> -->
+  <script src="js/script.js"></script>
   <!-- JS FILE LINK END -->
 </html>
