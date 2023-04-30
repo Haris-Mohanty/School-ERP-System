@@ -13,7 +13,15 @@ $check_table = "SELECT * FROM register";
 $response = $db -> query($check_table);
 
 if($response){
-    echo "found";
+   
+    $insert_data = "INSERT INTO register(name, email, mobile, desc) VALUES ('$name', '$email', '$mobile', '$desc')";
+
+        if($db -> query($insert_data)){
+            echo "success";
+        }else{
+            echo "Unable to Register!";
+        }
+
 }else
 {
     $create_table = "CREATE TABLE register(
@@ -21,14 +29,20 @@ if($response){
         name VARCHAR(55),
         email VARCHAR(55),
         mobile VARCHAR(25),
-        desc VARCHAR(255),
+        desc VARCHAR(55),
         status DEFAULT 'pending',
         reg_date datetime DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY(id)
     )";
     if($db -> query($create_table)){
 
-        $insert_data = "INSERT";
+        $insert_data = "INSERT INTO register(name, email, mobile, desc) VALUES ('$name', '$email', '$mobile', '$desc')";
+
+        if($db -> query($insert_data)){
+            echo "success";
+        }else{
+            echo "Unable to Register!";
+        }
 
     }else{
         echo "Unable to Create Table!";
