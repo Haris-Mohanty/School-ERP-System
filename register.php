@@ -109,7 +109,7 @@ require("Common_files/php/database.php");
                   $(".register-btn").html("Please Wait....");
                 },
                 success: function (response) {
-                    if(response.trim() == "success")
+                    alert(response);
                 },
             });
         });
