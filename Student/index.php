@@ -86,10 +86,13 @@ require_once("../Common_files/php/database.php");
         ?>
         <div class="container-fluid">
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 p-4">
               <div class="card">
-                <div class="card-header" style="">
+                <div class="card-header" style="background-color : #1ab393;">
                   <h3 class="text-center text-white">Student Dues</h3>
+                </div>
+                <div class="card-body">
+                  <div class="card-box"></div>
                 </div>
               </div>
             </div>
