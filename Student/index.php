@@ -75,19 +75,15 @@ require_once("../Common_files/php/database.php");
           <i class="fa-solid fa-angle-down float-end mt-2"></i>
         </button>
         <ul class="collapse show institute-menu">
-          <li class="border-start collapse-item p-2" access-link="branding_design.php">Branding Details</li>
-          <li class="border-start collapse-item p-2" access-link="category_design.php">Create Category</li>
-          <li class="border-start collapse-item p-2" access-link="course_design.php">Create Course</li>
-          <li class="border-start collapse-item p-2" access-link="batch_design.php">Create Batch</li>
-          <li class="border-start collapse-item p-2" access-link="student_design.php">Student Registration</li>
-          <li class="border-start collapse-item p-2" access-link="document_design.php">Upload Student Document</li>
-          <li class="border-start collapse-item p-2" access-link="invoice_design.php">Create Invoice</li>
-          <li class="border-start collapse-item p-2" access-link="attendance_design.php">Student Attendance</li>
-          <li class="border-start collapse-item p-2 active" access-link="access_design.php">Give Access Link</li>
+          <li class="border-start collapse-item p-2" access-link="">Invoice List</li>
+          <li class="border-start collapse-item p-2" access-link="">Payment Mode</li>
+          <li class="border-start collapse-item p-2" access-link="">Student Details</li>
         </ul>
       </div>
       <div class="page page-open">
-        <?php require_once("../Employee/php/nav.php") ?>
+        <?php 
+        require_once("../Employee/php/nav.php") 
+        ?>
       </div>
     </div>
   </body>
