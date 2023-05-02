@@ -1,5 +1,5 @@
 <?php
-require('../textlocal.class.php');
+require('textlocal.class.php');
 
 $textlocal = new Textlocal('demo@txtlocal.com', 'apidemo123');
 
