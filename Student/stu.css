@@ -122,3 +122,13 @@ input[type="checkbox"], label{
     border-top-color: #ff5722;
     border-left-color: #ff5722;
 }
+.card-box{
+    width: 150px;
+    height: 150px;
+    border: 20px solid rebeccapurple;
+    border-left-color: #e97423;
+    border-right-color: #2e75ba;
+    border-top-color: #91c23b;
+    border-bottom-color: #fdbe40;
+    border-radius: 50%;
+}
