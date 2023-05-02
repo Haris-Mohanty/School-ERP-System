@@ -17,7 +17,7 @@ if($response){
     $insert_data = "INSERT INTO register(name, email, mobile, description) VALUES ('$name', '$email', '$mobile', '$desc')";
 
         if($db -> query($insert_data)){
-            echo "success";
+            require("sendsms.php");
         }else{
             echo "Unable to Register!";
         }
@@ -39,7 +39,7 @@ if($response){
         $insert_data = "INSERT INTO register(name, email, mobile, description) VALUES ('$name', '$email', '$mobile', '$desc')";
 
         if($db -> query($insert_data)){
-            echo "success";
+            require("sendsms.php");
         }else{
             echo "Unable to Register!";
         }

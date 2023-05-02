@@ -109,14 +109,14 @@ require("Common_files/php/database.php");
                   $(".register-btn").html("Please Wait....");
                 },
                 success: function (response) {
-                    if(response.trim() == "success"){
+                    // if(response.trim() == "success"){
 
-                        $(".register-form").addClass("d-none");
-                        $(".verify-form").removeClass("d-none");
+                    //     $(".register-form").addClass("d-none");
+                    //     $(".verify-form").removeClass("d-none");
 
-                    }else{
-                        swal(response.trim(), response.trim(), "error");
-                    }
+                    // }else{
+                    //     swal(response.trim(), response.trim(), "error");
+                    // }
                 },
             });
         });
