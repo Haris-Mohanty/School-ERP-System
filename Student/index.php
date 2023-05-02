@@ -98,6 +98,7 @@ require_once("../Common_files/php/database.php");
                 </div>
               </div>
             </div>
+            
             <div class="col-md-4 p-4">
               <div class="card">
                 <div class="card-header" style="background-color : #1ab393;">
@@ -110,8 +111,19 @@ require_once("../Common_files/php/database.php");
                 </div>
               </div>
             </div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
+
+            <div class="col-md-4 p-4">
+              <div class="card">
+                <div class="card-header" style="background-color : #1ab393;">
+                  <h3 class="text-center text-white">Student Dues</h3>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-center">
+                  <div class="card-box d-flex align-items-center justify-content-center">
+                    <h1 style="color: #30a891">4000</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
