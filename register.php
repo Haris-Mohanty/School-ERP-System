@@ -55,11 +55,11 @@ require("Common_files/php/database.php");
             <div class="col-md-6">
                <form class="register-form">
                 <label for="name">Name</label>
-                <input type="text" name="name" id="name" class="form-control mb-3">
+                <input type="text" required name="name" id="name" class="form-control mb-3">
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" class="form-control mb-3">
+                <input type="email" required name="email" id="email" class="form-control mb-3">
                 <label for="mobile">Mobile</label>
-                <input type="text" name="mobile" id="mobile" class="form-control mb-3">
+                <input type="text" required name="mobile" id="mobile" class="form-control mb-3">
                 <label for="description">Description</label>
                 <textarea id="description" name="desc" class="form-control mb-3"></textarea>
                 <button class="btn btn-primary w-100 register-btn">Register Now</button>
@@ -67,11 +67,11 @@ require("Common_files/php/database.php");
                <form class="verify-form d-none">
                     <div class="form-group">
                         <div class="btn-group border shadow-sm">
-                            <button class="btn btn-light">
+                            <button class="btn btn-light" type="button">
                                 <input type="text" placeholder="Enter OTP here!" class="form-control otp">
                             </button>
-                            <button class="btn btn-success m-1 border verify-btn">Verify</button>
-                            <button class="btn btn-warning m-1 border resend-btn">Resend</button>
+                            <button class="btn btn-success m-1 border verify-btn" type="button">Verify</button>
+                            <button class="btn btn-warning m-1 border resend-btn" type="button">Resend</button>
                         </div>
                     </div>
                </form>
