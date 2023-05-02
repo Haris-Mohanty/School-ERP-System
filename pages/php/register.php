@@ -14,7 +14,7 @@ $response = $db -> query($check_table);
 
 if($response){
    
-    $insert_data = "INSERT INTO register(name, email, mobile, desc) VALUES ('$name', '$email', '$mobile', '$desc')";
+    $insert_data = "INSERT INTO register(name, email, mobile, description) VALUES ('$name', '$email', '$mobile', '$desc')";
 
         if($db -> query($insert_data)){
             echo "success";
@@ -29,14 +29,14 @@ if($response){
         name VARCHAR(55),
         email VARCHAR(55),
         mobile VARCHAR(25),
-        desc VARCHAR(55),
-        status DEFAULT 'pending',
+        description VARCHAR(55),
+        status VARCHAR(55) DEFAULT 'pending',
         reg_date datetime DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY(id)
     )";
     if($db -> query($create_table)){
 
-        $insert_data = "INSERT INTO register(name, email, mobile, desc) VALUES ('$name', '$email', '$mobile', '$desc')";
+        $insert_data = "INSERT INTO register(name, email, mobile, description) VALUES ('$name', '$email', '$mobile', '$desc')";
 
         if($db -> query($insert_data)){
             echo "success";
