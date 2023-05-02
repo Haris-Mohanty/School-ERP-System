@@ -131,9 +131,10 @@ require_once("../Common_files/php/database.php");
                   <h3 class="text-center text-white">Student Details</h3>
                 </div>
                 <div class="card-body d-flex align-items-center justify-content-center">
-                  <div class="card-box d-flex align-items-center justify-content-center">
-                    <h1 style="color: #30a891">4000</h1>
-                  </div>
+                  <b>Name</b><br><br>
+                  <b>Course</b><br><br>
+                  <b>Batch</b><br><br>
+                  <b>Enrollment</b><br><br>
                 </div>
               </div>
             </div>
