@@ -56,7 +56,9 @@ $category = $_GET['cat_name'];
                 <div class="border bg-white p-4">
                     <h5>Filter</h5>
                     <div class="btn-group-vertical">
-
+                        <?php
+                            $get_course = "";
+                        ?>
                     </div>
                 </div>
             </div>
