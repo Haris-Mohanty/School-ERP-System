@@ -116,6 +116,9 @@ require_once("../Common_files/php/database.php");
         <?php 
         require_once("../Employee/php/nav.php") 
         ?>
+        <?php
+        print_r($pres_length);
+        ?>
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-4 p-4">
