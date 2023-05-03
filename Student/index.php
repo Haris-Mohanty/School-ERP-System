@@ -96,7 +96,31 @@ require_once("../Common_files/php/database.php");
     <link rel="shortcut icon" href="../Images/shortcut.jpg">
   </head>
   <body>
-    
+    <div class="container-fluid p-0">
+      <div class="side-nav side-nav-open">
+        <!-- student profile pic -->
+        <div class="stu-profile" style="background-image: url(../Employee/<?php echo $all_students_data['photo'] ?>);">
+
+        </div>
+        <button class="btn w-100 text-light text-start institute-update-btn">
+          <i class="fa-solid fa-chart-line"></i>
+          <!-- Student name -->
+          <?php echo $all_students_data['student_name']; ?>
+          <i class="fa-solid fa-angle-down float-end mt-2"></i>
+        </button>
+        <ul class="collapse show institute-menu">
+          <li class="border-start collapse-item p-2" access-link="dashboard_design.php">Dashboard</li>
+          <li class="border-start collapse-item p-2" access-link="">Invoice List</li>
+          <li class="border-start collapse-item p-2" access-link="">Payment Mode</li>
+        </ul>
+      </div>
+      <div class="page page-open">
+        <?php 
+        require_once("../Employee/php/nav.php") 
+        ?>
+        
+      </div>
+    </div>
   </body>
   <!-- JS FILE LINK START -->
   <!-- <script src="js/script.js"></script> -->
