@@ -18,6 +18,8 @@ require_once("../Common_files/php/database.php");
   if($stu_res -> num_rows != 0){
     $all_students_data = $stu_res -> fetch_assoc();
   }
+
+  $enrollment = 
 ?>
 
 <!DOCTYPE html>
@@ -135,6 +137,7 @@ require_once("../Common_files/php/database.php");
                   <b>Course :- <strong><?php echo $all_students_data['course']; ?></strong></b><br><br>
                   <b>Batch :- <strong><?php echo $all_students_data['batch']; ?></strong></b><br><br>
                   <b>Enrollment :- <strong><?php echo $all_students_data['enrollment']; ?></strong></b><br><br>
+                  <b>Total Fees :- <strong><?php echo $all_students_data['fee']; ?></strong></b><br>
                 </div>
               </div>
             </div>
