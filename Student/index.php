@@ -131,7 +131,7 @@ require_once("../Common_files/php/database.php");
                   <h3 class="text-center text-white">Student Details</h3>
                 </div>
                 <div class="card-body">
-                  <b>Name :- <strong><?php  ?></strong></b><br><br>
+                  <b>Name :- <strong><?php echo $all_students_data['student_name']; ?></strong></b><br><br>
                   <b>Course :- <strong>PHP</strong></b><br><br>
                   <b>Batch :- <strong>New Batch</strong></b><br><br>
                   <b>Enrollment :- <strong>785584</strong></b><br><br>
