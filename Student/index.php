@@ -130,11 +130,11 @@ require_once("../Common_files/php/database.php");
                 <div class="card-header" style="background-color : #1ab393;">
                   <h3 class="text-center text-white">Student Details</h3>
                 </div>
-                <div class="card-body d-flex align-items-center justify-content-center">
-                  <b>Name</b><br><br>
-                  <b>Course</b><br><br>
-                  <b>Batch</b><br><br>
-                  <b>Enrollment</b><br><br>
+                <div class="card-body">
+                  <b>Name :- <strong>Haris Mohanty</strong></b><br><br>
+                  <b>Course :- <strong>PHP</strong></b><br><br>
+                  <b>Batch :- <strong>New Batch</strong></b><br><br>
+                  <b>Enrollment :- <strong>785584</strong></b><br><br>
                 </div>
               </div>
             </div>
