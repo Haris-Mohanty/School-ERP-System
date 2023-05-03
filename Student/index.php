@@ -19,7 +19,9 @@ require_once("../Common_files/php/database.php");
     $all_students_data = $stu_res -> fetch_assoc();
   }
 
-  $enrollment = 
+  $enrollment = $all_students_data['enrollment'];
+
+  $get_data = "SELECT * FROM attendance";
 ?>
 
 <!DOCTYPE html>
