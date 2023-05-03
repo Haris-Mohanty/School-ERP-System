@@ -7,15 +7,16 @@ $file = "";
 $location = "";
 $file_binary = "";
 
-if(!$_FILES) //compare
+if($_FILES['title-image']['name'] != "") //compare
 {
     $file = $_FILES['file_data'];
     $location = $file['tmp_name'];
     $file_binary = addslashes(file_get_contents($location));
-}else{
+}else
+{
+    $file = "";
     $location = "";
     $file_binary = "";
-
 }
 
 $json_data = json_encode($_POST['css_data']); //receive by encoding

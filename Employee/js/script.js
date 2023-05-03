@@ -2135,9 +2135,8 @@ function createShowcaseFunc(){
   // PREVIEW CODE START
   $(document).ready(function() {
     $(".preview-btn").click(function(){
-      let file = document.querySelector("#title-image").files[0];
+      // let file = document.querySelector("#title-image").files[0];
       let formData = new FormData();
-      formData.append("photo", file);
 
       // getting alignment
       let flex_box = document.querySelector(".showcase-preview");
