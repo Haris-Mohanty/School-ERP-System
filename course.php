@@ -47,30 +47,15 @@ require("Common_files/php/database.php");
     <!-- nav -->
     <?php require("assets/nav.php"); ?>
 
-    <!-- LOGIN CODE START -->
-    <div class="container bg-white shadow-lg border p-4" style="margin-top:100px">
-        <h2>Login With Us</h2>
-        <hr>
+    <div class="container" style="margin-top: 100px;">
         <div class="row">
-            <div class="col-md-6">
-               <label for="email">Email</label>
-               <input type="email" required id="username" class="form-control mb-3">
-               <label for="password">Password</label>
-               <input type="password" required id="password" class="form-control mb-3">
-               <input type="radio" name="user" class="user" id="admin" value="admin"><label for="admin" style="cursor: pointer;">Admin</label> &nbsp; &nbsp;
-               <input type="radio" name="user" class="user" id="student" value="student"><label for="student" style="cursor: pointer;">Student</label><br><br>
-               <button class="btn btn-primary login-btn w-100">Login Now</button>
+            <div class="col-md-3">
+                
             </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-5 text-center mt-5">
-                <h3>
-                    I don't have any Account!
-                </h3>
-                <a href="register.php" class="btn btn-success">Register</a>
-            </div>
+            <div class="col-md-9"></div>
         </div>
     </div>
-    <!-- LOGIN CODE END -->
+
 
     <!-- footer -->
     <?php require("assets/footer.php"); ?>
