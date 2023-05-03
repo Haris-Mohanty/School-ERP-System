@@ -19,6 +19,7 @@ require_once("../Common_files/php/database.php");
     $all_students_data = $stu_res -> fetch_assoc();
   }
 
+//Get Total Attendance
   $enrollment = $all_students_data['enrollment'];
 
   $all_att = [];
@@ -32,6 +33,7 @@ require_once("../Common_files/php/database.php");
       array_push($all_att, $data);
     }
   }
+  $att_length = count($all_att);
 
 ?>
 
