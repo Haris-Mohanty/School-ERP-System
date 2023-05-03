@@ -50,9 +50,24 @@ require("Common_files/php/database.php");
     <div class="container" style="margin-top: 100px;">
         <div class="row">
             <div class="col-md-3">
-                
+                <div class="border bg-white p-4">
+                    <h5>Filter</h5>
+                    <div class="btn-group-vertical">
+
+                    </div>
+                </div>
             </div>
-            <div class="col-md-9"></div>
+            <div class="col-md-9">
+                <div class="bg-white d-flex flex-wrap justify-content-between batch-result border p-4">
+                    <div class="w-50 shadow-sm p-3 border mb-4">
+                        <img src="images/buss.jpg" class="w-100" alt=""><br><br>
+                        <span class="mt-3 fw-bold text-uppercase">JAVASCRIPT</span><br><br>
+                        <span class="fw-bold text-uppercase">Batch Time : 09:00 to 10:50</span><br><br>
+                        <span class="fw-bold text-uppercase">Batch Time : 09:00 to 10:50</span><br><br>
+                        <a href="http://localhost/School-ERP-System/register.php" class="btn btn-primary">Register</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

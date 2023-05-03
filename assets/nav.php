@@ -41,7 +41,7 @@
                             while($data = $cat_res -> fetch_assoc()){
                                 echo '
                                 <li class="nav-item">
-                                  <a href="#" class="nav-link">'.$data['category_name'].'</a>
+                                  <a href="course.php" class="nav-link">'.$data['category_name'].'</a>
                                 </li>
                                 ';
                             }
