@@ -21,7 +21,18 @@ require_once("../Common_files/php/database.php");
 
   $enrollment = $all_students_data['enrollment'];
 
-  $get_data = "SELECT * FROM attendance";
+  $all_att = [];
+
+  $get_att = "SELECT * FROM attendance WHERE enrollment = '$enrollment'";
+  $att_response = $db -> query($get_att);
+
+  if($att_response){
+    while($data = $att_response -> fetch_assoc())
+    {
+      array_push($all_att, $data);
+    }
+  }
+
 ?>
 
 <!DOCTYPE html>
