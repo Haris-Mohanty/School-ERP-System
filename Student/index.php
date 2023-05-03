@@ -133,7 +133,7 @@ require_once("../Common_files/php/database.php");
                 <div class="card-body">
                   <b>Name :- <strong><?php echo $all_students_data['student_name']; ?></strong></b><br><br>
                   <b>Course :- <strong><?php echo $all_students_data['course']; ?></strong></b><br><br>
-                  <b>Batch :- <strong>New Batch</strong></b><br><br>
+                  <b>Batch :- <strong><?php echo $all_students_data['batch']; ?></strong></b><br><br>
                   <b>Enrollment :- <strong>785584</strong></b><br><br>
                 </div>
               </div>
