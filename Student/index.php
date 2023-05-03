@@ -35,6 +35,21 @@ require_once("../Common_files/php/database.php");
   }
   $att_length = count($all_att);
 
+
+//Get Total Present
+  $all_att = [];
+
+  $get_att = "SELECT * FROM attendance WHERE enrollment = '$enrollment'";
+  $att_response = $db -> query($get_att);
+
+  if($att_response){
+    while($data = $att_response -> fetch_assoc())
+    {
+      array_push($all_att, $data);
+    }
+  }
+  $att_length = count($all_att);
+
 ?>
 
 <!DOCTYPE html>
