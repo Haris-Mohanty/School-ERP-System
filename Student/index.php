@@ -50,7 +50,7 @@ require_once("../Common_files/php/database.php");
   }
   $pres_length = count($all_pres);
 
-  $percentage = 
+  $percentage = $pres_length*100/$att_length;
 
 ?>
 
