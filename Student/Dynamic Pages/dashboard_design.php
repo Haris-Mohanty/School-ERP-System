@@ -1,5 +1,55 @@
 <?php
 
+  session_start();
+  $username = $_SESSION['username'];
+
+  if(empty($username)){
+    header("Location:../");
+    exit;
+  }
+  $get_data = "SELECT * FROM students WHERE email = '$username'";
+
+  $stu_res = $db -> query($get_data);
+  $all_students_data = "";
+
+  if($stu_res -> num_rows != 0){
+    $all_students_data = $stu_res -> fetch_assoc();
+  }
+
+//Get Total Attendance
+  $enrollment = $all_students_data['enrollment'];
+
+  $all_att = [];
+
+  $get_att = "SELECT * FROM attendance WHERE enrollment = '$enrollment'";
+  $att_response = $db -> query($get_att);
+
+  if($att_response){
+    while($data = $att_response -> fetch_assoc())
+    {
+      array_push($all_att, $data);
+    }
+  }
+  $att_length = count($all_att);
+
+
+//Get Total Present
+  $all_pres = [];
+
+  $get_pres = "SELECT * FROM attendance WHERE enrollment = '$enrollment' AND attendance = 'present'";
+  $pres_response = $db -> query($get_pres);
+
+  if($pres_response){
+    while($pres_data = $pres_response -> fetch_assoc())
+    {
+      array_push($all_pres, $pres_data);
+    }
+  }
+  $pres_length = count($all_pres);
+
+  $percentage = $pres_length*100/$att_length;
+
+
 echo '
 
 <div class="container-fluid">
