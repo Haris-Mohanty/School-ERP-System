@@ -93,7 +93,7 @@ require_once("../Common_files/php/database.php");
                 </div>
                 <div class="card-body d-flex align-items-center justify-content-center">
                   <div class="card-box d-flex align-items-center justify-content-center">
-                    <h1 style="color: #30a891"><?php  ?></h1>
+                    <h1 style="color: #30a891"><?php echo $all_students_data['fee'] - $all_students_data['paid_fee']; ?></h1>
                   </div>
                 </div>
               </div>
