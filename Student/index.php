@@ -109,7 +109,7 @@ require_once("../Common_files/php/database.php");
           <i class="fa-solid fa-angle-down float-end mt-2"></i>
         </button>
         <ul class="collapse show institute-menu">
-          <li class="border-start collapse-item p-2" access-link="dashboard_design">Dashboard</li>
+          <li class="border-start collapse-item p-2" access-link="dashboard_design.php">Dashboard</li>
           <li class="border-start collapse-item p-2" access-link="">Invoice List</li>
           <li class="border-start collapse-item p-2" access-link="">Payment Mode</li>
         </ul>
