@@ -50,6 +50,8 @@ require_once("../Common_files/php/database.php");
   }
   $pres_length = count($all_pres);
 
+  $percentage = 
+
 ?>
 
 <!DOCTYPE html>
@@ -115,9 +117,6 @@ require_once("../Common_files/php/database.php");
       <div class="page page-open">
         <?php 
         require_once("../Employee/php/nav.php") 
-        ?>
-        <?php
-        print_r($pres_length);
         ?>
         <div class="container-fluid">
           <div class="row">
