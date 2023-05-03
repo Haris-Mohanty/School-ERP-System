@@ -19,39 +19,6 @@ require_once("../Common_files/php/database.php");
     $all_students_data = $stu_res -> fetch_assoc();
   }
 
-//Get Total Attendance
-  $enrollment = $all_students_data['enrollment'];
-
-  $all_att = [];
-
-  $get_att = "SELECT * FROM attendance WHERE enrollment = '$enrollment'";
-  $att_response = $db -> query($get_att);
-
-  if($att_response){
-    while($data = $att_response -> fetch_assoc())
-    {
-      array_push($all_att, $data);
-    }
-  }
-  $att_length = count($all_att);
-
-
-//Get Total Present
-  $all_pres = [];
-
-  $get_pres = "SELECT * FROM attendance WHERE enrollment = '$enrollment' AND attendance = 'present'";
-  $pres_response = $db -> query($get_pres);
-
-  if($pres_response){
-    while($pres_data = $pres_response -> fetch_assoc())
-    {
-      array_push($all_pres, $pres_data);
-    }
-  }
-  $pres_length = count($all_pres);
-
-  $percentage = $pres_length*100/$att_length;
-
 ?>
 
 <!DOCTYPE html>
@@ -109,20 +76,17 @@ require_once("../Common_files/php/database.php");
           <i class="fa-solid fa-angle-down float-end mt-2"></i>
         </button>
         <ul class="collapse show institute-menu">
-          <li class="border-start collapse-item p-2" access-link="dashboard_design.php">Dashboard</li>
+          <li class="border-start collapse-item p-2 active" access-link="dashboard_design.php">Dashboard</li>
           <li class="border-start collapse-item p-2" access-link="">Invoice List</li>
           <li class="border-start collapse-item p-2" access-link="">Payment Mode</li>
         </ul>
       </div>
       <div class="page page-open">
-        <?php 
-        require_once("../Employee/php/nav.php") 
-        ?>
         
       </div>
     </div>
   </body>
   <!-- JS FILE LINK START -->
-  <!-- <script src="js/script.js"></script> -->
+  <script src="js/student.js"></script>
   <!-- JS FILE LINK END -->
 </html>
