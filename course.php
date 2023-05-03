@@ -2,6 +2,7 @@
 
 //Database linked
 require("Common_files/php/database.php");
+$category = $_GET['cat_name'];
 
 ?>
 
@@ -49,6 +50,7 @@ require("Common_files/php/database.php");
     <?php require("assets/nav.php"); ?>
 
     <div class="container" style="margin-top: 100px;">
+     <a href="#" class="text-uppercase"><?php echo $category ?></a><br><br>
         <div class="row">
             <div class="col-md-3">
                 <div class="border bg-white p-4">
