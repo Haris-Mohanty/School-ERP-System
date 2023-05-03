@@ -37,18 +37,18 @@ require_once("../Common_files/php/database.php");
 
 
 //Get Total Present
-  $all_att = [];
+  $all_pres = [];
 
-  $get_att = "SELECT * FROM attendance WHERE enrollment = '$enrollment'";
-  $att_response = $db -> query($get_att);
+  $get_pres = "SELECT * FROM attendance WHERE enrollment = '$enrollment' AND attendance = 'present'";
+  $pres_response = $db -> query($get_pres);
 
-  if($att_response){
-    while($data = $att_response -> fetch_assoc())
+  if($pres_response){
+    while($pres_data = $pres_response -> fetch_assoc())
     {
-      array_push($all_att, $data);
+      array_push($all_pres, $pres_data);
     }
   }
-  $att_length = count($all_att);
+  $pres_length = count($all_pres);
 
 ?>
 
