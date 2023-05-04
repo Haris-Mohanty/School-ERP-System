@@ -89,6 +89,11 @@ $category = $_GET['cat_name'];
     <!-- footer -->
     <?php require("assets/footer.php"); ?>
      
+    <script>
+        $(document).ready(function(){
+            alert();
+        });
+    </script>
+
 </body>
-<script src="assets/index.js"></script>
 </html>
