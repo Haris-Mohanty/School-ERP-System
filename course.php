@@ -58,13 +58,13 @@ $category = $_GET['cat_name'];
                     <div class="btn-group-vertical">
                         <?php
                             $get_course = "SELECT * FROM course WHERE category = '$category'";
-                            $course_response = $db -> query($get_course)
+                            $course_response = $db -> query($get_course);
 
                             if($course_response)
                             {
                                 while($data = $course_response -> fetch_assoc())
                                 {
-                                    echo "<button></button>";
+                                    echo "<button>".$data['name']."</button>";
                                 }
                             }
                         ?>
