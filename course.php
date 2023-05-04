@@ -57,7 +57,16 @@ $category = $_GET['cat_name'];
                     <h5>Filter</h5>
                     <div class="btn-group-vertical">
                         <?php
-                            $get_course = "SELECT * FROM";
+                            $get_course = "SELECT * FROM course WHERE category = '$category'";
+                            $course_response = $db -> query($get_course)
+
+                            if($course_response)
+                            {
+                                while($data = $course_response -> fetch_assoc())
+                                {
+                                    echo "<button></button>";
+                                }
+                            }
                         ?>
                     </div>
                 </div>
