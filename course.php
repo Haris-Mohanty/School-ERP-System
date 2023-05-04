@@ -95,6 +95,9 @@ $category = $_GET['cat_name'];
                 $(this).click(function(){
                     let cat_name = $(this).attr('cat-name').trim();
                     let course_name = $(this).text().trim();
+
+                    //ajax
+                    $.ajax({});
                 });
             });
         });
