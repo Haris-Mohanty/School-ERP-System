@@ -64,7 +64,7 @@ $category = $_GET['cat_name'];
                             {
                                 while($data = $course_response -> fetch_assoc())
                                 {
-                                    echo "<button cat_name='".$data['category']."' class='btn filter-btn px-3 text-capitalize border'> <i class='fa fa-angle-double-right'></i> ".$data['name']."</button>";
+                                    echo "<button cat-name='".$data['category']."' class='btn filter-btn px-3 text-capitalize border'> <i class='fa fa-angle-double-right'></i> ".$data['name']."</button>";
                                 }
                             }
                         ?>
@@ -93,7 +93,8 @@ $category = $_GET['cat_name'];
         $(document).ready(function(){
             $(".filter-btn").each(function(){
                 $(this).click(function(){
-                    alert();
+                    let cat_name = $(this).attr('cat-name').trim();
+                    let course_name = $(this).text().trim();
                 });
             });
         });
