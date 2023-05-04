@@ -91,7 +91,11 @@ $category = $_GET['cat_name'];
      
     <script>
         $(document).ready(function(){
-            alert();
+            $(".filter-btn").each(function(){
+                $(this).click(function(){
+                    alert();
+                });
+            });
         });
     </script>
 
