@@ -105,9 +105,11 @@ $category = $_GET['cat_name'];
                             course_name : course_name
                         },
                         cache : false,
-                        beforeSend : function(){},
+                        beforeSend : function(){
+                            $(".batch_result").html("<b>Loading...</b>");
+                        },
                         success : function(response){
-                            alert(response)
+                            console.log(response)
                         },
                     });
                 });
