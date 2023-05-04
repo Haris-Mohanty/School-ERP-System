@@ -97,7 +97,19 @@ $category = $_GET['cat_name'];
                     let course_name = $(this).text().trim();
 
                     //ajax
-                    $.ajax({});
+                    $.ajax({
+                        type : "POST",
+                        url : "pages/php/filter.php",
+                        data : {
+                            cat_name : cat_name,
+                            course_name : course_name
+                        },
+                        cache : false,
+                        beforeSend : function(){},
+                        success : function(response){
+                            alert(response)
+                        },
+                    });
                 });
             });
         });
