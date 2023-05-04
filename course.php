@@ -64,7 +64,7 @@ $category = $_GET['cat_name'];
                             {
                                 while($data = $course_response -> fetch_assoc())
                                 {
-                                    echo "<button class='btn filter-btn px-3 text-capitalize border'>".$data['name']."</button>";
+                                    echo "<button class='btn filter-btn px-3 text-capitalize border'> <i class='fa fa-angle-double-right'></i> ".$data['name']."</button>";
                                 }
                             }
                         ?>
