@@ -1,5 +1,6 @@
 <?php
 
-    //Database Linked
+    //Database linked
+    require("../../Common_files/php/database.php");
 
 ?>
