@@ -73,13 +73,7 @@ $category = $_GET['cat_name'];
             </div>
             <div class="col-md-9">
                 <div class="bg-white d-flex flex-wrap justify-content-between batch-result border p-4">
-                    <div class="w-50 shadow-sm p-3 border mb-4">
-                        <img src="images/buss.jpg" class="w-100" alt=""><br><br>
-                        <span class="mt-3 fw-bold text-uppercase">JAVASCRIPT</span><br><br>
-                        <span class="fw-bold text-uppercase">Batch Time : 09:00 to 10:50</span><br><br>
-                        <span class="fw-bold text-uppercase">Batch Time : 09:00 to 10:50</span><br><br>
-                        <a href="http://localhost/School-ERP-System/register.php" class="btn btn-primary">Register</a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -106,14 +100,30 @@ $category = $_GET['cat_name'];
                         },
                         cache : false,
                         beforeSend : function(){
-                            $(".batch_result").html("<b>Loading...</b>");
+                            $(".batch-result").html("<b>Loading...</b>");
                         },
                         success : function(response){
                             if(response.trim() != "There is no Batch!")
                             {
-                                let batch_list = 
-                            }else{
+                                let batch_list = JSON.parse(response.trim());
+                                if(batch_list.length != 0){
+                                    batch_list.forEach((batch, index) => {
+                                        let box = `
+                                     <div class="w-50 shadow-sm p-3 border mb-4">
+                                        <img src="images/buss.jpg" class="w-100" alt=""><br><br>
+                                        <span class="mt-3 fw-bold text-uppercase">JAVASCRIPT</span><br><br>
+                                        <span class="fw-bold text-uppercase">Batch Time : 09:00 to 10:50</span><br><br>
+                                        <span class="fw-bold text-uppercase">Batch Time : 09:00 to 10:50</span><br><br>
+                                        <a href="http://localhost/School-ERP-System/register.php" class="btn btn-primary">Register</a>
+                                     </div>
+                                        `;
+                                    });
+                                }else{
+                                $(".batch-result").html("<h2> <i class='fa fa-shoping-cart'></i> Yet No Batch in This Course.</h2>")
+                                }
 
+                            }else{
+                                $(".batch-result").html("<h2> <i class='fa fa-shoping-cart'></i> Yet No Batch in This Course.</h2>")
                             }
                         },
                     });
