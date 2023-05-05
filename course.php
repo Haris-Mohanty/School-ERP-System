@@ -109,7 +109,12 @@ $category = $_GET['cat_name'];
                             $(".batch_result").html("<b>Loading...</b>");
                         },
                         success : function(response){
-                            console.log(response)
+                            if(response.trim() != "There is no Batch!")
+                            {
+                                let batch_list = 
+                            }else{
+
+                            }
                         },
                     });
                 });
