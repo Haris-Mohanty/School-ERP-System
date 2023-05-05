@@ -114,7 +114,7 @@ $category = $_GET['cat_name'];
                                         <img src= "Employee/${batch.logo}" class="w-100" alt=""><br><br>
                                         <span class="mt-3 fw-bold text-uppercase">${batch.course}</span><br><br>
                                         <span class="fw-bold text-uppercase">Batch Time : ${batch.batch_from} to ${batch.batch_to}</span><br><br>
-                                        <span class="fw-bold text-uppercase">Batch Time : </span><br><br>
+                                        <span class="fw-bold text-uppercase">Batch Date : ${batch.batch_from_date} to ${batch.batch_to_date}</span><br><br>
                                         <a href="http://localhost/School-ERP-System/register.php" class="btn btn-primary">Register</a>
                                      </div>
                                         `;
