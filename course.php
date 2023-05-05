@@ -103,6 +103,7 @@ $category = $_GET['cat_name'];
                             $(".batch-result").html("<b>Loading...</b>");
                         },
                         success : function(response){
+                            $(".batch-result").html("");
                             if(response.trim() != "There is no Batch!")
                             {
                                 let batch_list = JSON.parse(response.trim());
@@ -110,14 +111,14 @@ $category = $_GET['cat_name'];
                                     batch_list.forEach((batch, index) => {
                                         let box = `
                                      <div class="w-50 shadow-sm p-3 border mb-4">
-                                        <img src="images/buss.jpg" class="w-100" alt=""><br><br>
+                                        <img src= "Employee/${batch.logo}" class="w-100" alt=""><br><br>
                                         <span class="mt-3 fw-bold text-uppercase">JAVASCRIPT</span><br><br>
                                         <span class="fw-bold text-uppercase">Batch Time : 09:00 to 10:50</span><br><br>
                                         <span class="fw-bold text-uppercase">Batch Time : 09:00 to 10:50</span><br><br>
                                         <a href="http://localhost/School-ERP-System/register.php" class="btn btn-primary">Register</a>
                                      </div>
                                         `;
-                                        $(".batch-result").append("box");
+                                        $(".batch-result").append(box);
                                     });
                                 }else{
                                 $(".batch-result").html("<h2> <i class='fa fa-shoping-cart'></i> Yet No Batch in This Course.</h2>")
