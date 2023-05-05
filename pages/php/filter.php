@@ -12,10 +12,13 @@ $get_batch = "SELECT * FROM batch WHERE category = '$cat_name' AND course = '$co
 $response = $db -> query($get_batch);
 
 if($response){
-    while($data = $response -> fetch_assoc()){
+    while($data = $response -> fetch_assoc())
+    {
         array_push($batch_list, $data);
     }
+    
     echo json_encode($batch_list);
+
 }else{
     echo "There is no Batch!";
 }
