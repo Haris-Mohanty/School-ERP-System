@@ -109,6 +109,7 @@ $category = $_GET['cat_name'];
                                 let batch_list = JSON.parse(response.trim());
                                 if(batch_list.length != 0){
                                     batch_list.forEach((batch, index) => {
+
                                         let box = `
                                      <div class="w-50 shadow-sm p-3 border mb-4">
                                         <img src= "Employee/${batch.logo}" class="w-100" alt=""><br><br>
@@ -119,6 +120,7 @@ $category = $_GET['cat_name'];
                                      </div>
                                         `;
                                         $(".batch-result").append(box);
+                                        
                                     });
                                 }else{
                                 $(".batch-result").html("<h2> <i class='fa fa-shoping-cart'></i> Yet No Batch in This Course.</h2>")
