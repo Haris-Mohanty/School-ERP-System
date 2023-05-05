@@ -117,6 +117,7 @@ $category = $_GET['cat_name'];
                                         <a href="http://localhost/School-ERP-System/register.php" class="btn btn-primary">Register</a>
                                      </div>
                                         `;
+                                        $(".batch-result").append("box");
                                     });
                                 }else{
                                 $(".batch-result").html("<h2> <i class='fa fa-shoping-cart'></i> Yet No Batch in This Course.</h2>")
