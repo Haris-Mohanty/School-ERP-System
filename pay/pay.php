@@ -14,7 +14,7 @@ $recent = $_GET['recent'];
 $total = $_GET['total'];
 $pending = $_GET['pending'];
 $date = $_GET['date'];
-$fe = $_GET['date'];
+$fee_time = $_GET['fee_time'];
 
 use Razorpay\Api\Api;
 
