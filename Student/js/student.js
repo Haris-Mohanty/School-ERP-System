@@ -163,7 +163,7 @@ function createInvoiceFunc(){
     dd = dd < 10 ? "0" + dd : dd;
     mm = mm < 10 ? "0"+mm : mm;
     let finalDate = dd+"-"+mm+"-"+yy;
-    
+
     // formData.append("paid_fee", total);
     // formData.append("pending", fee_pending);
     // formData.append("date", finalDate);
@@ -176,7 +176,7 @@ function createInvoiceFunc(){
     let fee_time = $(".inv-time").val();
     let recent = $(".inv-recent").val();
 
-    window.location = "../pay/pay.php";
+    window.location = "../pay/pay.php?enrollment="+enrollment+"&name";
     //ajax request
     // $.ajax({
     //   type: "POST",
