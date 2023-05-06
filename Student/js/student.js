@@ -167,31 +167,32 @@ function createInvoiceFunc(){
     formData.append("pending", fee_pending);
     formData.append("date", finalDate);
     e.preventDefault();
+    window.location = "../r-pay/pay.php";
     //ajax request
-    $.ajax({
-      type: "POST",
-      url: "php/create_invoice.php",
-      data: formData,
-      processData: false,
-      contentType: false,
-      cache: false,
-      beforeSend: function () {
-        $(".invoice-loader").removeClass("d-none");
-      },
-      success: function (response) {
-        $(".invoice-loader").addClass("d-none");
-        if(response.trim() == "success"){
-          swal("Invoice Created!", "Your Invoice Created Successully!", "success");
+    // $.ajax({
+    //   type: "POST",
+    //   url: "php/create_invoice.php",
+    //   data: formData,
+    //   processData: false,
+    //   contentType: false,
+    //   cache: false,
+    //   beforeSend: function () {
+    //     $(".invoice-loader").removeClass("d-none");
+    //   },
+    //   success: function (response) {
+    //     $(".invoice-loader").addClass("d-none");
+    //     if(response.trim() == "success"){
+    //       swal("Invoice Created!", "Your Invoice Created Successully!", "success");
 
-          window.location = "php/invoice.php?enrollment="+allInput[1].value+"&name="+allInput[2].value+"&category="+allInput[3].value+"&date="+finalDate+"&course="+allInput[4].value+"&batch="+allInput[5].value+"&fee-time="+allInput[6].value+"&paid-fee="+total+"&pending="+fee_pending+"&recent="+allInput[8].value;
+    //       window.location = "php/invoice.php?enrollment="+allInput[1].value+"&name="+allInput[2].value+"&category="+allInput[3].value+"&date="+finalDate+"&course="+allInput[4].value+"&batch="+allInput[5].value+"&fee-time="+allInput[6].value+"&paid-fee="+total+"&pending="+fee_pending+"&recent="+allInput[8].value;
 
-          invoiceForm.reset();
-          $(".invoice-btn").addClass("disabled");
-        }else{
-          swal(response.trim(), response.trim(), "error");
-        }
-      },
-    });
+    //       invoiceForm.reset();
+    //       $(".invoice-btn").addClass("disabled");
+    //     }else{
+    //       swal(response.trim(), response.trim(), "error");
+    //     }
+    //   },
+    // });
   });
 }
 // CREATE INVOICE - CODE END
