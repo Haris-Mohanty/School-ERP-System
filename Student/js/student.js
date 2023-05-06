@@ -155,6 +155,7 @@ function createInvoiceFunc(){
 
   //add invoice
   $(invoiceForm).submit(function (e) {
+    e.preventDefault();
     let date = new Date();
     let dd = date.getDate();
     let mm = date.getMonth()+1;
@@ -162,11 +163,19 @@ function createInvoiceFunc(){
     dd = dd < 10 ? "0" + dd : dd;
     mm = mm < 10 ? "0"+mm : mm;
     let finalDate = dd+"-"+mm+"-"+yy;
-    let formData = new FormData(this);
-    formData.append("paid_fee", total);
-    formData.append("pending", fee_pending);
-    formData.append("date", finalDate);
-    e.preventDefault();
+    
+    // formData.append("paid_fee", total);
+    // formData.append("pending", fee_pending);
+    // formData.append("date", finalDate);
+    
+    let enrollment = $(".inv-enroll").val();
+    let name = $(".inv-name").val();
+    let category = $(".inv-category").val();
+    let course = $(".inv-course").val();
+    let batch = $(".inv-batch").val();
+    let fee_time = $(".inv-time").val();
+    let recent = $(".inv-recent").val();
+
     window.location = "../pay/pay.php";
     //ajax request
     // $.ajax({
