@@ -5,6 +5,9 @@ require('razorpay-php/Razorpay.php');
 session_start();
 // create the razorpay order
 
+$brand_name = $_SESSION['brand-name'];
+
+
 $enrollment = $_GET['enrollment'];
 $name = $_GET['name'];
 $category = $_GET['category'];
