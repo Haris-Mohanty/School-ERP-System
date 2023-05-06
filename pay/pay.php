@@ -25,7 +25,7 @@ $api = new Api($keyId,$keySecret);
 //
 $orderData = [
     'receipt'         => 'rcptid_11',
-    'amount'          => 500*100, // 39900 rupees in paise
+    'amount'          => $recent*100, // 39900 rupees in paise
     'currency'        => 'INR'
 ];
 

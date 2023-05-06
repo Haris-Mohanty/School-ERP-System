@@ -20,6 +20,7 @@
                     echo "<img src='".$src."' width='40'>";
                     echo "&nbsp";
                     echo "<small class='fw-bold'>".$brand_res['brand_name']."</small>";
+                    session_start()
                     ?>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar">
