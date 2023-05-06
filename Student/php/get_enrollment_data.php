@@ -21,7 +21,7 @@ if($response){
         echo "Not Match!";
     }
 }else{
-    echo "Not Match";skj
+    echo "Not Match";
 }
 
 ?>
