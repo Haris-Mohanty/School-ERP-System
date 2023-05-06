@@ -87,3 +87,133 @@ $(document).ready(function () {
     });
   });
   //ACTIVE TAB END
+
+// CREATE INVOICE - CODE START
+function createInvoiceFunc(){
+    let invoiceForm = document.querySelector(".invoice-form");
+    let allInput = invoiceForm.querySelectorAll("INPUT");
+    let allSpan = invoiceForm.querySelectorAll(".invoice-fee");
+
+
+  //show data by oninput
+  let total = 0;
+  let fee_pending = 0;
+  $("#invoice-enrollment").on("input", async function () {
+    let response = await ajaxGetEnrollmentData("students", this.value, "invoice-loader");
+    if (response.trim() != "Not Match!") {
+      $(".invoice-btn").removeClass("disabled");
+      $(".invoice-msg").html("");
+
+      const data = JSON.parse(response.trim());
+      //Table input
+      allInput[1].value = data.enrollment;
+      allInput[2].value = data.student_name;
+      allInput[3].value = data.category;
+      allInput[4].value = data.course;
+      allInput[5].value = data.batch;
+
+      //span input
+      allSpan[0].innerHTML = data.fee;
+      allSpan[1].innerHTML = data.paid_fee;
+
+      //fee time & pending-fee
+      allInput[6].value = data.fee_time;
+      let pending_amount = data.fee - data.paid_fee;
+      allInput[7].value = pending_amount;
+
+      //fee payable
+      let pending = Number(allInput[7].value);
+      $(".recent-paid").on("input", function () {
+        let paid = Number(allSpan[1].innerHTML);
+        let recent = Number(this.value);
+        total = paid + recent;
+
+        //fee pending
+        fee_pending = pending - recent;
+        allInput[7].value = fee_pending;
+      });
+    } else {
+      $(".invoice-msg").html("Enrollment not Found!");
+      $(".invoice-btn").addClass("disabled");
+
+      //DATA EMPTY
+      allInput[1].value = "";
+      allInput[2].value = "";
+      allInput[3].value = "";
+      allInput[4].value = "";
+      allInput[5].value = "";
+
+      //span input
+      allSpan[0].innerHTML = "";
+      allSpan[1].innerHTML = "";
+
+      //fee time & pending-fee
+      allInput[6].value = "";
+      allInput[7].value = "";
+    }
+  });
+
+  //add invoice
+  $(invoiceForm).submit(function (e) {
+    let date = new Date();
+    let dd = date.getDate();
+    let mm = date.getMonth()+1;
+    let yy = date.getFullYear();
+    dd = dd < 10 ? "0" + dd : dd;
+    mm = mm < 10 ? "0"+mm : mm;
+    let finalDate = dd+"-"+mm+"-"+yy;
+    let formData = new FormData(this);
+    formData.append("paid_fee", total);
+    formData.append("pending", fee_pending);
+    formData.append("date", finalDate);
+    e.preventDefault();
+    //ajax request
+    $.ajax({
+      type: "POST",
+      url: "php/create_invoice.php",
+      data: formData,
+      processData: false,
+      contentType: false,
+      cache: false,
+      beforeSend: function () {
+        $(".invoice-loader").removeClass("d-none");
+      },
+      success: function (response) {
+        $(".invoice-loader").addClass("d-none");
+        if(response.trim() == "success"){
+          swal("Invoice Created!", "Your Invoice Created Successully!", "success");
+
+          window.location = "php/invoice.php?enrollment="+allInput[1].value+"&name="+allInput[2].value+"&category="+allInput[3].value+"&date="+finalDate+"&course="+allInput[4].value+"&batch="+allInput[5].value+"&fee-time="+allInput[6].value+"&paid-fee="+total+"&pending="+fee_pending+"&recent="+allInput[8].value;
+
+          invoiceForm.reset();
+          $(".invoice-btn").addClass("disabled");
+        }else{
+          swal(response.trim(), response.trim(), "error");
+        }
+      },
+    });
+  });
+}
+// CREATE INVOICE - CODE END
+
+// GET ENROLLMENT DATA DYNAMICALLY CODE START
+function ajaxGetEnrollmentData(table, data, loader) {
+  return new Promise(function (resolve, reject) {
+    $.ajax({
+      type: "POST",
+      url: "php/get_enrollment_data.php",
+      data: {
+        table: table,
+        user_data: data,
+      },
+      beforeSend: function () {
+        $("." + loader).removeClass("d-none");
+      },
+      success: function (response) {
+        $("." + loader).addClass("d-none");
+          resolve(response);
+      },
+    });
+  });
+}
+// GET ENROLLMENT DATA DYNAMICALLY CODE END
