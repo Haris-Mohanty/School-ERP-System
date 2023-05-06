@@ -5,6 +5,17 @@ require('razorpay-php/Razorpay.php');
 session_start();
 // create the razorpay order
 
+$enrollment = $_GET['enrollment'];
+$name = $_GET['name'];
+$category = $_GET['category'];
+$course = $_GET['course'];
+$batch = $_GET['batch'];
+$recent = $_GET['recent'];
+$total = $_GET['total'];
+$pending = $_GET['pending'];
+$date = $_GET['date'];
+$fe = $_GET['date'];
+
 use Razorpay\Api\Api;
 
 $api = new Api($keyId,$keySecret);
