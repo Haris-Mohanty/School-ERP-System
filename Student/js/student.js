@@ -176,7 +176,7 @@ function createInvoiceFunc(){
     let fee_time = $(".inv-time").val();
     let recent = $(".inv-recent").val();
 
-    window.location = "../pay/pay.php?enrollment="+enrollment+"&name";
+    window.location = "../pay/pay.php?enrollment="+enrollment+"&name="+name+"&category="+category+"&course="+course+"&batch="+batch+"&fee_time="+fee_time+"&recent="+recent+"&total="+total+"&pending="+fee_pending+"$date="+finalDate;
     //ajax request
     // $.ajax({
     //   type: "POST",
