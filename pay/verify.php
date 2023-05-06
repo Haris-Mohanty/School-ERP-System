@@ -1,9 +1,6 @@
 <?php
-
 require('config.php');
-
 session_start();
-
 require('razorpay-php/Razorpay.php');
 use Razorpay\Api\Api;
 use Razorpay\Api\Errors\SignatureVerificationError;
@@ -48,3 +45,5 @@ else
 }
 
 echo $html;
+
+?>

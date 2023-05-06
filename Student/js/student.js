@@ -167,7 +167,7 @@ function createInvoiceFunc(){
     formData.append("pending", fee_pending);
     formData.append("date", finalDate);
     e.preventDefault();
-    window.location = "../r-pay/pay.php";
+    window.location = "../pay/pay.php";
     //ajax request
     // $.ajax({
     //   type: "POST",
