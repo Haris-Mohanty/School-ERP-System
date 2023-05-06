@@ -77,8 +77,8 @@ require_once("../Common_files/php/database.php");
         </button>
         <ul class="collapse show institute-menu">
           <li class="border-start collapse-item p-2 active" access-link="dashboard_design.php">Dashboard</li>
-          <li class="border-start collapse-item p-2" access-link="">Invoice List</li>
-          <li class="border-start collapse-item p-2" access-link="">Payment Mode</li>
+          <li class="border-start collapse-item p-2" access-link="invoice_design">Invoice List</li>
+          <li class="border-start collapse-item p-2" access-link="payment_design">Payment Mode</li>
         </ul>
       </div>
       <div class="page page-open">
