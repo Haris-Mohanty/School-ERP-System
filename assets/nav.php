@@ -1,5 +1,6 @@
 <?php
     
+    session_start();
     $brand_res = "";
     $get_brand = "SELECT * FROM branding";
     $response = $db -> query($get_brand);
@@ -20,7 +21,6 @@
                     echo "<img src='".$src."' width='40'>";
                     echo "&nbsp";
                     echo "<small class='fw-bold'>".$brand_res['brand_name']."</small>";
-                    session_start();
                     $_SESSION['brand-name'] = $brand_res['brand_name'];
                     ?>
                 </a>

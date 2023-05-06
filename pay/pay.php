@@ -52,7 +52,7 @@ if(isset($_GET['checkout']) and in_array($_GET['checkout'],['automatic','manual'
 $data = [
     "key"               => $keyId,
     "amount"            => $amount,
-    "name"              => "JUST FOR CODE",
+    "name"              => $brand_name,
     "description"       => "just for code",
     "image"             => "https://cdn.razorpay.com/logos/FFATTsJeURNMxx_medium.png",
     "prefill"           => [
