@@ -6,9 +6,9 @@ session_start();
 // create the razorpay order
 
 $brand_name = $_SESSION['brand-name'];
-$brand_name = $_SESSION['mobile'];
-$brand_name = $_SESSION['address'];
-$brand_name = $_SESSION['username'];
+$mobile = $_SESSION['mobile'];
+$address = $_SESSION['address'];
+$email = $_SESSION['username'];
 
 
 $enrollment = $_GET['enrollment'];
@@ -60,8 +60,8 @@ $data = [
     "image"             => "https://e7.pngegg.com/pngimages/410/207/png-clipart-massachusetts-institute-of-technology-mit-license-bsd-licence-open-source-license-open-miscellaneous-text.png",
     "prefill"           => [
     "name"              => $name,
-    "email"             => "zeeshan@gmail.com",
-    "contact"           => "6393640841",
+    "email"             => $email,
+    "contact"           => $mobile,
     ],
     "notes"             => [
     "address"           => "Mahrastra",
