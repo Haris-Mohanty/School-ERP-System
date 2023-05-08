@@ -8,6 +8,7 @@ session_start();
 $brand_name = $_SESSION['brand-name'];
 $brand_name = $_SESSION['mobile'];
 $brand_name = $_SESSION['address'];
+$brand_name = $_SESSION['username'];
 
 
 $enrollment = $_GET['enrollment'];
