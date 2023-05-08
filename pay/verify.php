@@ -35,7 +35,7 @@ if (empty($_POST['razorpay_payment_id']) === false)
 
 if ($success === true)
 {
-    require_once()
+    require_once("../Student/php/create_invoice.php");
 }
 else
 {
