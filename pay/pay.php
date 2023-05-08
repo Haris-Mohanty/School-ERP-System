@@ -22,6 +22,17 @@ $pending = $_GET['pending'];
 $date = $_GET['date'];
 $fee_time = $_GET['fee_time'];
 
+$_SESSION['enrollment'] = $enrollment;
+$_SESSION['name'] = $name;
+$_SESSION['category'] = $category;
+$_SESSION['course'] = $course;
+$_SESSION['batch'] = $batch;
+$_SESSION['recent'] = $recent;
+$_SESSION['total'] = $total;
+$_SESSION['pending'] = $pending;
+$_SESSION['date'] = $date;
+$_SESSION['fee_time'] = $fee_time;
+
 use Razorpay\Api\Api;
 
 $api = new Api($keyId,$keySecret);
