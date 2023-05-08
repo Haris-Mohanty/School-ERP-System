@@ -90,4 +90,5 @@ if($displayCurrency !== 'INR')
 }
 $json = json_encode($data);
 require("checkout/manual.php");
+
 ?>
