@@ -18,6 +18,8 @@ require_once("../Common_files/php/database.php");
   if($stu_res -> num_rows != 0){
     $all_students_data = $stu_res -> fetch_assoc();
   }
+  $_SESSION['mobile'] = $all_students_data['mobile'];
+  $_SESSION['address'] = $all_students_data['city'];
 
 ?>
 

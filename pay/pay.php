@@ -56,7 +56,7 @@ $data = [
     "description"       => $brand_name,
     "image"             => "https://e7.pngegg.com/pngimages/410/207/png-clipart-massachusetts-institute-of-technology-mit-license-bsd-licence-open-source-license-open-miscellaneous-text.png",
     "prefill"           => [
-    "name"              => "zeeshan khan",
+    "name"              => $name,
     "email"             => "zeeshan@gmail.com",
     "contact"           => "6393640841",
     ],
