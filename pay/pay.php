@@ -64,7 +64,7 @@ $data = [
     "contact"           => $mobile,
     ],
     "notes"             => [
-    "address"           => "Mahrastra",
+    "address"           => $address,
     "merchant_order_id" => "32564258",
     ],
     "theme"             => [
