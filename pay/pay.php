@@ -6,6 +6,8 @@ session_start();
 // create the razorpay order
 
 $brand_name = $_SESSION['brand-name'];
+$brand_name = $_SESSION['mobile'];
+$brand_name = $_SESSION['address'];
 
 
 $enrollment = $_GET['enrollment'];
