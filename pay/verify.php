@@ -35,8 +35,7 @@ if (empty($_POST['razorpay_payment_id']) === false)
 
 if ($success === true)
 {
-    $html = "<p>Your payment was successful</p>
-             <p>Payment ID: {$_POST['razorpay_payment_id']}</p>";
+    require_once()
 }
 else
 {
