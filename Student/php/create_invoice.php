@@ -22,8 +22,8 @@ if($response){
     if($db -> query($insert_data)){
 
         $update_student = "UPDATE students SET paid_fee = '$paid_fee' WHERE enrollment = '$enrollment'";
-        $db -> query($update_student);    
-        echo "success";
+        $db -> query($update_student);   
+        header("Location");
     }else{
         echo "Unable to Create Invoice!";
     }
