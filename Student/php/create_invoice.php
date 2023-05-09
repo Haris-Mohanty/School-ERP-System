@@ -3,11 +3,11 @@
 //LINK DATABASE
 require_once("../../Common_files/php/database.php");
 
-$enrollment = $_SESSION['invoice-enrollment'];
-$name = $_SESSION['invoice-name'];
-$category = $_SESSION['invoice-category'];
-$course = $_SESSION['invoice-course'];
-$batch = $_SESSION['invoice-batch'];
+$enrollment = $_SESSION['enrollment'];
+$name = $_SESSION['name'];
+$category = $_SESSION['category'];
+$course = $_SESSION['course'];
+$batch = $_SESSION['batch'];
 $paid_fee = $_SESSION['paid_fee'];
 $pending = $_SESSION['pending'];
 $date = $_SESSION['date'];
