@@ -18,7 +18,7 @@ $get_data = "SELECT * FROM invoice";
 
 $response = $db -> query($get_data);
 if($response){
-    $insert_data = "INSERT INTO invoice(enrollment, name, category, course, batch, paid_fee, pending, fee_time, invoice_pending, invoice_recent, date) VALUES('$enrollment', '$name', '$category', '$course', '$batch', '$paid_fee', '$pending', '$fee_time', '$invoice_pending', '$invoice_recent', '$date')";
+    $insert_data = "INSERT INTO invoice(enrollment, name, category, course, batch, paid_fee, pending, fee_time, invoice_recent, date) VALUES('$enrollment', '$name', '$category', '$course', '$batch', '$paid_fee', '$pending', '$fee_time', '$invoice_recent', '$date')";
     if($db -> query($insert_data)){
 
         $update_student = "UPDATE students SET paid_fee = '$paid_fee' WHERE enrollment = '$enrollment'";
@@ -38,13 +38,12 @@ if($response){
         paid_fee VARCHAR(55),
         pending VARCHAR(55),
         fee_time VARCHAR(55),
-        invoice_pending VARCHAR(55),
         invoice_recent VARCHAR(55),
         date VARCHAR(55),
         PRIMARY KEY(id)
     )";
     if($db -> query($create_table)){
-        $insert_data = "INSERT INTO invoice(enrollment, name, category, course, batch, paid_fee, pending, fee_time, invoice_pending, invoice_recent, date) VALUES('$enrollment', '$name', '$category', '$course', '$batch', '$paid_fee', '$pending', '$fee_time', '$invoice_pending', '$invoice_recent', '$date')";
+        $insert_data = "INSERT INTO invoice(enrollment, name, category, course, batch, paid_fee, pending, fee_time, invoice_recent, date) VALUES('$enrollment', '$name', '$category', '$course', '$batch', '$paid_fee', '$pending', '$fee_time', '$invoice_recent', '$date')";
         if($db -> query($insert_data)){
 
            $update_student = "UPDATE students SET paid_fee = '$paid_fee' WHERE enrollment = '$enrollment'";
