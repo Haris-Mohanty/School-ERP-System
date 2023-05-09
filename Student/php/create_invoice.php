@@ -8,13 +8,11 @@ $name = $_SESSION['name'];
 $category = $_SESSION['category'];
 $course = $_SESSION['course'];
 $batch = $_SESSION['batch'];
-$paid_fee = $_SESSION['paid_fee'];
+$paid_fee = $_SESSION['total'];
 $pending = $_SESSION['pending'];
-$date = $_SESSION['date'];
-
-$fee_time = $_POST['invoice-fee-time'];
-$invoice_pending = $_POST['invoice-pending'];
+$fee_time = $_SESSION['fee-time'];
 $invoice_recent = $_POST['invoice-recent'];
+$date = $_SESSION['date'];
 
 $get_data = "SELECT * FROM invoice";
 
