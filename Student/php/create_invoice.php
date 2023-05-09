@@ -3,14 +3,14 @@
 //LINK DATABASE
 require_once("../../Common_files/php/database.php");
 
-$enrollment = $_POST['invoice-enrollment'];
-$name = $_POST['invoice-name'];
-$category = $_POST['invoice-category'];
-$course = $_POST['invoice-course'];
-$batch = $_POST['invoice-batch'];
-$paid_fee = $_POST['paid_fee'];
-$pending = $_POST['pending'];
-$date = $_POST['date'];
+$enrollment = $_SESSION['invoice-enrollment'];
+$name = $_SESSION['invoice-name'];
+$category = $_SESSION['invoice-category'];
+$course = $_SESSION['invoice-course'];
+$batch = $_SESSION['invoice-batch'];
+$paid_fee = $_SESSION['paid_fee'];
+$pending = $_SESSION['pending'];
+$date = $_SESSION['date'];
 
 $fee_time = $_POST['invoice-fee-time'];
 $invoice_pending = $_POST['invoice-pending'];
