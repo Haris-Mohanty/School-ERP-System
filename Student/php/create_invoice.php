@@ -23,7 +23,7 @@ if($response){
 
         $update_student = "UPDATE students SET paid_fee = '$paid_fee' WHERE enrollment = '$enrollment'";
         $db -> query($update_student);   
-        header("Location:http://localhost/School ERP System/Student/");
+        header("Location:http://localhost/School ERP System/Student/index.php");
     }else{
         echo "Unable to Create Invoice!";
     }
