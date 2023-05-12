@@ -1,6 +1,6 @@
 <?php
 
-$keyId = 'rzp_test_vpZbdkkY4Rzgl4';
+$keyId = 'rzp_test_OfYtyCCWCEYB53';
 $keySecret = 'x9VKMDq9KnirTG2KYcJumu6T';
 $displayCurrency = 'INR';
 
