@@ -1,5 +1,5 @@
 <?php
 
-$db = new mysqli("localhost", "root", "8658763042@Haris", "school_erp");
+$db = new mysqli("localhost", "root", "*********", "school_erp");
 
 ?>
